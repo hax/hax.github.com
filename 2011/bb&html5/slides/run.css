@@ -1,12 +1,11 @@
 html {
-	height: 95%;
-	outline: 3px double #666;	
+	/*height: 95%;
+	outline: 3px double #666;*/	
 }
 body {
-	height: 100%;
-	width: auto;
+	/*height: 100%;
+	width: auto;*/
 	
-	background: white;
 	/*min-width: 2000px;
 	position: absolute;
 	
@@ -17,5 +16,18 @@ body {
 	-moz-column-width: 800px;
 	-moz-column-gap: 200px;*/
 	
-	border: 1px solid;
+	/*border: 1px solid;*/
+}
+
+header, section, footer {
+	position: fixed;
+	left: 0; right: 0; top: 0; bottom: 0;
+	margin: 0;
+	border: none;
+	padding: 0 2% 3em 2%;
+	visibility: hidden;
+	overflow: auto;
+}
+.current {
+	visibility: visible;
 }
