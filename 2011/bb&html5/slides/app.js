@@ -55,7 +55,6 @@ new function () {
 		console.debug(evt.type)
 		
 		if (window.fullScreen) {
-			if (current == null) gotoSlide(getSlideIndex() || 0)
 			playSlides()
 		} else {
 			stopSlides()
@@ -69,12 +68,22 @@ new function () {
 	
 	function playSlides() {
 		console.debug('play')
+		
 		document.enableStyleSheetsForSet('slides')	
 		window.addEventListener('keydown', keyboardHandler, false)
 		window.addEventListener('click', mouseHandler, false)
+		
+		gotoSlide(current != null ? current : getSlideIndex() || 0)
 	}
 	function stopSlides() {
 		console.debug('stop')
+		
+		var list, i
+		list = document.querySelectorAll('.current')
+		for (i = 0; i < list.length; i++) list[i].classList.remove('current')
+		list = document.querySelectorAll('.past')
+		for (i = 0; i < list.length; i++) list[i].classList.remove('past')
+		
 		document.enableStyleSheetsForSet('')
 		window.removeEventListener('keydown', keyboardHandler, false)
 		window.removeEventListener('click', mouseHandler, false)
@@ -103,7 +112,7 @@ new function () {
 	}
 	
 	function prev() {
-		go(current - 1)
+		if (current > 0) go(current - 1)
 	}
 	function next() {
 		go(current + 1)
@@ -115,23 +124,37 @@ new function () {
 		go(-1)
 	}
 	function go(n) {
-		if (gotoSlide(n))
-			history.pushState({index:n}, '', '#' + n)
+		var s = gotoSlide(n)
+		if (s) {
+			var title = s.title
+			if (!title) {
+				var h = s.getElementsByTagName('h1')[0]
+				title = h.title || h.textContent
+			}
+			//console.debug('go', n, title)
+			history.pushState({index:n}, title, '#' + n)
+		}
 	}
 	function gotoSlide(n) {
 		console.debug('slide', current, '->', n)
 		var slides = getSlides()
 		if (n < 0) n += slides.length
 		if (n >= 0 && n < slides.length) {
-			var old = document.getElementsByClassName('current')[0]
-			if (old) old.classList.remove('current')
-			slides[n].classList.add('current')
+			var s = document.querySelector('.current')
+			if (s) {
+				s.classList.add('past')
+				s.classList.remove('current')
+				console.debug(s.className)
+			}
+			s = slides[n]
+			s.classList.add('current')
+			s.classList.remove('past')
 			current = n
 			console.debug('current slide is', current)
-			return true
+			return slides[n]
 		} else {
-			console.debug('failed to goto slide', n, 'in', slides)
-			return false
+			console.debug('failed to goto slide', n)
+			return null
 		}
 	}
 	
