@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="cmn-Hans-CN-x-hax">
+<head>
+<meta charset="utf-8">
+
+<title>Bambook & HTML5</title>
+
+<!-- import stylesheets and scripts of Slides framework -->
+<link rel="stylesheet" href="slides/common.css">
+<link rel="stylesheet" media="projection, screen and (min-width: 780px)" href="slides/projection.css">
+<link rel="alternate stylesheet" title="slides" href="slides/run.css">
+<style>
+</style>
+<script src="slides/app.js"></script>
+
+</head>
+
+<body>
+
+<header>
+	<hgroup>
+		<h1>Bambook & HTML5</h1>
+		<h2>Bambook电子书运用Web技术的经验</h2>
+	</hgroup>
+	<dl>
+		<dt>作者
+		<dd>盛大创新院 贺师俊 (hax)
+		<dt>最后更新时间
+		<dd><time pubdate datetime="2011-06-04">2011年6月4日晚</time>
+	</dl>
+</header>
+
+<section id="bambook">
+	<h1>Bambook</h1>
+	<ul>
+		<li>电子书：手机、平板等之外的新的一种移动产品
+		<li>E-Ink技术：效果类似纸张，保护眼睛、省电、低刷新、灰度
+		<li>互联网产品：通过WiFi、USB连接或3G联网更新
+		<li>版权保护：通过内置“密宝”硬件芯片对内容加解密
+		<li>微支付通道：适应互联网时代的数字内容出版
+		<li>电子书国家标准正在制定中（工信部、新闻出版署）
+	</ul>
+</section>
+
+<section id="arch">
+	<h1>架构 Architecture</h1>
+	<ul>
+		<li>系统层：经过深度定制裁剪和改进的Android 1.5
+		<li>应用层：基于WebKit引擎（版本528, 2008年11月的fork）
+		<li>基于企业开放平台的云服务：用户认证、云中书城、网盘<sup>*</sup>等
+		<li>基于国际开放标准的内容接入：Atom/RSS、OPDS<sup>*</sup>等
+		<li>基于W3C Widget标准的应用部署<sup>*</sup>
+		<li>目标：所有用户界面和业务逻辑均采用Web技术构建
+	</ul>
+	<p class="note"><small>* 尚处于开发或测试阶段</small>
+</section>
+
+<section id="problems">
+	<h1>问题 Problems</h1>
+	<ul>
+		<li>WebKit版本老旧：WebKit的版本取决于Android系统版本，而Android的版本升级受制于许多因素（如硬件驱动）
+		<li>WebKit引擎非常复杂，在新的硬件平台上可能存在bug
+		<li>WebKit的Anroid移植版的特别问题：焦点控制、按键事件、表单控件、高速缓存、接口性能等
+		<li>WebKit在电子书应用领域的特别问题：对分页媒介的支持较差
+	</ul>
+</section>
+
+<section h1="solutions">
+	<h1>应对之策 Solutions</h1>
+	<ul>
+		<li>Anroid版本升级
+		<li>修剪和改进Anroid
+		<li>给WebKit打patch
+		<li>自行实现特性（native）
+		<li>自行实现特性（scripting）
+		<li>开发者Guidelines
+	</ul>
+</section>
+
+<section h1="cases">
+	<h1>案例 Cases</h1>
+	<ul>
+		<li>阅读器（采用WebKit的插件机制）
+		<li>跨域资源访问（修改WebKit源码）
+		<li>textarea input event（从changeset里挑选并制作patch）
+		<li>localStorage（不同于phonegap，使用C++实现）
+		<li>keyboard events（将Anroid层面的KeyEvent透过postMessage发送到脚本层并实现DOM Events标准草案API）
+		<li>Element.classList API（在脚本层实现，覆盖所有真实使用场景）
+		<li>history API（在脚本层实现，部分特性无法实现）
+		<!--<li>pageshow/pagehide events（允许脚本兼容）-->
+	</ul>
+</section>
+
+<section id="todo">
+	<h1>有待解决 TBD</h1>
+	<ul>
+		<li>实现Device API<small>（电量、网络状态获取和通知）</small>
+		<li>实现Widget相关标准
+		<li>应该实现哪些API？<small>（比如存储API：WebStorage/WebSQL/IndexedDB？）</small>
+		<li>如何正确实现CSS media query？<small>（是否应增加media="ebook"？）</small>
+		<li>缺乏某些API标准<small>（休眠/唤醒？语音相关：TTS API？CSS audio？）</small>
+		<li>Bambook当前未涉及的问题：@viewport、适应不同DPI、Touch events等
+	</ul>
+</section>
+
+<section>
+	<h1>成本 Cost</h1>
+	<ul>
+		<li>对WebKit的修改和patch无法以标准Anroid SDK/NDK开发、以APK方式部署，必须定制固件
+		<li>定制固件需考量产业链成本（与Anroid硬件厂商如何分工合作？怎样确保产品开发周期？）
+</section>
+
+<footer>
+	<h1>Q & A</h1>
+	<dl>
+		<dt>Bambook官方网站
+		<dd><a href="http://bb.sdo.com/">bb.sdo.com</a>
+		<dt>盛大创新院
+		<dd><a href="http://in.sdo.com/">in.sdo.com</a>
+		<dt>盛大开源平台
+		<dd><a href="http://sndacode.com/">sndacode.com</a>
+		<dt>我个人的开源
+		<dd><a href="https://github.com/hax">github.com/hax</a>
+	</dl>
+	<address>
+		<dl>
+			<dt>Email
+			<dd><a href="mailto:johnhax@gmail.com">johnhax@gmail.com</a>
+			<dt>Weibo
+			<dd><a href="http://weibo.com/haxy">weibo.com/haxy</a> (@johnhax)
+			<dt>Twitter
+			<dd><a href="http://twitter.com/haxy">@haxy</a>
+			<dt>Fanfou
+			<dd><a href="http://fanfou.com/haxy">@haxy</a>
+		</dl>
+	</address>
+</footer>
+
+</body>
+
+</html>

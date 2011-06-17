@@ -1,0 +1,21 @@
+html {
+	height: 95%;
+	outline: 3px double #666;	
+}
+body {
+	height: 100%;
+	width: auto;
+	
+	background: white;
+	/*min-width: 2000px;
+	position: absolute;
+	
+	-webkit-column-width: 800px;
+	-webkit-column-gap: 200px;
+	-webkit-column-rule: 3px double #999;
+	
+	-moz-column-width: 800px;
+	-moz-column-gap: 200px;*/
+	
+	border: 1px solid;
+}
