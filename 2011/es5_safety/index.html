@@ -133,6 +133,31 @@ W('#container').html(...)
 <section id="others3">
 	<h1>对我们的其他启示</h1>
 	<ul>
+		<li>信号
+			<pre>
+function getSignal(where) {
+	if (where - lastTrain.where <= 2000) {
+		return Signal.RED
+	} else {
+		return Signal.GREEN
+	}
+}
+
+function getSignal(where) {
+	if (where - lastTrain.where > 2000) {
+		return Signal.GREEN
+	} else {
+		return Signal.RED
+	}
+}
+
+			</pre>
+	</ul>
+</section>
+
+<section id="others9">
+	<h1>对我们的其他启示</h1>
+	<ul>
 		<li>Module system: CommonJS / AMD</small>
 		<li>OO system: <a href="">Traits.js</a>
 		<li>Type system:
