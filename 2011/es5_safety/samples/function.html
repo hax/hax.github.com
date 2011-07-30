@@ -1,0 +1,43 @@
+<!doctype html>
+
+<style>
+#info {
+	background: black;
+	color: white;
+	font-size: 48px;
+	margin: 1em 0;
+	padding: 0.25em;
+}
+#test {
+	font-size: 32px;
+}
+</style>
+
+<script>
+//'use strict'
+if (window.addEventListener) {
+	function addEvent(o, type, handler) {
+		if (typeof o === 'string') o = document.getElementById(o)
+		o.addEventListener(type, handler, false)
+	}
+} else if (window.attachEvent) {
+	function addEvent(o, type, handler) {
+		if (typeof o === 'string') o = document.getElementById(o)
+		o.attachEvent('on' + type, handler)
+	}
+}
+
+function out(msg) {
+	document.getElementById('info').innerHTML = msg
+}
+
+</script>
+
+<input id="test" type="button" value="click me">
+<div id="info"></div>
+
+<script>
+addEvent('test', 'click', function() {
+	out('clicked!')
+})
+</script>

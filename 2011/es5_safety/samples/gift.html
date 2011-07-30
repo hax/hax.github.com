@@ -1,0 +1,99 @@
+<!doctype html>
+
+<style>
+#gates {
+	display: inline-block;
+	border-bottom: 2px solid gray;
+	width: 90%;
+	padding-left: 10%;
+}
+#gates .gate {
+	border: 8px solid;
+	border-bottom: none;
+	width: 120px;
+	height: 160px;
+	margin-left: 80px;
+	float: left;
+	text-align: center;
+	font-size: 72px;
+	border-radius: 12px 12px 0 0;
+}
+#gate1 {
+	color: red;
+}
+#gate2 {
+	color: green;
+}
+#gate3 {
+	color: blue;
+}
+#info {
+	background: black;
+	color: white;
+	font-size: 48px;
+	margin: 1em 0;
+	padding: 0.25em;
+}
+</style>
+
+<p><input type="button" value="开始" onclick="run()" style="font-size:32px;"></p>
+
+<div id="gates">
+	<div id="gate1" class="gate">0</div>
+	<div id="gate2" class="gate">1</div>
+	<div id="gate3" class="gate">2</div>
+</div>
+<div id="info">
+</div>
+
+<script>
+function run() {
+
+	//var test = document.getElementById('test')
+	
+	if (document.addEventListener)
+		document.addEventListener('keydown', keyHandler, false)
+	else if (document.attachEvent)
+		document.attachEvent('onkeydown', keyHandler)
+	
+	var which = Math.floor(Math.random() * 3)
+	console.log('which: ', which)
+	
+	var opened = Math.floor(which + 1 + Math.random() * 2) % 3
+	out('偷偷告诉你，门' + opened + '后面没有奖品哦！')
+	
+	var key = 48 + which // Space bar
+	var url = 'gift'
+	
+	function keyHandler(evt) {
+		with (evt) {
+			console.log(keyCode)
+			if (keyCode === key) {
+				loadResource(url, function(gift) {
+					out('恭喜你，你中奖啦！你得到奖品是：')
+					setTimeout(function() {
+						out(gift)
+					}, 5000)
+				})
+			} else if (keyCode >= 48 && keyCode < 51) {
+				out('对不起，你猜错了！')
+			}
+		}
+	}
+	
+	function loadResource(url, callback) {
+		var xhr = new XMLHttpRequest()
+		xhr.open('GET', url, false)
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState === 4) {
+				callback(xhr.responseText)
+			}
+		}
+		xhr.send()
+	}
+	
+	function out(msg) {
+		document.getElementById('info').innerHTML = msg
+	}
+}
+</script>

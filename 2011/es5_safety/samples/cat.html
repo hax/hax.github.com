@@ -1,0 +1,47 @@
+<!doctype html>
+
+<style>
+#info {
+	background: black;
+	color: white;
+	font-size: 48px;
+	margin: 1em 0;
+	padding: 0.25em;
+}
+#CatChen {
+	padding: 0;
+}
+</style>
+
+<button id="CatChen" name="CatChen">
+	<img alt="Cat" width="70" src="https://secure.gravatar.com/avatar/1220b0561e7e6d5e567f251e135fbcc5?s=140&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png">
+</button>
+
+<div id="info"></div>
+
+
+<script>
+//"use strict"
+function Cat(name) {
+	this.name = name
+	document.getElementById(name).onclick = this.hello
+}
+Cat.prototype.hello = function() {
+	//repeat(3, function() {
+	out (this.name + ' say: mew... world!')
+	//})
+}
+
+var cat = new Cat('CatChen')
+
+
+function out(msg) {
+	document.getElementById('info').innerHTML += msg + '<br>'
+}
+
+
+function repeat(n, f) {
+	new Array(n + 1).join('x').split('').forEach(f)
+}
+</script>
+

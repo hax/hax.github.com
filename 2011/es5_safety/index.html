@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="cmn-Hans-CN-x-hax">
+<head>
+<meta charset="utf-8">
+
+<title>ES5 &mdash;Improve the Safety of JavaScript</title>
+
+<!-- import stylesheets and scripts of Slides framework -->
+<!--meta http-equiv="Default-Style" content=""-->
+<link rel="stylesheet" href="../slides/common.css">
+<link rel="stylesheet" media="projection, screen and (min-width: 780px)" href="../slides/projection.css">
+<link rel="alternate stylesheet" title="slides" href="../slides/run.css">
+<script src="../slides/app.js"></script>
+<style>
+body>section div img { float: right; margin: 1em; }
+</style>
+
+<!-- happyistudy -->
+</head>
+
+<body>
+
+<header>
+	<hgroup>
+		<h1>ECMAScript 5</h1>
+		<h2>&mdash; Improve the Safety of JavaScript</h2>
+	</hgroup>
+	<dl>
+		<dt>作者
+		<dd>盛大创新院 贺师俊 (hax)
+		<dt>最后更新时间
+		<dd><time pubdate datetime="2011-07-30">2011年7月30日中午</time>
+	</dl>
+</header>
+
+<section id="es-trend">
+	<h1>ECMAScript的发展方向</h1>
+	<ul>
+		<li>API扩展和标准化：JSON、Array.protoype.forEach/map/filter...
+		<li>通用化，可实现平台对象：get/set accessor、Object.defineProperty、etc.
+		<li>适应于PITL（programming-in-the-large）
+	</ul>
+	<p><a href="http://hax.iteye.com/blog/1122103">JavaScript的未来方向之观察</a>
+</section>
+
+<section id="pitl">
+	<h1>什么是 Programming in the Large</h1>
+	<ul>
+		<li><a href="http://en.wikipedia.org/wiki/Programming_in_the_large_and_programming_in_the_small">Wikipedia定义</a>
+		<li>不是一个人
+		<li>不是一两天
+		<li>需要多人的协作开发或较长时期的维护
+	</ul>
+</section>
+
+<section id="es3">
+	<h1>JavaScript传统上是PITS的语言</h1>
+	<ul>
+		<li>设计为一门依赖于host环境的脚本语言
+		<li>无内置module/namespace
+		<li>缺少较全面的标准API库
+		<li>缺乏各种invariants约束的能力
+		<li>残缺的OO
+	</ul>
+</section>
+
+<section id="safety">
+	<div><img src="gaotie.jpg"></div>
+	<h1>不够安全</h1>
+</section>
+
+<section id="es5">
+	<h1>ES4/ES5/Harmony希望针对PITL的改进</h1>
+	<ul>
+		<li>ES4：增加大量语言特性
+		<li>ES5：设计strict模式（更严格的ES，Good Parts）
+		<li>Harmony：在ES5的语义上谨慎的增加特性
+	</ul>	
+	<p><a href="http://es5.github.com/">http://es5.github.com/</a>
+	<p><a href="http://wiki.ecmascript.org/">http://wiki.ecmascript.org/</a>
+</section>
+
+<section id="pre-cases">
+	<h1>案例</h1>
+</section>
+
+<section id="cases">
+	<h1>案例</h1>
+	<ul>
+		<li>“this” reference
+		<li>“with” statement
+		<li>Function declaration in statement
+	</ul>
+</section>
+
+<section id="summary">
+	<div><img src="wjb.jpg"></div>
+	<h1>对于PITL，语言特性不是越多越好，不是越灵活越好。要把安全放在第一位。失掉了安全，就失掉了可信度。</h1>
+</section>
+
+<section id="hint">
+	<h1>对我们的其他启示</h1>
+	<ul>
+		<li>Module system: CommonJS / AMD</small>
+		<li>OO system: <a href="">Traits.js</a>
+		<li>Type system:
+			<ul>
+				<li><a href="https://github.com/ilinsky/guard.js/blob/master/test.html">guard.js</a>
+				<li><a href="http://jeditoolkit.com/2011/07/03/guards.html">jsguards</a>
+				<li><a href="http://github.catchen.me/jsHelpers/zh/#Overload">jsHelpers Overload</a>
+				<li><a href="http://wiki.ecmascript.org/doku.php?id=strawman:trademarks">Trademark/Guard proposal</a>
+			</ul>
+	</ul>
+</section>
+
+
+<footer>
+	<h1>Q & A</h1>
+	<dl>
+		<dt>我的Blog
+		<dd><a href="http://hax.iteye.com/">hax.iteye.com</a>
+		<dt>我个人的开源
+		<dd><a href="https://github.com/hax">github.com/hax</a>
+		<dt>演讲slides
+		<dd><a href="https://hax.github.com/">hax.github.com</a>
+		<dt>ES5兼容项目
+		<dd><a href="https://github.com/hax/es5-shim">es5-shim</a>
+	</dl>
+	<address>
+		<dl>
+			<dt>Email
+			<dd><a href="mailto:johnhax@gmail.com">johnhax@gmail.com</a>
+			<dt>Weibo
+			<dd><a href="http://weibo.com/haxy">weibo.com/haxy</a> (@johnhax)
+			<dt>Twitter
+			<dd><a href="http://twitter.com/haxy">@haxy</a>
+			<dt>Fanfou
+			<dd><a href="http://fanfou.com/haxy">@haxy</a>
+		</dl>
+	</address>
+</footer>
+
+</body>
+
+</html>

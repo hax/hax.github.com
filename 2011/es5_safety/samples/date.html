@@ -1,0 +1,46 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<style>
+#year { width: 2.5em; text-align: center; }
+#month, #day { width: 1.5em; text-align: center; }
+
+#info {
+	background: black;
+	color: white;
+	font-size: 48px;
+	margin: 1em 0;
+	padding: 0.25em;
+}
+</style>
+
+<form onsubmit="return validateOrder()">
+<p>请输入时间：
+<input id="year" value="2011"><label for="year">年</label>
+<input id="month" value="07"><label for="year">月</label>
+<input id="day" value="23"><label for="year">日</label>
+<input type="submit" value="确认">
+</form>
+
+<div id="info">
+</div>
+
+<script>
+function validateOrder() {
+	var d = new Date(getValue('year'), getValue('month'), getValue('day'))
+	out('已经成功订阅' + d.toLocaleString() + '的动车票一张。亲！')
+	return false
+}
+
+function getValue(id) {
+	//'use strict'
+	var result = parseInt(document.getElementById(id).value)
+	console.log(id, result)
+	if (id === 'month') result -= 1
+	return result
+}
+
+function out(msg) {
+	document.getElementById('info').innerHTML = msg
+}
+</script>
