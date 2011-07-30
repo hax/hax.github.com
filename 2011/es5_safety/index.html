@@ -99,7 +99,38 @@ body>section div img { float: right; margin: 1em; }
 	<h1>对于PITL，语言特性不是越多越好，不是越灵活越好。要把安全放在第一位。失掉了安全，就失掉了可信度。</h1>
 </section>
 
-<section id="hint">
+<section id="others">
+	<h1>对我们的其他启示</h1>
+	<ul>
+		<li>“鲁棒”（robust），还是“逆来顺受”（tolerant）
+			<pre>
+Dog.prototype.setName = function(name) {
+	this.name = String(name).toLowerCase()
+}
+
+var q = new Dog()
+q.setName(q)	// q.setName('q')
+
+			</pre>
+	</ul>
+</section>
+
+<section id="others2">
+	<h1>对我们的其他启示</h1>
+	<ul>
+		<li>Null Object Pattern
+			<pre>
+var id = W('#id').getValue()
+// W.one('#notexist').getValue()
+...
+...
+...
+W('#container').html(...)
+			</pre>
+	</ul>
+</section>
+
+<section id="others3">
 	<h1>对我们的其他启示</h1>
 	<ul>
 		<li>Module system: CommonJS / AMD</small>
