@@ -3,10 +3,19 @@
 <head>
 <meta charset="utf-8">
 <title>HTML5 History API</title>
-<link rel="stylesheet" href="https://raw.github.com/hax/Slides/master/src/common.css">
-<link rel="stylesheet" media="projection, screen and (min-width: 780px)" href="https://raw.github.com/hax/Slides/master/src/projection.css">
-<link rel="alternate stylesheet" title="slides" href="https://raw.github.com/hax/Slides/master/src/play.css">
-<script src="https://raw.github.com/hax/Slides/master/src/app.js"></script>
+<link rel="stylesheet" type="text/css" href="../slides/common.css">
+<link rel="stylesheet" type="text/css" media="projection, screen and (min-width: 780px)" href="../slides/projection.css">
+<link rel="alternate stylesheet" title="slides" type="text/css" href="../slides/run.css">
+<script src="../slides/app.js"></script>
+<style>
+code m {
+	font-weight: bold;
+	color: red;
+}
+code i {
+	color: #00ff00;
+}
+</style>
 </head>
 <body>
 
@@ -17,8 +26,205 @@
 </hgroup>
 </header>
 
-<section id="x">
-<h1>API</h1>
+<section id="historyInterface0">
+<h1>window.history</h1>
+<ul>
+	<li><code>history . back()</code>
+		<p>Goes back one step in the joint session history. 
+		<p>If there is no previous page, does nothing.
+
+	<li><code>history . forward()</code>
+		<p>Goes forward one step in the joint session history. 
+		<p>If there is no next page, does nothing.
+
+	<li><code>history . go( [ delta ] )</code>
+		<p>Goes back or forward the specified number of steps in the joint session history. 
+		<p>A zero delta will reload the current page. 
+		<p>If the delta is out of range, does nothing.
+
+	<li><code>history . length</code>
+		<p>Returns the number of entries in the joint session history.
+</ul>
+</section>
+
+<section id="historyInterface1">
+<h1>The History Interface</h1>
+<ul>
+	<li><code>history . pushState(data, title [, url ] )</code>
+		<p>Pushes the given data onto the session history, with the given title, and, if provided, the given URL.
+
+	<li><code>history . replaceState(data, title [, url ] )</code>
+		<p>Updates the current entry in the session history to have the given data, title, and, if provided, URL.
+	
+	<li><code>history . state</code>
+		<p>Returns the current state object.
+</ul>
+</section>
+
+<section id="example0" style="overflow: hidden">
+	<figure style="text-align:center;">
+		<img src="ju_ge_li_zi.jpg" alt="举个栗子" style="height:100%;">
+	</figure>
+</section>
+
+<section id="example1">
+	<h1><a href="static/5.html">static/5.html</a></h1>
+	<code><pre>
+&lt;!doctype html&gt;
+&lt;!-- this is http://example.com/5.html --&gt;
+&lt;title&gt;Line Game - 5&lt;/title&gt;
+&lt;p&gt;You are at coordinate 5 on the line.&lt;/p&gt;
+&lt;p&gt;
+ &lt;a href=&quot;6.html&quot;&gt;Advance to 6&lt;/a&gt; or
+ &lt;a href=&quot;4.html&quot;&gt;retreat to 4&lt;/a&gt;?
+&lt;/p&gt;
+	</pre></code>
+</section>
+<section id="example1x">
+	<h1>传统静态方案</h1>
+	<ul>
+		<li>每次都要重新加载新页面</li>
+		<li>无法实现更好的用户体验，如动画效果</li>
+</section>
+
+<section id="example2">
+	<h1><a href="ajax/5.html">ajax/5.html</a></h1>
+	<code><pre>
+&lt;!doctype html&gt;
+&lt;!-- this starts off as http://example.com/5.html --&gt;
+&lt;title&gt;<m>Line Game - 5</m>&lt;/title&gt;
+&lt;p&gt;You are at coordinate &lt;span id=&quot;coord&quot;&gt;<m>5</m>&lt;/span&gt; on the line.&lt;/p&gt;
+&lt;p&gt;
+ &lt;a href=&quot;<m>6.html</m>&quot; <i>onclick=&quot;go(1); return false;&quot;</i>&gt;<m>Advance to 6</m>&lt;/a&gt; or
+ &lt;a href=&quot;<m>4.html</m>&quot; <i>onclick=&quot;go(-1); return false;&quot;</i>&gt;<m>retreat to 4</m>&lt;/a&gt;?
+&lt;/p&gt;
+<i>&lt;script&gt;
+ function go(d) {
+   setupPage(currentPage + d);
+ }
+ function setupPage(page) {
+   currentPage = page;
+   document.title = 'Line Game - ' + currentPage;
+   document.getElementById('coord').textContent = currentPage;
+   document.links[0].href = (currentPage+1) + '.html';
+   document.links[0].textContent = 'Advance to ' + (currentPage+1);
+   document.links[1].href = (currentPage-1) + '.html';
+   document.links[1].textContent = 'retreat to ' + (currentPage-1);
+ }
+&lt;/script&gt;</i>	
+	</pre></code>
+</section>
+<section id="example2x">
+	<h1>Ajax方案之一</h1>
+	<ul>
+		<li>无法寻址、不支持书签、回退等操作</li>
+		<li>破坏了Web用户体验</li>
+</section>
+
+<section id="example3">
+	<h1><a href="ajax/n.html#5">ajax/n.html#5</a></h1>
+	<code><pre>
+&lt;!doctype html&gt;
+&lt;!-- this starts off as http://example.com/<i>n.html#5</i> --&gt;
+&lt;title&gt;Line Game - 5&lt;/title&gt;
+&lt;p&gt;You are at coordinate &lt;span id=&quot;coord&quot;&gt;5&lt;/span&gt; on the line.&lt;/p&gt;
+&lt;p&gt;
+ &lt;a href=&quot;<i>#6</i>&quot;&gt;Advance to 6&lt;/a&gt; or
+ &lt;a href=&quot;<i>#4</i>&quot;&gt;retreat to 4&lt;/a&gt;?
+&lt;/p&gt;
+&lt;script&gt;
+ function go(d) {
+   location.hash = '#' + (currentPage + d)
+ }
+ function setupPage(page) {
+   currentPage = page;
+   document.title = 'Line Game - ' + currentPage;
+   document.getElementById('coord').textContent = currentPage;
+   document.links[0].href = '#' + (currentPage+1);
+   document.links[0].textContent = 'Advance to ' + (currentPage+1);
+   document.links[1].href = '#' + (currentPage-1);
+   document.links[1].textContent = 'retreat to ' + (currentPage-1);
+ }
+ 
+ <i>setInterval(function() {
+   setupPage(parseInt(location.hash.slice(1)) || 1)
+ }, 200)</i>
+&lt;/script&gt;
+	</pre></code>
+</section>
+
+<section id="example3x">
+	<h1>Ajax方案之二</h1>
+	<ul>
+		<li>征用了#，无法同时支持锚点
+		<li>#后的部分不会被发送到服务器，因此首次加载（或刷新页面）也需要通过脚本组装页面
+		<li>增加了开发者进行优雅退化和SEO的难度（无脚本？搜索引擎？）
+		<li>低效的轮询实现
+	</ul>
+</section>
+
+<section id="example4">
+	<h1><a href="html5/index.html?x=5">html5/?x=5</a></h1>
+	<code><pre>
+&lt;!DOCTYPE HTML&gt;
+&lt;!-- this starts off as http://example.com/?x=5 --&gt;
+&lt;title&gt;Line Game - 5&lt;/title&gt;
+&lt;p&gt;You are at coordinate &lt;span id=&quot;coord&quot;&gt;5&lt;/span&gt; on the line.&lt;/p&gt;
+&lt;p&gt;
+ &lt;a href=&quot;?x=6&quot; onclick=&quot;go(1); return false;&quot;&gt;Advance to 6&lt;/a&gt; or
+ &lt;a href=&quot;?x=4&quot; onclick=&quot;go(-1); return false;&quot;&gt;retreat to 4&lt;/a&gt;?
+&lt;/p&gt;
+&lt;script&gt;
+ var currentPage = 5; // prefilled by server
+ function go(d) {
+   setupPage(currentPage + d);
+   <i>history.pushState(currentPage, document.title, '?x=' + currentPage);</i>
+ }
+ <i>onpopstate = function(event) {
+   setupPage(event.state || 5);
+ }</i>
+ function setupPage(page) {
+   currentPage = page;
+   document.title = 'Line Game - ' + currentPage;
+   document.getElementById('coord').textContent = currentPage;
+   document.links[0].href = '?x=' + (currentPage+1);
+   document.links[0].textContent = 'Advance to ' + (currentPage+1);
+   document.links[1].href = '?x=' + (currentPage-1);
+   document.links[1].textContent = 'retreat to ' + (currentPage-1);
+ }
+&lt;/script&gt;		
+	</code></pre>
+</section>
+
+<section id="diagram">
+	<h1>浏览器历史队列图解</h1>
+	<p>（略）</p>
+</section>
+
+<section id="example4x">
+	<h1>HTML5 History API 方案</h1>
+	<ul>
+		<li>网址变化不一定访问服务器
+		<li>需要服务器端和浏览器端行为一致
+	</ul>
+	<p>参考文档：<a href="http://developers.whatwg.org/history.html#the-history-interface">HTML5标准</a>
+</section>
+
+<section id="faq">
+	<h1>FAQ</h1>
+	
+	<ul>
+		<li>安全问题
+		<li>兼容性问题
+		<li>……
+	</ul>
+</section>
+
+<section id="practice">
+	<h1>习题</h1>
+	<ul>
+		<li>思考为什么：<code><pre>if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) return;</pre></code>
+		<li>设想两个需要replaceState的案例，并简单实现一下
 </section>
 
 <footer>

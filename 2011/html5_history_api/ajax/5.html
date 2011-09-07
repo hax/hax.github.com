@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<!-- this starts off as http://example.com/5.html -->
+<title>Line Game - 5</title>
+<p>You are at coordinate <span id="coord">5</span> on the line.</p>
+<p>
+ <a href="6.html" onclick="go(1); return false;">Advance to 6</a> or
+ <a href="4.html" onclick="go(-1); return false;">retreat to 4</a>?
+</p>
+<script>
+ var currentPage = 5; // prefilled by server
+ function go(d) {
+   setupPage(currentPage + d);
+ }
+ function setupPage(page) {
+   currentPage = page;
+   document.title = 'Line Game - ' + currentPage;
+   document.getElementById('coord').textContent = currentPage;
+   document.links[0].href = (currentPage+1) + '.html';
+   document.links[0].textContent = 'Advance to ' + (currentPage+1);
+   document.links[1].href = (currentPage-1) + '.html';
+   document.links[1].textContent = 'retreat to ' + (currentPage-1);
+ }
+</script>
