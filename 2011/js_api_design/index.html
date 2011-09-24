@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="zh-cmn-Hans-x-hax">
+<head>
+<meta charset="utf-8">
+<title>JavaScript之API设计的思考两三例</title>
+<link rel="stylesheet" type="text/css" href="../slides/common.css">
+<link rel="stylesheet" type="text/css" media="projection, screen and (min-width: 780px)" href="../slides/projection.css">
+<link rel="alternate stylesheet" title="slides" type="text/css" href="../slides/run.css">
+<script src="../slides/app.js"></script>
+<style>
+body>header dt {
+	display:none;
+}
+code m, strong {
+	font-weight: bold;
+	color: red;
+}
+code i {
+	color: #00ff00;
+}
+.hide {
+	color: transparent;
+}
+em {
+	font-weight: bolder;
+	font-style: normal;
+	
+}
+code>pre {
+	font-size: 0.825em;
+}
+</style>
+</head>
+<body>
+
+<header>
+	<hgroup>
+		<h1>关于JavaScript库和框架的<br>API设计的思考两三例</h1>
+	</hgroup>
+	<dl>
+		<dt>作者
+		<dd onclick="this.firstChild.className=''; event.stopPropagation()"><em class="hide">前</em>盛大创新院 研究员 贺师俊 (hax)
+		<dt>最后更新时间
+		<dd style="text-align:center;"><time pubdate datetime="2011-09-24">2011年9月24日</time>
+	</dl>
+	<!--	即使只使用如jQuery等主流库和框架，在稍大一些的项目中，我们迟早会面临设计给他人使用的公共接口的问题——即所谓API设计。与单纯实现功能不同，API设计有一些独特的问题，但开发者普遍缺少这方面的训练——从实践经验到理论探讨都很缺乏，甚至连评估一个API设计的好坏都很难。特别是，JavaScript是一门非常灵活的语言，又缺乏足够丰富的标准库作为样板，因此关于JavaScript编程中API设计的讨论往往最终归结为“风格”甚至“喜好”等主观因素。这次分享就想通过一些案例来探讨JavaScript的API设计中的一些问题，并希望能归纳出一些“客观”标准，或至少能建立一个针对此问题领域的分析框架。
+	-->
+</header>
+
+<section id="PAD">
+	<figure style="float: right; max-width: 50%;">
+		<img src="PAD_cover.jpg" alt="Practical API Design">
+	</figure>
+	<h1>Practical API Design</h1>
+</section>
+
+<section id="cluelessness">
+	<h1>Cluelessness 无绪</h1>
+	<ul>
+		<li>即使对事物的内在本质并不清楚，也可以很好的使用它。
+		<li>例子：电视机、汽车、手机……
+		<li>例子：软件、高级语言、数据库、算法……
+		<li>不同层次的理解：用户、维修人员、开发人员、架构师、设计师……
+	</ul>
+	<!--	译者注：即使某人对某一样事物的内在本质并不清楚，也可以很好的使用该事物。如大部分人都不知道电视机的原理，但并不妨碍大家使用电视机观看电视。同样的，开发人员不需要知道某个组件或模块的内在实现原理，也可以很好的使用该组件或模块对外提供的API来完成自己所需的功能。
+	-->
+</section>
+
+<section id="selective-cluelessness">
+	<h1>选择性无绪</h1>
+	<ul>
+		<li>编程不是火箭科技，程序员不是科学家
+		<li>软件工程中的无绪是指：程序员无需深入了解很多内容，也可写出好的代码
+		<li>找到一种编程实践方法，让开发人员不用深入了解所有事情，即选择他们所需的知识
+		<li>API是对所需知识的抽象，它将系统的复杂性隐藏起来
+		<!--协作开发、模块化、交流互通-->
+	</ul>
+</section>
+
+<section id="criterion">
+	<h1>评价API好坏的标准</h1>
+	<ul>
+		<li>可理解性
+		<li>一致性
+		<li>可见性
+		<li>简单性
+		<li>保护投资（兼容性）
+	</ul>
+</section>
+
+<section id="jquery">
+	<h1>评价API好坏的标准：jQuery</h1>
+	<ul>
+		<li>可理解性：Selector
+		<li>一致性：链式调用
+		<li>可见性：$
+		<li>简单性：write less, do more.
+		<li>保护投资：对比Dojo、YUI……
+	</ul>
+</section>
+
+<section id="url-route">
+	<h1>评价API好坏的标准：URL route</h1>
+	<ul>
+		<li>参考：<a href="http://hax.iteye.com/blog/361310">偶对某框架的rant</a>
+		<li>URL route用正则匹配？
+		<li>例子：一个blog系统中，特定格式的URL映射到存档页面
+	</ul>
+</section>
+
+<section id="url-route-django">
+	<h1>评价API好坏的标准：某python Web框架</h1>
+	<code><pre>
+urlpatterns = patterns(<i>''</i>,    
+  (r<i>'^articles/(?P&lt;year&gt;\d{4})/$'</i>, views.year_archive),    
+  (r<i>'^articles/(?P&lt;year&gt;\d{4})/(?P&lt;month&gt;\d{2})/$'</i>, views.month_archive),    
+)	
+	</pre></code>
+</section>
+
+<section id="url-route-django">
+	<h1>评价API好坏的标准：Grails</h1>
+	<code><pre>
+static mappings = {  
+  <i>"/articles/$year/"</i> (view:<i>'year_archive'</i>) {  
+	constraints { year(matches:<i>/\d{4}/</i>) }  
+  }  
+  <i>"/articles/$year/$month"</i> (view:<i>'month_archive'</i>) {  
+	constraints {  
+	  year(matches:<i>/\d{4}/</i>)  
+	  month(matches:<i>/\d{2}/</i>)  
+	}  
+  }  
+}  	
+	</pre></code>
+</section>
+
+<section id="url-route-comp">
+<h1>评价API好坏的标准</h1>
+	<ul>
+		<li>URL“<kbd>/articles/2009/</kbd>”返回的页面为2009年的存档
+		<li>URL“<kbd>/articles/2009/06/</kbd>”返回的页面为2009年6月的存档
+	</ul>
+	<code><pre>(r<i>'^articles/(?P&lt;year&gt;\d{4})/(?P&lt;month&gt;\d{2})/$'</i>, views.month_archive)</pre></code>
+	<code><pre><i>"/articles/$year/$month"</i> (view:<i>'month_archive'</i>) {  
+  constraints {  
+    year(matches:<i>/\d{4}/</i>)  
+    month(matches:<i>/\d{2}/</i>)  
+  }
+}</pre></code>
+	</ul>
+</section>
+
+<section id="url-route-criterion-1">
+	<h1>评价API好坏的标准：<br>正则表达式 vs 内嵌变量的字符串</h1>
+	<ul>
+		<li>可理解性
+		<li>一致性
+		<li>可见性
+		<li>简单性
+		<li>保护投资（兼容性）
+	</ul>
+</section>
+
+<section id="url-route-criterion-2">
+	<h1>评价API好坏的标准：<br>正则表达式 vs 内嵌变量的字符串</h1>
+	<ul>
+		<li><strong>可理解性</strong>
+		<li>一致性
+		<li>可见性
+		<li><strong>简单性</strong>
+		<li>保护投资（兼容性）
+	</ul>
+</section>
+
+<section id="api-compatibility">
+	<h1>API演进过程中的兼容性问题</h1>
+	<ul>
+		<li>反面教材：Dojo
+		<li>Prototype之坑爹的getElementsByClassName
+		<li>Prototype之坑爹的Object.prototype
+		<li>在Shim中应该抛异常还是静默失败？</a>
+	</ul>
+</section>
+
+<section id="getElementsByClassName">
+	<h1>坑爹的getElementsByClassName</h1>
+	<ul>
+		<li>Prototype 1.6开始被deprecated，因为：
+		<blockquote>native implementations return a <code>NodeList</code> rather than an <code>Array</code>.</blockquote>
+		<li>问题出在哪里？
+		<li>如果回到当初？
+	</ul>
+</section>
+
+<section id="Object_prototype">
+	<h1>坑爹的Object.prototype</h1>
+	<ul>
+		<li>prototype的修改是全局性的，和global变量一样，甚至更糟糕……
+		<li>ES5加入一些方法：用Object.xxx而不是Object.prototype.xxx
+		<li>修改其他built-in对象的prototype如何？
+		<li>与未来API的冲突？
+		<li onclick="this.getElementsByTagName('em')[0].className = ''; event.stopPropagation();">解决之道<em class="hide">：Wrapper、支持prototype隔离的Module系统</em>
+	</ul>
+</section>
+
+<section>
+	<h1>对于不支持的功能应该抛异常还是静默失败？</h1>
+	<ul>
+		<li>ES5 Shim：<a href="http://hax.iteye.com/blog/1146699">shim是应该抛异常还是应该fail silently？</a>
+	</ul>
+</section>
+
+<section id="api-style">
+	<h1>风格</h1>
+	<ul>
+		<li>短命名
+		<li>占位符
+		<li>重载形式的Accessor
+	</ul>
+</section>
+
+<section id="prototype-shortnames">
+	<h1>Prototype开创的短名字</h1>
+	<ul>
+		<li>$
+		<li>$$
+		<li>_
+	</ul>
+</section>
+
+<section id="prototype-more-shortnames">
+	<h1>Prototype的短名</h1>
+	<ul>
+		<li>$A
+		<li>$H
+		<li>$R
+		<li>$F
+		<li>$w
+	</ul>
+</section>
+
+<section id="more-shortnames-1">
+	<h1>更多的短名字</h1>
+	<ul>
+		<li>$d$
+		<li>$h$
+		<li>$ID$
+		<li>$SC$
+		<li>$CLASS$
+		<li>$thread$
+		<li>$E$
+		<li>$DD$
+	</ul>
+</section>
+
+<section id="more-shortnames-2">
+	<h1>更多更多的短名字</h1>
+	<ul>
+		<li>_.A
+		<li>_.B
+		<li>_.D
+		<li>_.F
+		<li>_.H
+		<li>_.N
+		<li>_.S
+	</ul>
+</section>
+
+<section id="more-shortnames-3">
+	<h1>还有……</h1>
+	<ul>
+		<li>_.isA
+		<li>_.isB
+		<li>_.isF
+		<li>_.isH
+		<li>_.isN
+		<li>_.isS
+	</ul>
+</section>
+
+<section>
+	<h1>“_”作为占位符</h1>
+	<ul>
+		<li><code>function f(a,b,c) {...}; var f1 = f.curry(x);<br>/* f1(b,c) -> f(x,b,c) */</code>
+		<li><code>var f2 = f.partial(_, x);<br>/* f2(a, c) -> f(a, x, c) */</code>
+		<li><code>var f2 = f.partial(_, _, x);<br>/* f2(a, b) -> f(a, b, x) */</code>
+	</ul>	
+</section>
+
+<section>
+	<h1>用undefined作为占位符而不是“_”如何？
+</section>
+
+<section>
+	<h1>用undefined作为占位符而不是“_”如何？
+	<ul>
+		<li>参数本身是 undefined 怎么办？
+		<li>在调用f.partial(x, undefined, y)时，x或y的值发生错误导致传入了undefined怎么办？
+	</ul>
+</section>
+
+<section>
+	<h1>重载形式的Accessor</h1>
+	<p><a href="http://hax.iteye.com/blog/850778">论KISSY中一则API的设计</a>
+</section>
+
+<section id="lazy-fn-def-pattern">
+	<h1>具体实现对API的影响</h1>
+	<ul>
+		<li><a href="http://peter.michaux.ca/articles/lazy-function-definition-pattern">Lazy function definition pattern</a>
+		<li><a href="http://hax.iteye.com/blog/113778">改写函数实际上违背了FP的无副作用的精神</a>
+	</ul>
+</section>
+
+<section id="no-execuse">
+	<h1>具体实现对API的影响</h1>
+	<ul>
+		<li>防御性编程习惯不是借口，文档不是借口
+		<li>开发者不会预期函数引用会变化
+		<li>就算API作者写了文档，开发者也不会看
+		<li>就算开发者看了文档，也未必注意和理解这对代码的影响
+	</ul>
+</section>
+
+<section id="summary">
+	<h1>总结</h1>
+	<ul>
+		<li>API的目的是让开发者可以选择性无绪
+		<li>评价API的好坏就是从“选择性无绪”出发，以此衍生出可理解性、一致性、可见性、简单性、保护投资（兼容性）等标准
+		<li>即使是看似主观的风格问题，也是可能按照标准结合情境进行分析的
+		<li>注意JavaScript的一些特点导致的特殊问题，如prototype，如动态语言特征，如ES5、Harmony新特性带来的API设计的进化等
+		<li>只是一个初步尝试，需要更多的探讨……
+	</ul>
+</section>
+
+<footer>
+	<h1>Q & A</h1>
+	<address>
+		<dl>
+			<dt>Blog
+			<dd><a href="http://hax.iteye.com/">hax.iteye.com</a>
+			<dt>GitHub
+			<dd><a href="https://github.com/hax">github.com/hax</a>
+			<dt>Weibo
+			<dd>@johnhax <a href="http://weibo.com/haxy">weibo.com/haxy</a>
+			<dt>Email
+			<dd><a href="mailto:johnhax@gmail.com">johnhax@gmail.com</a>
+		</dl>
+	</address>
+</footer>
+
+</body>
+</html>
+
