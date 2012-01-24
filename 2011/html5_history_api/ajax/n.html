@@ -7,6 +7,7 @@
  <a href="#4">retreat to 4</a>?
 </p>
 <script>
+ var currentPage = 5; // prefilled by server
  function go(d) {
    location.hash = '#' + (currentPage + d)
  }
@@ -21,6 +22,7 @@
  }
  
  setInterval(function() {
-   setupPage(parseInt(location.hash.slice(1)) || 1)
+   var page = parseInt(location.hash.slice(1)) || 1
+   if (page !== currentPage) setupPage(page)
  }, 200)
 </script>

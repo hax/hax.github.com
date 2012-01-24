@@ -8,12 +8,23 @@
 <link rel="alternate stylesheet" title="slides" type="text/css" href="../slides/run.css">
 <script src="../slides/app.js"></script>
 <style>
-code m {
-	font-weight: bold;
-	color: red;
+code {
+	font-family: 'Consolas', 'Courier New', monospace;
 }
-code i {
-	color: #00ff00;
+code mark {
+	color: black;
+	background: yellow;
+}
+code del {
+	color: #993333;
+}
+code ins {
+	text-decoration: none;
+	color: #00cc00;
+}
+pre {
+	margin: 0;
+	line-height: 1.38;
 }
 </style>
 </head>
@@ -68,17 +79,16 @@ code i {
 </section>
 
 <section id="example1">
-	<h1><a href="static/5.html">static/5.html</a></h1>
-	<code><pre>
+	<h1><a href="static/5.html" target="example">static/5.html</a></h1>
+	<pre><code>
 &lt;!doctype html&gt;
-&lt;!-- this is http://example.com/5.html --&gt;
-&lt;title&gt;Line Game - 5&lt;/title&gt;
-&lt;p&gt;You are at coordinate 5 on the line.&lt;/p&gt;
+&lt;title&gt;Line Game - <mark>5</mark>&lt;/title&gt;
+&lt;p&gt;You are at coordinate <mark>5</mark> on the line.&lt;/p&gt;
 &lt;p&gt;
- &lt;a href=&quot;6.html&quot;&gt;Advance to 6&lt;/a&gt; or
- &lt;a href=&quot;4.html&quot;&gt;retreat to 4&lt;/a&gt;?
+ &lt;a href=&quot;<mark>6.html</mark>&quot;&gt;Advance to <mark>6</mark>&lt;/a&gt; or
+ &lt;a href=&quot;<mark>4.html</mark>&quot;&gt;retreat to <mark>4</mark>&lt;/a&gt;?
 &lt;/p&gt;
-	</pre></code>
+	</code></pre>
 </section>
 <section id="example1x">
 	<h1>传统静态方案</h1>
@@ -88,17 +98,18 @@ code i {
 </section>
 
 <section id="example2">
-	<h1><a href="ajax/5.html">ajax/5.html</a></h1>
-	<code><pre>
+	<h1><a href="ajax/5.html target="example">ajax/5.html</a></h1>
+	<pre><code>
 &lt;!doctype html&gt;
 &lt;!-- this starts off as http://example.com/5.html --&gt;
-&lt;title&gt;<m>Line Game - 5</m>&lt;/title&gt;
-&lt;p&gt;You are at coordinate &lt;span id=&quot;coord&quot;&gt;<m>5</m>&lt;/span&gt; on the line.&lt;/p&gt;
+&lt;title&gt;<mark>Line Game - 5</mark>&lt;/title&gt;
+&lt;p&gt;You are at coordinate &lt;span id=&quot;coord&quot;&gt;<mark>5</mark>&lt;/span&gt; on the line.&lt;/p&gt;
 &lt;p&gt;
- &lt;a href=&quot;<m>6.html</m>&quot; <i>onclick=&quot;go(1); return false;&quot;</i>&gt;<m>Advance to 6</m>&lt;/a&gt; or
- &lt;a href=&quot;<m>4.html</m>&quot; <i>onclick=&quot;go(-1); return false;&quot;</i>&gt;<m>retreat to 4</m>&lt;/a&gt;?
+ &lt;a href=&quot;<mark>6.html</mark>&quot; <ins>onclick=&quot;go(1); return false;&quot;</ins>&gt;<mark>Advance to 6</mark>&lt;/a&gt; or
+ &lt;a href=&quot;<mark>4.html</mark>&quot; <ins>onclick=&quot;go(-1); return false;&quot;</ins>&gt;<mark>retreat to 4</mark>&lt;/a&gt;?
 &lt;/p&gt;
-<i>&lt;script&gt;
+<ins>&lt;script&gt;
+ var currentPage = 5; // prefilled by server
  function go(d) {
    setupPage(currentPage + d);
  }
@@ -111,8 +122,8 @@ code i {
    document.links[1].href = (currentPage-1) + '.html';
    document.links[1].textContent = 'retreat to ' + (currentPage-1);
  }
-&lt;/script&gt;</i>	
-	</pre></code>
+&lt;/script&gt;</ins>	
+	</code></pre>
 </section>
 <section id="example2x">
 	<h1>Ajax方案之一</h1>
@@ -122,35 +133,38 @@ code i {
 </section>
 
 <section id="example3">
-	<h1><a href="ajax/n.html#5">ajax/n.html#5</a></h1>
-	<code><pre>
+	<h1><a href="ajax/n.html#5" target="example">ajax/n.html#5</a></h1>
+	<pre><code>
 &lt;!doctype html&gt;
-&lt;!-- this starts off as http://example.com/<i>n.html#5</i> --&gt;
-&lt;title&gt;Line Game - 5&lt;/title&gt;
-&lt;p&gt;You are at coordinate &lt;span id=&quot;coord&quot;&gt;5&lt;/span&gt; on the line.&lt;/p&gt;
+&lt;!-- this starts off as http://example.com/<del>5.html</del><ins>n.html<strong>#5</strong></ins> --&gt;
+&lt;title&gt;<mark>Line Game - 5</mark>&lt;/title&gt;
+&lt;p&gt;You are at coordinate &lt;span id=&quot;coord&quot;&gt;<mark>5</mark>&lt;/span&gt; on the line.&lt;/p&gt;
 &lt;p&gt;
- &lt;a href=&quot;<i>#6</i>&quot;&gt;Advance to 6&lt;/a&gt; or
- &lt;a href=&quot;<i>#4</i>&quot;&gt;retreat to 4&lt;/a&gt;?
+ &lt;a href=&quot;<del>6.html</del><ins>#6</ins>&quot; <del>onclick="go(1); return false;"</del>&gt;<mark>Advance to 6</mark>&lt;/a&gt; or
+ &lt;a href=&quot;<del>4.html</del><ins>#4</ins>&quot; <del>onclick="go(-1); return false;"</del>&gt;<mark>retreat to 4</mark>&lt;/a&gt;?
 &lt;/p&gt;
 &lt;script&gt;
+ var currentPage = 5; // prefilled by server
  function go(d) {
-   location.hash = '#' + (currentPage + d)
+   <del>setupPage(currentPage + d);</del>
+   <ins>location.hash = '#' + (currentPage + d)</ins>
  }
  function setupPage(page) {
    currentPage = page;
    document.title = 'Line Game - ' + currentPage;
    document.getElementById('coord').textContent = currentPage;
-   document.links[0].href = '#' + (currentPage+1);
+   document.links[0].href = <del>(currentPage+1) + '.html'</del><ins>'#' + (currentPage+1)</ins>;
    document.links[0].textContent = 'Advance to ' + (currentPage+1);
-   document.links[1].href = '#' + (currentPage-1);
+   document.links[1].href = <del>(currentPage-1) + '.html'</del><ins>'#' + (currentPage-1)</ins>;
    document.links[1].textContent = 'retreat to ' + (currentPage-1);
  }
  
- <i>setInterval(function() {
-   setupPage(parseInt(location.hash.slice(1)) || 1)
- }, 200)</i>
+ <ins>setInterval(function() {
+   var page = parseInt(location.hash.slice(1)) || 1
+   if (page !== currentPage) setupPage(page)
+ }, 200)</ins>
 &lt;/script&gt;
-	</pre></code>
+	</code></pre>
 </section>
 
 <section id="example3x">
@@ -165,7 +179,7 @@ code i {
 
 <section id="example4">
 	<h1><a href="html5/index.html?x=5">html5/?x=5</a></h1>
-	<code><pre>
+	<pre><code>
 &lt;!DOCTYPE HTML&gt;
 &lt;!-- this starts off as http://example.com/?x=5 --&gt;
 &lt;title&gt;Line Game - 5&lt;/title&gt;
@@ -178,11 +192,11 @@ code i {
  var currentPage = 5; // prefilled by server
  function go(d) {
    setupPage(currentPage + d);
-   <i>history.pushState(currentPage, document.title, '?x=' + currentPage);</i>
+   <ins>history.pushState(currentPage, document.title, '?x=' + currentPage);</ins>
  }
- <i>onpopstate = function(event) {
+ <ins>onpopstate = function(event) {
    setupPage(event.state || 5);
- }</i>
+ }</ins>
  function setupPage(page) {
    currentPage = page;
    document.title = 'Line Game - ' + currentPage;
@@ -198,7 +212,7 @@ code i {
 
 <section id="diagram">
 	<h1>浏览器历史队列图解</h1>
-	<p>（略）</p>
+	<p><figure>（略）</figure></p>
 </section>
 
 <section id="example4x">
