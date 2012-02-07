@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{{ page.title }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"><!--target-densitydpi=device-dpi-->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="/images/icon.png">
+<link rel="apple-touch-icon-precomposed" href="/images/icon.png">
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+	// scrolling 1px to hide address bar of mobile browsers
+	window.scrollTo(0, 1)
+}, false)
+</script>
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" media="handheld, only screen and (max-device-width: 320px)" href="phone.css">
+<link rel="stylesheet" media="only screen and (min-width: 641px) and (max-width: 800px)" href="pad.css">
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-1882727-3']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+</head>
+<body>
+{{ content }}
+<footer>
+    <p class="copyright"><small>&copy; <b title="賀師俊">HE Shi-Jun</b> 2011, some 
+
+rights reserved.</small>
+</footer>
+</body>
+</html>

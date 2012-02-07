@@ -1,7 +1,11 @@
 body {
-	font-family: 'Droid Sans', '文泉驿微米黑', '微软雅黑', 'Arial', sans-serif;
+	font-family: 'Droid Sans', '文泉驿微米黑', 'Microsoft Yahei', 'Arial', sans-serif;
 	line-height: 1.5;
 }
 a {
 	text-decoration: none;
+}
+body>footer {
+    position: fixed;
+    left: 0; bottom: 0;
 }
