@@ -1,5 +1,4 @@
-{% if page.quirk %}<!-- enable IE6/IE7 quirk mode -->{% endif %}
-<!doctype html>
+{% if page.quirk %}<!-- enable IE6/IE7 quirk mode -->{% endif %}<!doctype html>
 <html{% if page.lang %} lang="{{ page.lang }}"{% endif %}>
 <head>
 <meta charset="utf-8">
@@ -21,15 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
 	window.scrollTo(0, 1)
 }, false)
 </script>
-{% if page.style %}
-{{ page.style }}
+{% if page.style %}{{ page.style }}
 {% else %}
 <link rel="stylesheet" href="common.css">
 <link rel="stylesheet" media="handheld, only screen and (max-device-width: 320px)" href="phone.css">
 <link rel="stylesheet" media="only screen and (min-width: 641px) and (max-width: 800px)" href="pad.css">
 {% endif %}
-{% if page.head %}
-{{ page.head }}
+{% if page.head %}{{ page.head }}
 {% endif %}
 <script>
 var _gaq = _gaq || [];
