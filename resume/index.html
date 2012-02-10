@@ -4,135 +4,135 @@ quirk: IE6/IE7
 title: Hax的简历
 lang: zh-cmn-Hans-x-hax
 style:|
-	body {
-		font: medium
-	}
+  body {
+  	font: medium
+  }
 head:|
-	<style media="screen">
-	#body {
-		font:15px/24px 宋体; margin:32px; padding:3px;
-		border:medium double #cc0000;
-		color:black; background:white;
-	}
-	#top { border-bottom:medium solid #ffcc00; padding:3px; }
-	#main { padding:0 36px 6px 3px; }
-	#my-name { font:bold 18px 宋体; letter-spacing:2px; }
-	address { font:italic 13px verdana; margin:1em }
+  <style media="screen">
+  #body {
+  	font:15px/24px 宋体; margin:32px; padding:3px;
+  	border:medium double #cc0000;
+  	color:black; background:white;
+  }
+  #top { border-bottom:medium solid #ffcc00; padding:3px; }
+  #main { padding:0 36px 6px 3px; }
+  #my-name { font:bold 18px 宋体; letter-spacing:2px; }
+  address { font:italic 13px verdana; margin:1em }
 
-	.nav {
-		position:fixed; right:7px;
-		border:medium dotted white;
-		background:#cc0000;
-	}
-	.nav a { font:12px 宋体; }
-	.nav a:link, .nav a:visited { color:white; }
-	.nav a:hover { text-decoration:none; color:yellow; }
-	#contents { top:45px; padding:2px 8px 1px 7px; list-style:none; }
-	#back-to-top { bottom:17px; padding:2px 8px 1px 7px; }
+  .nav {
+  	position:fixed; right:7px;
+  	border:medium dotted white;
+  	background:#cc0000;
+  }
+  .nav a { font:12px 宋体; }
+  .nav a:link, .nav a:visited { color:white; }
+  .nav a:hover { text-decoration:none; color:yellow; }
+  #contents { top:45px; padding:2px 8px 1px 7px; list-style:none; }
+  #back-to-top { bottom:17px; padding:2px 8px 1px 7px; }
 
-	.date { font:12px georgia; padding-right:1em; color:gray }
-	.name { font-weight:bold; }
-	h2 { font:16px 黑体; letter-spacing:1px;
-	 margin:1.25em 0.5em 0.5em 0.5em; }
-	h2 .en { font-weight:bold; }
-	h2:target { color:red; }
-	p { margin:0.5em 2em }
-	ul { margin-top:0.5em; margin-bottom:0.5em; list-style:square }
-	li p { margin:0.5em 0; font-size:14px; line-height:20px }
-	ul ul { list-style:circle }
-	ul ul.compact { list-style:disc }
-	ul.compact .date { display:none; }
-	ul.compact .name { font-weight:normal; }
-	ul.compact li p { display:none; }
-	em { font-style:normal; }
-	a { text-decoration:none; }
-	a.url, a.alpha { font:italic 13px georgia; }
-	a:link { color:blue; }
-	a:visited { color:#9999cc; }
-	a:hover { text-decoration:underline; }
-	a:active { color:red; }
-	a img { border:none; }
-	#bottom { padding-left:8px; font:12px 宋体; vertical-align:middle; }
-	.copyright { float:right; }
-	</style>
-	<style media="print">
-	* {
-		font-family:宋体;
-	}
-	#body {
-		font-size:11.5pt;
-		line-height:18pt;
-	}
-	#top {
-		border-bottom:medium solid #ffcc00; padding:1pt;
-	}
-	#main { padding:0.5em; }
-	#my-name { font:15pt 楷体_gb2312; letter-spacing:1pt; }
-	address { font:italic 10.5pt verdana; margin:1em }
+  .date { font:12px georgia; padding-right:1em; color:gray }
+  .name { font-weight:bold; }
+  h2 { font:16px 黑体; letter-spacing:1px;
+   margin:1.25em 0.5em 0.5em 0.5em; }
+  h2 .en { font-weight:bold; }
+  h2:target { color:red; }
+  p { margin:0.5em 2em }
+  ul { margin-top:0.5em; margin-bottom:0.5em; list-style:square }
+  li p { margin:0.5em 0; font-size:14px; line-height:20px }
+  ul ul { list-style:circle }
+  ul ul.compact { list-style:disc }
+  ul.compact .date { display:none; }
+  ul.compact .name { font-weight:normal; }
+  ul.compact li p { display:none; }
+  em { font-style:normal; }
+  a { text-decoration:none; }
+  a.url, a.alpha { font:italic 13px georgia; }
+  a:link { color:blue; }
+  a:visited { color:#9999cc; }
+  a:hover { text-decoration:underline; }
+  a:active { color:red; }
+  a img { border:none; }
+  #bottom { padding-left:8px; font:12px 宋体; vertical-align:middle; }
+  .copyright { float:right; }
+  </style>
+  <style media="print">
+  * {
+  	font-family:宋体;
+  }
+  #body {
+  	font-size:11.5pt;
+  	line-height:18pt;
+  }
+  #top {
+  	border-bottom:medium solid #ffcc00; padding:1pt;
+  }
+  #main { padding:0.5em; }
+  #my-name { font:15pt 楷体_gb2312; letter-spacing:1pt; }
+  address { font:italic 10.5pt verdana; margin:1em }
 
-	.nav, .toggle { display:none; }
+  .nav, .toggle { display:none; }
 
-	.date { font:10.5pt georgia; padding-right:1em; color:gray }
-	.name { font-weight:bold; }
-	h2 { font:13.5pt 黑体; letter-spacing:1pt;
-	 margin:1.25em 0.5em 0.5em 0.5em; page-break-after:avoid; }
-	h2 .en { font-weight:bold; }
-	p { margin:0.5em 2em; }
-	ul { margin:0.5em 0 0.5em 4em; padding:0; list-style:square; }
-	li ul { list-style:circle; }
-	li ul * { page-break-before:avoid; page-break-after:avoid; }
-	li p { margin:0.25em 0; page-break-before:avoid; }
-	em { font-style:normal; font-weight:bold; }
-	a.url, a.alpha { font:italic 10.5pt georgia; }
-	#bottom { display:none; }
-	</style>
-	<!--[if lt IE 8]>
-	<style type="text/css">
-	/* fixd position for M$ IE */
-	html { $background:fixed url(http:); }
-	.nav { $position:absolute; $right:11px; $border:dashed thin #cc0000; }
-	#contents { $top:expression(eval(document.body.scrollTop + 49) + 'px'); }
-	#back-to-top { $top:expression(eval(document.body.scrollTop + document.body.clientHeight - 63) + 'px'); padding:6px 8px 4px 7px; }
-	</style>
-	<![endif]-->
-	<script defer>
-	function $(id) { return document.getElementById(id) }
-	function init () {
-		var contents = generateContents();
-		var top = $('top');
-		top.parentNode.insertBefore(contents, top.nextSibling);
-		var addr = $('contact-info').cloneNode(true);
-		addr.id = 'repeat-contact-info';
-		var bottom = $('bottom');
-		bottom.parentNode.insertBefore(addr, bottom);
-		collapse();
-	}
+  .date { font:10.5pt georgia; padding-right:1em; color:gray }
+  .name { font-weight:bold; }
+  h2 { font:13.5pt 黑体; letter-spacing:1pt;
+   margin:1.25em 0.5em 0.5em 0.5em; page-break-after:avoid; }
+  h2 .en { font-weight:bold; }
+  p { margin:0.5em 2em; }
+  ul { margin:0.5em 0 0.5em 4em; padding:0; list-style:square; }
+  li ul { list-style:circle; }
+  li ul * { page-break-before:avoid; page-break-after:avoid; }
+  li p { margin:0.25em 0; page-break-before:avoid; }
+  em { font-style:normal; font-weight:bold; }
+  a.url, a.alpha { font:italic 10.5pt georgia; }
+  #bottom { display:none; }
+  </style>
+  <!--[if lt IE 8]>
+  <style type="text/css">
+  /* fixd position for M$ IE */
+  html { $background:fixed url(http:); }
+  .nav { $position:absolute; $right:11px; $border:dashed thin #cc0000; }
+  #contents { $top:expression(eval(document.body.scrollTop + 49) + 'px'); }
+  #back-to-top { $top:expression(eval(document.body.scrollTop + document.body.clientHeight - 63) + 'px'); padding:6px 8px 4px 7px; }
+  </style>
+  <![endif]-->
+  <script defer>
+  function $(id) { return document.getElementById(id) }
+  function init () {
+  	var contents = generateContents();
+  	var top = $('top');
+  	top.parentNode.insertBefore(contents, top.nextSibling);
+  	var addr = $('contact-info').cloneNode(true);
+  	addr.id = 'repeat-contact-info';
+  	var bottom = $('bottom');
+  	bottom.parentNode.insertBefore(addr, bottom);
+  	collapse();
+  }
 
-	function generateContents () {
-		var contents = document.createElement('ul');
-		var list = document.getElementsByTagName("h2");
-		for (var i = 0; list.length > i; i++) {
-			var h = list.item(i);
-			var li = document.createElement('li');
-			var a = document.createElement('a');
-			a.href = '#' + h.id;
-			a.appendChild(document.createTextNode(h.textContent || h.innerText));
-			li.appendChild(a);
-			contents.appendChild(li);
-		}
-		contents.id = 'contents';
-		contents.className = 'nav';
-		return contents;
-	}
+  function generateContents () {
+  	var contents = document.createElement('ul');
+  	var list = document.getElementsByTagName("h2");
+  	for (var i = 0; list.length > i; i++) {
+  		var h = list.item(i);
+  		var li = document.createElement('li');
+  		var a = document.createElement('a');
+  		a.href = '#' + h.id;
+  		a.appendChild(document.createTextNode(h.textContent || h.innerText));
+  		li.appendChild(a);
+  		contents.appendChild(li);
+  	}
+  	contents.id = 'contents';
+  	contents.className = 'nav';
+  	return contents;
+  }
 
-	function expand () {
-		$('univs').className = '';
-	}
+  function expand () {
+  	$('univs').className = '';
+  }
 
-	function collapse () {
-		$('univs').className = 'compact';
-	}
-	</script>
+  function collapse () {
+  	$('univs').className = 'compact';
+  }
+  </script>
 ---
 <div id="top"><span id="my-name">贺师俊</span> | 十年工作经验</div>
 
