@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!-- device adapt -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"><!--target-densitydpi=device-dpi-->
-
+<!-- iOS features -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="apple-touch-icon" href="/images/icon.png">
@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	window.scrollTo(0, 1)
 }, false)
 </script>
+
 {% if page.style %}
 <style>
 {{ page.style }}
@@ -29,8 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <link rel="stylesheet" media="handheld, only screen and (max-device-width: 320px)" href="phone.css">
 <link rel="stylesheet" media="only screen and (min-width: 641px) and (max-width: 800px)" href="pad.css">
 {% endif %}
-{% if page.head %}{{ page.head }}
+
+{% if page.head %}
+{{ page.head }}
 {% endif %}
+
 <script>
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-1882727-3']);
@@ -43,12 +47,15 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </script>
 </head>
 <body>
+
 {{ content }}
+
 <footer>
-    <p class="copyright"><small>&copy; <b title="賀師俊">HE Shi-Jun</b> 2011, some 
+    <p class="copyright"><small>&copy; <b title="賀師俊">HE Shi-Jun</b> 2012, some 
 
 rights reserved.</small>
-	<p class="sponsor"><small>Hosted by GitHub</small>
+	<!--<p class="sponsor"><small>Hosted by GitHub</small>-->
 </footer>
+
 </body>
 </html>

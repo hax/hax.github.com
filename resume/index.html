@@ -1,171 +1,263 @@
----
-layout: default
-quirk: IE6/IE7
-title: Hax的简历
-lang: zh-cmn-Hans-x-hax
-style: |
-  body {
-  	font: medium
-  }
-head: |
-  <style media="screen">
-  #body {
-  	font:15px/24px 宋体; margin:32px; padding:3px;
-  	border:medium double #cc0000;
-  	color:black; background:white;
-  }
-  #top { border-bottom:medium solid #ffcc00; padding:3px; }
-  #main { padding:0 36px 6px 3px; }
-  #my-name { font:bold 18px 宋体; letter-spacing:2px; }
-  address { font:italic 13px verdana; margin:1em }
+<!-- enable IE6/IE7 quirk mode -->
+<!doctype html>
+<html lang="zh-cmn-Hans-x-hax">
+<head>
+<meta charset="utf-8">
+<title>Hax's Résumé</title>
+<meta name="author" content="hax">
+<!-- IE compatible mode -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- device adapt -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"><!--target-densitydpi=device-dpi-->
+<!-- iOS features -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="/images/icon.png">
+<link rel="apple-touch-icon-precomposed" href="/images/icon.png">
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+	// scrolling 1px to hide address bar of mobile browsers
+	window.scrollTo(0, 1)
+}, false)
+</script>
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-1882727-3']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+</head>
+<body>
+<style media="screen">
+body {
+	font-family: 'Hiragino Sans GB', 'WenQuanYi Micro Hei', 'Microsoft Yahei', sans-serif;
+	font-size: 15px;
+	line-height: 1.6;
+}
+p:lang(zh) {
+	text-align: justify;
+}
+:lang(zh) b {
+	font-weight: inherit;
+}
+em:lang(zh) {
+	font-weight: bold;
+}
+#body {
+	margin: auto;
+	max-width: 40em;
+	color: black;
+	text-shadow: 1px 1px 2px #ccc;
+}
 
-  .nav {
-  	position:fixed; right:7px;
-  	border:medium dotted white;
-  	background:#cc0000;
-  }
-  .nav a { font:12px 宋体; }
-  .nav a:link, .nav a:visited { color:white; }
-  .nav a:hover { text-decoration:none; color:yellow; }
-  #contents { top:45px; padding:2px 8px 1px 7px; list-style:none; }
-  #back-to-top { bottom:17px; padding:2px 8px 1px 7px; }
+header {
+	color: black;
+	background: #fec;
+	border-radius: 6px;
+	box-shadow: 3px 3px 1px #999;
+	margin: 1em;
+	padding: 1em;
+	text-shadow: 1px 1px 1px #fcc;
+}
+h1 {
+	border-bottom: medium solid black;
+	font-size: 1.2em;
+	letter-spacing: 2px;
+	padding: 5px;
+	margin-top: 0;
+	padding-top: 0;
+}
+.work-year {
+	display: none;
+}
+header img {
+	border: 1px solid navy;
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+	border-radius: 2px;
+	vertical-align: top;
+}
+address#contact {
+	display: inline-block;
+	margin-left: 1em;
+	vertical-align: top;
+	min-width: 50%;
+	font-family: Verdana, sans-serif;
+	font-size: 0.8em;
+}
+address#contact dt {
+	float: left;
+	min-width: 5em;
+}
+address#contact dd {
+}
+#main {
+	padding:0 36px 6px 3px;
+}
 
-  .date { font:12px georgia; padding-right:1em; color:gray }
-  .name { font-weight:bold; }
-  h2 { font:16px 黑体; letter-spacing:1px;
-   margin:1.25em 0.5em 0.5em 0.5em; }
-  h2 .en { font-weight:bold; }
-  h2:target { color:red; }
-  p { margin:0.5em 2em }
-  ul { margin-top:0.5em; margin-bottom:0.5em; list-style:square }
-  li p { margin:0.5em 0; font-size:14px; line-height:20px }
-  ul ul { list-style:circle }
-  ul ul.compact { list-style:disc }
-  ul.compact .date { display:none; }
-  ul.compact .name { font-weight:normal; }
-  ul.compact li p { display:none; }
-  em { font-style:normal; }
-  a { text-decoration:none; }
-  a.url, a.alpha { font:italic 13px georgia; }
-  a:link { color:blue; }
-  a:visited { color:#9999cc; }
-  a:hover { text-decoration:underline; }
-  a:active { color:red; }
-  a img { border:none; }
-  #bottom { padding-left:8px; font:12px 宋体; vertical-align:middle; }
-  .copyright { float:right; }
-  </style>
-  <style media="print">
-  * {
-  	font-family:宋体;
-  }
-  #body {
-  	font-size:11.5pt;
-  	line-height:18pt;
-  }
-  #top {
-  	border-bottom:medium solid #ffcc00; padding:1pt;
-  }
-  #main { padding:0.5em; }
-  #my-name { font:15pt 楷体_gb2312; letter-spacing:1pt; }
-  address { font:italic 10.5pt verdana; margin:1em }
+.nav {
+	position:fixed; right:7px;
+	border:medium dotted white;
+	background:#cc0000;
+}
+.nav a { font:12px 宋体; }
+.nav a:link, .nav a:visited { color:white; }
+.nav a:hover { text-decoration:none; color:yellow; }
+#contents { top:45px; padding:2px 8px 1px 7px; list-style:none; }
+#back-to-top { bottom:17px; padding:2px 8px 1px 7px; }
 
-  .nav, .toggle { display:none; }
+li .date {
+	font-size: 0.9em;
+	font-family: georgia;
+	padding-right:1em;
+	color:gray;
+}
+li b {
+	font-size: 1.2em;
+}
 
-  .date { font:10.5pt georgia; padding-right:1em; color:gray }
-  .name { font-weight:bold; }
-  h2 { font:13.5pt 黑体; letter-spacing:1pt;
-   margin:1.25em 0.5em 0.5em 0.5em; page-break-after:avoid; }
-  h2 .en { font-weight:bold; }
-  p { margin:0.5em 2em; }
-  ul { margin:0.5em 0 0.5em 4em; padding:0; list-style:square; }
-  li ul { list-style:circle; }
-  li ul * { page-break-before:avoid; page-break-after:avoid; }
-  li p { margin:0.25em 0; page-break-before:avoid; }
-  em { font-style:normal; font-weight:bold; }
-  a.url, a.alpha { font:italic 10.5pt georgia; }
-  #bottom { display:none; }
-  </style>
-  <!--[if lt IE 8]>
-  <style type="text/css">
-  /* fixd position for M$ IE */
-  html { $background:fixed url(http:); }
-  .nav { $position:absolute; $right:11px; $border:dashed thin #cc0000; }
-  #contents { $top:expression(eval(document.body.scrollTop + 49) + 'px'); }
-  #back-to-top { $top:expression(eval(document.body.scrollTop + document.body.clientHeight - 63) + 'px'); padding:6px 8px 4px 7px; }
-  </style>
-  <![endif]-->
-  <script defer>
-  function $(id) { return document.getElementById(id) }
-  function init () {
-  	var contents = generateContents();
-  	var top = $('top');
-  	top.parentNode.insertBefore(contents, top.nextSibling);
-  	var addr = $('contact-info').cloneNode(true);
-  	addr.id = 'repeat-contact-info';
-  	var bottom = $('bottom');
-  	bottom.parentNode.insertBefore(addr, bottom);
-  	collapse();
-  }
+b.title, b.dept {
+	font-weight: normal;
+	font-size: 0.9em;
+}
+h2 {
+	font-size: 1.2em; letter-spacing: 1px;
+	margin:1.25em 0.5em 0.5em 0.5em;
+}
 
-  function generateContents () {
-  	var contents = document.createElement('ul');
-  	var list = document.getElementsByTagName("h2");
-  	for (var i = 0; list.length > i; i++) {
-  		var h = list.item(i);
-  		var li = document.createElement('li');
-  		var a = document.createElement('a');
-  		a.href = '#' + h.id;
-  		a.appendChild(document.createTextNode(h.textContent || h.innerText));
-  		li.appendChild(a);
-  		contents.appendChild(li);
-  	}
-  	contents.id = 'contents';
-  	contents.className = 'nav';
-  	return contents;
-  }
+h2:target { color:red; }
+p { margin:0.5em 2em }
+ul { margin-top:0.5em; margin-bottom:0.5em; list-style:square }
+li p { margin:0.5em 0; font-size:14px; line-height:20px }
+ul ul { list-style:circle }
+ul ul.compact { list-style:disc }
+ul.compact .date { display:none; }
+ul.compact .name { font-weight:normal; }
+ul.compact li p { display:none; }
+em { font-style:normal; }
+/*a { text-decoration:none; }*/
+a.url, a.alpha { font:italic 13px georgia; }
+a:link { color:blue; }
+a:visited { color:#9999cc; }
+a:hover { text-decoration:underline; }
+a:active { color:red; }
+a img { border:none; }
+#bottom { padding-left:8px; font:12px 宋体; vertical-align:middle; }
+.copyright { float:right; }
+</style>
+<style media="print">
+* {
+	font-family: 宋体, serif;
+}
+#body {
+	font-size:11.5pt;
+	line-height:18pt;
+}
+#top {
+	border-bottom:medium solid #ffcc00; padding:1pt;
+}
+#main { padding:0.5em; }
+#my-name { font:15pt 楷体_gb2312; letter-spacing:1pt; }
+address { font:italic 10.5pt verdana; margin:1em }
 
-  function expand () {
-  	$('univs').className = '';
-  }
+.nav, .toggle { display:none; }
 
-  function collapse () {
-  	$('univs').className = 'compact';
-  }
-  </script>
----
-<div id="top"><span id="my-name">贺师俊</span> | 十年工作经验</div>
+.date { font:10.5pt georgia; padding-right:1em; color:gray }
+.name { font-weight:bold; }
+h2 { font:13.5pt 黑体; letter-spacing:1pt;
+ margin:1.25em 0.5em 0.5em 0.5em; page-break-after:avoid; }
+h2 .en { font-weight:bold; }
+p { margin:0.5em 2em; }
+ul { margin:0.5em 0 0.5em 4em; padding:0; list-style:square; }
+li ul { list-style:circle; }
+li ul * { page-break-before:avoid; page-break-after:avoid; }
+li p { margin:0.25em 0; page-break-before:avoid; }
+em { font-style:normal; font-weight:bold; }
+a.url, a.alpha, a[href^='mailto:'] { font:italic 10.5pt georgia; }
+#bottom { display:none; }
+</style>
+<!--[if lt IE 8]>
+<style>
+/* fixd position for M$ IE */
+html { $background:fixed url(http:); }
+.nav { $position:absolute; $right:11px; $border:dashed thin #cc0000; }
+#contents { $top:expression(eval(document.body.scrollTop + 49) + 'px'); }
+#back-to-top { $top:expression(eval(document.body.scrollTop + document.body.clientHeight - 63) + 'px'); padding:6px 8px 4px 7px; }
+</style>
+<![endif]-->
 
-<!-- ul#contents -->
+<script>
+function $(id) { return document.getElementById(id) }
+function expand() { $('univs').className = '' }
+function collapse() { $('univs').className = 'compact' }
+</script>
 
-<address id="contact-info">
-e-mail: <a class="alpha" href="mailto:johnhax@gmail.com">johnhax@gmail.com</a><br />
-mobile: +86 13162630304
-</address>
+<div id="body">
+
+<header>
+	<h1>贺师俊</h1>
+	<span class="work-year">十年工作经验</span>
+	<img src="hax.jpg" alt="近照" title="2010年D2会议结束后摄于杭州城站候车厅">
+	<address id="contact">
+		<dl>
+			<dt>e-mail: <dd><a href="mailto:johnhax@gmail.com">johnhax@gmail.com</a>
+			<dt>mobile: <dd><a href="tel:+8613162630304">+86 13162630304</a>
+			<dt>weibo: <dd><a href="http://weibo.com/haxy">@johnhax</a>
+		</dl>
+	</address>
+	<nav><!-- ul#contents --></nav>
+</header>
 
 <div id="main">
-<h2 id="self-assessment">自我评价</h2>
-<p>作为一名Web技术专家，除了知识和经验，我更重要的特质是对技术具有深入的理解。早年教育部网站技术总监的有趣经历使我获得了较为全面的研发、维护、管理和协作经验。而后，全职程序员、技术培训讲师、软件架构师以及开源项目的贡献者等不同角色，给予了我从不同视角学习和审视技术的机会。此外，与许多技术人士不同，我对于用户体验始终保有敏锐的直觉。</p>
 
-<h2 id="career-goals">职业目标</h2>
+<section>
+<h2 id="about-me">关于我</h2>
+<p>我是<b>贺师俊</b>，网名<b>hax</b>（包括几个变形形式如<b>John Hax</b>或者<b>haxy</b>）。
+<p>十五年前还在校园时，我写了人生中第一个<abbr title="HyperText Markup Language">HTML</abbr>网页，当时我并没有想到这会是我的职业起点。也许是机缘巧合，我工作不久就参与了教育部项目——大学生门户网站<a href="http://univs.cn/">univs.cn</a>，并忝当“CTO”之任。麻雀虽小，五脏俱全，策划、设计、研发、运维样样不落，还有与新浪、东方网等企业的合作。这段经历自然让我受益匪浅，并且给了我一个很高的起点。而后，全职程序员、培训讲师、软件架构师、企业网站管理者以及开源项目贡献者等不同角色，又给予了我从不同视角学习和审视技术的机会。
+<p>但是简单的用“Web Developer”或者“Web技术专家”等标签并不足以准确描述我。应该这样说，我<em>信仰</em>Web。我希望投身于构建真正实践互联网开放理念的Web产品。
+<p>本着这样的想法，我于2006年和2010年两次加入盛大，先后参与了盛大盒子<b>EZPLAY</b>和盛大电子书<b>Bambook</b>等项目的设计研发工作。它们的共同点是，都可视作两个部分的结合：其一是面向最终消费者的基于互联网技术的电子终端产品；其二是面向上下游产业链的基于互联网技术的开放平台。
+<p>透过电子终端产品的经验，我认识到，构建Web，乃至一切产品，不单是技术活，而是要平衡需求、技术和人性因素。与许多“攻城师”不同，在代码之外，我也热切关注产品的可用性、无障碍性乃至更广泛意义上的用户体验（譬如售后服务）。敏锐直觉和严谨逻辑的结合，正是我的特色，这也使我在团队中能跨越产品、设计、用研、测试等多个部门，并寻求合理的解决方案。
+<p>而透过开放平台的经验，我也印证了标准化和互操作性的重要性。这一块恰恰是目前国内行业的普遍弱项。理解Web技术架构和标准体系，理解其价值，是我的独特长处。我也有能力参与企业技术标准的制定、乃至参与国家标准和国际标准的制定。
+<p>我是Web技术社群的活跃参与者。如积极参加W3C国际标准组织下设中文小组关于Web标准如HTML5、CSS3等的各项讨论和会议。我在这些讨论中所提出问题和提案，有数项已被相关标准工作组纳入考虑。我也给ECMAScript、Mozilla、WebKit等标准或产品提交过不少Issue。我多次受邀在D2、QCon等会议上演讲，并经常参加w3ctech、WebRebuild等民间技术组织的交流活动。我还参与策划和组织了w3ctech 2011——拥抱HTML5技术大会。
+<p>我涉猎广泛，感兴趣的领域除了Web标准、协议、架构以及与Web相关的各种具体技术之外，还包括交互设计、字体和排版、编程语言和方法论等。
+</section>
+
+<section>
+<h2 id="career-goals">角色</h2>
 <ul>
-	<li>Web应用设计者和开发者、网站架构师
-		<p>——构建Web，并平衡需求、技术和人性因素</p>
-	</li>
-	<li>技术咨询师和研究员
-		<p>——帮助人们更好地理解和运用新技术</p>
+	<li>Web产品技术研发团队和用户体验团队的领导者<br>
+		——招募、带领和培养行业领先的团队
+	<li>Web网站、应用和服务的设计者和开发者<br>
+		——创造Web产品，并平衡需求、技术和人性因素
+	<li>基于Web技术的开放平台和解决方案的架构师和首席程序员<br>
+		——构建协议和标准体系，参与行业标准、国家标准乃至国际标准的制定
+	<li>技术咨询师、培训师和研究员<br>
+		——帮助领导、团队、客户更好地理解和运用新技术</p>
 	</li>
 </ul>
-
-<h2 id="it-specialty"><span class="en">IT</span> 专长</h2>
+</section>
+<!--
+<section>
+<h2 id="it-specialty">专长</h2>
 <ul>
 	<li id="web">系统、全面地把握Web相关标准体系，并深入理解其所秉持的设计原理。以此为基础，对与Web相关的各方面技术进行了长期研究和实践，涉猎领域包括标准化、无障碍性、浏览器兼容性、性能优化、交互设计等。对Web架构模式和开发流程进行了许多探索，具备各种主流架构的实际项目经验，亦对新兴技术保持关注；对<acronym title="Rich Web Clients">RWC</acronym>、<acronym title="Asynchronous JavaScript and XML">Ajax</acronym>、Web开发框架的发展有独到创见。</li>
 	<li id="xml">系统、全面的把握XML相关标准和技术。深入理解XML语法、Namespace、Infoset等核心规范，具备XML建模和词汇集设计的能力，精通XPath、XSLT、DOM等关键技术，也了解多种平台和语言相关的处理技术，熟悉XML各个领域的发展和走向。</li>
 	<li id="admin">因多年兼领系统管理员和webmaster的职责于一身，故具备丰富的IT系统构建和维护的经验，熟悉DNS、HTTP、FTP、VPN、虚拟化、<acronym title="Software Configuration Management">SCM</acronym>、<acronym title="Content Management System">CMS</acronym>、Helpdesk等IT基础设施技术，并具全局观。对某些企业应用如CMS（内容管理系统）、Helpdesk（帮助台）、企业搜索等领域进行过行业研究和产品调研。</li>
 </ul>
-
+</section>
+-->
+<section>
 <h2 id="projects">项目经验</h2>
 <ul>
+	<li>
+		<span class="date">2010/01 ~ 2011/06</span>
+		<span class="name">Bambook</span>
+		<p>项目描述：盛大电子书Bambook</p>
+		<p>由于可能涉及企业机密，无法在此详述工作内容。</p>
 	<li>
 		<span class="date">2006/04 ~ 2007/01</span>
 		<span class="name">EZPLAY</span>
@@ -189,6 +281,7 @@ mobile: +86 13162630304
 		<a class="url" href="http://www.univs.cn/">http://www.univs.cn/</a>
 		<p>项目描述：教育部主办、全国高校合作共建的门户网站。</p>
 		<p>责任描述：技术总监，进行技术规划和日常技术管理。</p>
+		<!--
 		<p>主要的子项目和阶段包括： <span class="toggle">[<a href="javascript:expand()">详细</a>|<a href="javascript:collapse()">缩略</a>]</span></p>
 		<ul id="univs">
 			<li>
@@ -264,7 +357,7 @@ mobile: +86 13162630304
 				<p>责任描述：参与策划，负责技术可行性研究、域名设计和管理、协作平台构建和管理等。</p>
 			</li>
 		</ul>
-	</li>
+	</li>-->
 	<li>
 		<span class="date">2003/05 ~ 2003/07</span>
 		<span class="name">在线考试系统</span>
@@ -273,7 +366,9 @@ mobile: +86 13162630304
 		<p>责任描述：系统设计、开发、部署、管理</p>
 	</li>
 </ul>
+</section>
 
+<section>
 <h2 id="open-source">开源项目</h2>
 <ul>
 	<li>
@@ -300,7 +395,9 @@ mobile: +86 13162630304
 		<p>PIES使用GPL/LGPL许可证，托管在sourceforge。</p>
 	</li>
 </ul>
-
+</section>
+<!--
+<section>
 <h2 id="more-projects">更多项目</h2>
 <ul>
 	<li>
@@ -339,7 +436,9 @@ mobile: +86 13162630304
 		<p>责任描述：webmaster</p>
 	</li>
 </ul>
+</section>
 
+<section>
 <h2 id="interests">技术兴趣</h2>
 <ul>
 	<li id="web-archit">新一代Web标准（HTML5, ES5, CSS3, XHTML, XForms, XEvents, etc.）和架构；</li>
@@ -347,37 +446,35 @@ mobile: +86 13162630304
 	<li id="semantic-web"><a href="http://www.w3.org/2001/sw/">语义网（Semantic Web）</a>应用；</li>
 	<li id="programming">敏捷编程语言和编程方法学（OO, Patterns, AOP, GP, XP, TDD, etc.）；</li>
 </ul>
-
-
-<h2 id="work-experience">工作履历</h2>
+</section>
+-->
+<section id="work-experience">
+<h2>工作履历</h2>
 <ul>
 	<li>
-		<span class="date">2007/04 ~</span>
-		<span class="name">Pixelworks (Shanghai)</span>
+		<span class="date"><time>2010/1</time> ~ <time>2011/10</time></span>
+		<b>盛大创新院</b>
 		<ul>
-			<li>
-				Web Application Engineer
-				<span class="dept">/ IT Operations</span>
-			</li>
+			<li><b class="title">研究员</b> / <b class="dept">产品发展部</b>
 		</ul>
-	</li>
 	<li>
-		<span class="date">2006/03 ~ 2007/03</span>
-		<span class="name">盛大网络</span>
+		<span class="date"><time>2007/4</time> ~ <time>2009/12</time></span>
+		<b>Pixelworks (Shanghai)</b>
 		<ul>
-			<li>
-				应用软件工程师
-				<span class="dept">/ 平台研发中心</span>
-			</li>
+			<li><b class="title">Web Application Engineer</b> / <b class="dept">IT Operations</b>
 		</ul>
-	</li>
 	<li>
-		<span class="date">2005/03 ~ 2005/09</span>
-		<span class="name">ScreamPoint LLC (Shanghai)</span>
+		<span class="date"><time>2006/03</time> ~ <time>2007/03</time></span>
+		<b>盛大网络</b>
+		<ul>
+			<li><b class="title">应用软件工程师</b> / <b class="dept">平台研发中心</b>
+		</ul>
+	<li>
+		<span class="date"><time>2005/03</time> ~ <time>2005/09</time></span>
+		<b>ScreamPoint LLC (Shanghai)</b>
 		<ul>
 			<li>Lead Software Architect</li>
 		</ul>
-	</li>
 	<li>
 		<span class="date">2004/09 ~ 2005/01</span>
 		<span class="name">上海文华学院</span>（兼职）
@@ -385,7 +482,6 @@ mobile: +86 13162630304
 			<li>NIIT课程讲师 主讲XML课</li>
 			<li>Java课程讲师 主讲SL275、SL314等课</li>
 		</ul>
-	</li>
 	<li>
 		<span class="date">2001/06 ~ 2004/08</span>
 		<span class="name">上海交通大学</span>
@@ -406,24 +502,27 @@ mobile: +86 13162630304
 				<span class="dept">/ 主页办公室</span>
 			</li>
 		</ul>
-	</li>
 </ul>
+</section>
 
-<h2 id="education">教育背景</h2>
-<ul>
-	<li>
-		<span class="date">1997/05 ~ 2001/07</span>
-		<span class="name">复旦大学</span> / 文科基地班 / 哲学学士
-		<p>复旦大学依托<em>国家文科基础科学研究和教学人才培养基地</em>成立<em>文科基地班</em>，以保送方式提前招生，配备最优秀的师资，进行文史哲贯通的通才教育。</p>
-		<p>在校期间活动参见<a href="200105.html">2001年5月简历</a>。</p>
-	</li>
-	<li>
-		<span class="date">1994/09 ~ 1997/05</span>
-		<span class="name">华东师大二附中</span> / 上海理科班
-		<p>就读国家教委特批的理科特长班，提前招收曾获各类竞赛省市一等奖以上的学生。</p>
-	</li>
-</ul>
+<section id="education">
+	<h2>教育背景</h2>
+	<ul>
+		<li>
+			<time datetime="1997-05">1997/5</time> ~
+			<time datetime="">2001/07</time>
+			<b>复旦大学</b> / 文科基地班 / 哲学学士
+			<p>复旦大学依托<b>国家文科基础科学研究和教学人才培养基地</b>成立<b>文科基地班</b>，以保送方式提前招生，配备最优秀的师资，进行文史哲贯通的通才教育。
+			<p>在校期间活动参见<a href="200105.html">2001年5月简历</a>。
+		<li>
+			<time datetime="1994-09">1994/9</time> ~
+			<time datetime="1997-05">1997/5</time>
+			<b>华东师大二附中</b> / 上海理科班
+			<p>国家教委特批的理科特长班，提前招收曾获各类竞赛省市一等奖以上的学生。
+	</ul>
+</section>
 
+<section>
 <h2 id="activities">其他活动</h2>
 <ul>
 	<li>
@@ -467,20 +566,21 @@ mobile: +86 13162630304
 		推动W3C文档中文翻译事业。 [<a class="alpha" href="http://www.w3china.org/">w3china</a>][<a class="alpha" href="http://www.opendl.com/">opendl</a>]
 	</li>
 </ul>
+</section>
 
+<section>
 <h2 id="personal-info">个人信息</h2>
-<ul>
-	<li>出生年月：1979/9</li>
-	<li>性别：男</li>
-	<li>户口：上海市</li>
-	<li>Blog：<a class="url" href="http://hax.javaeye.com/">http://hax.javaeye.com/</a> &amp; <a class="url" href="http://johnhax.blogspot.com/">http://johnhax.blogspot.com</a>
-	</li>
-	
-</ul>
+<dl>
+	<dt>出生年月：<dd>1979/9
+	<dt>性别：<dd>男
+	<dt>户口：<dd>上海市
+	<dt>Blog：<dd><a href="http://hax.javaeye.com/">hax.iteye.com</a>
+</dl>
+</section>
 
 </div><!--end #main-->
 
-<div id="back-to-top" class="nav"><a href="#top">回到页首</a></div>
+<nav id="back-to-top"><a href="#top">回到页首</a></nav>
 
 <!-- repeat contact-info -->
 
@@ -505,8 +605,38 @@ mobile: +86 13162630304
 			alt="Level Double-A conformance icon, 
 			W3C-WAI Web Content Accessibility Guidelines 1.0" /></a>
 </div>
+</div>
 
-<div class="debug" id="out"></div>
-<script defer>
-init();
+<script>
+!function() {
+	var contents = generateContents();
+	var top = $('top');
+	top.parentNode.insertBefore(contents, top.nextSibling);
+	var addr = $('contact-info').cloneNode(true);
+	addr.id = 'repeat-contact-info';
+	var bottom = $('bottom');
+	bottom.parentNode.insertBefore(addr, bottom);
+	collapse();
+}()
+
+function generateContents () {
+	var contents = document.createElement('nav')
+	var ul = document.createElement('ul')
+	contents.appendChild(ul)
+	var list = document.getElementsByTagName("h2");
+	for (var i = 0; list.length > i; i++) {
+		var h = list.item(i);
+		var li = document.createElement('li');
+		var a = document.createElement('a');
+		a.href = '#' + h.id;
+		a.appendChild(document.createTextNode(h.textContent || h.innerText));
+		li.appendChild(a);
+		ul.appendChild(li);
+	}
+	contents.id = 'contents';
+	contents.className = 'nav';
+	return contents;
+}
 </script>
+</body>
+</html>
