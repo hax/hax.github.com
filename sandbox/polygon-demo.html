@@ -1,0 +1,91 @@
+<!doctype html>
+<!-- demo for http://weibo.com/1657422865/y8Z2afayz -->
+<canvas id="myCanvas" width=320 height=320 style="border:1px solid;">
+</canvas>
+<script>
+new function() {
+
+	var width = 320, height = 320, fontSize = 12
+	
+	var MAX_POINTS = 24
+
+	var n = Math.floor(Math.random() * (MAX_POINTS - 3) + 3)
+	var points = new Array(n)
+	for (var i = 0; i < n; i++) points[i] = randomPoint()
+	
+	points = sortPoints(points)
+
+	drawPolygon(points)
+
+	function drawPolygon(points) {
+		var ctx = document.getElementById('myCanvas').getContext('2d')
+		
+		ctx.lineWidth = 5
+		ctx.strokeStyle = 'rgba(128,128,128, 0.5)'
+		ctx.beginPath()
+		ctx.moveTo(points[points.top].x, points[points.top].y)
+		ctx.lineTo(points[points.bottom].x, points[points.bottom].y)
+		ctx.stroke()
+		
+		ctx.font = 'bold ' + fontSize + 'px Arial, sans-serif'
+		ctx.textBaseline = 'middle'
+		ctx.lineWidth = 1.5
+		ctx.strokeStyle = 'red'
+		ctx.beginPath()
+		for (var i = 0; i < points.length; i++) {
+			var p = points[i]
+			ctx.lineTo(p.x, p.y)
+			var dx = 0, dy = 0
+			if (i == points.top) {
+				dy = -fontSize / 2
+			} else if (i == points.bottom) {
+				dy = fontSize / 2
+			} else if (i > points.bottom) {
+				ctx.textAlign = 'right'
+			}
+			ctx.fillText(i, p.x + dx, p.y + dy)
+		}
+		ctx.closePath()
+		ctx.stroke()
+	}
+
+	function sortPoints(points) {
+		points.sort(function(a, b) { return a.y - b.y })
+		var top = points[0], bottom = points.pop()
+		var leftPoints = [], rightPoints = [],
+			s = (bottom.x - top.x) / (bottom.y - top.y),
+			left, right
+		if (top.x < bottom.x) {
+			left = top.x
+			right = bottom.x
+		} else {
+			left = bottom.x
+			right = top.x
+		}
+		for (var i = 1, n = points.length; i < n; i++) {
+			var p = points[i]
+			if (p.x <= left) leftPoints.push(p)
+			else if (p.x >= right) rightPoints.push(p)
+			else {
+				if (p.x < (p.y - top.y) * s + top.x) leftPoints.push(p)
+				else rightPoints.push(p)
+			}		
+		}
+		points = [].concat(top, rightPoints, bottom, leftPoints.reverse())
+		points.top = 0
+		points.bottom = rightPoints.length + 1
+		return points
+	}
+	
+	function randomPoint() {
+		return {
+			x: Math.random() * (width - fontSize * 2) + fontSize,
+			y: Math.random() * (height - fontSize * 2) + fontSize,
+			toString: function() {
+				return ['[', this.x.toFixed(1), ', ', this.y.toFixed(1), ']'].join('')
+			}
+		}
+	}
+
+}
+</script>
