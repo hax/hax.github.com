@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-cmn-Hans-x-hax">
+<head>
+<meta charset="utf-8">
+<title>HTML5 History API</title>
+<link rel="stylesheet" type="text/css" href="../slides/common.css">
+<link rel="stylesheet" type="text/css" media="projection, screen and (min-width: 780px)" href="../slides/projection.css">
+<link rel="alternate stylesheet" title="slides" type="text/css" href="../slides/run.css">
+<script src="../slides/app.js"></script>
+<style>
+code {
+	font-family: 'Consolas', 'Courier New', monospace;
+}
+code mark {
+	color: black;
+	background: yellow;
+}
+code del {
+	color: #993333;
+}
+code ins {
+	text-decoration: none;
+	color: #00cc00;
+}
+pre {
+	margin: 0;
+	line-height: 1.38;
+}
+</style>
+</head>
+<body>
+
+<header>
+	<hgroup>
+	<h1>Mini ChaoGe in 1 hour</h1>
+	</hgroup>
+	<dl>
+		<dt>By
+		<dd>hax （贺师俊）
+		<dt>最后更新时间
+		<dd style="text-align:center;"><time pubdate datetime="2012-5-8">2012年5月8日</time>
+	</dl>
+</header>
+
+<section id="introduce">
+<h1>自我介绍</h1>
+<ul>
+	<li>姓名：贺师俊
+	<li>网名：hax / johnhax / haxy
+	<li>角色：Web Developer
+</ul>
+</section>
+
+<section id="why-nodejs">
+<h1>为啥不用PHP做</h1>
+<ul>
+	<li>不太喜欢“抄”代码
+	<li>JavaScript熟练工
+	<li>NodeJS的粉丝
+</ul>
+</section>
+
+<section id="req">
+<h1>对PHP版的分析</h1>
+<ul>
+	<li>核心是Kijiji.php
+	<li>包含了模型和数据库映射
+	<li>整理了一份简单的需求提纲
+</ul>
+</section>
+
+<section id="nodejs_vs_php">
+<h1>使用NodeJS后与PHP的差异</h1>
+<ul>
+	<li>需要配置应用服务器
+	<li>定义route和controller
+	<li>更薄的view
+	<li>回调、回调、回调
+</ul>
+</section>
+
+<section id="bugs">
+<h1>遇到的陷阱</h1>
+<ul>
+	<li>数据库不完整
+	<li>数据库scheme的个别特例
+</ul>
+</section>
+
+<section id="v1">
+<h1>第一次完成的</h1>
+<ul>
+	<li>nodejs+express
+</ul>
+</section>
+
+<section id="problem">
+<h1>大问题</h1>
+<ul>
+	<li>无法在一个小时里做完
+</ul>
+</section>
+
+<section id="reason">
+<h1>原因</h1>
+<ul>
+	<li>代码量比PHP版大
+	<li>笔记本touchpad添乱
+	<li>JavaScript语法冗余
+</ul>
+</section>
+
+<section id="solution">
+<h1>应对方案</h1>
+<ul>
+	<li>尽量缩减一些代码
+	<li>下了个驱动，在外接鼠标时禁用touchpad
+	<li>换coffeescript
+</ul>
+</section>
+
+<section id="final">
+<h1>最终</h1>
+<ul>
+	<li>48分钟
+	<li>代码量仍然略高于PHP
+</ul>
+</section>
+
+<section id="pro">
+<h1>PRO</h1>
+<ul>
+	<li>强制的controllers/views分离
+	<li>结构上更松耦合的orm方案
+	<li>代码的抽象程度更高一点
+	<li>更好的模板引擎
+</ul>
+</section>
+
+<section id="con">
+<h1>CON</h1>
+<ul>
+	<li>更多的依赖项
+	<li>coffeescript调试的成本大
+	<li>因为分离带来的编辑context转换成本
+</ul>
+</section>
+
+<section id="conclusion">
+<h1>结论<h1>
+<ul>
+	<li>
+</ul>
+</section>
+
+<footer>
+	<h1>Thank you</h1>
+	<dl>
+		<dt>我的Blog
+		<dd><a href="http://hax.iteye.com/">hax.iteye.com</a>
+		<dt>我个人的开源
+		<dd><a href="https://github.com/hax">github.com/hax</a>
+	</dl>
+	<address>
+		<dl>
+			<dt>Email
+			<dd><a href="mailto:johnhax@gmail.com">heshijun@baixing.com</a>
+			<dt>Weibo
+			<dd><a href="http://weibo.com/haxy">weibo.com/haxy</a> (@johnhax)
+			<dt>Twitter
+			<dd><a href="http://twitter.com/haxy">@haxy</a>
+			<dt>Fanfou
+			<dd><a href="http://fanfou.com/haxy">@haxy</a>
+		</dl>
+	</address>
+</footer>
+
+</body>
+</html>
