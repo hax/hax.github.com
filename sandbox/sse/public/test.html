@@ -1,0 +1,27 @@
+<!doctype html>
+<form method="post" action="/say" onsubmit="return say(this)">
+	<input type="text">
+	<input type="submit">
+</form>
+
+
+
+<script>
+var es = new EventSource('/chat')
+es.onmessage = function(evt) {
+	if (evt.data !== 'noop')
+		console.log(evt.data)
+}
+
+function say(form) {
+	var words = form.elements[0].value
+	var req = new XMLHttpRequest()
+	req.open(form.method, form.action, false)
+	req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+	req.send('words=' + words)
+	req.onload = function() {
+		console.log(req.responseText)
+	}
+	return false
+}
+</script>
