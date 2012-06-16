@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Workers and Messaging</title>
+</head>
+<body>
+	<script>
+	var myworker = new Worker('heavyJob.js');
+	myworker.addEventListener('message', function(event) {
+		document.write('Worker said: ' + event.data);
+	}, false);
+	myworker.postMessage('Time to start working.');
+	</script>
+</body>
+</html>
