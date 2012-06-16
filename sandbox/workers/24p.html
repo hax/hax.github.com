@@ -1,0 +1,46 @@
+<!doctype html>
+<title>24点！</title>
+<meta charset="utf-8">
+
+<form onsubmit="return p24()">
+	<label for="cards">输入四张牌</label>
+	<input id="cards" type="text" pattern="([1-9TJQK],?){4}" placeholder="23TQ">
+	<input type="button" value="发牌" onclick="shuffle()">
+	<input type="submit" value="算！">
+</form>
+
+<script>
+var Cards = {
+	10: 'T',
+	11: 'J',
+	12: 'Q',
+	13: 'K',
+	T: 10,
+	J: 11,
+	Q: 12,
+	K: 13
+}
+function shuffle() {
+	var cards = []
+	for (var i = 0; i < 4; i++) {
+		var c = Math.ceil(Math.random() * 13)
+		cards.push(Cards[c] || c.toString())
+		document.getElementById('cards').value = cards
+	}
+}
+
+function p24() {
+	var w = new Worker('calc.js')
+	w.onmessage = function (evt) {
+		console.log(evt.data)
+	}
+	var operands = document.getElementById('cards').value.split(/,?/)
+	for (var i = 0; i < operands.length; i++) {
+		operands[i] = Cards[operands[i]] || parseInt(operands[i], 10)
+	}
+	w.postMessage(operands)
+		
+	return false
+}
+
+</script>
