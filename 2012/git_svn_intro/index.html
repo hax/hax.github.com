@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="zh-cmn-Hans-x-hax">
+<head>
+<meta charset="utf-8">
+<title>HTML5 History API</title>
+<link rel="stylesheet" type="text/css" href="../slides/common.css">
+<link rel="stylesheet" type="text/css" media="projection, screen and (min-width: 780px)" href="../slides/projection.css">
+<link rel="alternate stylesheet" title="slides" type="text/css" href="../slides/run.css">
+<script src="../slides/app.js"></script>
+<style>
+code {
+	font-family: 'Consolas', 'Courier New', monospace;
+}
+code mark {
+	color: black;
+	background: yellow;
+}
+code del {
+	color: #993333;
+}
+code ins {
+	text-decoration: none;
+	color: #00cc00;
+}
+pre {
+	margin: 0;
+	line-height: 1.38;
+}
+</style>
+</head>
+<body>
+
+<header>
+	<hgroup>
+	<h1>Git的一点点经验分享</h1>
+	</hgroup>
+	<dl>
+		<dt>By
+		<dd>hax （贺师俊）
+		<dt>最后更新时间
+		<dd style="text-align:center;"><time pubdate datetime="2012-5-8">2012年5月8日</time>
+	</dl>
+</header>
+
+<section id="introduce">
+<h1>自我介绍</h1>
+<ul>
+	<li>姓名：贺师俊
+	<li>网名：hax / johnhax / haxy
+	<li>角色：Web Developer
+</ul>
+</section>
+
+<section id="what-is-git">
+<h1>什么是Git</h1>
+<ul>
+	<li>分布式版本控制／软件配置管理软件
+	<li>林纳斯·托瓦兹为管理Linux内核开发所设计开发
+	<li>速度快、适合多分支开发模式
+</ul>
+</section>
+
+<section id="problems">
+<h1>传统版本控制的问题</h1>
+<ul>
+	<li>团队可能有严格的提交规则，导致大家不敢小步提交，导致复杂功能几乎没有做版本控制；
+	<li>没有合适的share未完成代码的方法，或者：
+	<li>为了share代码在仓库里留下许多未完成的版本；
+	<li>无法离线工作
+</ul>
+</section>
+
+<section id="revolution">
+<h1>分布式版本控制的改变</h1>
+<ul>
+	<li>去中心化
+	<li>可离线工作
+	<li>强大的分支功能
+</ul>
+</section>
+
+<section id="decentrenlize">
+<h1>去中心化</h1>
+<ul>
+	<li>避免单点fail
+	<li>适合分布式的协作
+	<li>对于某些项目来说是政治正确的
+	<li>特别适合开源模式（不同分支可以竞争）和基于开源的商业模式（上下游独立性）
+</ul>
+</section>
+
+<section id="offline">
+<h1>可离线工作</h1>
+<ul>
+	<li>随时工作（在家里、在飞机上、火车上……）
+	<li>随时提交
+	<li>随时看日志
+</ul>
+</section>
+
+<section id="branch">
+<h1>分支</h1>
+<ul>
+	<li>本地随便开分支
+	<li>在分支上切换的代价非常低
+	<li>分支合并比较容易
+	<li>鼓励尝试
+	<li>鼓励创新
+</ul>
+</section>
+
+<section id="op-co">
+<h1>常用指令</h1>
+<ul>
+	<li>svn checkout
+	<li>git clone
+</ul>
+</section>
+
+<section id="op-add">
+<h1>常用指令</h1>
+<ul>
+	<li>svn add
+	<li>git add
+</ul>
+</section>
+
+<section id="op-commit">
+<h1>常用指令</h1>
+<ul>
+	<li>svn commit
+	<li>git commit
+</ul>
+</section>
+
+<section id="op-commit">
+<h1>常用指令</h1>
+<ul>
+	<li>svn revert
+	<li>git checkout --
+</ul>
+</section>
+
+<section id="op-commit">
+<h1>常用指令</h1>
+<ul>
+	<li>svn ?
+	<li>git reset HEAD [file]
+</ul>
+</section>
+
+<section id="op-commit">
+<h1>常用指令</h1>
+<ul>
+	<li>svn status
+	<li>git status
+</ul>
+</section>
+
+<section id="op-git">
+<h1>Git独有指令</h1>
+<ul>
+	<li>git remote
+	<li>git clone
+	<li>git pull
+	<li>git push
+</ul>
+</section>
+
+<section id="git-svn">
+<h1>git-svn 把SVN当成远程仓库来使用
+<ul>
+	<li>git svn clone svn://... -s
+	<li>git svn dcommit
+	<li>git svn rebase
+</ul>
+</section>
+
+<section id="conclusion">
+<h1>结论<h1>
+<ul>
+	<li>
+</ul>
+</section>
+
+<footer>
+	<h1>Thank you</h1>
+	<dl>
+		<dt>我的Blog
+		<dd><a href="http://hax.iteye.com/">hax.iteye.com</a>
+		<dt>我个人的开源
+		<dd><a href="https://github.com/hax">github.com/hax</a>
+	</dl>
+	<address>
+		<dl>
+			<dt>Email
+			<dd><a href="mailto:johnhax@gmail.com">heshijun@baixing.com</a>
+			<dt>Weibo
+			<dd><a href="http://weibo.com/haxy">weibo.com/haxy</a> (@johnhax)
+			<dt>Twitter
+			<dd><a href="http://twitter.com/haxy">@haxy</a>
+			<dt>Fanfou
+			<dd><a href="http://fanfou.com/haxy">@haxy</a>
+		</dl>
+	</address>
+</footer>
+
+</body>
+</html>

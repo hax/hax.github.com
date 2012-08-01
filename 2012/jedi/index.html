@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="zh-cmn-Hans-x-hax">
+<head>
+<meta charset="utf-8">
+<title>HTML5 History API</title>
+<link rel="stylesheet" type="text/css" href="../slides/common.css">
+<link rel="stylesheet" type="text/css" media="projection, screen and (min-width: 780px)" href="../slides/projection.css">
+<link rel="alternate stylesheet" title="slides" type="text/css" href="../slides/run.css">
+<script src="../slides/app.js"></script>
+<style>
+code {
+	font-family: 'Consolas', 'Courier New', monospace;
+}
+code mark {
+	color: black;
+	background: yellow;
+}
+code del {
+	color: #993333;
+}
+code ins {
+	text-decoration: none;
+	color: #00cc00;
+}
+pre {
+	margin: 0;
+	line-height: 1.38;
+}
+</style>
+</head>
+<body>
+
+<header>
+	<hgroup>
+	<h1><nobr>The Problems and the Solutions<wbr> of the Presentation Layer<wbr> @ Baixing.com</nobr></h1>
+	</hgroup>
+	<dl>
+		<dt>By
+		<dd>hax （贺师俊）
+		<dt>最后更新时间
+		<dd style="text-align:center;"><time datetime="2012-7-26">2012年7月26日</time>
+	</dl>
+</header>
+
+<section id="why-soc">
+<h1>前后端分离</h1>
+<ul>
+	<li>为什么要分离？
+</ul>
+</section>
+
+<section id="why-soc1">
+<h1>前后端分离</h1>
+<ul>
+	<li>为什么要分离？
+	<li>罗贯中说：天下大势，合久必分，分久必合
+</ul>
+</section>
+
+<section id="why-soc2">
+<h1>前后端分离</h1>
+<ul>
+	<li>为什么要分离？
+	<li>罗贯中说：天下大势，合久必分，分久必合
+	<li>设计原则：SoC —— <a href="http://en.wikipedia.org/wiki/Separation_of_concerns">Seperation of Concerns</a>
+</ul>
+</section>
+
+<section id="why-soc3">
+<h1>前后端分离</h1>
+<ul>
+	<li>为什么要分离？
+	<li>罗贯中说：天下大势，合久必分，分久必合
+	<li>设计原则：SoC —— <a href="http://en.wikipedia.org/wiki/Separation_of_concerns">Seperation of Concerns</a>
+	<li>其实：分是为了更好的合
+</ul>
+</section>
+
+<section id="problems">
+<h1>现状</h1>
+<ul>
+	<li>应用工程师要改一些展现内容，花了很长时间才找到修改的地方
+	<li>前端工程师要改进一些结构和样式，不敢动手，因为View的可测试性不足
+	<li>重复或相似的代码相当多，特别是表现层，由于缺乏称手的工具而难以重构
+	<li>稍复杂的需求变化，应用工程师荡漾在一堆标签和php逻辑交织的代码里
+	<li>由于一些小的非本质性的变动，要改变许多原有的代码
+</ul>
+</section>
+
+<section id="problems">
+<h1>这些问题背后的原因？</h1>
+<ul>
+	<li>表现层代码散布各处 —— /lib下的类和方法输出html甚至style
+	<li>Controller大包大揽 —— routing、页面布局、组装、应用逻辑……
+	<li>View同时承担两个职责 —— 页面单元和复用单元，导致view变得太零碎
+	<li>前端代码缺乏抽象层 —— 虽有抽象层尝试，但是不够好，很容易产生“抽象泄露”
+</ul>
+</section>
+
+<section id="prior-art">
+<h1>已经尝试过的方法</h1>
+<ul>
+	<li>include
+	<li>view组装
+	<li>page layout（Decorator/Wrapper模式）
+	<li>Pueur + BootStrap based plugins
+	<li>HTML类
+</ul>
+</section>
+
+<section id="prior-art">
+<h1>尚未尝试过的可能方案</h1>
+<ul>
+	<li>Partial
+	<li>View Helper
+	<li>Template
+	<li>Builder
+</ul>
+</section>
+
+<section id="newtech">
+<h1>新技术</h1>
+<ul>
+	<li>Haml / Jade
+	<li>Coffeecup / HTMLBuilder(Ruby/Groovy)
+	<li>Client-side MVC Framework (Backbone ...)
+	<li>Full-stack Framework (Meteor, Derby ...)
+</ul>
+</section>
+
+<section id="co1">
+<h1>我们传统的协作方式</h1>
+<ul>
+	<li>PM
+	<li>App Dev
+	<li>Others
+</ul>
+</section>
+
+<section id="co2">
+<h1>许多大公司的协作方式</h1>
+<ul>
+	<li>PM
+	<li>交互设计师
+	<li>视觉设计师
+	<li>前端工程师
+	<li>架构师
+	<li>后端工程师
+	<li>Others
+</ul>
+</section>
+
+<section id="co3">
+<h1>我认为理想的协作方式</h1>
+<ul>
+	<li>PM
+	<li>设计师
+	<li>后端App Dev
+	<li>前端App Dev
+	
+	<li>前端Infrastructure
+	<li>后端Infrastructure
+</ul>
+</section>
+
+<section id="roadmap">
+<h1>路线图</h1>
+<ul>
+	<li>使用Partial等方式逐步改进现有代码，将view model理出来（准备阶段）
+	<li>基于Jedi重构表现层（改造阶段）
+	<li>并行的改进（改善阶段）
+	<li>引入Full-stack Framework，支持UI Binding、No-refresh Update、Bigpipe……（未来的方向）
+</ul>
+</section>
+
+<section id="faq">
+<h1>FAQ<h1>
+<ul>
+	<li>请拍砖！
+</ul>
+</section>
+
+<footer>
+	<h1>Thank you</h1>
+	<dl>
+		<dt>我的Blog
+		<dd><a href="http://hax.iteye.com/">hax.iteye.com</a>
+		<dt>我个人的开源
+		<dd><a href="https://github.com/hax">github.com/hax</a>
+	</dl>
+	<address>
+		<dl>
+			<dt>Email
+			<dd><a href="mailto:johnhax@gmail.com">heshijun@baixing.com</a>
+			<dt>Weibo
+			<dd><a href="http://weibo.com/haxy">weibo.com/haxy</a> (@johnhax)
+			<dt>Twitter
+			<dd><a href="http://twitter.com/haxy">@haxy</a>
+			<dt>Fanfou
+			<dd><a href="http://fanfou.com/haxy">@haxy</a>
+		</dl>
+	</address>
+</footer>
+
+</body>
+</html>
