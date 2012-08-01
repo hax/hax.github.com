@@ -1,0 +1,28 @@
+<!doctype html>
+<style>
+#waterfall > div {
+	/*float: left;*/
+	display: inline-block;
+	margin: 8px;
+	border: 3px double;
+}
+</style>
+
+<script>
+var width = 200
+function newBlock(text) {
+	var div = document.createElement('div')
+	div.style.width = width + 'px'
+	div.style.height = Math.floor(Math.random() * 320 + 160) + 'px'
+	div.textContent = text
+	var w = document.getElementById('waterfall')
+	w.appendChild(div)
+}
+</script>
+
+<section id="waterfall">
+</section>
+
+<script>
+for (var i = 0; i < 20; i++) newBlock(i)
+</script>
