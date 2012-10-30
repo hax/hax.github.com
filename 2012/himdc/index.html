@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="zh-cmn-Hans-x-hax">
+<head>
+<meta charset="utf-8">
+<title>HIMDC Share</title>
+<link rel="stylesheet" type="text/css" href="../slides/common.css">
+<link rel="stylesheet" type="text/css" media="projection, screen and (min-width: 780px)" href="../slides/projection.css">
+<link rel="alternate stylesheet" title="slides" type="text/css" href="../slides/run.css">
+<script src="../slides/app.js"></script>
+<style>
+code {
+	font-family: 'Consolas', 'Courier New', monospace;
+}
+code mark {
+	color: black;
+	background: yellow;
+}
+code del {
+	color: #993333;
+}
+code ins {
+	text-decoration: none;
+	color: #00cc00;
+}
+pre {
+	margin: 0;
+	line-height: 1.38;
+}
+</style>
+</head>
+<body>
+
+<header>
+	<hgroup>
+	<h1>2012移动开发者大会 HTML5会场</h1>
+	</hgroup>
+	<dl>
+		<dt>最后更新时间
+		<dd style="text-align:center;"><time pubdate datetime="2012-9-2">2012年9月2日</time>
+	</dl>
+</header>
+
+<section id="original">
+<style scoped>
+img.avatar {
+	margin: 1.5em;
+	float: left;
+}
+p { clear:both; margin: 1.5em; }
+</style>
+<img class="avatar" src="jeffreysu1984.jpg">
+<h1><nobr>HTML5相关的移动互联网、<wbr>物联网的商业化实践和探索</nobr></h1>
+<p>苏震威，苏州盛派网络创始人、CEO，优居物联网合伙创始人，HTML5梦工厂成员。长期执着于Web开发，正在进军智能家居领域。
+</section>
+
+<section id="backup">
+<style scoped>
+p { clear:both; margin: 1.5em; }
+</style>
+<img class="avatar" src="mg1.jpg" width="180">
+<h1><nobr>HTML5相关的移动互联网、<wbr>物联网的一丁点纸上谈兵</nobr></h1>
+<p>Hax，百姓网创始人、CEO王建硕座下攻城狮一头，（此处略去其他类似头衔若干）。长期执着于Web开发，正在自个儿家里进军智能家居领域。</section>
+
+<section id="what-is-mobile-internet-1">
+<h1>啥是移动互联网？</h1>
+<ul>
+</ul>
+</section>
+<section id="what-is-mobile-internet-2">
+<h1>啥是移动互联网？</h1>
+<ul>
+	<li>指互联网的技术、平台、商业模式和应用与移动通信技术结合并实践的活动的总称——摘自<a href="http://baike.baidu.com/view/1168245.htm">百度百科条目</a>
+</ul>
+</section>
+<section id="what-is-mobile-internet-3">
+<h1>啥是移动互联网？</h1>
+<ul>
+	<li>手机能上QQ，能上weibo，能分享照片，能上传很难听的卡拉ok……
+	<li>能查地图，能找餐厅，能看泷泽萝拉，能打游戏，能看《春哥传》……
+</ul>
+</section>
+</section>
+<section id="what-is-mobile-internet-4">
+<h1>啥是移动互联网？</h1>
+<p style="text-align: center"><a href="http://www.baixing.com/pages/mobilesite/"><img src="baixing_mobile.png"></a>
+</section>
+<section id="what-is-mobile-internet-5">
+<h1>啥是移动互联网？</h1>
+<ul>
+	<li>适应于手机等移动终端的互联网
+</ul>
+</section>
+
+<section id="what-is-iot-1">
+<h1>啥是物联网？</h1>
+<ul>
+	<li>The Internet of Things refers to uniquely identifiable objects (things) and their virtual representations in an Internet-like structure ——摘自<a href="http://en.wikipedia.org/wiki/Internet_of_Things">维基百科条目</a>
+</ul>
+</section>
+<section id="what-is-iot-2">
+<style scoped>
+</style>
+<h1>啥是物联网？</h1>
+	<div style="position: relative">
+		<img src="iot1.jpg" style="position:absolute; right: 24px; top: -140px">
+		<img src="iot2.jpg" style="position:absolute; right: 36px; bottom: 36px">
+		<img src="iot3.jpg">
+	</div>
+</section>
+<section id="what-is-iot-3">
+<h1>啥是物联网？</h1>
+<img src="nest.png" width="100%">
+</section>
+<section id="what-is-iot-4">
+<h1>啥是物联网？</h1>
+<p style="text-align:center">
+<embed src="http://player.youku.com/player.php/sid/XNDAxNzgzNDYw/v.swf" quality="high" width="480" height="400" align="middle" allowScriptAccess="sameDomain" allowFullscreen="true" type="application/x-shockwave-flash"></embed>
+</section>
+<section id="what-is-iot-5">
+<h1>啥是物联网？</h1>
+<ul>
+	<li>接入各种智能终端的互联网
+</ul>
+</section>
+
+
+<header>
+	<hgroup>
+	<h1>Web设备适配之前生今世</h1>
+	</hgroup>
+	<p style="text-align:right">By hax (@johnhax)
+</header>
+
+<section id="what-is-web">
+<h1>什么是Web</h1>
+<ul>
+</ul>
+</section>
+
+<section id="web-spirit">
+<h1>什么是Web的精神？</h1>
+<ul>
+</ul>
+</section>
+
+<section id="early-days">
+<h1>早期的Web</h1>
+<ul>
+	<li>发明者：Tim Berners-Lee
+	<li>用途：科学信息分享
+	<li>网页都很简单，文字加一点儿图片，今天都能看
+</ul>
+</section>
+
+<section id="progress">
+<h1>早期的网页设计</h1>
+<ul>
+	<li>Table可以用来布局哈！
+	<li>多栏的布局，图文混排
+	<li>有什么问题？
+</ul>
+</section>
+
+<section id="css-reattack">
+<h1>CSS的反攻</h1>
+<ul>
+	<li>Table布局是邪恶的吗？
+	<li>我们要div+css
+	<li>流式布局，部分可伸缩
+</ul>
+</section>
+
+<section id="css-problems">
+<h1>CSS的困境</h1>
+<ul>
+	<li>各种bug：IE6 is still alive
+	<li>缺乏高级排版能力（排个杂志报纸看看？）
+	<li>各种CSS trick和CSS hack
+	<li>语义化的要求 vs 样式钩子
+	<li>国际化？
+</ul>
+</section>
+
+<section id="mobile">
+<h1>手机上的Web</h1>
+<ul>
+	<li>手机上看那些网页是神马情况？
+	<li>怎么办？
+</ul>
+</section>
+
+<section id="mobile2">
+<h1>装！</h1>
+<ul>
+	<li>聪明而邪恶的浏览器厂商的解决方案：把手机伪装成显示屏
+	<li>iPhone
+	<li>Android
+	<li>Windows Mobile
+</ul>
+</section>
+
+<section id="viewport">
+<h1>要真的写手机版网页怎么办？</h1>
+<ul>
+	<li>viewport声明
+	<li>麻烦的是……
+</ul>
+</section>
+
+<section id="media-query">
+<h1>能否同时用于桌面和手机？</h1>
+<ul>
+	<li>media query！
+</ul>
+</section>
+
+<section id="more">
+<h1>更多的输出设备？</h1>
+<ul>
+</ul>
+</section>
+
+<section id="more1">
+<h1>更多的视觉输出设备？</h1>
+<ul>
+	<li>Pad
+	<li>电子书
+	<li>TV
+	<li>高清电视
+	<li>3D电视
+	<li>超大屏幕
+	<li>头盔
+	<li>……
+</ul>
+</section>
+
+<section id="conclusion1">
+<h1>结论<h1>
+<ul>
+	<li>Web on Everything
+		<p><small>Mobile phones, smart phones, personal digital assistants, 
+		interactive television systems, voice response systems, kiosks and even certain domestic appliances can all access the Web.</small>
+</ul>
+</section>
+
+<section id="conclusion2">
+<h1>结论<h1>
+<ul>
+	<li>Web for All
+		<p><small>One of W3C's primary goals is to make these benefits available to <em>all</em> people, 
+		whatever their hardware, software, network infrastructure, native language, 
+		culture, geographical location, or physical or mental ability.</small>
+</ul>
+</section>
+
+<footer>
+	<h1>Thank you</h1>
+	<dl>
+		<dt>我的Blog
+		<dd><a href="http://hax.iteye.com/">hax.iteye.com</a>
+		<dt>我个人的开源
+		<dd><a href="https://github.com/hax">github.com/hax</a>
+	</dl>
+	<address>
+		<dl>
+			<dt>Email
+			<dd><a href="mailto:johnhax@gmail.com">heshijun@baixing.com</a>
+			<dt>Weibo
+			<dd><a href="http://weibo.com/haxy">weibo.com/haxy</a> (@johnhax)
+			<dt>Twitter
+			<dd><a href="http://twitter.com/haxy">@haxy</a>
+			<dt>Fanfou
+			<dd><a href="http://fanfou.com/haxy">@haxy</a>
+		</dl>
+	</address>
+</footer>
+
+</body>
+</html>
