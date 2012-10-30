@@ -7,6 +7,7 @@
 	<input id="cards" type="text" pattern="([1-9TJQK],?){4}" placeholder="23TQ">
 	<input type="button" value="发牌" onclick="shuffle()">
 	<input type="submit" value="算！">
+	<output id="resolutions" for="cards"></output>
 </form>
 
 <script>
@@ -32,7 +33,7 @@ function shuffle() {
 function p24() {
 	var w = new Worker('calc.js')
 	w.onmessage = function (evt) {
-		console.log(evt.data)
+		document.getElementById('resolutions').innerHTML += evt.data
 	}
 	var operands = document.getElementById('cards').value.split(/,?/)
 	for (var i = 0; i < operands.length; i++) {
@@ -42,5 +43,4 @@ function p24() {
 		
 	return false
 }
-
 </script>
