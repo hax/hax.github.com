@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-cmn-Hans-x-hax">
+<head>
+<meta charset="utf-8">
+<title>攻城狮和成绪猿的世界 之 HTML基础</title>
+<link rel="stylesheet" href="../slides/common.css">
+<link rel="stylesheet" media="projection, screen and (min-width: 780px)" href="../slides/projection.css">
+<link rel="alternate stylesheet" title="slides" href="../slides/run.css">
+<script src="../slides/app.js"></script>
+<style>
+header dt {
+	float: left;
+}
+header dd {
+	margin-left: 2em;
+}
+code {
+	font-family: 'Consolas', 'Courier New', monospace;
+}
+code mark {
+	color: black;
+	background: yellow;
+}
+code del {
+	color: #993333;
+}
+code ins {
+	text-decoration: none;
+	color: #00cc00;
+}
+pre {
+	margin: 0;
+	line-height: 1.38;
+}
+strong {
+	color: green;
+}
+</style>
+</head>
+<body>
+
+<header>
+	<hgroup>
+		<h1>HTML 基础</h1>
+		<h2>—— 8小时建站入门 课程之一</h1>
+	</hgroup>
+	<dl>
+		<dt>By
+		<dd>Hax （贺师俊）
+		<dt>于
+		<dd><time datetime="2012-08-01">2012年 扒衣见君节</time>
+	</dl>
+</header>
+
+<section id="welcome">
+	<h1>欢迎来到攻城狮和成绪猿的世界</h1>
+	<p><img src="gcs.jpg" alt="攻城狮" width="50%"><img src="cxy.jpg" alt="成绪猿" width="50%">
+</section>
+
+<section id="what-is-url">
+<h1>什么是网址？</h1>
+<ul>
+	<li>网页的地址：在地址栏里输入网址，就可以打开网页
+	<li>URL：Uniform Resource Locator（统一资源定位符）
+	<li>URI: Uniform Resource Identifier（统一资源标识符）
+</ul>
+</section>
+
+<section id="uri-components">
+<h1>URI 的组成</h1>
+<p>例子：http://johnhax.net/2012/html_basic/
+<dl>
+	<dt>Scheme/Protocol<dd><strong>http</strong>://...
+	<dt>Domain Name<dd>http://<strong>johnhax.net</strong>/2012...
+	<dt>Path<dd>...johnhax.net<strong>/2012/html_basic/</strong>
+</dl>
+</section>
+
+<section id="uri-scheme">
+	<h1>Examples of URI Scheme
+	<ul>
+		<li><a href="http://johnhax.net"><strong>http</strong>://johnhax.net/...</a>
+		<li><a href="https://mail.google.com/mail/u/0/#inbox"><strong>https</strong>://mail.google.com/mail/u/0/#inbox</a>
+		<li><a href=""><strong>ftp</strong>://...</a>
+		<li><a href="mailto:engineer@baixing.com"><strong>mailto</strong>:engineer@baixing.com</a>
+		<li><a href="tel:86-131-6263-0304"><strong>tel</strong>:86-131-6263-0304</a>
+		<li><a href="urn:isbn:9787536692930"><strong>urn</strong>:isbn:9787536692930</a>
+		<li><a href="data:,Hello"><strong>data</strong>:,Hello</a>
+	</ul>
+</section>
+
+<section id="uri-domain">
+	<h1>Examples of Domain Name</h1>
+	<ul>
+		<li><a href="http://johnhax.net">johnhax.net</a>
+		<li><a href="http://www.heshijun.baixing.com">heshijun.baixing.com</a>
+		<li><a href="http://douban.fm">douban.fm</a>
+		<li><a href="http://minyan.li">minyan.li</a>
+	</ul>
+</section>
+
+<section id="page-process">
+	<h1>打开网页的过程</h1>
+	<ol>
+		<li>浏览器补全你输入的 URI
+		<li>浏览器根据 URI 的 scheme 选择合适的处理方式（以下假设是 http）
+		<li>浏览器通过 DNS（域名服务器）获得域名所对应的 IP 地址
+		<li>浏览器向该 IP 地址发起 HTTP Request（请求）
+		<li>该 IP 地址所对应的服务器处理收到的请求，生成 HTTP Response（响应），返回给请求方
+		<li>浏览器接收到响应，根据响应的 Content Type（内容的类型）按照合适的方式呈现给用户
+	</ol>
+</section>
+
+<section id="server-request-response">
+	<h1>服务器处理请求和生成响应</h1>
+	<p>处理过程可能很简单，比如根据你请求的Path，在服务器的文件系统中找到对应的文件；
+	<p>也可能很复杂，比如根据Path等信息从数据库中搜索数据，执行业务逻辑，调用第三方系统……最终生成合适的内容。
+</section>
+
+
+<section id="prepare">
+	<h1>准备工作</h1>
+	<ul>
+		<li>浏览器：最新版的 Chrome 或 Firefox，IE 9 也可以。
+		<li>文本编辑器：Notepad++
+	</ul>
+</section>
+
+<section>
+	<h1>Hello world</h1>
+	<ul>
+		<li>在地址栏输入：<a href="data:text/html,Hello world!">data:text/html,Hello world!</a>
+		<li>打开文本编辑器，在文本编辑器里输入：Hello world<br>
+			然后保存为 hello.html ，在浏览器中打开它！
+	</ul>
+</section>
+
+<section id="html1">
+<h1>HTML<h1>
+<ul>
+	<li>doctype
+	<li>html
+	<li>head
+	<li>title
+	<li>meta
+	<li>body
+	<li>section/header/footer
+	<li>h1/h2/h3...
+	<li>p
+	<li>address
+</ul>
+</section>
+
+<section id="html2">
+<h1>HTML<h1>
+<ul>
+	<li>ul/ol/li
+	<li>dl/dt/dd
+	<li>a
+	<li>img
+	<li>strong/em/abbr
+</ul>
+</section>
+
+<section id="html3">
+<h1>HTML<h1>
+<ul>
+	<li>form
+	<li>input/select/label
+	<li>style
+	<li>script
+</ul>
+</section>
+
+<footer>
+	<h1>Thank you</h1>
+	<p>大家鼓掌！
+</footer>
+
+</body>
+</html>
