@@ -26,6 +26,9 @@ pre {
 	margin: 0;
 	line-height: 1.38;
 }
+body > header dt {
+	display: none;
+}
 </style>
 </head>
 <body>
@@ -42,11 +45,138 @@ pre {
 	</dl>
 </header>
 
-<section id="what-is-template">
-	<h1>啥是模板</h1>
+<section id="what-is-template-0">
+	<h1>啥是模板（Template）？</h1>
+</section>
+
+<section id="template-sample-1">
+	<h1>示例1</h1>
+	<pre><code>
+		Hello $user!
+	</code></pre>
+</section>
+
+<section id="what-is-template-1">
+	<h1>啥是模板（Template）？</h1>
 	<ul>
-		<li>字符串替换：带有标记的字符串 + 数据 => 输出字符串
-		<li>
+		<li>字符串替换？
+	</ul>
+</section>
+
+<section id="template-sample-2">
+	<h1>示例2</h1>
+	<p><a href="https://github.com/myst729/front.js/blob/gh-pages/demo.html">18行代码的模板引擎的demo</a>
+</section>
+
+<section id="what-is-template-2">
+	<h1>啥是模板（Template）？</h1>
+	<ul>
+		<li>字符串替换 + 支持简单逻辑？
+	</ul>
+</section>
+
+<section id="template-sample-3">
+	<h1>示例3</h1>
+	<p><a href="http://underscorejs.org/#template">underscore.js 的模板</a>
+</section>
+
+<section id="what-is-template-3">
+	<h1>啥是模板（Template）？</h1>
+	<ul>
+		<li>文本内插（interpolation） + 编程语言混合（从而支持表达式和逻辑结构） + 特别的优化？
+	</ul>
+</section>
+
+<section id="template-sample-4">
+	<h1>示例4</h1>
+	<p><a href="http://www.w3.org/TR/xslt#data-example">XSLT</a>
+</section>
+
+<section id="what-is-template-4">
+	<h1>啥是模板（Template）？</h1>
+	<ul>
+		<li>匹配规则 + 查询语言和表达式 + 输出指令？
+	</ul>
+</section>
+
+<section id="template-sample-5">
+	<h1>示例5</h1>
+	<p><a href="http://groovy.codehaus.org/Builders">Groovy Builders</a>
+</section>
+
+<section id="what-is-template-5">
+	<h1>啥是模板（Template）？</h1>
+	<ul>
+		<li>特定编程语言的库？
+	</ul>
+</section>
+
+<section id="template-sample-6">
+	<h1>示例6</h1>
+	<p><a href="http://jade-lang.com/">Jade</a>
+</section>
+
+<section id="what-is-template-6">
+	<h1>啥是模板（Template）？</h1>
+	<ul>
+		<li>DSL？
+	</ul>
+</section>
+
+<section id="template-sample-8">
+	<h1>更多示例</h1>
+	<p><a href="http://stackoverflow.com/questions/2719345/comparison-of-web-template-engines">Comparison of web template engines</a>
+</section>
+
+<section id="how-many-template-engines?">
+	<h1>有多少种模板？</h1>
+	<p><a href="http://en.wikipedia.org/wiki/Template_engine_(web)#Comparison">模板引擎的比较</a>
+</section>
+
+<section id="what-is-template-7">
+	<h1>啥是模板（Template）？</h1>
+	<ul>
+		<li>字符串替换？
+		<li>字符串替换 + 支持简单逻辑？
+		<li>文本内插（interpolation） + 编程语言混合（从而支持表达式和逻辑结构） + 特别的优化？
+		<li>匹配规则 + 查询语言和表达式 + 输出指令？
+		<li>特定编程语言的库？
+		<li>DSL？
+		<li>……
+	</ul>
+</section>
+
+<section id="what-is-template-10">
+	<h1>一图胜千言</h1>
+	<figure>
+		<img src="http://upload.wikimedia.org/wikipedia/en/thumb/a/a2/TempEngWeb016.svg/245px-TempEngWeb016.svg.png">
+	</figure>
+</section>
+
+<section id="what-is-template-11">
+	<h1>一图胜千言</h1>
+	<figure>
+		<img src="http://upload.wikimedia.org/wikipedia/en/thumb/a/a2/TempEngWeb016.svg/245px-TempEngWeb016.svg.png" style="float: left; margin-right: 1em; background: white">
+		<figcaption>The basic process: content (from a database), and "presentation specifications" (in a web template), are combined (through the template engine) to mass-produce web documents</figcaption>
+	</figure>
+</section>
+
+<section id="what-is-template-12">
+	<h1>定义</h1>
+	<ul>
+		<li>Presentation Specifications —— 呈现的规格
+	</ul>
+</section>
+
+<section id="why-template-0">
+	<h1>模板解决什么问题？</h1>
+</section>
+
+<section id="why-template-1">
+	<h1>模板解决什么问题？</h1>
+	<ul>
+		<li>批量生成页面的工具，或生成动态页面的机制
+		<li>执行表现层逻辑
 	</ul>
 </section>
 
@@ -58,73 +188,119 @@ pre {
 </ul>
 </section>
 
-<section id="problems">
-<h1>现状</h1>
+<section id="template-history-1">
+<h1>历史上……</h1>
 <ul>
-	<li>应用工程师要改一些展现内容，花了很长时间才找到修改的地方
-	<li>前端工程师要改进一些结构和样式，不敢动手，因为View的可测试性不足
-	<li>重复或相似的代码相当多，特别是表现层，由于缺乏称手的工具而难以重构
-	<li>稍复杂的需求变化，应用工程师荡漾在一堆标签和php逻辑交织的代码里
-	<li>由于一些小的非本质性的变动，要改变许多原有的代码
+	<li>拼字符串
+</ul>
+</section>
+
+<section id="template-history-2">
+<h1>历史上……</h1>
+<ul>
+	<li>拼字符串
+	<li>反转 => HTML内嵌变量和脚本
+</ul>
+</section>
+
+<section id="template-history-2">
+<h1>历史上……</h1>
+<ul>
+	<li>拼字符串
+	<li>反转 => HTML内嵌变量和脚本
+	<li>Helper
+</ul>
+</section>
+
+<section id="template-history-2">
+<h1>历史上……</h1>
+<ul>
+	<li>拼字符串
+	<li>反转 => HTML内嵌变量和脚本
+	<li>Helper
+	<li>自定义标签
+</ul>
+</section>
+
+<section id="template-history-2">
+<h1>历史上……</h1>
+<ul>
+	<li>拼字符串
+	<li>反转 => HTML内嵌变量和脚本
+	<li>Helper
+	<li>自定义标签
+	<li>ASP.NET WebForm 和 JSF
+</ul>
+</section>
+
+<section id="template-history-2">
+<h1>历史上……</h1>
+<ul>
+	<li>拼字符串
+	<li>反转 => HTML内嵌变量和脚本
+	<li>Helper
+	<li>自定义标签
+	<li>ASP.NET WebForm 和 JSF
+	<li>返璞“归真”
 </ul>
 </section>
 
 <section id="problems">
+<h1>各种问题……</h1>
+<ul>
+	<li>要改一些展现内容，花了很长时间才找到修改的地方
+	<li>要改进一些结构和样式，不敢动手，因为View的可测试性不足
+	<li>重复或相似的代码相当多，由于缺乏称手的工具而难以重构
+	<li>稍复杂的需求变化，工程师荡漾在一堆标签和php/jsp/js逻辑交织的代码里
+	<li>由于一些小的非本质性的变动，要改变许多原有的代码
+</ul>
+</section>
+
+<section id="problems-reason">
 <h1>这些问题背后的原因？</h1>
 <ul>
-	<li>表现层代码散布各处 —— /lib下的类和方法输出html甚至style
+	<li>表现层代码散布各处 —— 各个层面的代码都在输出html甚至style
 	<li>Controller大包大揽 —— routing、页面布局、组装、应用逻辑……
 	<li>View同时承担两个职责 —— 页面单元和复用单元，导致view变得太零碎
 	<li>前端代码缺乏抽象层 —— 虽有抽象层尝试，但是不够好，很容易产生“抽象泄露”
 </ul>
 </section>
 
-<section id="prior-art">
-<h1>已经尝试过的方法</h1>
-<ul>
-	<li>include
-	<li>view组装
-	<li>page layout（Decorator/Wrapper模式）
-	<li>Pueur + BootStrap based plugins
-	<li>HTML类
-</ul>
+<section id="why-template-2">
+	<h1>模板解决什么问题？</h1>
+	<ul>
+		<li>分离前后端关注点
+		<li>所谓 presentation spec，即确定如何将（后端的）数据转化为（前端的）信息
+	</ul>
 </section>
 
-<section id="prior-art">
-<h1>尚未尝试过的可能方案</h1>
-<ul>
-	<li>Partial
-	<li>View Helper
-	<li>Template
-	<li>Builder
-</ul>
+<section id="why-template-3">
+	<h1>模板提供的价值</h1>
+	<ul>
+		<li>语法友好
+		<li>页面结构的组织（布局）
+		<li>常用单元的复用（组件）
+		<li>最佳实践的约束
+		<li>安全性
+	</ul>
 </section>
 
-<section id="newtech">
-<h1>新技术</h1>
-<ul>
-	<li>Haml / Jade
-	<li>Coffeecup / HTMLBuilder(Ruby/Groovy)
-	<li>Client-side MVC Framework (Backbone ...)
-	<li>Full-stack Framework (Meteor, Derby ...)
-</ul>
+<section>
+
 </section>
 
-<section id="roadmap">
-<h1>路线图</h1>
+<section>
+<h1>感谢</h1>
 <ul>
-	<li>使用Partial等方式逐步改进现有代码，将view model理出来（准备阶段）
-	<li>基于Jedi重构表现层（改造阶段）
-	<li>并行的改进（改善阶段）
-	<li>引入Full-stack Framework，支持UI Binding、No-refresh Update、Bigpipe……（未来的方向）
+	<li>感谢在模板和许多技术问题上与我一起交流探讨的：jindw、Winter、GZhang、司徒正美等。
+	<li>本分享也源自于研发Jedi模板引擎，在这里特别感谢以下同事在开发和design review上的帮助：大绵羊、晓良、Sofish、林子、佳辰和飞哥，也要特别感谢百姓网CEO健硕和CTO晓良带领的整个技术团队给予我的信任和极大的自由度。
+	<li>本分享的标题“致我们终将会用的模板”来自一丝同学的创意。“Web标准翻译与贡献”群的朋友也提议了许多有趣的名字：<br>
+		模板金刚、那些年我们一起干过的模板、当模板遇见html、模板沉思录、可摸的洗衣板……在此一并表示感谢。<br>
+
 </ul>
 </section>
-
 <section id="faq">
 <h1>FAQ<h1>
-<ul>
-	<li>请拍砖！
-</ul>
 </section>
 
 <footer>
