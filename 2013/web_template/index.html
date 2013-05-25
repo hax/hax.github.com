@@ -199,48 +199,48 @@ body > header dt {
 <h1>历史上……</h1>
 <ul>
 	<li>拼字符串
-	<li>反转 => HTML内嵌变量和脚本
+	<li>反转 => HTML内嵌变量和脚本（例子：PHP）
 </ul>
 </section>
 
-<section id="template-history-2">
+<section id="template-history-3">
+<h1>历史上……</h1>
+<ul>
+	<li>拼字符串
+	<li>反转 => HTML内嵌变量和脚本
+	<li>Helper（例子：CakePHP）
+</ul>
+</section>
+
+<section id="template-history-4">
 <h1>历史上……</h1>
 <ul>
 	<li>拼字符串
 	<li>反转 => HTML内嵌变量和脚本
 	<li>Helper
+	<li>自定义标签（JSP TagLib）
 </ul>
 </section>
 
-<section id="template-history-2">
-<h1>历史上……</h1>
-<ul>
-	<li>拼字符串
-	<li>反转 => HTML内嵌变量和脚本
-	<li>Helper
-	<li>自定义标签
-</ul>
-</section>
-
-<section id="template-history-2">
-<h1>历史上……</h1>
-<ul>
-	<li>拼字符串
-	<li>反转 => HTML内嵌变量和脚本
-	<li>Helper
-	<li>自定义标签
-	<li>ASP.NET WebForm 和 JSF
-</ul>
-</section>
-
-<section id="template-history-2">
+<section id="template-history-5">
 <h1>历史上……</h1>
 <ul>
 	<li>拼字符串
 	<li>反转 => HTML内嵌变量和脚本
 	<li>Helper
 	<li>自定义标签
-	<li>ASP.NET WebForm 和 JSF
+	<li>组件化（ASP.NET WebForm 和 JSF）
+</ul>
+</section>
+
+<section id="template-history-6">
+<h1>历史上……</h1>
+<ul>
+	<li>拼字符串
+	<li>反转 => HTML内嵌变量和脚本
+	<li>Helper
+	<li>自定义标签
+	<li>组件化
 	<li>返璞“归真”
 </ul>
 </section>
@@ -249,7 +249,7 @@ body > header dt {
 <h1>各种问题……</h1>
 <ul>
 	<li>要改一些展现内容，花了很长时间才找到修改的地方
-	<li>要改进一些结构和样式，不敢动手，因为View的可测试性不足
+	<li>要改进一些结构和样式，不敢动手，因为视图的可测试性不足
 	<li>重复或相似的代码相当多，由于缺乏称手的工具而难以重构
 	<li>稍复杂的需求变化，工程师荡漾在一堆标签和php/jsp/js逻辑交织的代码里
 	<li>由于一些小的非本质性的变动，要改变许多原有的代码
@@ -261,8 +261,8 @@ body > header dt {
 <ul>
 	<li>表现层代码散布各处 —— 各个层面的代码都在输出html甚至style
 	<li>Controller大包大揽 —— routing、页面布局、组装、应用逻辑……
-	<li>View同时承担两个职责 —— 页面单元和复用单元，导致view变得太零碎
-	<li>前端代码缺乏抽象层 —— 虽有抽象层尝试，但是不够好，很容易产生“抽象泄露”
+	<li>视图单元同时承担两个职责 —— 页面单元和复用单元，导致视图单元变得太零碎
+	<li>前端代码缺乏抽象层 —— 虽有抽象层尝试，但是不够好，很容易产生“抽象泄露”（传统编程的抽象方法不适应前端）
 </ul>
 </section>
 
@@ -274,8 +274,86 @@ body > header dt {
 	</ul>
 </section>
 
-<section id="why-template-3">
-	<h1>模板提供的价值</h1>
+<section id="sort-template-engines-1">
+	<h1>模板引擎在不同维度上的分类</h1>
+	<p><a href="http://garann.github.io/template-chooser/">模板引擎选选看</a>
+</section>
+
+<section id="sort-template-engines-2">
+	<h1>模板引擎在不同维度上的分类</h1>
+	<ul>
+		<li>前端 or 后端 or 前后端通吃？
+	</ul>
+</section>
+
+<section id="sort-template-engines-3">
+	<h1>模板引擎在不同维度上的分类</h1>
+	<ul>
+		<li>前端 or 后端 or 前后端通吃？
+		<li>支持任意复杂逻辑和表达式 or 受限的逻辑和简单表达式（辅以特别机制如filter） or Logicless？
+	</ul>
+</section>
+
+<section id="sort-template-engines-4">
+	<h1>模板引擎在不同维度上的分类</h1>
+	<ul>
+		<li>前端 or 后端 or 前后端通吃？
+		<li>支持任意复杂逻辑和表达式 or 受限的逻辑和简单表达式（辅以特别机制如filter） or Logicless？
+		<li>基于字符串的模板 or DOM-aware的模板
+	</ul>
+</section>
+
+<section id="how-to-choose-0">
+	<h1>如何选择模板引擎？</h1>
+</section>
+
+<section id="how-to-choose-1">
+	<h1>如何选择模板引擎？</h1>
+	<ul>
+		<li>前端 or 后端 or 前后端通吃？
+		<li>支持任意复杂逻辑和表达式 or 受限的逻辑和简单表达式（辅以特别机制如filter） or Logicless？
+		<li>基于字符串的模板 or DOM-aware的模板
+		<li>语言、平台、框架
+		<li>性能
+		<li>
+	</ul>
+</section>
+
+<section id="how-to-choose-2">
+	<h1>如何选择模板引擎？</h1>
+	<ul>
+		<li>语法友好
+	</ul>
+</section>
+
+<section id="how-to-choose-3">
+	<h1>如何选择模板引擎？</h1>
+	<ul>
+		<li>语法友好
+		<li>页面结构的组织（布局）
+	</ul>
+</section>
+
+<section id="how-to-choose-4">
+	<h1>如何选择模板引擎？</h1>
+	<ul>
+		<li>语法友好
+		<li>页面结构的组织（布局）
+		<li>常用单元的复用（组件）
+	</ul>
+</section>
+
+<section id="how-to-choose-5">
+	<h1>如何选择模板引擎？</h1>
+	<ul>
+		<li>语法友好
+		<li>页面结构的组织（布局）
+		<li>常用单元的复用（组件）
+		<li>最佳实践的约束
+	</ul>
+</section>
+<section id="how-to-choose-6">
+	<h1>如何选择模板引擎？</h1>
 	<ul>
 		<li>语法友好
 		<li>页面结构的组织（布局）
@@ -284,9 +362,77 @@ body > header dt {
 		<li>安全性
 	</ul>
 </section>
+<section id="how-to-choose-7">
+	<h1>如何选择模板引擎？</h1>
+	<ul>
+		<li>语法友好
+		<li>页面结构的组织（布局）
+		<li>常用单元的复用（组件）
+		<li>最佳实践的约束
+		<li>安全性
+		<li>与整体架构的匹配
+	</ul>
+</section>
 
 <section>
+	<h1>未来趋势</h1>
+</section>
 
+<section>
+	<h1>未来趋势</h1>
+	<ul>
+		<li>前后端一致
+	</ul>
+</section>
+
+<section>
+	<h1>未来趋势</h1>
+	<ul>
+		<li>前后端一致
+		<li>声明式
+	</ul>
+</section>
+
+<section>
+	<h1>未来趋势</h1>
+	<ul>
+		<li>前后端一致
+		<li>声明式
+		<li>Full stack
+	</ul>
+</section>
+
+<section>
+	<h1>未来趋势</h1>
+	<ul>
+		<li>前后端一致
+		<li>声明式
+		<li>Full stack
+		<li>UI 绑定
+	</ul>
+</section>
+
+<section>
+	<h1>未来趋势</h1>
+	<ul>
+		<li>前后端一致
+		<li>声明式
+		<li>Full stack
+		<li>UI 绑定
+		<li>更强的最佳实践约束和工具集成
+	</ul>
+</section>
+
+<section>
+	<h1>未来趋势</h1>
+	<ul>
+		<li>前后端一致
+		<li>声明式
+		<li>Full stack
+		<li>UI 绑定
+		<li>更强的最佳实践约束和工具集成
+		<li>前端主导
+	</ul>
 </section>
 
 <section>
