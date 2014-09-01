@@ -1,0 +1,114 @@
+@font-face {
+    font-family: 'LeagueGothicRegular';
+    src: url('type/League_Gothic-webfont.eot');
+    src: url('type/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('type/League_Gothic-webfont.woff') format('woff'),
+         url('type/League_Gothic-webfont.ttf') format('truetype'),
+         url('type/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body
+{
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  height: 100%;
+  font:normal 100% "Gill Sans", sans-serif;
+  font-size: 19px;
+}
+
+p, pre, ul, ol, blockquote, h2, h3, h4, h5, h6, dl, table {
+    margin-left: 0;
+}
+
+ul, ol {
+    padding-left: 1em;
+}
+
+ul li {
+    list-style: disc outside none;
+    margin: 0 0 0 0;
+}
+
+
+div.background div.hidden { display: none; visibility: hidden }
+div.slide.cover { padding: 0; margin: 0; background-color: white; }
+
+div.slide.cover object {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+div.slide.cover div {
+ padding: 0;
+ margin: 0;
+ text-align: center;
+}
+
+div.slide.cover div h1 {
+ font: 3em 'LeagueGothicRegular', sans-serif;
+ margin: 0;
+ margin-top: 0;
+ padding-top: 0;
+}
+
+div.slide.cover div .event, div.slide.cover div .author {
+ font: 1.2em 'LeagueGothicRegular', sans-serif;
+}
+
+div.slide.cover div p {
+  margin: 0;
+  padding: 0;
+  padding-top: 0.3em;
+}
+
+div.background img {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+}
+
+div.background div.left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  height: 100%;
+}
+
+div.background {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+div.slide {
+ padding-left:18%
+}
+
+div.slide h1 {
+  font: 1.7em 'LeagueGothicRegular', sans-serif;
+  text-transform:uppercase;
+  color:#004480;
+  margin-top:1.4em;
+  line-height:1.2em;
+  margin-bottom: 0.8em;
+  margin-right: 1em;
+}
+
+

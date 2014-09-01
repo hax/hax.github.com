@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- modify the title as appropriate -->
+  <title>Web标准是怎样炼成的</title>
+  
+  <meta name="duration" content="5">
+  <meta name="copyright" content="Copyright © 2013 W3C (MIT, ERCIM, Keio, Beihang)">
+  <link rel="stylesheet" type="text/css" href="TPAC2013_files/slidy.css">
+  <link rel="stylesheet" type="text/css" href="TPAC2013_files/template.css">
+  <script type="text/javascript" src="TPAC2013_files/slidy.js">
+  </script>
+  <script type="text/javascript" src="TPAC2013_files/img.js">
+  </script>
+</head>
+
+<body style="visibility: visible; font-size: 16pt;" class=" single_slide"><div class=" slidy_toc hidden"><div class=" toc-heading">Table of Contents</div>1. <a class=" titleslide" href="#%281%29">HTML Slide Template</a><br>2. <a href="#%282%29">HTML Slide Template</a><br>3. <a href="#%283%29">Simple bullet lists </a><br>4. <a href="#%284%29">HTML Slide Template</a><br>5. <a href="#%285%29">Browser bugs</a></div><div class=" slidy_toc hidden"><div class=" toc-heading">Table of Contents</div>1. <a href="#%281%29" class=" titleslide">HTML Slide Template</a><br>2. <a href="#%282%29">HTML Slide Template</a><br>3. <a href="#%283%29">Simple bullet lists - </a><br>4. <a href="http://www.w3.org/2013/Talks/template-tpac2013/index.html">HTML Slide Template</a><br>5. <a href="#%285%29">Browser bugs</a></div>
+
+<!-- this defines the slide background -->
+<div style="display: block;" class="background hidden">
+<div class="left"></div>
+<img src="TPAC2013_files/tpac2013-front.jpg" alt="">
+<!-- hidden images to ensure they are saved with other content -->
+<div class="hidden">
+<img src="TPAC2013_files/bullet.gif" alt="">
+<img src="TPAC2013_files/bullet-fold.gif" alt="">
+<img src="TPAC2013_files/bullet-unfold.gif" alt="">
+<img src="TPAC2013_files/bullet-fold-dim.gif" alt="">
+<img src="TPAC2013_files/bullet-nofold-dim.gif" alt="">
+<img src="TPAC2013_files/bullet-unfold-dim.gif" alt="">
+</div>
+</div>
+
+<!-- this defines the cover page -->
+<div class="slide cover title first-slide">
+<p style="text-align:center"><img alt="W3C TPAC 2013" src="TPAC2013_files/tpac2013-front.jpg"></p>
+<!-- modify the following text as appropriate -->
+<div>
+<h1>Web标准是怎样炼成的</h1>
+<p class="author">贺师俊 &lt;heshijun@baixing.com&gt;</p>
+<p class="event">November 2013, Shenzhen, China</p>
+</div>
+<br><br></div>
+
+
+<div class="slide">
+  <h1>轻松一下先</h1>
+  <ul class="incremental">
+    <li><a href="https://www.destroyallsoftware.com/talks/wat">WAT</a>
+    <li>WY
+      <ul class="incremental">
+        <li>ExpressionStatement VS Block
+        <li>Automatic Semicolon Insertion
+        <li>Unary Operator
+      </ul>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>提纲</h1>
+  <ol>
+    <li>啥是Web標準，爲什麼需要它
+    <li>Web標準如何制訂和演化
+    <li>開發者如何參與Web標準
+    <li>Web標準的一些Issue實例
+  </ol>
+</div>
+
+<div class="slide">
+  <h1>啥是Web标准，为什么需要它</h1>
+  <ul class="incremental">
+    <li>请林子回答
+    <li>请小美补充
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Web标准如何制订和演化 &<br> 开发者如何参与Web标准</h1>
+  <ul>
+    <li><a href="http://www.tudou.com/programs/view/E6NZ6retifQ/">Everything you always wanted to know about <strong>Web Standards</strong> <small>(But Were Afraid to Ask)</small></a>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Web標準的一些Issue實例</h1>
+  <ul>
+    <li> html 5 中的 cite 問題
+    <li> css 3 text 中的空白壓縮問題
+    <li> responsive images 中的 @srcset 和 @src 問題 *
+  </ul>
+</div>
+<!--
+-->
+<!-- the div will be inferred if missing and slide starts with h1 -->
+
+<div class="slide">
+  <h1>Cite</h1>
+  <ul class="incremental">
+    <li><a href="http://www.w3.org/TR/html/text-level-semantics.html#the-cite-element">HTML5中Cite的定义</a>
+    <li><a href="http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#the-cite-element">HTML 5.1 Nightly中Cite的定义</a>
+    <li><a href="http://html5doctor.com/cite-and-blockquote-reloaded/">讨论</a>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Whitespaces</h1>
+  <ul class="incremental">
+    <li><a href="http://www.w3.org/TR/css-text-3/#line-break-transform">CSS Text Last Call草案</a>
+    <li><a href="http://www.unicode.org/reports/tr11/">什么是全角（全形）／半角（半形）</a>
+    <li><a href="http://www.unicode.org/Public/6.3.0/ucd/EastAsianWidth.txt">哪些字符是Ambiguous字符？</a>
+    <li>Use cases探讨</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>srcset</h1>
+  <ul class="incremental">
+    <li><a href="http://www.w3.org/html/wg/drafts/srcset/w3c-srcset/">srcset草案</a>
+    <li>Use cases探讨</li>
+  </ul>
+</div>
+
+
+<div class="slide">
+  <h1>总结</h1>
+</div>
+
+<div class="slide hidden">
+<h1>HTML Slide Template</h1>
+<p>To use this template, you are recommended to create a folder at
+the same level as this one, e.g.</p>
+
+<pre>/2013/Talks/My-Slides/
+</pre>
+
+<p>And to copy this file to that folder (as below) and edit it to your
+heart's content.</p>
+
+<pre>/2013/Talks/My-Slides/Overview.html
+</pre>
+<br><br></div>
+
+<div class="slide hidden">
+<h1>Simple bullet lists </h1>
+
+<p>These are very easy to do with html's unordered lists:</p>
+
+<pre>&lt;div class="slide"&gt;
+&lt;h1&gt;Simple bullet lists&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;first bullet point&lt;/li&gt;
+&lt;li&gt;second bullet point&lt;/li&gt;
+&lt;li&gt;and so on&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+
+<p>Looks like:</p>
+
+<ul>
+<li>first bullet point</li>
+<li>second bullet point</li>
+<li>and so on</li>
+</ul>
+
+<p>Add class="incremental" to the ul start tag to progressively
+reveal the bullet points.</p>
+<br><br></div>
+
+<div class="slide hidden">
+<h1>HTML Slide Template</h1>
+
+<p>See <a href="http://www.w3.org/Talks/Tools/Slidy2/">Slidy markup 
+examples</a> for information on how to make use of incremental
+slide content, expanding/collapsing lists and much more.</p>
+
+<p>My suggestion is to use view source on that page and take a look
+at how the different slides are marked up.</p>
+
+<p>If anyone wants to know how to use syntax coloring on
+code examples, I recommend <a href="http://code.google.com/p/google-code-prettify/">Google prettify</a>.</p>
+<br><br><br><br></div>
+
+<div class="slide hidden">
+<h1>Browser bugs</h1>
+
+<p>This template relies on SVG and CSS. Please let me know
+if your browser has problems rendering this template!</p>
+
+<p>Firefox seems to be the most reliable, and works well on desktop and tablets.</p>
+
+<p>Some browsers don't scale the SVG correctly</p>
+
+<p>Others don't implement the touch events needed for swiping to the next or previous slide, e.g. the stock browser on Android. :(</p>
+
+<p>On Android if the text wraps halfway across, disable auto-fit pages 
+via settings &gt; advanced &gt; auto-fit pages. Sadly, the default 
+setting causes pages to wrap prematurely.</p>
+<br><br></div>
+
+
+<div style="display: block;" tabindex="0" class="toolbar"><div style="float: right; text-align: right"><span>4m13s slide 1/5</span></div><div style="text-align: left"><span style="color: rgb(240, 240, 240);">* </span><a title="Navigate with mouse click, space bar, Cursor Left/Right, or Pg Up and Pg Dn. Use S and B to change font size." href="http://www.w3.org/Talks/Tools/Slidy2/help/help.html">help?</a> <a title="table of contents" href="javascript:w3c_slidy.toggle_table_of_contents()">contents?</a> <span class="copyright">Copyright © 2013 W3C (MIT, ERCIM, Keio, Beihang)</span></div></div></body></html>
