@@ -1,14 +1,10 @@
-# The Answer to JavaScript Module
-  论ES6模块和加载器之设计
+# The Answer to JavaScript Module -- 我对ES6模块和加载器的思考和实践
 
-## Introduction of ES6 Module Syntax
-   一、ES6的module语法简介
+## Introduction of ES6 Module Syntax ［ES6的module语法简介］
 
-## Introduction of ES6 Loader API
-   二、ES6的loader用法简介
+## Introduction of ES6 Loader API ［ES6的loader用法简介］
 
-## The Modular Mechanism of other Programming Languages
-   三、其他编程语言中的模块机制
+## The Modular Mechanism of other Programming Languages ［其他编程语言中的模块机制］
 
  * 待考察语言（已确定）：Java, C#, PHP, Python, Ruby
  * 待考察语言（未确定）：C, C++, OC, Haskell, Lua, F#, Go, Rust, Swift...
@@ -20,8 +16,7 @@
  * static linking VS dynamic linking?
  * loader?
 
-## The Various Modular Solutions in the Old JavaScript
-   四、史上各种JS模块化方案
+## The Various Modular Solutions in the Old JavaScript ［史上各种JS模块化方案］
 
   * simple module pattern
   * jspkg, jsan, jslab, jsvm, jsi, pies, ...
@@ -39,9 +34,9 @@
  * 版本更新
  * 加载其他资源（如CSS）
 
-## ES6 module 和其他方案的对比
+## ES6 module VS CommonJS/AMD/* module ［ES6 module 和其他方案的对比］
 
-## ES6 module 的设计原理
+## The Design of ES6 module ［ES6 module 的设计原理］
 
 ### 满足主流需求（靠近CommonJS）
  * ES6开发进程中的挑战
@@ -69,4 +64,8 @@
 ### Nomalize.js
 ### Ember.js
 
-## ES6 module对于JS社区发展未来的意义和展望
+## Future of the ES6 era ［ES6 module对于JS社区发展未来的意义和展望］
+
+### Ubiquitous API like Ployfill.io
+### Next Generation Components/Package Solution like Nzl.io
+### Unified community and One ecosystem
