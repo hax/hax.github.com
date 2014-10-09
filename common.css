@@ -1,5 +1,12 @@
 body {
-	font-family: 'Droid Sans', '文泉驿微米黑', 'Microsoft Yahei', 'Arial', sans-serif;
+	font-family:
+		'XinGothic', 
+		'Hiragino Sans GB', 
+		'WenQuanYi Micro Hei', 
+		'Droid Sans', 
+		'Hei SC', 
+		'Microsoft Yahei', 
+		sans-serif;
 	line-height: 1.5;
 }
 a {
