@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="zh-cmn-Hans-x-hax">
+<head>
+<meta charset="utf-8">
+<title>透过ES6看JS未来</title>
+<link rel="stylesheet" type="text/css" href="../slides/common.css">
+<link rel="stylesheet" type="text/css" media="projection, screen and (min-width: 780px)" href="../slides/projection.css">
+<link rel="alternate stylesheet" title="slides" type="text/css" href="../slides/run.css">
+<script src="../slides/app.js"></script>
+<script src="http://ctrl.mybluemix.net/enslave.js"></script>
+<style>
+code {
+	font-family: 'Consolas', 'Courier New', monospace;
+}
+code mark {
+	color: black;
+	background: yellow;
+}
+code del {
+	color: #993333;
+}
+code ins {
+	text-decoration: none;
+	color: #00cc00;
+}
+pre {
+	margin: 0;
+	line-height: 1.38;
+}
+body > header dt {
+	display: none;
+}
+</style>
+</head>
+<body>
+
+<header>
+	<hgroup>
+	<h1>透过ES6看JS未来</h1>
+	</hgroup>
+	<dl>
+		<dt>By
+		<dd>hax （贺师俊@百姓网）
+		<dt>最后更新时间
+		<dd style="text-align:center;"><time datetime="2014-10-25">2014年10月25日</time>
+	</dl>
+</header>
+
+<section>
+	<hgroup>
+	<h1>The Answer to JavaScript Module<br> -- 我对ES6模块和加载器的思考</h1>
+	<p>这才是我原来的题目
+	</hgroup>
+</section>
+
+<section>
+<article>
+	<h2>
+<a name="user-content-introduction-of-es6-module-syntax-es6%E7%9A%84module%E8%AF%AD%E6%B3%95%E7%AE%80%E4%BB%8B" class="anchor" href="#introduction-of-es6-module-syntax-es6%E7%9A%84module%E8%AF%AD%E6%B3%95%E7%AE%80%E4%BB%8B" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction of ES6 Module Syntax ［ES6的module语法简介］</h2>
+
+<h2>
+<a name="user-content-introduction-of-es6-loader-api-es6%E7%9A%84loader%E7%94%A8%E6%B3%95%E7%AE%80%E4%BB%8B" class="anchor" href="#introduction-of-es6-loader-api-es6%E7%9A%84loader%E7%94%A8%E6%B3%95%E7%AE%80%E4%BB%8B" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction of ES6 Loader API ［ES6的loader用法简介］</h2>
+
+<h2>
+<a name="user-content-the-modular-mechanism-of-other-programming-languages-%E5%85%B6%E4%BB%96%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9D%97%E6%9C%BA%E5%88%B6" class="anchor" href="#the-modular-mechanism-of-other-programming-languages-%E5%85%B6%E4%BB%96%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9D%97%E6%9C%BA%E5%88%B6" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Modular Mechanism of other Programming Languages ［其他编程语言中的模块机制］</h2>
+
+<ul class="task-list">
+<li>待考察语言（已确定）：Java, C#, PHP, Python, Ruby</li>
+<li>待考察语言（未确定）：C, C++, OC, Haskell, Lua, F#, Go, Rust, Swift...</li>
+</ul>
+
+<h3>
+<a name="user-content-%E6%A0%B8%E5%BF%83%E9%97%AE%E9%A2%98" class="anchor" href="#%E6%A0%B8%E5%BF%83%E9%97%AE%E9%A2%98" aria-hidden="true"><span class="octicon octicon-link"></span></a>核心问题</h3>
+
+<ul class="task-list">
+<li>reused unit / namespace / source file / package</li>
+<li>versioning</li>
+<li>dependency hell</li>
+<li>static linking VS dynamic linking?</li>
+<li>loader?</li>
+</ul>
+
+<h2>
+<a name="user-content-the-various-modular-solutions-in-the-old-javascript-%E5%8F%B2%E4%B8%8A%E5%90%84%E7%A7%8Djs%E6%A8%A1%E5%9D%97%E5%8C%96%E6%96%B9%E6%A1%88" class="anchor" href="#the-various-modular-solutions-in-the-old-javascript-%E5%8F%B2%E4%B8%8A%E5%90%84%E7%A7%8Djs%E6%A8%A1%E5%9D%97%E5%8C%96%E6%96%B9%E6%A1%88" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Various Modular Solutions in the Old JavaScript ［史上各种JS模块化方案］</h2>
+
+<ul class="task-list">
+<li>simple module pattern</li>
+<li>jspkg, jsan, jslab, jsvm, jsi, pies, ...</li>
+<li>jQuery</li>
+<li>YUI, Dojo</li>
+<li>CommonJS, Node.js</li>
+<li>AMD, Require.js, Sea.js</li>
+<li>UMD</li>
+</ul>
+
+<h3>
+<a name="user-content-web-%E7%9A%84%E7%8B%AC%E7%89%B9%E9%97%AE%E9%A2%98" class="anchor" href="#web-%E7%9A%84%E7%8B%AC%E7%89%B9%E9%97%AE%E9%A2%98" aria-hidden="true"><span class="octicon octicon-link"></span></a>Web 的独特问题</h3>
+
+<ul class="task-list">
+<li>异步加载</li>
+<li>按需加载</li>
+<li>合并请求</li>
+<li>缓存</li>
+<li>版本更新</li>
+<li>加载其他资源（如CSS）</li>
+</ul>
+
+<h2>
+<a name="user-content-es6-module-vs-commonjsamd-module-es6-module-%E5%92%8C%E5%85%B6%E4%BB%96%E6%96%B9%E6%A1%88%E7%9A%84%E5%AF%B9%E6%AF%94" class="anchor" href="#es6-module-vs-commonjsamd-module-es6-module-%E5%92%8C%E5%85%B6%E4%BB%96%E6%96%B9%E6%A1%88%E7%9A%84%E5%AF%B9%E6%AF%94" aria-hidden="true"><span class="octicon octicon-link"></span></a>ES6 module VS CommonJS/AMD/* module ［ES6 module 和其他方案的对比］</h2>
+
+<h2>
+<a name="user-content-the-design-of-es6-module-es6-module-%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%8E%9F%E7%90%86" class="anchor" href="#the-design-of-es6-module-es6-module-%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%8E%9F%E7%90%86" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Design of ES6 module ［ES6 module 的设计原理］</h2>
+
+<h3>
+<a name="user-content-%E6%BB%A1%E8%B6%B3%E4%B8%BB%E6%B5%81%E9%9C%80%E6%B1%82%E9%9D%A0%E8%BF%91commonjs" class="anchor" href="#%E6%BB%A1%E8%B6%B3%E4%B8%BB%E6%B5%81%E9%9C%80%E6%B1%82%E9%9D%A0%E8%BF%91commonjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>满足主流需求（靠近CommonJS）</h3>
+
+<ul class="task-list">
+<li>ES6开发进程中的挑战</li>
+</ul>
+
+<h3>
+<a name="user-content-%E9%9D%99%E6%80%81%E5%8C%96" class="anchor" href="#%E9%9D%99%E6%80%81%E5%8C%96" aria-hidden="true"><span class="octicon octicon-link"></span></a>静态化</h3>
+
+<ul class="task-list">
+<li>错误检查</li>
+<li>性能</li>
+<li>循环依赖</li>
+<li>macro可能性</li>
+<li>类型系统</li>
+<li>跨语言</li>
+</ul>
+
+<h3>
+<a name="user-content-%E7%AE%80%E5%8C%96" class="anchor" href="#%E7%AE%80%E5%8C%96" aria-hidden="true"><span class="octicon octicon-link"></span></a>简化</h3>
+
+<ul class="task-list">
+<li>基于惯例</li>
+<li>没有 namespace 和 qualified name</li>
+<li>无单独的模块名，文件和模块边界一致</li>
+<li>default import/export</li>
+<li>使用 Promise API</li>
+</ul>
+
+<h2>
+<a name="user-content-es6-module-now" class="anchor" href="#es6-module-now" aria-hidden="true"><span class="octicon octicon-link"></span></a>ES6 module now</h2>
+
+<h3>
+<a name="user-content-es6-module-loader-polyfill" class="anchor" href="#es6-module-loader-polyfill" aria-hidden="true"><span class="octicon octicon-link"></span></a>ES6 module loader polyfill</h3>
+
+<h3>
+<a name="user-content-es6-module-transpiler" class="anchor" href="#es6-module-transpiler" aria-hidden="true"><span class="octicon octicon-link"></span></a>ES6 module transpiler</h3>
+
+<h3>
+<a name="user-content-systemjs" class="anchor" href="#systemjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>SystemJS</h3>
+
+<h3>
+<a name="user-content-nomalizejs" class="anchor" href="#nomalizejs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nomalize.js</h3>
+
+<h3>
+<a name="user-content-emberjs" class="anchor" href="#emberjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ember.js</h3>
+
+<h2>
+<a name="user-content-future-of-the-es6-era-es6-module%E5%AF%B9%E4%BA%8Ejs%E7%A4%BE%E5%8C%BA%E5%8F%91%E5%B1%95%E6%9C%AA%E6%9D%A5%E7%9A%84%E6%84%8F%E4%B9%89%E5%92%8C%E5%B1%95%E6%9C%9B" class="anchor" href="#future-of-the-es6-era-es6-module%E5%AF%B9%E4%BA%8Ejs%E7%A4%BE%E5%8C%BA%E5%8F%91%E5%B1%95%E6%9C%AA%E6%9D%A5%E7%9A%84%E6%84%8F%E4%B9%89%E5%92%8C%E5%B1%95%E6%9C%9B" aria-hidden="true"><span class="octicon octicon-link"></span></a>Future of the ES6 era ［ES6 module对于JS社区发展未来的意义和展望］</h2>
+
+<h3>
+<a name="user-content-ubiquitous-api-like-ployfillio" class="anchor" href="#ubiquitous-api-like-ployfillio" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ubiquitous API like Ployfill.io</h3>
+
+<h3>
+<a name="user-content-next-generation-componentspackage-solution-like-nzlio" class="anchor" href="#next-generation-componentspackage-solution-like-nzlio" aria-hidden="true"><span class="octicon octicon-link"></span></a>Next Generation Components/Package Solution like Nzl.io</h3>
+
+<h3>
+<a name="user-content-unified-community-and-one-ecosystem" class="anchor" href="#unified-community-and-one-ecosystem" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unified community and One ecosystem</h3>
+</article>
+</section>
+
+<section>
+	<hgroup>
+	<h1>The Answer to JavaScript Module<br> -- 我对ES6模块和加载器的思考</h1>
+	<p>这才是我原来的题目
+	</hgroup>
+</section>
+
+<section>
+	<hgroup>
+	<h1>The Answer to JavaScript Module<br> -- 我对ES6模块和加载器的思考</h1>
+	<p>这才是我原来的题目
+	<p>本来怎么着也打算讲它个2个小时……
+	</hgroup>
+</section>
+
+<section>
+	<hgroup>
+	<h1>透过ES6看JS未来</h1>
+	<p>变成命题作文<span style="visibility: hidden">，而且题目好大，跟高考作文似的</span>
+	</hgroup>
+</section>
+
+<section>
+	<hgroup>
+	<h1>透过ES6看JS未来</h1>
+	<p>变成命题作文，而且题目好大，跟高考作文似的
+	</hgroup>
+</section>
+
+<section>
+	<hgroup>
+	<h1>透过ES6看JS未来</h1>
+	<p>变成命题作文，而且题目好大，跟高考作文似的
+	<p>只有20分钟！
+	</hgroup>
+</section>
+
+<section>
+	<hgroup>
+	<h1>透过ES6看JS未来</h1>
+	<p>变成命题作文，而且题目好大，跟高考作文似的
+	<p>只有20分钟！
+	<p>TED...
+	</hgroup>
+</section>
+
+<section>
+	<p>所以……
+</section>
+
+<section>
+	<p>所以……
+	<p><center><iframe height=498 width=510 src="http://player.youku.com/embed/XNzk4OTg0NDgw" frameborder=0 allowfullscreen></iframe></center>
+</section>
+
+<section>
+	<h1>ES6的状况</h1>
+	<ul>
+		<li>大部分功能已经定案
+		<li>浏览器已经支持了许多特性
+		<li>明年会发布正式标准
+		<li>大量ES6到ES5的编译器，涵盖了几乎所有特性
+	</ul>
+</section>
+
+<section>
+	<h1>实际开发的现状</h1>
+</section>
+
+<section>
+	<h1>实际开发的现状</h1>
+	<ul>
+		<li>Node.js已经开始用部分ES6特性！
+		<li>无线前端应该可以全部用ES5了！
+		<li>还有许多前端还在ES3时代……
+	</ul>	
+</section>
+
+<section>
+	<h1>问题：我们为什么要用ES6？</h1>
+</section>
+
+<section>
+	<h1>问题：ES6有哪些新feature？</h1>
+</section>
+
+<section>
+	<h1>问题：ES6有哪些新feature？</h1>
+	<p><a href="http://es6.ruanyifeng.com/">ECMAScript 6 Primer</a>
+</section>
+
+<section>
+	<p><a href="http://hax.iteye.com/blog/1122103">http://hax.iteye.com/blog/1122103</a>
+	<p>具体来看ES的发展方向大概是以下三个方面：
+	<ul>
+		<li>API扩展。
+		<li>使得ES成为一种真正的通用编程语言，让ES本身也可以实现平台对象。
+		<li>适应于programming-in-the-large的（PITL）需要。 
+	</ul>
+</section>
+
+<section>
+	<h1>问题：ES6中对于未来意义最重大的features是什么？</h1>
+</section>
+
+<section>
+	<h1>问题：ES6中对于未来意义最重大的features是什么？</h1>
+	<ul>
+		<li>ES6 Module / Loader
+	</ul>
+</section>
+
+<section>
+	<p><a href="http://hax.iteye.com/blog/653499">http://hax.iteye.com/blog/653499</a>
+	<p>许多JS框架都会实现一套自己的module/loader机制。反复造轮子这也就罢了，更大的问题在于，这些轮子互相都是不兼容的。结果就造成了JS社区的分化和内耗，阻碍了JS库和组件在较细粒度上的竞争和发展，JS框架和库的切换成了强迫开发者做出非此即彼的选择。缺乏语言级别的module，其恶果就是既没有足够的标准库，也很难像其他语言一样通过丛林法则发展出事实标准库。
+</section>
+
+<section>
+	<p><a href="http://hax.iteye.com/blog/1829042">http://hax.iteye.com/blog/1829042</a>
+	<p>ES6静态模块系统的好处
+	<ul>
+		<li>早期变量检查
+		<li>兼容未来的macro特性
+		<li>兼容未来的类型系统
+		<li>跨语言的模块性
+	</ul>
+</section>
+
+<section>
+	<h1>问题：ES6中对于未来意义最重大的features是什么？</h1>
+	<ul>
+		<li>ES6 Module / Loader
+		<li>Class
+	</ul>
+</section>
+
+<section>
+	<h1>我们不需要Class？</h1>
+	<ul>
+		<li>一半以上库是按OO/class方式写的？
+		<li>除了jQuery之外，几乎每个“严肃”的JS基础库都有一个Class实现
+		<li>但不同实现之间有微妙差异
+		<li>工具难以识别（IDE、doc等）
+		<li>最困难的点：super call、private等
+		<li>引擎性能优化
+	</ul>
+</section>
+
+<section>
+	<h1>问题：ES6中对于未来意义最重大的features是什么？</h1>
+	<ul>
+		<li>ES6 Module / Loader
+		<li>Class
+		<li>Promise? Proxy? Generator? Arrow function? Destructuring?...
+	</ul>
+</section>
+
+<section>
+	<h1>总结</h1>
+	<ul>
+		<li>Module 使得 JS 生态系统能重新统一
+		<li>Module / Class 等让 JS 更适合大型编程
+		<li>Promise 等将最佳实践标准化
+		<li>Generator / Proxy 等提供了现代语言所需的重要设施
+		<li>Arrow function / Destructring 等不仅是语法糖，而且填了长期以来的一些坑
+	</ul>
+</section>
+
+<section>
+	<hgroup>
+	<h1>让我们拥抱ES6！</h1>
+	</hgroup>
+</section>
+
+<section>
+	<hgroup>
+	<h1>让我们拥抱ES7、ES8……</h1>
+	</hgroup>
+</section>
+
+<footer>
+	<h1>Thank you</h1>
+	<address>
+		<ul>
+			<li><a href="https://github.com/hax">github.com/hax</a>
+			<li><a href="http://www.zhihu.com/people/he-shi-jun">贺师俊@知乎</a>
+			<li><a href="http://weibo.com/haxy">@johnhax</a> 
+		</ul>
+		<p>百姓网 <a href="http://jobs.baixing.com/">jobs.baixing.com</a>
+	</address>
+</footer>
+
+</body>
+</html>
