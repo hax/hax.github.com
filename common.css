@@ -9,14 +9,19 @@ body {
 		sans-serif;
 	line-height: 1.75;
 
-	margin-bottom: 1.5em;
+	max-width: 780px;
+	margin: auto;
 }
 a {
 	text-decoration: none;
 }
 body>footer {
-    position: fixed;
-    left: 0; bottom: 0;
+	position: fixed;
+	left: 0; right: 0; bottom: 0;
+	text-align: center;
+	color: white;
+	background: gray;
+	background: rgba(0, 0, 0, 0.5);
 }
 
 
