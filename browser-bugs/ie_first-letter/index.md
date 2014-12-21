@@ -5,7 +5,7 @@ title: IE first-letter bug
 
 ### Source code of <a href="./test.html">Demo page</a>
 
-```html
+{% highlight html %}
 <style>
 
 :first-letter {
@@ -36,7 +36,7 @@ div { margin: 0.5em 2em; border: 1px solid }
 		</div>
 	</div>
 </div>
-```
+{% endhighlight %}
 
 ### Result in Chrome 20
 <img src="./chrome_20.png">
