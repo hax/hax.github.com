@@ -7,7 +7,9 @@ body {
 		'Hei SC', 
 		'Microsoft Yahei', 
 		sans-serif;
-	line-height: 1.5;
+	line-height: 1.75;
+
+	margin-bottom: 1.5em;
 }
 a {
 	text-decoration: none;

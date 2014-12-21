@@ -26,9 +26,11 @@ document.addEventListener('DOMContentLoaded', function() {
 {{ page.style }}
 </style>
 {% else %}
-<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="/common.css">
+<!--
 <link rel="stylesheet" media="handheld, only screen and (max-device-width: 320px)" href="phone.css">
 <link rel="stylesheet" media="only screen and (min-width: 641px) and (max-width: 800px)" href="pad.css">
+-->
 {% endif %}
 
 {% if page.head %}
