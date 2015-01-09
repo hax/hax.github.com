@@ -9,7 +9,7 @@
 
    ---
    
-   We just announced $100 million D round 3 days ago.
+   We just announced **$100 million** D round 3 days ago.
 
    ---
    
@@ -17,9 +17,10 @@
    
    ---
 
-   JOIN US
+   **JOIN US**
+
    (http://jobs.baixing.com)
-   
+
    ---
 
  - Write first html page in 1998, for IE 4
@@ -28,20 +29,32 @@
 
  - Famous as a critic
 
-  ![我不是为了输赢，我就是认真](http://mmbiz.qpic.cn/mmbiz/agEQQ7NdJSNsicF1gEy6wJTlLd5COiac9YeOyn6iazca5icBtsWRxrtlwas0cuKCIMLWibHdNuO5w5R3T3plRzG1oKA/0)
+   ---
 
-----
+   ![我不是为了输赢，我就是认真](http://mmbiz.qpic.cn/mmbiz/agEQQ7NdJSNsicF1gEy6wJTlLd5COiac9YeOyn6iazca5icBtsWRxrtlwas0cuKCIMLWibHdNuO5w5R3T3plRzG1oKA/0)
+
+   ---
+
+---
+
 So let's talk about CSS Frameworks...
-----
+
+---
+
 
 ## What are CSS Frameworks?
+
 
 ### [Wikipedia article](http://en.wikipedia.org/wiki/CSS_frameworks)
 
  - pre-prepared software frameworks
+
  - allow for easier, more standards-compliant web design
+
  - CSS, of course
+
  - JavaScript based functions, design oriented and unobtrusive 
+
  
 ### Consist of...
 
@@ -49,17 +62,22 @@ So let's talk about CSS Frameworks...
    - grid especially for responsive web design
    - web typography
    - set of icons in sprites or iconfonts
+
    - styling for tooltips, buttons, elements of forms
    - parts of graphical user interfaces like Accordion, tabs, slideshow or Modal windows (Lightbox)
    - Equalizer to create equal height content
+
    - often used css helper classes (left, hide)
+
 
 ### Notable examples
 
    - Bootstrap (Most stars project on GitHub)
    - Foundation
    - Semantic UI
+
    - [More...](http://usablica.github.io/front-end-frameworks/compare.html)
+
 
 ### The End
 
@@ -70,6 +88,7 @@ So let's talk about CSS Frameworks...
   [Scope CSS classes with prefixes](http://markdotto.com/2012/02/16/scope-css-classes-with-prefixes/) [中译 by @cssmagic](https://github.com/cssmagic/blog/issues/45)
 
   Such thought is so called:
+
 
 ## CSS Methodologies
 
