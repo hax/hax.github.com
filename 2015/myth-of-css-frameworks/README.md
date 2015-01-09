@@ -7,11 +7,14 @@
 
  - Web Developer @ BaiXing.com
 
+   ----
    We just announced $100 million D round 3 days ago.
+   ----
    So it's a good time to...
-
+   ----
    JOIN US
    (http://jobs.baixing.com)
+   ----
 
  - Write first html page in 1998, for IE 4
 
