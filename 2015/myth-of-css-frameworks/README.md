@@ -73,7 +73,9 @@ So let's talk about CSS Frameworks...
    - Bootstrap (Most stars project on GitHub)
    - Foundation
    - Semantic UI
+     
      ---
+     
    - [More...](http://usablica.github.io/front-end-frameworks/compare.html)
 
 
