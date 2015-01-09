@@ -5,25 +5,24 @@
 
 ## About me
 
- - Web Developer @ BaiXing.com [bx-ad][]
+ - Web Developer @ BaiXing.com
+
+   We just announced $100 million D round 3 days ago.
+   So it's a good time to...
+
+   JOIN US
+   (http://jobs.baixing.com)
+
  - Write first html page in 1998, for IE 4
+
  - Love the Web platform, especially the design of CSS
- - Famous as a critic [laoluo][]
 
- [bx-ad]:
- We just announced $100 million D round 3 days ago.
- So it's a good time to...
- ----
- JOIN US
- (http://jobs.baixing.com)
- ----
+ - Famous as a critic
 
- [laoluo]: ![我不是为了输赢，我就是认真](http://mmbiz.qpic.cn/mmbiz/agEQQ7NdJSNsicF1gEy6wJTlLd5COiac9YeOyn6iazca5icBtsWRxrtlwas0cuKCIMLWibHdNuO5w5R3T3plRzG1oKA/0)
+  ![我不是为了输赢，我就是认真](http://mmbiz.qpic.cn/mmbiz/agEQQ7NdJSNsicF1gEy6wJTlLd5COiac9YeOyn6iazca5icBtsWRxrtlwas0cuKCIMLWibHdNuO5w5R3T3plRzG1oKA/0)
 
 ----
-
 So let's talk about CSS Frameworks...
-
 ----
 
 ## What are CSS Frameworks?
