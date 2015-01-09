@@ -62,7 +62,6 @@ So let's talk about CSS Frameworks...
    - grid especially for responsive web design
    - web typography
    - set of icons in sprites or iconfonts
-
    - styling for tooltips, buttons, elements of forms
    - parts of graphical user interfaces like Accordion, tabs, slideshow or Modal windows (Lightbox)
    - Equalizer to create equal height content
@@ -75,7 +74,6 @@ So let's talk about CSS Frameworks...
    - Bootstrap (Most stars project on GitHub)
    - Foundation
    - Semantic UI
-
    - [More...](http://usablica.github.io/front-end-frameworks/compare.html)
 
 
