@@ -65,7 +65,6 @@ So let's talk about CSS Frameworks...
    - styling for tooltips, buttons, elements of forms
    - parts of graphical user interfaces like Accordion, tabs, slideshow or Modal windows (Lightbox)
    - Equalizer to create equal height content
-
    - often used css helper classes (left, hide)
 
 
@@ -74,7 +73,8 @@ So let's talk about CSS Frameworks...
    - Bootstrap (Most stars project on GitHub)
    - Foundation
    - Semantic UI
-   - [More...](http://usablica.github.io/front-end-frameworks/compare.html)
+   - 
+     [More...](http://usablica.github.io/front-end-frameworks/compare.html)
 
 
 ### The End
