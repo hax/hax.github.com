@@ -570,6 +570,7 @@ So let's talk about CSS Frameworks...
 
 **WTF?**
 
+![WTF](http://m.memegen.com/zqbu4b.jpg)
 
 ---
 
