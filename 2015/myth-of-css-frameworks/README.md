@@ -765,10 +765,7 @@ So let's talk about CSS Frameworks...
 
  - Less abstraction
 
---
- 
-
-   There is no need to look for rules in a style sheet to figure out the styling of a template. It’s all in the markup.
+   There is no need to look for rules in a style sheet to figure out the styling of a template. It's all in the markup.
 
 --
  
@@ -857,6 +854,9 @@ So let's talk about CSS Frameworks...
     <p class="descendant">
 </div>
 ```
+
+--
+
 ```css
 .Title {}
   .Title.isModified {}
