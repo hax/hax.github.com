@@ -228,12 +228,14 @@ So let's talk about CSS Frameworks...
 ![important](http://image.slidesharecdn.com/bestpractices-110330135557-phpapp02/95/our-best-practices-are-killing-us-88-728.jpg?cb=1302790778)
 
 #### Solution
-[solve](http://image.slidesharecdn.com/bestpractices-110330135557-phpapp02/95/our-best-practices-are-killing-us-98-728.jpg?cb=1302790778)
+![solve](http://image.slidesharecdn.com/bestpractices-110330135557-phpapp02/95/our-best-practices-are-killing-us-98-728.jpg?cb=1302790778)
 
 
 ## ACSS
  
  - Atomic CSS
+ - http://www.smashingmagazine.com/2013/08/02/other-interface-atomic-design-sass/
+ - http://www.smashingmagazine.com/2013/10/21/challenging-css-best-practices-atomic-approach/
 
 ## BEM
 
@@ -247,13 +249,40 @@ So let's talk about CSS Frameworks...
 
  - 
 
-## Abstraction mechnism in CSS
+## Some new theory
 
-### CSS variable is harmful
+### Style can be semantic
+
+
+### Anti semantic class
+ classes are neither semantic or insemantic; they are sensible or insensible! Stop stressing about ‘semantic’ class names and pick something sensible and futureproof.
+
+
+
+## Abstraction mechanism in CSS
+
+### Why “variables” in CSS are harmful
 
  - By Bert Bos
- -
+ - 30 June 2008
 
-### Key points
+### Summary
 
+ - External program can replace constant
+ - Cost to user-defined names: memory (when writing) and understanding (when reading)
+ - Style sheets are short
+ - Hard to reuse (c&p)
+ - Hard to learn
+ - Modular
+ - Help for authors, not for the semantic web
+
+
+### Conclusion
+ 
+ CSS do NOT have any abstraction mechanism itself, up to now ([CSS variables draft](http://dev.w3.org/csswg/css-variables/))
+
+ So the only way to "reuse" style rules is "css class hook"
+
+
+##
 
