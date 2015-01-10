@@ -615,6 +615,9 @@ So let's talk about CSS Frameworks...
 <div id="rightRail">
     <div class="media">
 ```
+
+---
+
 ```css
 .media {
     margin: 10px;
@@ -933,7 +936,7 @@ https://github.com/cssmagic/blog/issues/45#issuecomment-40124120
 
 ### Summary
 
----
+--
 
  - External program can replace constant
 
@@ -948,7 +951,6 @@ https://github.com/cssmagic/blog/issues/45#issuecomment-40124120
  - Modular
 
  - Help for authors, not for the semantic web
-
 
 ---
 
@@ -1019,7 +1021,7 @@ https://github.com/cssmagic/blog/issues/45#issuecomment-40124120
 
 --
 
- - But we definitely need it
+ - But we *definitely* need it
 
 
 ---
@@ -1049,7 +1051,9 @@ https://github.com/cssmagic/blog/issues/45#issuecomment-40124120
    * [CSS `unset` value]
 
 
---
+---
+
+### How to solve the problem?
 
  - CSS extensions
 
@@ -1057,14 +1061,10 @@ https://github.com/cssmagic/blog/issues/45#issuecomment-40124120
 --
 
    We finally will use CSS variables, 
-
 --
-
-
    Sorry Bert.
 
 --
-
 
    [cssnext](https://cssnext.github.io/cssnext-playground/)
 
@@ -1082,7 +1082,7 @@ https://github.com/cssmagic/blog/issues/45#issuecomment-40124120
 --
 
 
-**There’s no such thing as semantic CSS.*** There’s only semantic HTML and its visible form. 
+**There's no such thing as semantic CSS.** There's only semantic HTML and its visible form. 
 
 ---
 
