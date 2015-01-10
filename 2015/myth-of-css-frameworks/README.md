@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # Myths of CSS Frameworks
 
 贺师俊 - @hax
