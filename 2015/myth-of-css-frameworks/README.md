@@ -633,10 +633,10 @@ https://github.com/cssmagic/blog/issues/45#issuecomment-40124120
 
  - Do Components in Right Way
 
-   [Custom Element]
-   [Shadow DOM]
-   [Scoped Style]
-   [CSS `unset` value]
+   * [Custom Element]
+   * [Shadow DOM]
+   * [Scoped Style]
+   * [CSS `unset` value]
 
  - CSS extensions
 
@@ -644,7 +644,7 @@ https://github.com/cssmagic/blog/issues/45#issuecomment-40124120
 
    Sorry Bert.
 
-   [nextcss]
+   [cssnext](https://cssnext.github.io/cssnext-playground/)
 
 
 ### NO semantic CSS
