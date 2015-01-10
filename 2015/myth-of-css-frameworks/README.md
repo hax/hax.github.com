@@ -698,7 +698,7 @@ So let's talk about CSS Frameworks...
 
 ### Why good?
 
- - Good names don’t change
+ - Good names don't change
 
  - is about *maintenance*, not semantics per se.
 
@@ -723,7 +723,7 @@ So let's talk about CSS Frameworks...
 ---
 
 
-### Pollute the markup rather than the style sheet.
+### Pollute the markup rather than the style sheet
 
 --
 
@@ -752,8 +752,9 @@ So let's talk about CSS Frameworks...
 
    A huge chunk of CSS can be shared across products and properties.
 
---
+---
  
+### Pollute the markup rather than the style sheet
 
  - Very little maintenance (on the CSS side)
 
@@ -827,6 +828,19 @@ So let's talk about CSS Frameworks...
 .block--modifier {}
 ```
 
+```html
+<div class="block block--modifier1 block--modifier2">
+  <div class="block__element">
+    ...
+  </div>
+  <div class="block__element block__element--modifier1a">
+    ...
+  </div>
+  <div class="block__element block__element--modifier1a block__element--modifier2b">
+    ...
+  </div>
+</div>
+```
 
 ---
  
@@ -906,7 +920,7 @@ https://github.com/cssmagic/blog/issues/45#issuecomment-40124120
 ---
 
 
-### Why “variables” in CSS are harmful
+### [Why “variables” in CSS are harmful](http://www.w3.org/People/Bos/CSS-variables)
 
 --
 
