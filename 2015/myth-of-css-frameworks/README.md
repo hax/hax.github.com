@@ -13,7 +13,9 @@
 ---
 
 ### Baixing.com
+
 --
+
    We just announced **$100 million** D round 3 days ago.
 
 --
@@ -39,13 +41,16 @@
 --
    , for IE 4
 
+--
+
  - Love the Web platform
+
 --
    , especially the design of CSS
 
 --
 
- - Famous as a critic
+ - Famous as a *critic*
 
 ---
 ## 情怀
@@ -54,6 +59,8 @@
 
 ---
 ## 言归正传
+
+--
 
 So let's talk about CSS Frameworks...
 
@@ -106,6 +113,8 @@ So let's talk about CSS Frameworks...
 --
      (Most stars project on GitHub)
 
+--
+
    - Foundation
 
 --
@@ -117,7 +126,7 @@ So let's talk about CSS Frameworks...
    - [More...](http://usablica.github.io/front-end-frameworks/compare.html)
 
 ---
-###
+### &nbsp;
 
   No, I don't want to talk about Bootstrap...
 
@@ -201,7 +210,7 @@ So let's talk about CSS Frameworks...
 
  - BEM
 
---- 
+---
 
 ## OOCSS
 
@@ -329,13 +338,19 @@ So let's talk about CSS Frameworks...
 
 ### Guidelines
 
+--
+
  - Avoid the descendent selector (i.e. don’t use .sidebar h3)
+
+--
+
  - Avoid IDs as styling hooks
+
+--
+
  - Avoid attaching classes to elements in your stylesheet (i.e. don’t do div.header or h1.title)
 
-
 ---
-
 
 ### Origin
 
@@ -395,34 +410,68 @@ So let's talk about CSS Frameworks...
 
 ## SMACSS
 
+--
+
  - http://smacss.com/
+
+--
+
  - http://www.smashingmagazine.com/2012/04/20/decoupling-html-from-css/
+
+---
 
 ### Categorizing CSS Rules
 
+--
+
   0. Base (element only selector)
+
+--
+
   0. Layout (id selector + layout class)
+
+--
+
   0. Module (class only selector + descendant selector)
+
+--
+
   0. State (class selector)
+
+--
+
   0. Theme (override below rules)
 
+---
 
 ### Minimizing the Depth
 
+--
+
   `body.article > #main > #content > #intro > p > b` => `.article #intro b`
+
+--
 
   (Nest structure of CSS preprocessors)
 
 
+---
+
 ### Selector Performance
+
+--
 
   * classes are indexed
   * right to left
 
+--
   ---
 
   * Avoid tag selectors for common elements
   * Use class names as the right-most selector
+
+
+---
 
 ### Increase semantics and decrease reliance on specific HTML
 
@@ -450,25 +499,48 @@ So let's talk about CSS Frameworks...
 }
 ```
 
+---
+
 ### Decouple HTML from CSS
+
+--
+
 
 `.box`, `.box h2`, `.box ul, .box p` =>
 
+--
+
+
 `.box`, `.box .hd`, `.box .bd` =>
+
+--
+
 
 `.box`, `.box-hd`, `.box-bd`
 
+---
 
 ### Thoughts
+
   I find that SMACSS is too loose of a convention (that at times contradicts its own advice) 
   --- http://snugug.com/musings/css-strategy
 
 
+---
+
 ## ACSS
- 
+
  - Atomic CSS
+
+--
+
  - http://www.smashingmagazine.com/2013/08/02/other-interface-atomic-design-sass/
+
+--
+
  - http://www.smashingmagazine.com/2013/10/21/challenging-css-best-practices-atomic-approach/
+
+---
 
 ### Sample
 
@@ -482,9 +554,16 @@ So let's talk about CSS Frameworks...
 }
 ```
 
+---
+
 ### Just abbrev of a single css declaration
 
+--
+
 **WTF?**
+
+
+---
 
 
 ### Origin
@@ -507,6 +586,7 @@ So let's talk about CSS Frameworks...
 }
 ```
 
+---
 
 ### New Requirement: display the image on the other side
 ```html
@@ -518,6 +598,8 @@ So let's talk about CSS Frameworks...
     margin-left: 10px;
 }
 ```
+
+---
 
 ### One More Requirement: make the text smaller when this module is inside the right rail of the page
 ```html
@@ -550,12 +632,19 @@ So let's talk about CSS Frameworks...
 }
 ```
 
+---
+
 ### What's Wrong
 
  - Simple changes to the style of our module have resulted in new rules in the style sheet.
+
  - We are grouping selectors for common styles (.media,.bd {}).
+
  - Of our six rules, four are context-based.
+
  - RTL and LTR interfaces become complicated.
+
+---
 
 ### ACSS version
 
@@ -588,72 +677,137 @@ So let's talk about CSS Frameworks...
 }
 ```
 
+---
+
 ### Styling via markup
 
  - No contextual styling
+
  - Directions (left and right) are “abstracted.”
+
+---
 
 ### Why good?
 
  - Good names don’t change
+
  - is about *maintenance*, not semantics per se.
+
  - Specificity (lower than inline script)
+
  - Verbosity (`M-10` VS `margin: 10px`)
+
  - Scope
+
  - Portability
+
+---
 
 ### Large site
 
  - We leave alone rules that we suspect to be obsolete for fear of breaking something.
+
  - We create new rules, rather than modify existing ones, because we are not sure the latter is 100% safe.
+
  - CSS bloat VS HTML bloat: CSS is cachable
 
+---
+
+
 ### Pollute the markup rather than the style sheet.
- 
+
+--
+
  - Less bloat
 
    We can build entire modules without adding a single line to the style sheets.
+
+--
+ 
 
  - Faster development
 
    Styles are driven by classes that are not related to content, so we can copy and paste existing modules to get started.
 
+--
+ 
+
  - RTL interface for free
 
    Using start and end keywords makes a lot of sense. It saves us from having to write extra rules for RTL context.
+
+--
+ 
 
  - Better caching
 
    A huge chunk of CSS can be shared across products and properties.
 
+--
+ 
+
  - Very little maintenance (on the CSS side)
 
    Only a small set of rules are meant to change over time.
 
+--
+ 
+
  - Less abstraction
 
+--
+ 
+
    There is no need to look for rules in a style sheet to figure out the styling of a template. It’s all in the markup.
+
+--
+ 
 
  - Third-party development
    
    A third party can hand us a template without having to attach a style sheet (or a style block) to it. No custom rules from third parties means no risk of breakage due to rules that have not been properly namespaced.
 
 
+---
+ 
+
 ### MetaCSS
 
  - Practice of the Chinese large sites: kaixing001, 163, etc.
+
  - Just same as ACSS
+
  - http://www.iteye.com/news/10843-metacss-css-framework
 
 
+---
+ 
+
 ## BEM
 
+
+--
+ 
+
  - Block__Element--Modifier
+
+--
+ 
  - http://bem.info
+
+--
+ 
  - http://www.smashingmagazine.com/2012/04/16/a-new-front-end-methodology-bem/
+ 
  - http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
 
+
+---
+ 
+
 ### Example
+
+
 
 ```css
 /* This is the Block */
@@ -664,7 +818,14 @@ So let's talk about CSS Frameworks...
 .block--modifier {}
 ```
 
+
+---
+ 
 ### Some variants
+
+
+---
+ 
 
 #### [Title CSS](http://www.sitepoint.com/title-css-simple-approach-css-class-naming/)
 
@@ -679,6 +840,10 @@ So let's talk about CSS Frameworks...
   .Title .descendant {}
 ```
 
+
+---
+ 
+
 #### Oops, I already found that independently!
 
 https://github.com/cssmagic/blog/issues/45#issuecomment-40124120
@@ -688,82 +853,170 @@ https://github.com/cssmagic/blog/issues/45#issuecomment-40124120
  > `.Alert.success`
  > 看上去是不是就突然清晰了？
 
+
+---
+ 
+
 ### More variants...
 
  - [SUIT CSS](https://suitcss.github.io/)
+
  - [NORTH](https://github.com/north/north)
+
  - ...
 
 
+---
+ 
+
 ## Some interesting theories
+
+--
 
 ### Do NOT use HTML5 new semantic tags like header/footer/section/article/nav/aside...
 
+--
+
 ### Style can be semantic
+
+--
 
 ### Semantic classes is meaningless
 
+--
+
  > classes are neither semantic or insemantic; they are sensible or insensible! Stop stressing about ‘semantic’ class names and pick something sensible and futureproof
  --- @csswizardry , Author of inuit CSS framework which follow OOCSS and BEM
+
+---
 
 
 
 ## Abstraction mechanism in CSS
 
+---
+
+
 ### Why “variables” in CSS are harmful
 
- - By Bert Bos
- - 30 June 2008
+--
+
+
+ By Bert Bos
+--
+ , 30 June 2008
+
+---
 
 ### Summary
 
+---
+
  - External program can replace constant
+
  - Cost to user-defined names: memory (when writing) and understanding (when reading)
+
  - Style sheets are short
+
  - Hard to reuse (c&p)
+
  - Hard to learn
+
  - Modular
+
  - Help for authors, not for the semantic web
+
+
+---
 
 
 ### Conclusion
  
+--
+
  CSS do NOT have any abstraction mechanism itself, up to now ([CSS variables draft](http://dev.w3.org/csswg/css-variables/))
+
+--
 
  So the only way to "reuse" style rules is "css class hook"
 
+---
 
 ### My Thoughts
 
+--
+
  - [Meta CSS —— Anti Pattern的典型 (MetaCSS/ACSS is anti-pattern)](http://hax.iteye.com/blog/497338)
+
  - [关于样式类 (Style Class can be avoid)](http://hax.iteye.com/blog/500015)
+
  - [再谈某些所谓CSS最佳实践 (Recheck "Best Practices" around using class)](http://hax.iteye.com/blog/849826)
+
  - [My Opinion about so-called "CSS Framework"](http://hax.iteye.com/blog/1706557)
+
  - [In Defense of Descendant Selectors and ID Elements](http://www.zeldman.com/2012/11/21/in-defense-of-descendant-selectors-and-id-elements/) by Zeldman
+
    [为后代选择器和ID选择器而辩护](http://hax.iteye.com/blog/1850571)
+
  - [为什么会产生 .text-size30 {font-size:30px} (Why the smart guys use .text-size30 {font-size:30px})](http://www.zhihu.com/question/20658520/answer/15770608)
+
  - [如何看待BEM (BEM is not a new thing)](http://www.zhihu.com/question/21935157/answer/19791915)
 
+---
 
 ## Requirements of UI component
 
+--
+
  - Not sure what's the best solution
+
+--
+
    * HTC, XBL, BECSS, dead `binding` or `behavior` CSS property...
+
+--
+
    * Server-side managed components like ASP.NET WebForms, JSF, etc.
+
+--
+
    * JavaScript frameworks like Bindows, Ext...too many!
+
+--
+
    * CSS frameworks like Bootstrap, Semantic-UI...
+
+--
+
    * Recent client-side MV* frameworks like Angular, Ember, React, etc.
+
+--
+
    * Polymer
+
+--
 
  - But we definitely need it
 
+
+---
+
 ### How to solve the problem?
 
+
+--
+
  - Workflow: Information/Content/Semantic-driven VS UI-driven
+
+
+--
 
  - Tools: CSS preprocessor
 
    [Debunking the myths surrounding CSS Pre-Processors](http://www.cyber-duck.co.uk/blog/debunking-the-myths-surrounding-css-pre-processors-at-sxswi-2014-in-austin)
+
+
+--
 
  - Do Components in Right Way
 
@@ -772,14 +1025,29 @@ https://github.com/cssmagic/blog/issues/45#issuecomment-40124120
    * [Scoped Style]
    * [CSS `unset` value]
 
+
+--
+
  - CSS extensions
+
+
+--
 
    We finally will use CSS variables, 
 
+--
+
+
    Sorry Bert.
+
+--
+
 
    [cssnext](https://cssnext.github.io/cssnext-playground/)
 
+
+
+---
 
 ### NO semantic CSS
 
@@ -787,7 +1055,13 @@ https://github.com/cssmagic/blog/issues/45#issuecomment-40124120
 
 [译：结合智能选择器的语义化的CSS](http://www.w3cplus.com/css/semantic-css-with-intelligent-selectors.html)
 
+
+--
+
+
 **There’s no such thing as semantic CSS.*** There’s only semantic HTML and its visible form. 
+
+---
 
 ### FAQ
 
