@@ -199,34 +199,35 @@ So let's talk about CSS Frameworks...
 
 ### Origin
 
-http://www.slideshare.net/stubbornella/our-best-practices-are-killing-us
+#### http://www.slideshare.net/stubbornella/our-best-practices-are-killing-us
+
 ![our-best-practices-are-killing-us](http://image.slidesharecdn.com/bestpractices-110330135557-phpapp02/95/our-best-practices-are-killing-us-1-728.jpg?cb=1302790778)
 
-Three Best Practices Myths
+#### Three Best Practices Myths
 ![Three Best Practices Myths](http://image.slidesharecdn.com/bestpractices-110330135557-phpapp02/95/our-best-practices-are-killing-us-29-728.jpg?cb=1302790778)
 
-H3 in sidebar
+#### H3 in sidebar
 ![sidebar h3](http://image.slidesharecdn.com/bestpractices-110330135557-phpapp02/95/our-best-practices-are-killing-us-65-728.jpg?cb=1302790778)
 
-New H3
+#### New H3
 ![new h3 mock](http://image.slidesharecdn.com/bestpractices-110330135557-phpapp02/95/our-best-practices-are-killing-us-68-728.jpg?cb=1302790778)
 
-Cascading H3s
+#### Cascading H3s
 ![cascading h3s](http://image.slidesharecdn.com/bestpractices-110330135557-phpapp02/95/our-best-practices-are-killing-us-69-728.jpg?cb=1302790778)
 
-More!
+#### More!
 ![more h3](http://image.slidesharecdn.com/bestpractices-110330135557-phpapp02/95/our-best-practices-are-killing-us-79-728.jpg?cb=1302790778)
 
-Six months later...
+#### Six months later...
 ![6 months later](http://image.slidesharecdn.com/bestpractices-110330135557-phpapp02/95/our-best-practices-are-killing-us-80-728.jpg?cb=1302790778)
 
-Inline style to rescue
+#### Inline style to rescue
 ![inline style](http://image.slidesharecdn.com/bestpractices-110330135557-phpapp02/95/our-best-practices-are-killing-us-83-728.jpg?cb=1302790778)
 
-`!important` to rescue
+#### `!important` to rescue
 ![important](http://image.slidesharecdn.com/bestpractices-110330135557-phpapp02/95/our-best-practices-are-killing-us-88-728.jpg?cb=1302790778)
 
-Solution
+#### Solution
 [solve](http://image.slidesharecdn.com/bestpractices-110330135557-phpapp02/95/our-best-practices-are-killing-us-98-728.jpg?cb=1302790778)
 
 
