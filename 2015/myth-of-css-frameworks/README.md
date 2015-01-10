@@ -538,10 +538,7 @@ So let's talk about CSS Frameworks...
  So the only way to "reuse" style rules is "css class hook"
 
 
-##
-
-
-### My thoughts
+### My Thoughts
 
  - [Meta CSS —— Anti Pattern的典型 (MetaCSS/ACSS is anti-pattern)](http://hax.iteye.com/blog/497338)
  - [关于样式类 (Style Class can be avoid)](http://hax.iteye.com/blog/500015)
@@ -552,6 +549,18 @@ So let's talk about CSS Frameworks...
  - [为什么会产生 .text-size30 {font-size:30px} (Why the smart guys use .text-size30 {font-size:30px})](http://www.zhihu.com/question/20658520/answer/15770608)
  - [如何看待BEM (BEM is not a new thing)](http://www.zhihu.com/question/21935157/answer/19791915)
 
+
+## Requirements of UI component
+
+ - Not sure what's the best solution
+   * HTC, XBL, BECSS, dead `binding` or `behavior` CSS property...
+   * Server-side managed components like ASP.NET WebForms, JSF, etc.
+   * JavaScript frameworks like Bindows, Ext...too many!
+   * CSS frameworks like Bootstrap, Semantic-UI...
+   * Recent client-side MV* frameworks like Angular, Ember, React, etc.
+   * Polymer
+
+ - But we definitely need it
 
 ### How to solve the problem?
 
