@@ -82,7 +82,35 @@ So let's talk about CSS Frameworks...
 
   But, something behind it, for example:
 
-  [Scope CSS classes with prefixes](http://markdotto.com/2012/02/16/scope-css-classes-with-prefixes/) ([中译 by @cssmagic](https://github.com/cssmagic/blog/issues/45))
+
+### Bootstrap sample from Wikipedia
+
+```html
+<!DOCTYPE html>
+  <body>
+    <div class="container">
+      <h1>Search</h1>
+      <label>Example for a simple search form.</label>
+ 
+      <!-- Search form with input field and button -->
+      <form class="well form-search">
+        <input type="text" class="input-medium search-query">
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+ 
+      <h2>Results</h2>
+ 
+      <!-- Table with alternating cell background color and outer frame -->
+      <table class="table table-striped table-bordered">
+        ...
+      </table>
+    </div>
+```
+
+### Why?
+  [Scope CSS classes with prefixes](http://markdotto.com/2012/02/16/scope-css-classes-with-prefixes/)
+
+  [中译 by @cssmagic](https://github.com/cssmagic/blog/issues/45)
 
   Such thought is so called:
 
@@ -90,10 +118,10 @@ So let's talk about CSS Frameworks...
 ## CSS Strategy/Approach/Best Practices/Methodologies/Architecture/Philosophy
 
  - OOCSS
+ - SMACSS
  - ACSS
  - BEM
- - SMACSS
-
+ 
 
 ## OOCSS
 
@@ -231,11 +259,239 @@ So let's talk about CSS Frameworks...
 ![solve](http://image.slidesharecdn.com/bestpractices-110330135557-phpapp02/95/our-best-practices-are-killing-us-98-728.jpg?cb=1302790778)
 
 
+## SMACSS
+
+ - http://smacss.com/
+ - http://www.smashingmagazine.com/2012/04/20/decoupling-html-from-css/
+
+### Categorizing CSS Rules
+
+  0. Base (element only selector)
+  0. Layout (id selector + layout class)
+  0. Module (class only selector + descendant selector)
+  0. State (class selector)
+  0. Theme (override below rules)
+
+
+### Minimizing the Depth
+
+  `body.article > #main > #content > #intro > p > b` => `.article #intro b`
+
+  (Nest structure of CSS preprocessors)
+
+
+### Selector Performance
+
+  - classes are indexed
+  - right to left
+
+  * Avoid tag selectors for common elements
+  * Use class names as the right-most selector
+
+### Increase semantics and decrease reliance on specific HTML
+
+```html
+<nav class="l-inline">
+    <h1>Primary Navigation</h1>
+    <ul>
+        <li>About Us
+            <ul class="l-stacked">
+                <li>Team</li>
+                <li>Location</li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+```
+
+```css
+.l-inline li { 
+    display: inline-block;
+}
+
+.l-stacked li {
+    display: block;
+}
+```
+
+### Decouple HTML from CSS
+
+`.box`, `.box h2`, `.box ul, .box p` =>
+`.box`, `.box .hd`, `.box .bd` =>
+`.box`, `.box-hd`, `.box-bd`
+
+
+### Thoughts
+  I find that SMACSS is too loose of a convention (that at times contradicts its own advice) 
+  --- http://snugug.com/musings/css-strategy
+
+
 ## ACSS
  
  - Atomic CSS
  - http://www.smashingmagazine.com/2013/08/02/other-interface-atomic-design-sass/
  - http://www.smashingmagazine.com/2013/10/21/challenging-css-best-practices-atomic-approach/
+
+### Sample
+
+```css
+.mt-20 {
+    margin-top: 20px;
+}
+/* Or */
+.fl {
+    float: left;
+}
+```
+
+### Just abbrev of a single css declaration
+
+**WTF?**
+
+
+### Origin
+
+```html
+<div class="media">
+  <a href="http://twitter.com/thierrykoblentz" class="img">
+        <img src="thierry.jpg" alt="me" width="40" />
+  </a>
+  <div class="bd">
+    @thierrykoblentz 14 minutes ago
+  </div>
+</div>
+```
+
+```css
+.media .img {
+    float: left;
+    margin-right: 10px;
+}
+```
+
+
+### New Requirement: display the image on the other side
+```html
+<a href="http://twitter.com/thierrykoblentz" class="imgExt">
+```
+```css
+.media .imgExt {
+    float: right;
+    margin-left: 10px;
+}
+```
+
+### One More Requirement: make the text smaller when this module is inside the right rail of the page
+```html
+<div id="rightRail">
+    <div class="media">
+```
+```css
+.media {
+    margin: 10px;
+}
+.media,
+.bd {
+    overflow: hidden;
+    _overflow: visible;
+    zoom: 1;
+}
+.media .img {
+    float: left;
+    margin-right: 10px;
+}
+.media .img img {
+    display: block;
+}
+.media .imgExt {
+    float: right;
+    margin-left: 10px;
+}
+#rightRail .bd {
+    font-size: smaller;
+}
+```
+
+### What's Wrong
+
+ - Simple changes to the style of our module have resulted in new rules in the style sheet.
+ - We are grouping selectors for common styles (.media,.bd {}).
+ - Of our six rules, four are context-based.
+ - RTL and LTR interfaces become complicated.
+
+### ACSS version
+
+```html
+<div class="Bfc M-10">
+    <a href="http://twitter.com/thierrykoblentz" class="Fl-start Mend-10">
+        <img src="thierry.jpg" alt="me" width="40" />
+    </a>
+    <div class="Bfc Fz-s">
+        @thierrykoblentz 14 minutes ago
+    </div>
+</div>
+```
+```css
+.Bfc {
+    overflow: hidden;
+    zoom: 1;
+}
+.M-10 {
+    margin: 10px;
+}
+.Fl-start {
+    float: left;
+}
+.Mend-10 {
+    margin-right: 10px;
+}
+.Fz-s {
+    font-size: smaller;
+}
+```
+
+### Styling via markup
+
+ - No contextual styling
+ - Directions (left and right) are “abstracted.”
+
+### Why good?
+
+ - Good names don’t change
+ - is about *maintenance*, not semantics per se.
+ - Specificity (lower than inline script)
+ - Verbosity (`M-10` VS `margin: 10px`)
+ - Scope
+ - Portability
+
+### Large site
+
+ - We leave alone rules that we suspect to be obsolete for fear of breaking something.
+ - We create new rules, rather than modify existing ones, because we are not sure the latter is 100% safe.
+ - CSS bloat VS HTML bloat: CSS is cachable
+
+### Pollute the markup rather than the style sheet.
+ - Less bloat
+   We can build entire modules without adding a single line to the style sheets.
+ - Faster development
+   Styles are driven by classes that are not related to content, so we can copy and paste existing modules to get started.
+ - RTL interface for free
+   Using start and end keywords makes a lot of sense. It saves us from having to write extra rules for RTL context.
+ - Better caching
+   A huge chunk of CSS can be shared across products and properties.
+ - Very little maintenance (on the CSS side)
+   Only a small set of rules are meant to change over time.
+ - Less abstraction
+   There is no need to look for rules in a style sheet to figure out the styling of a template. It’s all in the markup.
+ - Third-party development
+   A third party can hand us a template without having to attach a style sheet (or a style block) to it. No custom rules from third parties means no risk of breakage due to rules that have not been properly namespaced.
+
+### MetaCSS
+
+ - Practice of the Chinese large sites: kaixing001, 163, etc.
+ - Just same as ACSS
+ - http://www.iteye.com/news/10843-metacss-css-framework
+
 
 ## BEM
 
@@ -245,17 +501,15 @@ So let's talk about CSS Frameworks...
  - http://www.smashingmagazine.com/2012/04/16/a-new-front-end-methodology-bem/
 
 
-## SMACSS
+## Some interesting theories
 
- - 
-
-## Some new theory
+### Do NOT use HTML5 new semantic tags like header/footer/section/article/nav/aside...
 
 ### Style can be semantic
 
-
-### Anti semantic class
- classes are neither semantic or insemantic; they are sensible or insensible! Stop stressing about ‘semantic’ class names and pick something sensible and futureproof.
+### Semantic classes is meaningless
+ classes are neither semantic or insemantic; they are sensible or insensible! Stop stressing about ‘semantic’ class names and pick something sensible and futureproof
+ --- @csswizardry , Author of inuit CSS framework which follow OOCSS and BEM
 
 
 
@@ -285,4 +539,34 @@ So let's talk about CSS Frameworks...
 
 
 ##
+
+
+### My thoughts
+
+ - [Meta CSS —— Anti Pattern的典型 (MetaCSS/ACSS is anti-pattern)](http://hax.iteye.com/blog/497338)
+ - [关于样式类 (Style Class can be avoid)](http://hax.iteye.com/blog/500015)
+ - [再谈某些所谓CSS最佳实践 (Recheck "Best Practices" around using class)](http://hax.iteye.com/blog/849826)
+ - [My Opinion about so-called "CSS Framework"](http://hax.iteye.com/blog/1706557)
+ - [In Defense of Descendant Selectors and ID Elements](http://www.zeldman.com/2012/11/21/in-defense-of-descendant-selectors-and-id-elements/) by Zeldman
+   [为后代选择器和ID选择器而辩护](http://hax.iteye.com/blog/1850571)
+ - [为什么会产生 .text-size30 {font-size:30px} (Why the smart guys use .text-size30 {font-size:30px})](http://www.zhihu.com/question/20658520/answer/15770608)
+ - [如何看待BEM (BEM is not a new thing)](http://www.zhihu.com/question/21935157/answer/19791915)
+
+
+### How to solve the problem?
+
+ - Workflow: Information/Content/Semantic-driven VS UI-driven
+ - Tools: CSS preprocessor
+ - Do Components in Right Way -- New Web Components specs
+ - CSS extensions -- We finally will use CSS variables, Sorry Bert
+
+### NO semantic CSS
+
+[Semantic CSS With Intelligent Selectors](http://www.smashingmagazine.com/2013/08/20/semantic-css-with-intelligent-selectors/)
+
+[译：结合智能选择器的语义化的CSS](http://www.w3cplus.com/css/semantic-css-with-intelligent-selectors.html)
+
+**There’s no such thing as semantic CSS.*** There’s only semantic HTML and its visible form. 
+
+### FAQ
 
