@@ -7,21 +7,21 @@
 
  - Web Developer @ BaiXing.com
 
-   ---
+---
    
    We just announced **$100 million** D round 3 days ago.
 
-   ---
+---
    
    So it's a good time to...
    
-   ---
+---
 
    **JOIN US**
 
    (http://jobs.baixing.com)
 
-   ---
+---
 
  - Write first html page in 1998, for IE 4
 
@@ -29,7 +29,7 @@
 
  - Famous as a critic
 
-   ---
+---
 
    ![我不是为了输赢，我就是认真](http://mmbiz.qpic.cn/mmbiz/agEQQ7NdJSNsicF1gEy6wJTlLd5COiac9YeOyn6iazca5icBtsWRxrtlwas0cuKCIMLWibHdNuO5w5R3T3plRzG1oKA/0)
 
