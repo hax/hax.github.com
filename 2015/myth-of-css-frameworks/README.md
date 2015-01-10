@@ -282,8 +282,10 @@ So let's talk about CSS Frameworks...
 
 ### Selector Performance
 
-  - classes are indexed
-  - right to left
+  * classes are indexed
+  * right to left
+
+  ---
 
   * Avoid tag selectors for common elements
   * Use class names as the right-most selector
@@ -317,7 +319,9 @@ So let's talk about CSS Frameworks...
 ### Decouple HTML from CSS
 
 `.box`, `.box h2`, `.box ul, .box p` =>
+
 `.box`, `.box .hd`, `.box .bd` =>
+
 `.box`, `.box-hd`, `.box-bd`
 
 
@@ -471,20 +475,35 @@ So let's talk about CSS Frameworks...
  - CSS bloat VS HTML bloat: CSS is cachable
 
 ### Pollute the markup rather than the style sheet.
+ 
  - Less bloat
+
    We can build entire modules without adding a single line to the style sheets.
+
  - Faster development
+
    Styles are driven by classes that are not related to content, so we can copy and paste existing modules to get started.
+
  - RTL interface for free
+
    Using start and end keywords makes a lot of sense. It saves us from having to write extra rules for RTL context.
+
  - Better caching
+
    A huge chunk of CSS can be shared across products and properties.
+
  - Very little maintenance (on the CSS side)
+
    Only a small set of rules are meant to change over time.
+
  - Less abstraction
+
    There is no need to look for rules in a style sheet to figure out the styling of a template. It’s all in the markup.
+
  - Third-party development
+   
    A third party can hand us a template without having to attach a style sheet (or a style block) to it. No custom rules from third parties means no risk of breakage due to rules that have not been properly namespaced.
+
 
 ### MetaCSS
 
@@ -496,9 +515,50 @@ So let's talk about CSS Frameworks...
 ## BEM
 
  - Block__Element--Modifier
- -
-
+ - http://bem.info
  - http://www.smashingmagazine.com/2012/04/16/a-new-front-end-methodology-bem/
+ - http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+
+### Example
+
+```css
+/* This is the Block */
+.block {}
+/* This is a child of the block that helps to for it */
+.block__element {}
+/* This modifies the element */
+.block--modifier {}
+```
+
+### Some variants
+
+#### [Title CSS](http://www.sitepoint.com/title-css-simple-approach-css-class-naming/)
+
+```html
+<div class="Title isModified">
+    <p class="descendant">
+</div>
+```
+```css
+.Title {}
+  .Title.isModified {}
+  .Title .descendant {}
+```
+
+#### Oops, I already found that independently!
+
+https://github.com/cssmagic/blog/issues/45#issuecomment-40124120
+
+ > 所有他操心的其实是使用者如何能清晰快速的在html上挂样式类而不挂错。想明白这点，就会发现所谓前缀式其实并没有什么神秘的力量。假设我们为所谓chained方式引入额外的命名规约，其实也能解决问题。比如所有组件名首字母大写（就好像OO中的klass那样）。
+ > `.Btn.success`
+ > `.Alert.success`
+ > 看上去是不是就突然清晰了？
+
+### More variants...
+
+ - [SUIT CSS](https://suitcss.github.io/)
+ - [NORTH](https://github.com/north/north)
+ - ...
 
 
 ## Some interesting theories
@@ -508,7 +568,8 @@ So let's talk about CSS Frameworks...
 ### Style can be semantic
 
 ### Semantic classes is meaningless
- classes are neither semantic or insemantic; they are sensible or insensible! Stop stressing about ‘semantic’ class names and pick something sensible and futureproof
+
+ > classes are neither semantic or insemantic; they are sensible or insensible! Stop stressing about ‘semantic’ class names and pick something sensible and futureproof
  --- @csswizardry , Author of inuit CSS framework which follow OOCSS and BEM
 
 
@@ -565,9 +626,26 @@ So let's talk about CSS Frameworks...
 ### How to solve the problem?
 
  - Workflow: Information/Content/Semantic-driven VS UI-driven
+
  - Tools: CSS preprocessor
- - Do Components in Right Way -- New Web Components specs
- - CSS extensions -- We finally will use CSS variables, Sorry Bert
+
+   [Debunking the myths surrounding CSS Pre-Processors](http://www.cyber-duck.co.uk/blog/debunking-the-myths-surrounding-css-pre-processors-at-sxswi-2014-in-austin)
+
+ - Do Components in Right Way
+
+   [Custom Element]
+   [Shadow DOM]
+   [Scoped Style]
+   [CSS `unset` value]
+
+ - CSS extensions
+
+   We finally will use CSS variables, 
+
+   Sorry Bert.
+
+   [nextcss]
+
 
 ### NO semantic CSS
 
