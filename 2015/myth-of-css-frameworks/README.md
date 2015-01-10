@@ -2,21 +2,37 @@
 
 贺师俊 - @hax
 
+---
 
 ## About me
+--
 
- - Web Developer @ BaiXing.com
+ - Web Developer
+--
+   @ BaiXing.com
 
 ---
-   
+
+### Baixing.com
+
    We just announced **$100 million** D round 3 days ago.
 
 ---
    
+### Baixing.com
+
+   We just announced **$100 million** D round 3 days ago.
+
    So it's a good time to...
    
 ---
 
+### Baixing.com
+
+   We just announced **$100 million** D round 3 days ago.
+
+   So it's a good time to...
+   
    **JOIN US**
 
    (http://jobs.baixing.com)
