@@ -951,11 +951,11 @@ https://github.com/cssmagic/blog/issues/45#issuecomment-40124120
 
 ## Some interesting theories
 
---
+---
 
 ### Do NOT use HTML5 new semantic tags like header/footer/section/article/nav/aside...
 
---
+---
 
 ### Style can be semantic
 
@@ -974,7 +974,7 @@ See [semantic-ui](http://semantic-ui.com/)
 </div>
 ```
 
---
+---
 
 ### Semantic classes is meaningless
 
@@ -986,8 +986,29 @@ See [semantic-ui](http://semantic-ui.com/)
 ---
 
 
+### My Thoughts
 
-## Abstraction mechanism in CSS
+--
+
+ - [Meta CSS —— Anti Pattern的典型 (MetaCSS/ACSS is anti-pattern)](http://hax.iteye.com/blog/497338)
+
+ - [关于样式类 (Style Class can be avoid)](http://hax.iteye.com/blog/500015)
+
+ - [再谈某些所谓CSS最佳实践 (Recheck "Best Practices" around using class)](http://hax.iteye.com/blog/849826)
+
+ - [My Opinion about so-called "CSS Framework"](http://hax.iteye.com/blog/1706557)
+
+ - [In Defense of Descendant Selectors and ID Elements](http://www.zeldman.com/2012/11/21/in-defense-of-descendant-selectors-and-id-elements/) by Zeldman
+
+   [为后代选择器和ID选择器而辩护](http://hax.iteye.com/blog/1850571)
+
+ - [为什么会产生 .text-size30 {font-size:30px} (Why the smart guys use .text-size30 {font-size:30px})](http://www.zhihu.com/question/20658520/answer/15770608)
+
+ - [如何看待BEM (BEM is not a new thing)](http://www.zhihu.com/question/21935157/answer/19791915)
+
+---
+
+## Abstraction Mechanism in CSS
 
 ---
 
@@ -1024,7 +1045,7 @@ See [semantic-ui](http://semantic-ui.com/)
 ---
 
 
-### Conclusion
+### Truth
  
 --
 
@@ -1033,28 +1054,6 @@ See [semantic-ui](http://semantic-ui.com/)
 --
 
  So the only way to "reuse" style rules is "css class hook"
-
----
-
-### My Thoughts
-
---
-
- - [Meta CSS —— Anti Pattern的典型 (MetaCSS/ACSS is anti-pattern)](http://hax.iteye.com/blog/497338)
-
- - [关于样式类 (Style Class can be avoid)](http://hax.iteye.com/blog/500015)
-
- - [再谈某些所谓CSS最佳实践 (Recheck "Best Practices" around using class)](http://hax.iteye.com/blog/849826)
-
- - [My Opinion about so-called "CSS Framework"](http://hax.iteye.com/blog/1706557)
-
- - [In Defense of Descendant Selectors and ID Elements](http://www.zeldman.com/2012/11/21/in-defense-of-descendant-selectors-and-id-elements/) by Zeldman
-
-   [为后代选择器和ID选择器而辩护](http://hax.iteye.com/blog/1850571)
-
- - [为什么会产生 .text-size30 {font-size:30px} (Why the smart guys use .text-size30 {font-size:30px})](http://www.zhihu.com/question/20658520/answer/15770608)
-
- - [如何看待BEM (BEM is not a new thing)](http://www.zhihu.com/question/21935157/answer/19791915)
 
 ---
 
@@ -1092,6 +1091,30 @@ See [semantic-ui](http://semantic-ui.com/)
 
  - But we *definitely* need it
 
+
+---
+
+### Other factors
+
+ - 工作流程
+
+   团队、流程、工具等如果已经适应某种代码规范，改变该代码规范的成本也会很高。而成本更高的则是既有代码的维护。
+
+ - 组织架构
+
+   对于外包来说，每次页面可以都被视为一次性的工作，也就是说，设计本身需要持久可维护的需求根本就不存在，或者说对外包团队来说，为可维护性做额外努力在经济上完全是不合算的。
+
+ - 分工方式
+
+   不仅设计和实现（前端）被分离到了不同的部门，甚至前端本身还被割裂成“重构”和“前端”。仅仅考虑一个部门或一个团队的“效率”，和考虑整体“效率”是不同的。由于设计部门和前端部门的分离，导致沟通成本上升。设计和技术本就存在天然张力，加之部门间天然的扯皮倾向，因此双方都倾向于通过简化自己的对外接口来分清职责，减少沟通成本。于是设计部门的交付物就简化到PSD设计稿，但是PSD设计稿只是效果图，其在传递“设计意图”上是不够的。
+
+ - 绩效评估
+
+   在这样的分工架构下，往往同时引入KPI绩效之类的管理工具。一般而言，像“可维护性”本身就是非常难以被量化为KPI考核指标的。软件开发部门或可通过内部评估来达成，但是维护“设计意图”需要跨部门的沟通协作，所以基本上是mission impossible。至于说语义化、无障碍性等因素也很难真正得到重视从而列入考核指标。
+
+ - 忙
+
+   另外前端作为用户界面的最终实现者，确实最容易受到各种因素的影响，导致“天天很忙”。结果是前端部门也逐渐变为一种接近于以最快完成任务为优先导向的外包团队的方式在工作。在团队内部，也会倾向于单纯考虑开发效率——如在小鱼答案中写的“能有一个 .classname 即可使用别人的外观”——这是一个典型的以样式为中心的行为模式。且因为HTML和CSS反正都是前端写的，如果只看单个项目周期，样式分离的好处其实就是虚的——从而缺乏真正提高可维护性的动力。
 
 ---
 
