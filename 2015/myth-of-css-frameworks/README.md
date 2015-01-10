@@ -24,11 +24,11 @@
 
 --
    
-   **JOIN US**
+   *JOIN US*
 
 --
 
-   (http://jobs.baixing.com)
+   http://jobs.baixing.com
 ---
 
 ## About me
@@ -186,9 +186,9 @@ So let's talk about CSS Frameworks...
 --
    / Approach
 --
-   / Best Practices
---
    / Methodologies
+--
+   / Best Practices
 --
    / Architecture
 --
@@ -340,7 +340,7 @@ So let's talk about CSS Frameworks...
 
 --
 
- - Avoid the descendent selector (i.e. don’t use .sidebar h3)
+ - Avoid the descendent selector (i.e. don't use `.sidebar h3`)
 
 --
 
@@ -348,7 +348,7 @@ So let's talk about CSS Frameworks...
 
 --
 
- - Avoid attaching classes to elements in your stylesheet (i.e. don’t do div.header or h1.title)
+ - Avoid attaching classes to elements in your stylesheet (i.e. don't do `div.header` or `h1.title`)
 
 ---
 
@@ -448,7 +448,13 @@ So let's talk about CSS Frameworks...
 
 --
 
-  `body.article > #main > #content > #intro > p > b` => `.article #intro b`
+  `body.article > #main > #content > #intro > p > b`
+
+--
+  =>
+
+--
+  `.article #intro b`
 
 --
 
@@ -462,12 +468,14 @@ So let's talk about CSS Frameworks...
 --
 
   * classes are indexed
+
   * right to left
 
 --
   ---
 
   * Avoid tag selectors for common elements
+
   * Use class names as the right-most selector
 
 
@@ -489,7 +497,7 @@ So let's talk about CSS Frameworks...
 </nav>
 ```
 
-```css
+```CSS
 .l-inline li { 
     display: inline-block;
 }
