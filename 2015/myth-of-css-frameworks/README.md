@@ -891,9 +891,63 @@ https://github.com/cssmagic/blog/issues/45#issuecomment-40124120
 
  - ...
 
+---
+
+### Origin
+
+```xml
+<b:page>
+  <b:head>
+    <b:menu>
+      ...
+    </b:menu>
+    <e:column>
+      <b:logo/>
+    </e:column>
+    <e:column>
+      <b:search>
+        <e:input/>
+        <e:button>Search</e:button>
+      </b:search>
+    </e:column>
+    <e:column>
+      <b:auth>
+        ...
+      </b:auth>
+    <e:column>
+  </b:head>
+</b:page>
+```
 
 ---
- 
+
+```xslt
+<xsl:template match="b:menu">
+  <ul class="menu">
+    <xsl:apply-templates/>
+  </ul>
+</xsl:template>
+
+<xsl:template match="b:menu/e:item">
+  <li class="menu__item">
+    <xsl:apply-templates/>
+  </li>
+<xsl:template>
+```
+
+---
+
+### BEM Truth
+
+- 所谓的block（块），其实就是UI的构成单元，就是我们常说的widget或者component
+
+- Workflow是用xml或json写ui然后通过xslt或bemhtml转换到html，然后配合css
+
+- HTML/CSS只是实现UI的技术，相当于汇编语言
+
+- 其CSS命名约定其实是让编译后的汇编代码能比较容易对应回原始的UI组件的结构
+
+---
 
 ## Some interesting theories
 
@@ -904,6 +958,21 @@ https://github.com/cssmagic/blog/issues/45#issuecomment-40124120
 --
 
 ### Style can be semantic
+
+See [semantic-ui](http://semantic-ui.com/)
+
+```html
+<div class="ui stackable center aligned page grid">
+  <div class="fourteen wide column">
+    <h1 class="ui inverted icon header">
+      <img src="/images/icons/pen.png" class="icon image">
+      Simplify Your Codebase
+    </h1>
+    <p>Semantic's conventions are based around <a target="_blank"><b>common usage</b></a> and not prescription. Syntax borrows useful principles from natural language like plurality, tense, and word order so your code explains itself.</p>
+    <!-- Recursion Omitted (Turtles all the way down) !-->
+  </div>
+</div>
+```
 
 --
 
