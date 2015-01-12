@@ -1,7 +1,10 @@
 ---
 layout: default
 title: Myths of CSS Frameworks
-style:
+---
+
+<style>
+
 	html {
 		font-size: 125%;
 		line-height: 1.5;
@@ -20,7 +23,8 @@ style:
 		font-family: 'Ubuntu Mono';
 		line-height: 1.25;
 	}
----
+
+</style>
 
 <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
 
