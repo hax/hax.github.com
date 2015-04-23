@@ -1,0 +1,35 @@
+html {
+	line-height: 1.5;
+	font-family: Futura;
+}
+
+.remark-code, .remark-inline-code {
+	line-height: 1.25;
+}
+
+.remark-slide-content {
+	font-size: 2rem;
+}
+.remark-slide-content h1 {
+	font-size: 2em;
+}
+
+.fit {
+	text-align: initial;
+	width: -webkit-fit-content;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em
+}
+
+.disable-highlight .remark-code-span-highlighted {
+  background: inherit;
+}
+.disable-highlight .remark-code-span-highlighted:before, .remark-code-span-highlighted:after {
+  content: "`";
+}
