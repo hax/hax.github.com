@@ -151,18 +151,18 @@ export class Welcome{
 /... ？
 --
 
-  - [ES6 — The future of JS](http://johnhax.net/2014/es6-js-future/)(D2 2014)
+  - [ES6 — The future of JS](http://johnhax.net/2014/es6-js-future/) (D2 2014)
 --
 
     - Why we need module / class
-    - Why XXX feature is not only syntax sugar
+    - Why feature X is not only syntax sugar
     - script language (toy for amateurs) => real GENERAL programming language (tool for professionals)
     - PITL (programming-in-the-large)
 
 ---
 
 
-## BB is easy, show me the code
+## BB is easy, Show me the CODE
 
 --
   - [hax/es6-in-action](https://github.com/hax/es6-in-action)
