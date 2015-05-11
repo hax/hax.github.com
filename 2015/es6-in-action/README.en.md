@@ -15,17 +15,17 @@ class: middle, center
  - Will release in next month!
 --
 
- - Browsers have already support [many features](http://kangax.github.io/compat-table/es6/)
+ - Browsers already supported [many features](http://kangax.github.io/compat-table/es6/)
 --
 
  - Node.js: use `--harmony` to enable ES6 features
 --
 
- - io.js [ES6 enabled by default](https://iojs.org/en/es6.html)
+ - io.js: [ES6 enabled by default](https://iojs.org/en/es6.html)
 --
 
  - [Many ES6+ to ES5 transpilers](https://github.com/addyosmani/es6-tools),
-   covered all features even early drafts (stage 0)
+   covered all features even stage 0 features
 --
 
  - ES6 => ES7 => ES8
@@ -33,17 +33,17 @@ class: middle, center
 
 ---
 
-## New Web standards already adopted ES6
+## Web standards already adopted ES6
 --
 
   - [Service Workers](https://slightlyoff.github.io/ServiceWorker/spec/service_worker/),
     [Fetch](https://fetch.spec.whatwg.org/),
     [Streams](https://streams.spec.whatwg.org/),
     [Loader](https://whatwg.github.io/loader/), etc...
-    &emdash; Promise-based APIs
+    — Promise-based APIs
 --
 
-  - All async APIs will based on Promise in the future, See TAG [Promise Guide](http://www.w3.org/2001/tag/doc/promises-guide)
+  - All async APIs will based on Promise, See [Promises Guide](http://www.w3.org/2001/tag/doc/promises-guide) by TAG
 --
 
   - The [sample codes](https://streams.spec.whatwg.org/#creating-examples) of Fetch, Streams  specs are written in ES6
@@ -80,7 +80,7 @@ class MyAppComponent {
 
 ---
 
-## React<small> (0.13.x started support class) </small>
+## React<small> (0.13.x class syntax) </small>
 
 ```js
 export class Counter extends React.Component {
@@ -142,16 +142,14 @@ export class Welcome{
 ---
 
 
-## Why I should use ES5
---
-/6
+## Why I should use ES6
 --
 /7
 --
 /... ？
 --
 
-  - [ES6 &emdash; The future of JS](http://johnhax.net/2014/es6-js-future/)(D2 2014)
+  - [ES6 — The future of JS](http://johnhax.net/2014/es6-js-future/)(D2 2014)
 --
 
     - Why we need module / class
@@ -207,8 +205,8 @@ export class Welcome{
   - Symbol
   - Promise
   - Set/Map
-  - 内建对象的扩展
-  - ……
+  - New methods of built-in Objects
+  - …
 
 ---
 
