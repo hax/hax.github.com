@@ -33,3 +33,9 @@ p {
 .disable-highlight .remark-code-span-highlighted:before, .remark-code-span-highlighted:after {
   content: "`";
 }
+
+p.languages {
+	position: fixed;
+	right: 0.5em;
+	top: 0.5em;
+}
