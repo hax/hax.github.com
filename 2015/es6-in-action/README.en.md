@@ -18,14 +18,14 @@ class: middle, center
  - Browsers already supported [many features](http://kangax.github.io/compat-table/es6/)
 --
 
- - Node.js: use `--harmony` to enable ES6 features
+ - Node.js: use `--harmony` to enable ES6
 --
 
  - io.js: [ES6 enabled by default](https://iojs.org/en/es6.html)
 --
 
  - [Many ES6+ to ES5 transpilers](https://github.com/addyosmani/es6-tools),
-   covered all features even stage 0 features
+   supported even stage 0 features
 --
 
  - ES6 => ES7 => ES8
@@ -48,7 +48,7 @@ class: middle, center
 
   - The [sample codes](https://streams.spec.whatwg.org/#creating-examples) of Fetch, Streams  specs are written in ES6
 
-  - The reference implementations of Streams, Promise specs are written in ES6
+  - The reference implementations of new specs are written in ES6
 
 ---
 
@@ -142,7 +142,9 @@ export class Welcome{
 ---
 
 
-## Why I should use ES6
+## Why I should use ES5
+--
+/6
 --
 /7
 --
@@ -157,11 +159,13 @@ export class Welcome{
     - script language (toy for amateurs) => real GENERAL programming language (tool for professionals)
     - PITL (programming-in-the-large)
 
---
+---
 
-  - BB is easy, show me the code
+
+## BB is easy, show me the code
+
 --
-  [hax/es6-in-action](https://github.com/hax/es6-in-action)
+  - [hax/es6-in-action](https://github.com/hax/es6-in-action)
 
 ---
 
