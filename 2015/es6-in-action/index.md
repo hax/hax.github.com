@@ -14,22 +14,7 @@ class: center, middle
 document.querySelector('.languages').addEventListener('click', function (event) {
 	if (event.target.tagName.toUpperCase() === 'A') {
 		event.preventDefault()
-		history.pushState(
-			String(event.target.href),
-			event.target.title || event.target.textContent,
-			{
-				remark: true,
-				url: event.target.href,
-			}
-		)
 		openSlide(event.target.href)
-	}
-})
-
-addEventListener('popstate', function (event) {
-	console.log()
-	if (event.data && event.data.remark) {
-		openSlide(event.data.url)
 	}
 })
 
