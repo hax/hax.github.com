@@ -15,7 +15,11 @@ var slideshow
 document.querySelector('.languages').addEventListener('click', function (event) {
 	if (event.target.tagName.toUpperCase() === 'A') {
 		event.preventDefault()
-		slideshow = remark.create({sourceUrl: event.target.href})
+		try {
+			slideshow = remark.create({sourceUrl: event.target.href})
+		} catch (e) {
+			console.error(e)
+		}
 	}
 })
 </script>
