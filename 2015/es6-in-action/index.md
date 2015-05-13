@@ -11,11 +11,13 @@ class: center, middle
 </p>
 
 <script>
-document.querySelector('.languages').addEventListener('click', function (event) {
+var langChoices = document.querySelector('.languages')
+langChoices.addEventListener('click', function (event) {
 	if (event.target.tagName.toUpperCase() === 'A') {
 		event.preventDefault()
 		openSlide(event.target.href)
 	}
+	this.hidden = true
 })
 
 var slideshow
