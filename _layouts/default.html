@@ -10,8 +10,8 @@
 <!-- iOS features -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="apple-touch-icon" href="/images/icon.png">
-<link rel="apple-touch-icon-precomposed" href="/images/icon.png">
+<!--<link rel="apple-touch-icon" href="/images/icon.png">
+<link rel="apple-touch-icon-precomposed" href="/images/icon.png">-->
 
 {% if page.style %}
 <style>
@@ -25,6 +25,11 @@
 -->
 {% endif %}
 
+{% if page.slide == remark %}
+<link rel="stylesheet" href="／remark-custom.css">
+<script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+{% endif %}
+
 {% if page.head %}
 {{ page.head }}
 {% endif %}
@@ -34,8 +39,6 @@
 ga('create', 'UA-1882727-3', 'auto');
 ga('send', 'pageview');
 </script>
-
-<script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
 
 </head>
 <body>

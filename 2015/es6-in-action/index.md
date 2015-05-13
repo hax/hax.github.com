@@ -1,11 +1,9 @@
 ---
 layout: default
 title: ES6 in Action
+slide: remark
 class: center, middle
 ---
-
-<link rel="stylesheet" href="remark-custom.css">
-<script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
 
 <p class="languages">
 	<a href="README.en.md" hreflang="en">English</a> |
