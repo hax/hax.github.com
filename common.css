@@ -1,4 +1,4 @@
-body {
+html {
 	font-family:
 		'XinGothic',
 		'Hiragino Sans GB',
@@ -8,9 +8,11 @@ body {
 		'Microsoft Yahei',
 		sans-serif;
 	line-height: 1.5;
-
+}
+body {
 	max-width: 780px;
 	margin: 0.5em auto 3.5em;
+	padding: 0.5em;
 }
 a {
 	text-decoration: none;
