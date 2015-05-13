@@ -15,7 +15,7 @@ document.querySelector('.languages').addEventListener('click', function (event) 
 	if (event.target.tagName.toUpperCase() === 'A') {
 		event.preventDefault()
 		history.pushState(
-			event.target.href,
+			String(event.target.href),
 			event.target.title || event.target.textContent,
 			{
 				remark: true,
@@ -27,6 +27,7 @@ document.querySelector('.languages').addEventListener('click', function (event) 
 })
 
 addEventListener('popstate', function (event) {
+	console.log()
 	if (event.data && event.data.remark) {
 		openSlide(event.data.url)
 	}
