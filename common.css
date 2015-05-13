@@ -1,16 +1,16 @@
 body {
 	font-family:
-		'XinGothic', 
-		'Hiragino Sans GB', 
-		'WenQuanYi Micro Hei', 
-		'Droid Sans', 
-		'Hei SC', 
-		'Microsoft Yahei', 
+		'XinGothic',
+		'Hiragino Sans GB',
+		'WenQuanYi Micro Hei',
+		'Droid Sans',
+		'Hei SC',
+		'Microsoft Yahei',
 		sans-serif;
 	line-height: 1.5;
 
 	max-width: 780px;
-	margin: 0.5em auto 2em;
+	margin: 0.5em auto 3em;
 }
 a {
 	text-decoration: none;
@@ -20,7 +20,7 @@ body>footer {
 	left: 0; right: 0; bottom: 0;
 	text-align: center;
 	font-size: smaller;
-	color: white;
+	color: silver;
 	background: gray;
 	background: rgba(0, 0, 0, 0.75);
 }

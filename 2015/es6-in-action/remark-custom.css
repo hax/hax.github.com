@@ -1,6 +1,5 @@
-html {
-	line-height: 1.5;
-	font-family: Futura;
+body {
+	max-width: auto;
 }
 
 .remark-code, .remark-inline-code {
