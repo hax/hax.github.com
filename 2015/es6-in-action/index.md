@@ -14,10 +14,10 @@ class: center, middle
 var langChoices = document.querySelector('.languages')
 langChoices.addEventListener('click', function (event) {
 	if (event.target.tagName.toUpperCase() === 'A') {
+		this.hidden = true
 		event.preventDefault()
 		openSlide(event.target.href)
 	}
-	this.hidden = true
 })
 
 var slideshow
