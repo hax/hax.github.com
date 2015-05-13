@@ -1,5 +1,6 @@
 .remark-container {
 	max-width: none;
+	height: calc(100% - 4em)
 }
 
 .remark-code, .remark-inline-code {
@@ -33,9 +34,9 @@ p {
   content: "`";
 }
 
-p.languages {
+/*p.languages {
 	position: fixed;
 	right: 0.5em;
 	top: 0.5em;
 	z-index: 10;
-}
+}*/
