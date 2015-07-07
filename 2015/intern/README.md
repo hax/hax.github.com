@@ -6,6 +6,7 @@
 
 ## 什么是前端
 
+--
  - HTML + CSS + JS ?
 
 --
@@ -21,13 +22,24 @@
 
 ## 前端工程师
 
+--
+ - 实现用户界面和产品功能，还原设计
+
+--
  - 企业产品和服务的Web用户体验的责任者
 	 http://www.zhihu.com/question/19589966/answer/12756480
 
+---
+
 ## 产品和应用
 
+--
  0. Web site: http://www.baixing.com/
+
+--
  0. Mobile Web site: http://www.baixing.com/m/
+
+--
  0. 各业务线产品
 
 ---
@@ -49,4 +61,4 @@
 ## 实习项目
  - 发布图片上传优化
  - 发帖质量改进（baixing/Notes#99）
- - ErrorBoard改进
+ - 其他项目
