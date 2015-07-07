@@ -7,10 +7,13 @@
 ## 什么是前端
 
  - HTML + CSS + JS ?
+
 --
  - HTML5 + CSS3 + ES6 ?
+
 --
  - 基于 Web platform 构建互联网应用和服务的用户界面
+
 --
  - 最后一公里
 
