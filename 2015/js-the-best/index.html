@@ -1,0 +1,24 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<style>
+		.slide {
+			position: fixed;
+			left: 0; right: 0;
+			top: 0;
+			visibility: hidden;
+		}
+		.current.slide {
+			visibility: visible;
+		}
+		.line {
+			width: -webkit-fit-content;
+			width: fit-content;
+			margin: auto;
+		}
+		.line.comma ~ .line {
+			visibility: hidden;
+		}
+	</style>
+	<script src="index.js"></script>
+</head>
