@@ -217,7 +217,7 @@ JS has changed the world
 
 Other keypoints
 
-Aync
+Async
 Event driven
 
 NO standard library,
