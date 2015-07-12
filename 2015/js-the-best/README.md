@@ -346,7 +346,7 @@ in the future
 
 My expectation:
 JavaScript will be
-as FASTER as Java
+as FAST as Java
 
 Sorry,
 Ruby
