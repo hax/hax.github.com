@@ -107,18 +107,17 @@ function pushState() {
 	history.pushState(slideIndex, '', `#${slideIndex}`)
 }
 
-const forEach = Array.prototype.forEach
 function adjustSlide() {
 	const curr = current()
 
 	curr.style.visibility = 'hidden'
 	curr.style.transform = null
-	curr.childNodes::forEach(e => e.style.fontSize = null)
+	Array.from(curr.childNodes).forEach(e => e.style.fontSize = null)
 
 	setTimeout(() => {
 		const vw = window.innerWidth * 0.8, vh = window.innerHeight * 0.8
 		// console.log(vw, vh)
-		curr.childNodes::forEach(e => {
+		Array.from(curr.childNodes).forEach(e => {
 			// console.log(e.clientWidth, vw)
 			e.style.fontSize = vw / e.clientWidth + 'em'
 			// console.log(e.clientWidth, vw)
