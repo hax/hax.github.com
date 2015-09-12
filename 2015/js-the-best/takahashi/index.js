@@ -27,7 +27,19 @@ function createSlides(slides) {
 				img.src = m[2]
 				lineDiv.appendChild(img)
 			} else {
-				lineDiv.appendChild(document.createTextNode(line))
+				const tokens = line.split(/(`|\*\*|\*|~~)(?=\S)(.*\S)\1/g)
+				for (let i = 0; i < tokens.length; ++i) {
+					let node
+					switch (tokens[i]) {
+						case '`': node = document.createElement('code'); break
+						case '**': node = document.createElement('strong'); break
+						case '*': node = document.createElement('em'); break
+						case '~~': node = document.createElement('s'); break
+						default: node = document.createTextNode(tokens[i])
+					}
+					if (node.nodeType === 1) node.appendChild(document.createTextNode(tokens[++i]))
+					lineDiv.appendChild(node)
+				}
 			}
 			slideDiv.appendChild(lineDiv)
 		})
