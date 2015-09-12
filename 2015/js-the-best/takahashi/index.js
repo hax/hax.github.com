@@ -1,3 +1,5 @@
+'use strict'
+
 fetch('README.md').then(res => res.text())
 	.then(parseContent)
 	.then(createSlides)
