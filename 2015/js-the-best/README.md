@@ -1,6 +1,8 @@
 # JavaScript
   The World's Best
 	Programming Language
+  ________________________________
+  （观赏本 slide 请使用 Chrome 45+ 等支持 ES6 新特性的浏览器）
 
 by Hax
 
@@ -11,29 +13,9 @@ by Hax
 百姓网
 www.baixing.com
 
-like Craigslist
-58赶集合并后自动排名上升一位
-
-冯大辉
-小道消息
-Fenng's Gossip
-
-昨天爆出百姓网获百度投资，我来补充些我知道的消息。
-百姓网除了接收百度投资之外，已完成了
-拆除 VIE，预计最快 10 月份就回归国内新三板上市，
-估值超过 10 亿美金。
-此外，百姓网公司员工数非常少(小公司的好处之一)，
-基本是全员持股，又有一波百万富翁要诞生了。
-
-There is a romur that my company will be listed
-And the value of baixing.com =
-$1,000,000,000
-
-无可
-奉告
-NO COMMENT
-
-AND
+分类信息,
+58赶集合并后自动排名上升一位,
+将于年底上市新三板
 
 Send your resume to
 简历请投
@@ -43,29 +25,8 @@ github: @hax
 zhihu: 贺师俊
 weibo: @johnhax
 
-The style of this slide is inspired by
 Takahashi Method
 高橋流簡報法
-
-Who NOT understand
-中文
-
-SORRY!
-是时候让你们体会我十几年来看全英文技术文档的感受了
-
-GOOD NEWS
-
-You can read MOST slide
-just like this page
-
-AND
-
-Help you to learn Chinese,
-然并卵
-
-READY?
-
-GO!
 
 ## 1st
 
@@ -130,7 +91,7 @@ Long long ago...
 By Douglas Crockford,
 I don't like him...
 
-What DC's "most misunderstand"
+What DC's "most misunderstood"
 really mean?
 
 JavaScript is ALREADY
@@ -165,8 +126,8 @@ Other opinions of DC which I against,
 JS do not need Class,
 JS do not need Module,
 JS do not need `this` keyword,
-JS do not need Object.create(),
-(Object.create is invented by DC),
+JS do not need `Object.create()`,
+(`Object.create` is invented by DC),
 JS do not need XXX
 
 DC: JS is GOOD enough
@@ -182,10 +143,7 @@ And you have
 no choice
 If you r a web front-end engineer
 
-Some explanations...
-(Sorry who do not understand 中文)
-
-In Brief:,
+For Example:,
 No module ->,
 each framework invent own wheel ->,
 community is break ->,
@@ -209,6 +167,9 @@ thing happen...
 Node.js
 
 164,234
+packages
+
+183,668
 packages
 
 With CommonJS
@@ -240,6 +201,9 @@ fix data structure
 
 for...of,
 fix for...in
+
+async/await
+fix callback hell
 
 More new features...
 
@@ -354,10 +318,12 @@ Ruby
 JS as a
 Platform
 
-Everything can be written in JS
-will be written in JS eventually
+“Everything that *can* be
+written in JavaScript *will*
+eventually be written in
+JavaScript”. — Atwood’s law
 
-The live and the death
+The birth & death
 of JavaScript
 
 WebAssembly
