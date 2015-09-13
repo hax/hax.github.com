@@ -361,3 +361,4 @@ The World's Best
 Programming Language
 
 Thank you!
+http://johnhax.net/2015/js-the-best
