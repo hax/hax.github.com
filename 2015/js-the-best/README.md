@@ -249,7 +249,16 @@ find a good BALANCE
 between practice and theory
 
 Sorry,
+过于高冷的,
 Haskell
+
+Sorry,
+被诅咒的,
+Lisp
+
+Lisp是如此强大，以至于
+在其他编程语言中的技术问题，
+到了Lisp中变成了社会问题
 
 Compatibility
 
@@ -313,7 +322,7 @@ JavaScript will be
 as FAST as Java
 
 Sorry,
-Ruby
+Ruby...
 
 JS as a
 Platform
