@@ -1,6 +1,7 @@
 ---
 layout: default
 title: JavaScript — The World's Best Programming Language
+lang: zh-cmn-Hans-x-hax
 ---
 
 ## JavaScript — The World's Best Programming Language
