@@ -2,9 +2,31 @@
   The World's Best
 	Programming Language
   ________________________________
-  （观赏本 slide 请使用 Chrome 45+ 等支持 ES6、Fetch API 等新特性的浏览器）
+  （观赏本 slide 请使用 Chrome 45+ 等支持 ES6 新特性的浏览器）
 
 by Hax
+
+## Introduction of
+   my company
+	 and myself
+
+百姓网
+www.baixing.com
+
+分类信息,
+58赶集合并后自动排名上升一位,
+将于年底上市新三板
+
+Send your resume to
+简历请投
+heshijun@baixing.com
+
+github: @hax
+zhihu: 贺师俊
+weibo: @johnhax
+
+Takahashi Method
+高橋流簡報法
 
 ## 1st
 
@@ -31,40 +53,6 @@ But
 
 我就是认真
 it's not about victory, it's all about attitude
-
-最好 ≠ 适用所有场景
-
-不设限
-打开思路
-
-欢迎激烈争论
-
-黑 ≠ 无脑黑
-
-摆事实
-讲道理
-
-## Introduction of
-   my company
-	 and myself
-
-百姓网
-www.baixing.com
-
-分类信息,
-58赶集合并后自动排名上升一位,
-将于年底上市新三板
-
-Send your resume to
-简历请投
-heshijun@baixing.com
-
-github: @hax
-zhihu: 贺师俊
-weibo: @johnhax
-
-Takahashi Method
-高橋流簡報法
 
 The options of "Best PL"
 
@@ -182,9 +170,6 @@ Node.js
 packages
 
 183,668
-packages
-
-195,117
 packages
 
 With CommonJS
