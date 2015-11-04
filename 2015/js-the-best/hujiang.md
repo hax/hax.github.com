@@ -207,7 +207,7 @@ fix callback hell
 
 More new features...
 
-Language features is
+Language features are
 Important
 for productivity
 
