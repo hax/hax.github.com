@@ -1,9 +1,13 @@
 'use strict'
+takahashi(location.search.slice(1) + '.md')
 
-fetch('README.md').then(res => res.text())
-	.then(parseContent)
-	.then(createSlides)
-	.then(startPresentation)
+function takahashi(markdownUrl) {
+	fetch(markdownUrl)
+		.then(res => res.text())
+		.then(parseContent)
+		.then(createSlides)
+		.then(startPresentation)
+}
 
 function parseContent(text) {
 	return text.split(/\n{2,}/).map(slideText => slideText.split(/\n/))
