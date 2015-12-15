@@ -1,0 +1,4 @@
+- 深JS版（2015年7月，20分钟） [Video link](http://v.youku.com/v_show/id_XMTMwMzI5ODc4MA==.html) [Slide](slide?v=shenjs)
+- 沪江版（2015年9月，90分钟） [Video link (118:30 ~ 207:20)](http://www.cctalk.com/course/152391648137/) [Slide](slide?v=hujiang)
+- QCon版（2015年11月，45分钟） 视频尚未发布 [Slide](slide?v=qcon)
+- SDCC版（2015年12月，45分钟） 视频尚未发布 [Slide](slide?v=sdcc)
