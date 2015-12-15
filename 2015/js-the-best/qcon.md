@@ -1,3 +1,7 @@
+Test
+
+![QCongShanghai 2015](QCon0.jpg)
+
 # JavaScript
   The World's Best
 	Programming Language
@@ -300,7 +304,7 @@ in the past
 
 With Babel
 
-most hard to upgrade ->,
+hardest to upgrade ->,
 Always use
 latest feature!
 
@@ -369,15 +373,15 @@ Browser
 The most active platform:,
 Node.js
 
-The most largest companies:,
+The largest companies:,
 Google
 Microsoft
 Apple
 
 The most experienced experts
-in the language committee
-
-The most largest developers
+in the language committee,
+-------------------- and --------------------,
+The largest developers
 Community
 
 JavaScript
@@ -385,4 +389,4 @@ The World's Best
 Programming Language
 
 Thank you!
-http://johnhax.net/2015/js-the-best
+http://johnhax.net/2015/js-the-best/
