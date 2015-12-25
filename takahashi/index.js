@@ -1,4 +1,5 @@
-takahashi(location.search.slice(1) + '.md')
+const mdSource = location.search.slice(1) || 'README'
+takahashi(mdSource + '.md')
 
 function takahashi(markdownUrl) {
 	fetch(markdownUrl)
