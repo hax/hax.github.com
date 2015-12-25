@@ -1,4 +1,3 @@
-'use strict'
 takahashi(location.search.slice(1) + '.md')
 
 function takahashi(markdownUrl) {
@@ -22,16 +21,24 @@ function createSlides(slides) {
 			const lineDiv = document.createElement('div')
 			lineDiv.className = 'line'
 			line = line.trim().replace(/^#+\s+/, '')
-			if (line.slice(-1) === ',') {
+			if (line.endsWith(',')) {
 				line = line.slice(0, -1)
 				lineDiv.classList.add('comma')
 			}
-			const m = /^!\[(.*?)\]\((.*?)\)/.exec(line)
+			const m = /^(!?)\[(.*?)\]\((.*?)\)/.exec(line)
 			if (m) {
-				const img = document.createElement('img')
-				img.alt = m[1]
-				img.src = m[2]
-				lineDiv.appendChild(img)
+				if (m[1]) {
+					const img = document.createElement('img')
+					img.alt = m[2]
+					img.src = m[3]
+					lineDiv.classList.add('replaced')
+					lineDiv.appendChild(img)
+				} else {
+					const a = document.createElement('a')
+					a.textContent = m[2]
+					a.href = m[3]
+					lineDiv.appendChild(a)
+				}
 			} else {
 				const tokens = line.split(/(`|\*\*|\*|~~)(?=\S)(.*\S)\1/g)
 				for (let i = 0; i < tokens.length; ++i) {
@@ -54,15 +61,21 @@ function createSlides(slides) {
 
 function startPresentation() {
 	initSlide()
+	window.onhashchange = initSlide
 	window.onpopstate = e => {
 		showSlide(parseInt(e.state))
 	}
 	window.onkeydown = kbEvent => {
-		const key = kbEvent.key || kbEvent.keyIdentifier
-		// console.log(key)
-		switch (key) {
-			case 'Left': prevSlide(); break
-			case 'Right': nextSlide(); break
+		if (kbEvent.key) {
+			switch (kbEvent.key) {
+				case 'ArrowLeft': prevSlide(); break
+				case 'ArrowRight': nextSlide(); break
+			}
+		} else if (kbEvent.keyIdentifier) {
+			switch (kbEvent.keyIdentifier) {
+				case 'Left': prevSlide(); break
+				case 'Right': nextSlide(); break
+			}
 		}
 	}
 }
@@ -79,7 +92,7 @@ function showSlide(i) {
 			const curr = current()
 			if (curr) curr.classList.toggle('current')
 			slide.classList.toggle('current')
-			adjustSlide()
+			adjustCurrentSlide()
 			return true
 		}
 		return false
@@ -104,7 +117,7 @@ function nextSlide() {
 		curr.classList.toggle('current')
 	}
 	pushState()
-	adjustSlide()
+	adjustCurrentSlide()
 }
 
 function prevSlide() {
@@ -117,7 +130,7 @@ function prevSlide() {
 		prev.classList.toggle('current')
 	}
 	pushState()
-	adjustSlide()
+	adjustCurrentSlide()
 }
 
 let slideIndex
@@ -125,25 +138,52 @@ function pushState() {
 	history.pushState(slideIndex, '', `#${slideIndex}`)
 }
 
-function adjustSlide() {
-	const curr = current()
+function adjustCurrentSlide() {
+	adjustSlide(current(), viewportSize())
+}
 
+function viewportSize() {
+	return {width: window.innerWidth, height: window.innerHeight}
+}
+
+function isReplacedElement(e) {
+	return e.matches('img, canvas, video, embed, iframe, object')
+		&& e.width != 0 && e.height != 0
+}
+
+function adjustSlide(curr, size) {
 	curr.style.visibility = 'hidden'
 	curr.style.transform = null
-	Array.from(curr.childNodes).forEach(e => e.style.fontSize = null)
-
-	setTimeout(() => {
-		const vw = window.innerWidth * 0.8, vh = window.innerHeight * 0.8
-		// console.log(vw, vh)
-		Array.from(curr.childNodes).forEach(e => {
-			// console.log(e.clientWidth, vw)
-			e.style.fontSize = vw / e.clientWidth + 'em'
-			// console.log(e.clientWidth, vw)
-		})
-		const scale = Math.min(vh / curr.clientHeight, 1)
-		const dy = (vh - curr.clientHeight) / 2 / scale
-		curr.style.transform = `scale(${scale}) translate(0, ${dy}px)`
-		curr.style.visibility = null
-		//console.log(vh, curr.clientHeight, vh / curr.clientHeight, curr.style.transform)
+	Array.from(curr.childNodes).forEach(e => {
+		if (e.classList.contains('replaced')) e.style.width = size.width + 'px'
+		else {
+			e.style.fontSize = '1rem'
+			e.style.fontSize = `${size.width / e.clientWidth / 2}rem`
+		}
 	})
+	const scale = Math.min(size.height / curr.clientHeight, size.width / curr.clientWidth)
+	// console.log(window.devicePixelRatio, scale, size, {width: curr.clientWidth, height: curr.clientHeight}, curr.textContent)
+	const dx = (size.width - curr.clientWidth * scale) / 2
+	const dy = (size.height - curr.clientHeight * scale) / 2
+	curr.style.transform = `translate(${dx}px, ${dy}px) scale(${scale})`
+	curr.style.visibility = null
+	//console.log(vh, curr.clientHeight, vh / curr.clientHeight, curr.style.transform)
+}
+
+window.onresize = adjustCurrentSlide
+
+matchMedia('print').onchange = mql => {
+	if (mql.matches) {
+		// console.log(window.devicePixelRatio,
+		// 	window.innerWidth, window.innerHeight,
+		// 	window.outerWidth, window.outerHeight,
+		// 	document.documentElement.clientWidth, document.documentElement.clientHeight,
+		// 	document.documentElement.offsetWidth, document.documentElement.offsetHeight,
+		// 	document.body.clientWidth, document.body.clientHeight,
+		// 	document.body.offsetWidth, document.body.offsetHeight)
+		// const pageBox = document.querySelector('#page-box')
+		// pageBox.style.width = window.innerWidth + 'px'
+		// pageBox.style.height = window.innerHeight + 'px'
+		Array.from(document.querySelectorAll('.slide')).forEach(e => adjustSlide(e, viewportSize()))
+	}
 }
