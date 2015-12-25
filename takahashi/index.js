@@ -1,3 +1,5 @@
+'use strict' // for Chrome 47-
+
 const mdSource = location.search.slice(1) || 'README'
 takahashi(mdSource + '.md')
 
