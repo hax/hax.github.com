@@ -20,10 +20,37 @@ function createSlides(slides) {
 		const slideDiv = document.createElement('div')
 		slideDiv.className = 'slide'
 		document.body.appendChild(slideDiv)
+		let container = slideDiv, listType = null
+		const listPatterns = {
+			'*': /^\*\s+/,
+			'-': /^-\s+/,
+			'#': /^\d\.\s+/,
+		}
 		slide.forEach(line => {
-			const lineDiv = document.createElement('div')
-			lineDiv.className = 'line'
 			line = line.trim().replace(/^#+\s+/, '')
+			if (listType) {
+				if (listPatterns[listType].test(line)) {
+					line = line.replace(listPatterns[listType], '')
+				} else {
+					listType = null
+					container = slideDiv
+				}
+			}
+			if (!listType) {
+				for (const t of Object.keys(listPatterns)) {
+					const re = listPatterns[t]
+					if (re.test(line)) {
+						listType = t
+						container = document.createElement(t === '#' ? 'ol' : 'ul')
+						container.className = 'line'
+						slideDiv.appendChild(container)
+						line = line.replace(listPatterns[listType], '')
+						break
+					}
+				}
+			}
+			const lineDiv = document.createElement(listType ? 'li' : 'div')
+			if (!listType) lineDiv.className = 'line'
 			if (line.endsWith(',')) {
 				line = line.slice(0, -1)
 				lineDiv.classList.add('comma')
@@ -57,7 +84,7 @@ function createSlides(slides) {
 					lineDiv.appendChild(node)
 				}
 			}
-			slideDiv.appendChild(lineDiv)
+			container.appendChild(lineDiv)
 		})
 	})
 }
