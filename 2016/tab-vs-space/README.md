@@ -175,6 +175,16 @@ IDE/编辑器
 
 然并卵
 
+- Visual Studio（扩展，by 原作者）
+- Code Browser（Windows only）
+- jEdit
+- Golang（tabwriter package）
+- Sublime（插件，“lite”版）
+- ACE（“lite”版）
+
+正确实现 Elastic Tabstops
+需要动编辑器核心
+
 当前最佳实践
 Use TAB for Indentation
 Use Blanks for Alignment
@@ -197,7 +207,7 @@ GitHub 插件
 [hax/etab](https://github.com/hax/etab)
 
 Atom 插件
-[hax/atom-elastic-tabstops](https://github.com/hax/atom-elastic-tabstops)
+[hax/atom-elastic-tabstops](https://atom.io/packages/elastic-tabstops)
 
 不清楚和有争议的可以@我
 github: @hax
