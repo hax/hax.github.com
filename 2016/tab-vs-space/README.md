@@ -1,20 +1,52 @@
-# TAB vs SPACE
+圣战一触即发
+选择你的阵营
+
+A. 信仰坚定纯正的Tab党,
+B. 虽然我用空格，但我是被迫的,
+C. 信仰坚定纯正、完全志愿加入的空格党,
+D. 投票是匿名的，我Tab和空格混着用
+
+神秘的程序员们
+![coderstory](indent-style/coderstory-qr)
+coderstory
+
+# 程序员的圣战之
+  TAB vs SPACE
 	________________________________
 	（观赏本 slide 请使用 Chrome 45+ 等支持 ES6、Fetch API 等新特性的浏览器）
 
 by Hax
 
 
-今年做了很多演讲，比如,
+## Introduction of
+   my company
+	 and myself
+
+百姓网
+www.baixing.com
+
+分类信息,
+58赶集合并后自动排名上升一位,
+上周在新三板挂牌
+
+Send your resume to
+简历请投
+heshijun@baixing.com
+
+github: @hax
+zhihu: 贺师俊
+weibo: @johnhax
+
+去年做了很多演讲，比如,
 JavaScript: The World's Best
 Programming Language
 
 争议性
 
+;
+
 回避,
 嘲笑
-
-值得讨论
 
 Coding Style
 
@@ -40,9 +72,6 @@ Trivial
 	那么为什么要有
 	Coding Style？
 
-积沙成塔
-集腋成裘
-
 Programming-in-the-large
 
 个人作坊 => 团队协作,
@@ -50,12 +79,6 @@ Programming-in-the-large
 
 一个人随便 => 一群人痛苦,
 一夜的潇洒 => 一生的痛苦
-
-一屋不扫
-何以扫天下
-
-clean code
-意识和习惯
 
 解决 trivial 问题
 是为了更好的集中精力解决
@@ -70,11 +93,6 @@ code review
 
 ![](indent-style/0)
 ![](indent-style/1)
-
-A. 信仰鉴定纯正的Tab党
-B. 虽然我用空格，但我是被迫的
-C. 信仰鉴定纯正、完全志愿加入的空格党
-D. 投票是匿名的，我Tab和空格混着用
 
 ![](indent-style/2)
 
@@ -203,11 +221,19 @@ No Alignment
 推动Elastic Tabstops
 获得更多IDE/编辑器的支持
 
-GitHub 插件
+浏览器用户脚本 for GitHub
 [hax/etab](https://github.com/hax/etab)
 
 Atom 插件
 [hax/atom-elastic-tabstops](https://atom.io/packages/elastic-tabstops)
+
+VSC 扩展
+正在开发中...
+
+A. 信仰坚定纯正的Tab党,
+B. 虽然我用空格，但我是被迫的,
+C. 信仰坚定纯正、完全志愿加入的空格党,
+D. 投票是匿名的，我Tab和空格混着用
 
 不清楚和有争议的可以@我
 github: @hax
