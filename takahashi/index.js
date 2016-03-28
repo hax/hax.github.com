@@ -114,6 +114,18 @@ function startPresentation() {
 			}
 		}
 	}
+	const controls = document.createElement('div')
+	controls.classList.add('controls')
+	controls.style.position = 'fixed'
+	controls.style.bottom = '0'
+	controls.style.left = '0'
+	controls.style.right = '0'
+	controls.innerHTML = '<button class="prev" style="width: 24%">&lt;</button><button class="next" style="width: 75%">&gt;</button>'
+	document.body.appendChild(controls)
+	controls.addEventListener('click', event => {
+		if	(event.target.matches('button.next'))	nextSlide()
+		else if	(event.target.matches('button.prev'))	prevSlide()
+	})
 }
 
 function initSlide() {
