@@ -1,4 +1,10 @@
+void function() {
 'use strict' // for Chrome 47-
+
+if (typeof fetch !== 'function') {
+	alert('Sorry, your browser is too low!')
+	return
+}
 
 const mdSource = location.search.slice(1) || 'README'
 takahashi(mdSource + '.md')
@@ -217,3 +223,5 @@ matchMedia('print').onchange = mql => {
 		Array.from(document.querySelectorAll('.slide')).forEach(e => adjustSlide(e, viewportSize()))
 	}
 }
+
+}()
