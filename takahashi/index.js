@@ -104,13 +104,13 @@ function startPresentation() {
 	window.onkeydown = kbEvent => {
 		if (kbEvent.key) {
 			switch (kbEvent.key) {
-				case 'ArrowLeft': prevSlide(); break
-				case 'ArrowRight': nextSlide(); break
+				case 'ArrowRight':	case 'ArrowDown':	nextSlide();	break
+				case 'ArrowLeft':	case 'ArrowUp':	prevSlide();	break
 			}
 		} else if (kbEvent.keyIdentifier) {
 			switch (kbEvent.keyIdentifier) {
-				case 'Left': prevSlide(); break
-				case 'Right': nextSlide(); break
+				case 'Right':	case 'Down':	nextSlide();	break
+				case 'Left':	case 'Up':	prevSlide();	break
 			}
 		}
 	}
