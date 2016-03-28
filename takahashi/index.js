@@ -120,7 +120,9 @@ function startPresentation() {
 	controls.style.bottom = '0'
 	controls.style.left = '0'
 	controls.style.right = '0'
-	controls.innerHTML = '<button class="prev" style="width: 24%">&lt;</button><button class="next" style="width: 75%">&gt;</button>'
+	controls.style.color = 'gray'
+	controls.style.opacity = '0.6'
+	controls.innerHTML = '<button class="prev" style="width: 38%; height: 48px">&lt;</button><button class="next" style="width: 61%; height: 48px">&gt;</button>'
 	document.body.appendChild(controls)
 	controls.addEventListener('click', event => {
 		if	(event.target.matches('button.next'))	nextSlide()
