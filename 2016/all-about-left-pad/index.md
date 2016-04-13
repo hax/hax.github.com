@@ -24,7 +24,7 @@ lang: zh-cmn-Hans-x-hax
 - js/nodejs/npm/前端…… 生态是不是有问题？
 - ……
 
-届时也欢迎大家参与讨论。
+届时也欢迎大家参与讨论。如有更多问题，可[在此开 issue](https://github.com/hax/all-about-left-pad/issues)。
 
 
 [1]: http://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos/
