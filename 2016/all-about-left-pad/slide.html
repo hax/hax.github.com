@@ -1,0 +1,53 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Slide</title>
+<style>
+	html {
+		font-family: Noto Sans CJK SC, PingFang SC, Hiragino Sans GB;
+	}
+	strong {
+		color: red
+	}
+	.slide {
+		-webkit-transform-origin: 0 0;
+		transform-origin: 0 0;
+	}
+	.line {
+		/*width: -webkit-fit-content;*/
+		width: fit-content;
+		margin: auto;
+	}
+	.replaced img, .replaced canvas, .replaced video, .replaced embed, .replaced iframe, .replaced object {
+		width: 100%;
+	}
+	a {
+		color: blue;
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+</style>
+<style media="screen">
+	.slide {
+		position: fixed;
+		left: 0; top: 0;
+		visibility: hidden;
+	}
+	.current.slide {
+		visibility: visible;
+	}
+	.line.comma ~ .line {
+		visibility: hidden;
+	}
+</style>
+<style media="print">
+	html, body {
+		height: 100%;
+	}
+	.slide {
+		page-break-after: always;
+		outline: 1px dotted navy;
+	}
+</style>
+<script src="../../takahashi/index.js"></script>
