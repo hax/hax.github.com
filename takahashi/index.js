@@ -96,6 +96,21 @@ function createSlides(slides) {
 }
 
 function startPresentation() {
+	const controls = document.createElement('div')
+	controls.classList.add('controls')
+	controls.style.position = 'fixed'
+	controls.style.bottom = '0'
+	controls.style.left = '0'
+	controls.style.right = '0'
+	controls.style.color = 'gray'
+	controls.style.opacity = '0.6'
+	controls.innerHTML = '<button class="prev" style="width: 38%; height: 48px">&lt;</button><button class="next" style="width: 61%; height: 48px">&gt;</button>'
+	document.body.appendChild(controls)
+	controls.addEventListener('click', event => {
+		if	(event.target.matches('button.next'))	nextSlide()
+		else if	(event.target.matches('button.prev'))	prevSlide()
+	})
+
 	initSlide()
 	window.onhashchange = initSlide
 	window.onpopstate = e => {
@@ -114,20 +129,6 @@ function startPresentation() {
 			}
 		}
 	}
-	const controls = document.createElement('div')
-	controls.classList.add('controls')
-	controls.style.position = 'fixed'
-	controls.style.bottom = '0'
-	controls.style.left = '0'
-	controls.style.right = '0'
-	controls.style.color = 'gray'
-	controls.style.opacity = '0.6'
-	controls.innerHTML = '<button class="prev" style="width: 38%; height: 48px">&lt;</button><button class="next" style="width: 61%; height: 48px">&gt;</button>'
-	document.body.appendChild(controls)
-	controls.addEventListener('click', event => {
-		if	(event.target.matches('button.next'))	nextSlide()
-		else if	(event.target.matches('button.prev'))	prevSlide()
-	})
 }
 
 function initSlide() {
@@ -160,14 +161,14 @@ function nextSlide() {
 		return
 	}
 	const next = curr.nextElementSibling
-	//console.log(next)
-	if (next) {
+	// console.log(next)
+	if (next && next.matches('.slide')) {
 		++slideIndex
 		next.classList.toggle('current')
 		curr.classList.toggle('current')
+		pushState()
+		adjustCurrentSlide()
 	}
-	pushState()
-	adjustCurrentSlide()
 }
 
 function prevSlide() {
@@ -178,9 +179,9 @@ function prevSlide() {
 		--slideIndex
 		curr.classList.toggle('current')
 		prev.classList.toggle('current')
+		pushState()
+		adjustCurrentSlide()
 	}
-	pushState()
-	adjustCurrentSlide()
 }
 
 let slideIndex
@@ -193,7 +194,7 @@ function adjustCurrentSlide() {
 }
 
 function viewportSize() {
-	return {width: window.innerWidth, height: window.innerHeight}
+	return {width: window.innerWidth, height: window.innerHeight - 48}
 }
 
 function isReplacedElement(e) {
@@ -234,7 +235,7 @@ matchMedia('print').onchange = mql => {
 		// const pageBox = document.querySelector('#page-box')
 		// pageBox.style.width = window.innerWidth + 'px'
 		// pageBox.style.height = window.innerHeight + 'px'
-		Array.from(document.querySelectorAll('.slide')).forEach(e => adjustSlide(e, viewportSize()))
+		Array.from(document.querySelectorAll('.slide')).forEach(e => adjustSlide(e, ze()))
 	}
 }
 
