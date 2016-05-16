@@ -197,6 +197,10 @@ function viewportSize() {
 	return {width: window.innerWidth, height: window.innerHeight - 48}
 }
 
+function printViewportSize() {
+	return {width: 1500, height: 900}
+}
+
 function isReplacedElement(e) {
 	return e.matches('img, canvas, video, embed, iframe, object')
 		&& e.width != 0 && e.height != 0
@@ -235,7 +239,7 @@ matchMedia('print').onchange = mql => {
 		// const pageBox = document.querySelector('#page-box')
 		// pageBox.style.width = window.innerWidth + 'px'
 		// pageBox.style.height = window.innerHeight + 'px'
-		Array.from(document.querySelectorAll('.slide')).forEach(e => adjustSlide(e, ze()))
+		Array.from(document.querySelectorAll('.slide')).forEach(e => adjustSlide(e, printViewportSize()))
 	}
 }
 
