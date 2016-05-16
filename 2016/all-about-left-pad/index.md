@@ -33,6 +33,10 @@ lang: zh-cmn-Hans-x-hax
 
 [[Slide]](slide?qcon)
 
+[[BXT 录像 A]]() [[BXT 录像 B]]()
+
+[[ITA1024 文字实录]]()
+
 
 [1]: http://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos/
 [2]: http://zhuanlan.zhihu.com/p/20669077
