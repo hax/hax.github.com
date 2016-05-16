@@ -6,9 +6,9 @@ lang: zh-cmn-Hans-x-hax
 
 ## 如何看待 left-pad 事件
 
-会议：[QConBeijing 2016](http://2016.qconbeijing.com/)
-时间：暂定 4月22日 13:30
-地点：北京·国际会议中心·5号厅B
+- 4月22日 13:30 [QConBeijing 2016 未来的前端](http://2016.qconbeijing.com/presentation/2987) @ 北京·国际会议中心·5号厅B
+- 5月11日 19:30 [BXT 技术沙龙 第六期](https://github.com/baixing/BXT/issues/7) @ 上海·浩然高科技大厦·206 百姓网
+- 5月12日 20:30 [ITA1024 前端技术](http://www.ita1024.com/activity/view/id/1462356747583) @ 微信·ITA1024前端技术精英群
 
 ### 简介
 
