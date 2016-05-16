@@ -33,9 +33,9 @@ lang: zh-cmn-Hans-x-hax
 
 [[Slide]](slide?qcon)
 
-[[BXT 录像 A]]() [[BXT 录像 B]]()
+[[BXT 录像 A]](http://v.youku.com/v_show/id_XMTU2NzA1MzUxNg==.html) [[BXT 录像 B]](http://v.youku.com/v_show/id_XMTU2NzA1NTYxMg==.html?from=y1.7-1.2)
 
-[[ITA1024 文字实录]]()
+[[ITA1024 文字实录]](https://mp.weixin.qq.com/s?__biz=MzIzMzEzODYwOA==&mid=2665284413&idx=1&sn=22c0f343e63fd2e2bf36a621f41c280f)
 
 
 [1]: http://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos/
