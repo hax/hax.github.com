@@ -9,7 +9,7 @@ lang: zh-cmn-Hans-x-hax
 ### 2016
 
 - 2016-03-19 广州 [第二届FEDay前端开发者大会](http://fequan.com/2016/) 圆桌论坛主持人
-<!-- [圆桌论坛 视频]() -->
+  <br>[圆桌论坛 视频](https://www.youtube.com/watch?v=TX4S3ESgH8c&index=4&list=PLsAZ3w8R-w4tyQcFTGYy5wHYHRxIoC0BF)
 - 2016-03-26 魔都 [Node 地下铁第二期线下沙龙](http://taobaofed.org/blog/2016/04/01/node-subway-shanghai/) 参会
 - 2016-03-27 魔都 [TopGeek 中国前端开发者大会](http://fdcon.topgeek.org/) 讲师
   <br>[程序员的圣战之TAB vs SPACE](/2016/tab-vs-space/)
@@ -93,6 +93,7 @@ lang: zh-cmn-Hans-x-hax
 - 2013-11-25 魔都 百姓网TechTalk 讲师
   <br>[Web标准是如何炼成的](/2013/web_standards/TPAC2013)
 
+<!--
 ### 2012
 
 - 2012-07-07 杭州 [第七届D2](http://www.d2forum.org/) 参会
@@ -148,3 +149,4 @@ lang: zh-cmn-Hans-x-hax
 
 ### BXT
 
+-->
