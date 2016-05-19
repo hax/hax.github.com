@@ -9,29 +9,38 @@ lang: zh-cmn-Hans-x-hax
 ### 2016
 
 - 2016-03-19 广州 [第二届FEDay前端开发者大会](http://fequan.com/2016/) 圆桌论坛主持人
-  <br>[圆桌论坛 视频](https://www.youtube.com/watch?v=TX4S3ESgH8c&index=4&list=PLsAZ3w8R-w4tyQcFTGYy5wHYHRxIoC0BF)
+  <br>[[圆桌论坛 录像]](https://www.youtube.com/watch?v=TX4S3ESgH8c&index=4&list=PLsAZ3w8R-w4tyQcFTGYy5wHYHRxIoC0BF)
 - 2016-03-26 魔都 [Node 地下铁第二期线下沙龙](http://taobaofed.org/blog/2016/04/01/node-subway-shanghai/) 参会
 - 2016-03-27 魔都 [TopGeek 中国前端开发者大会](http://fdcon.topgeek.org/) 讲师
-  <br>[程序员的圣战之TAB vs SPACE](/2016/tab-vs-space/) [[视频]](http://boolan.com/lecture/1000001275)
+  <br>[程序员的圣战之TAB vs SPACE](/2016/tab-vs-space/) [[录像]](http://boolan.com/lecture/1000001275)
 - 2016-04-02 魔都 [饿了么大前端春季交流会](https://mp.weixin.qq.com/s?__biz=MzAxNTgzNzg4Mg==&mid=402685056&idx=1&sn=10a2bcaeb2259c952c52f40af2ba2fb5) 嘉宾
   <br>[大前端春季交流会](http://www.wtoutiao.com/p/1afNEi7.html)
 - 2016-04-21~23 帝都 [QCon北京2016](http://2016.qconbeijing.com/) “未来的前端”专题讲师、“编程语言实战”专题代班主持人
   <br>[如何看待left-pad事件](/2016/all-about-left-pad/)
 - 2016-05-11 魔都 [BXT-006](https://github.com/baixing/BXT/issues/7) 讲师
   <br>[如何看待left-pad事件](/2016/all-about-left-pad/)
+  [[录像 A]](http://v.youku.com/v_show/id_XMTU2NzA1MzUxNg==.html)
+  [[录像 B]](http://v.youku.com/v_show/id_XMTU2NzA1NTYxMg==.html)
 - 2016-05-12 线上 [ITA1024前端技术](http://www.ita1024.com/activity/view/id/1462356747583) 讲师
   <br>[如何看待left-pad事件](/2016/all-about-left-pad/)
+  [[文字实录]](https://mp.weixin.qq.com/s?__biz=MzIzMzEzODYwOA==&mid=2665284413&idx=1&sn=22c0f343e63fd2e2bf36a621f41c280f)
 - 2016-06-04 魔都 [iWeb峰会](http://2016.html5dw.com/shanghai) 工具专场主持人
-- 2016-06-25 杭州 <!--Git训练营-->
+- 2016-06-25~26 杭州 [GIT训练营杭州2016](http://git.geekbang.org/trainingcamp/hangzhoucamp) 讲师
+  <br>JavaScript API 设计案例分析
+- 2016-09-03~04 南京 [JSConf 宁JS](http://2016.jsconf.cn/)
+- 2016-10-20~22 魔都 [QCon上海2016](http://2016.qconshanghai.com/)
 
 ### 2015
 
 - 2015-01-10 帝都 [CSSConf 中国首届CSS开发者大会](http://css.w3ctech.com/1) 讲师
   <br>[“CSS框架”的迷思](/2015/myth-of-css-frameworks/)
-- 2015-01-14 魔都 [C4分享会]() 参会
-- 2015-01-14 魔都 [JS.WED]() 参会
+  [[录像 A]](http://my.tv.sohu.com/pl/9047590/81233460.shtml)
+  [[录像 B]](http://my.tv.sohu.com/pl/9047590/81233461.shtml)
+  [[录像 C]](http://my.tv.sohu.com/pl/9047590/81233395.shtml)
+- 2015-01-14 魔都 [C4分享会](http://www.imooc.com/learn/327) 参会
 - 2015-01-17 广州 [FEDAY 首届前端开发者年度大会](http://fequan.com/feday) 讲师
   <br>[ES6实战](/2015/es6-in-action/)
+  [[录像]](http://v.youku.com/v_show/id_XODgwNzMyNzAw.html)
 - 2015-03-04 魔都 [JavaScript Wednesday night](http://www.meetup.com/efjsday/events/218731261/) 参会
 - 2015-03-09 魔都 [ES6 in today's project](http://www.meetup.com/Shanghai-JavaScript/events/201810072/) 参会
 - 2015-04-23~25 帝都 [QCon北京2015](http://2015.qconbeijing.com/) 讲师
