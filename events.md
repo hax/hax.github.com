@@ -12,7 +12,7 @@ lang: zh-cmn-Hans-x-hax
   <br>[圆桌论坛 视频](https://www.youtube.com/watch?v=TX4S3ESgH8c&index=4&list=PLsAZ3w8R-w4tyQcFTGYy5wHYHRxIoC0BF)
 - 2016-03-26 魔都 [Node 地下铁第二期线下沙龙](http://taobaofed.org/blog/2016/04/01/node-subway-shanghai/) 参会
 - 2016-03-27 魔都 [TopGeek 中国前端开发者大会](http://fdcon.topgeek.org/) 讲师
-  <br>[程序员的圣战之TAB vs SPACE](/2016/tab-vs-space/)
+  <br>[程序员的圣战之TAB vs SPACE](/2016/tab-vs-space/) [[视频]](http://boolan.com/lecture/1000001275)
 - 2016-04-02 魔都 [饿了么大前端春季交流会](https://mp.weixin.qq.com/s?__biz=MzAxNTgzNzg4Mg==&mid=402685056&idx=1&sn=10a2bcaeb2259c952c52f40af2ba2fb5) 嘉宾
   <br>[大前端春季交流会](http://www.wtoutiao.com/p/1afNEi7.html)
 - 2016-04-21~23 帝都 [QCon北京2016](http://2016.qconbeijing.com/) “未来的前端”专题讲师、“编程语言实战”专题代班主持人
