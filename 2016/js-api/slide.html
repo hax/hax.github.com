@@ -1,0 +1,89 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Slide</title>
+<style>
+	html {
+		font-family: Noto Sans CJK SC, PingFang SC, Hiragino Sans GB;
+	}
+	strong {
+		color: red
+	}
+	.slide {
+		-webkit-transform-origin: 0 0;
+		transform-origin: 0 0;
+	}
+	.line {
+		/*width: -webkit-fit-content;*/
+		width: fit-content;
+		margin: auto;
+	}
+	.replaced img, .replaced canvas, .replaced video, .replaced embed, .replaced iframe, .replaced object {
+		width: 100%;
+	}
+	a {
+		color: blue;
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+
+	pre {
+		padding: 0.5em;
+		background: #fff0f0;
+		tab-size: 2ch;
+
+	}
+	pre > code i {
+		color: #009900;
+	}
+</style>
+<style media="screen">
+	.slide {
+		position: fixed;
+		left: 0; top: 0;
+		padding: 1em;
+		visibility: hidden;
+	}
+	.current.slide {
+		visibility: visible;
+	}
+	.line.comma ~ .line {
+		visibility: hidden;
+	}
+</style>
+<style media="print">
+	html, body {
+		height: 100%;
+	}
+	.slide {
+		page-break-after: always;
+		/*outline: 1px dotted navy;*/
+	}
+	.controls {
+		display: none;
+	}
+</style>
+<style media="screen and (min-width: 640px)">
+html {
+	min-height: 100vh;
+	background: url(footer.png) no-repeat bottom right;
+	background-size: contain;
+}
+html[data-slide-index='0'] {
+	background-image: url(cover.png);
+	background-size: cover;
+}
+html[data-slide-index='124'] {
+	background: url(thanks.png) no-repeat center;
+}
+.controls {
+	display: none;
+}
+</style>
+<script src="../../takahashi/index.js"></script>
+<script>
+window.addEventListener('slide', event => {
+	console.log(event.detail)
+})
+</script>

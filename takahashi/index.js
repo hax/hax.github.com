@@ -32,8 +32,35 @@ function createSlides(slides) {
 			'-': /^-\s+/,
 			'#': /^\d\.\s+/,
 		}
+		let codeBlock = false
 		slide.forEach(line => {
-			line = line.trim().replace(/^#+\s+/, '')
+			if (line.startsWith('```')) {
+				if (!codeBlock) {
+					codeBlock = true
+					const pre = document.createElement('pre')
+					container = document.createElement('code')
+					slideDiv.appendChild(pre)
+					pre.appendChild(container)
+					container.className = line.slice(3)
+				} else {
+					codeBlock = false
+					container = slideDiv
+				}
+				return
+			}
+			if (codeBlock) {
+				container.innerHTML += line + '<br>'
+				return
+			}
+			line = line.trim()
+			if (line.startsWith('<!--')) {
+				line = line.slice(4)
+				if (line.endsWith('-->')) line = line.slice(0, -3)
+				if (!slideDiv.dataset.comments) slideDiv.dataset.comments = line
+				else slideDiv.dataset.comments += '\n' + line
+				return
+			}
+			line = line.replace(/^#+\s+/, '')
 			if (listType) {
 				if (listPatterns[listType].test(line)) {
 					line = line.replace(listPatterns[listType], '')
@@ -76,7 +103,7 @@ function createSlides(slides) {
 					lineDiv.appendChild(a)
 				}
 			} else {
-				const tokens = line.split(/(`|\*\*|\*|~~)(?=\S)(.*\S)\1/g)
+				const tokens = line.split(/(`|\*\*|\*|~~)(?=\S)(.*?\S)\1/g)
 				for (let i = 0; i < tokens.length; ++i) {
 					let node
 					switch (tokens[i]) {
@@ -114,7 +141,7 @@ function startPresentation() {
 	initSlide()
 	window.onhashchange = initSlide
 	window.onpopstate = e => {
-		showSlide(parseInt(e.state))
+		gotoSlide(parseInt(e.state))
 	}
 	window.onkeydown = kbEvent => {
 		if (kbEvent.key) {
@@ -132,25 +159,17 @@ function startPresentation() {
 }
 
 function initSlide() {
-	if (!showSlide(parseInt(location.hash.slice(1)))) showSlide(0)
-	pushState()
-}
-
-function showSlide(i) {
-		const slide = document.querySelectorAll('.slide')[i]
-		if (slide) {
-			slideIndex = i
-			const curr = current()
-			if (curr) curr.classList.toggle('current')
-			slide.classList.toggle('current')
-			adjustCurrentSlide()
-			return true
-		}
-		return false
+	if (gotoSlide(parseInt(location.hash.slice(1))) || gotoSlide(0)) pushState()
 }
 
 function current() {
-	return  document.querySelector('.current.slide')
+	return document.querySelector('.current.slide')
+}
+
+function gotoSlide(i) {
+		const slide = document.querySelectorAll('.slide')[i]
+		if (!slide) return false
+		return showSlide(i, slide, current())
 }
 
 function nextSlide() {
@@ -161,27 +180,29 @@ function nextSlide() {
 		return
 	}
 	const next = curr.nextElementSibling
-	// console.log(next)
-	if (next && next.matches('.slide')) {
-		++slideIndex
-		next.classList.toggle('current')
-		curr.classList.toggle('current')
-		pushState()
-		adjustCurrentSlide()
-	}
+	if (next && next.matches('.slide')) showSlide(slideIndex + 1, next, curr) && pushState()
 }
 
 function prevSlide() {
 	const curr = current()
 	const prev = curr.previousElementSibling
-	//console.log(prev)
-	if (prev) {
-		--slideIndex
-		curr.classList.toggle('current')
-		prev.classList.toggle('current')
-		pushState()
-		adjustCurrentSlide()
-	}
+	if (prev && prev.matches('.slide')) showSlide(slideIndex - 1, prev, curr) && pushState()
+}
+
+function showSlide(index, element, old) {
+	const e = new CustomEvent('slide', {
+		bubbles: true,
+		cancelable: true,
+		detail: {from: slideIndex, to: index},
+	})
+	if (!element.dispatchEvent(e)) return false
+
+	if (old) old.classList.toggle('current')
+	element.classList.toggle('current')
+	slideIndex = index
+	adjustCurrentSlide()
+	document.documentElement.dataset.slideIndex = slideIndex
+	return true
 }
 
 let slideIndex
@@ -194,7 +215,7 @@ function adjustCurrentSlide() {
 }
 
 function viewportSize() {
-	return {width: window.innerWidth, height: window.innerHeight - 48}
+	return {width: window.innerWidth, height: window.innerHeight - 96}
 }
 
 function printViewportSize() {
