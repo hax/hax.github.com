@@ -514,6 +514,27 @@ Monad
 
 [Why Callback/Thunk Sucks and Promise Rocks](https://github.com/hax/hax.github.com/issues/11)
 
+Promise VS Callback
+- **可理解性**
+- **一致性**
+- 可见性
+- **简单性**
+- 保护投资
+
+Promise VS Thunk
+- **可理解性**
+- 一致性
+- 可见性
+- 简单性
+- **保护投资**
+
+Async&Await VS Fiber
+- **可理解性**
+- 一致性
+- **可见性**
+- 简单性
+- 保护投资
+
 ## JavaScript API 的未来趋势
 
 ,
