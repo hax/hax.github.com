@@ -26,7 +26,7 @@ lang: zh-cmn-Hans-x-hax
   [[文字实录]](https://mp.weixin.qq.com/s?__biz=MzIzMzEzODYwOA==&mid=2665284413&idx=1&sn=22c0f343e63fd2e2bf36a621f41c280f)
 - 2016-06-04 魔都 [iWeb峰会](http://2016.html5dw.com/shanghai) 工具专场主持人
 - 2016-06-25~26 杭州 [GIT训练营杭州2016](http://git.geekbang.org/trainingcamp/hangzhoucamp) 讲师
-  <br>JavaScript API 设计案例分析
+  <br>[JavaScript API 设计案例分析](/2016/js-api/)
 - 2016-07-? 线上 [代码时间](http://codetimecn.com/) 嘉宾
 - 2016-07-? 线上 ？
 - 2016-08-? 魔都 [BXT-007] 组织者
