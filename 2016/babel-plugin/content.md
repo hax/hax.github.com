@@ -17,6 +17,14 @@ Programming Language
 
 Ecosystem
 
+Babel
+
+Enable new language features
+in production
+
+Deploy -> Practice -> Updated Proposal,
+Positive Feedback Loop
+
 My works related to babel
 - babel-features
 - babel-plugin-transform-function-sent
@@ -25,14 +33,19 @@ My works related to babel
 # How to write a babel plugin?
 
 First,
-[RTFM](https://github.com/thejameskyle/babel-handbook/blob/master/translations/en/plugin-handbook.md) 
+[RTFM](https://github.com/thejameskyle/babel-handbook/blob/master/translations/en/plugin-handbook.md)
 
 Second,
-Use [generator-babel-plugin](https://github.com/thejameskyle/generator-babel-plugin)
+[yo generator-babel-plugin](https://github.com/thejameskyle/generator-babel-plugin)
 
 Third,
 [Explore the AST](https://astexplorer.net/)
 
+Then,
+Write your tests,
+and implement you plugin
+
 Sometimes,
 [RTFSC](https://github.com/babel/babel/tree/master/packages/babel-traverse)
 
+The End.
