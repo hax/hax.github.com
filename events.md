@@ -27,11 +27,9 @@ lang: zh-cmn-Hans-x-hax
 - 2016-06-04 魔都 [iWeb峰会](http://2016.html5dw.com/shanghai) 工具专场主持人
 - 2016-06-25~26 杭州 [GIT训练营杭州2016](http://git.geekbang.org/trainingcamp/hangzhoucamp) 讲师
   <br>[JavaScript API 设计案例分析](/2016/js-api/)
-- 2016-07-? 线上 [代码时间](http://codetimecn.com/) 嘉宾
-- 2016-07-? 线上 ？
-- 2016-08-? 魔都 [BXT-007] 组织者
-<!-- 2016-08-? 台北-->
-- 2016-09-03~04 南京 [JSConf 宁JS](http://2016.jsconf.cn/)
+- 2016-08-02 线上 [代码时间](http://codetimecn.com/) 嘉宾
+- 2016-08-11 魔都 [BXT-007](https://github.com/baixing/BXT/issues/8) 组织者
+- 2016-09-03~04 南京 [JSConf 宁JS](http://2016.jsconf.cn/) Lightning Talk
 - 2016-10-20~22 魔都 [QCon上海2016](http://2016.qconshanghai.com/) 前端专题出品人
 
 ### 2015
