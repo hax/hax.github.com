@@ -30,7 +30,11 @@ lang: zh-cmn-Hans-x-hax
 - 2016-08-02 线上 [代码时间](http://codetimecn.com/) 嘉宾
 - 2016-08-11 魔都 [BXT-007](https://github.com/baixing/BXT/issues/8) 组织者
 - 2016-09-03~04 南京 [JSConf 宁JS](http://2016.jsconf.cn/) Lightning Talk
+- 2016-09-10 魔都 [100offer MEETUP](http://www.huodongxing.com/event/8350738170800) 嘉宾
 - 2016-10-20~22 魔都 [QCon上海2016](http://2016.qconshanghai.com/) 前端专题出品人
+- 2016-11-?? 魔都 [BXT-008](https://github.com/baixing/BXT/issues/) 组织者
+- 2016-12-?? ?? D2
+- 2016-12-?? ?? CSSConf
 
 ### 2015
 
