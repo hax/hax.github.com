@@ -34,7 +34,7 @@ lang: zh-cmn-Hans-x-hax
 - 2016-09-03~04 南京 [JSConf 宁JS](http://2016.jsconf.cn/) Lightning Talk
   <br>[如何写一个Babel Plugin？](/2016/babel-plugin/slide?content)
 - 2016-09-10 魔都 [100offer MEETUP](http://www.huodongxing.com/event/8350738170800) 嘉宾
-  <br>[前端构建的过去、现在和未来](/2016/fe-build/)
+  <br>[前端构建的过去、现在和未来](/2016/fe-build/) [录像 1:29开始（但1:36之前没有录到声音）](http://e.vhall.com/387006736)
 - 2016-10-20~22 魔都 [QCon上海2016](http://2016.qconshanghai.com/) 前端专题出品人
 - 2016-11-?? 魔都 [BXT-008](https://github.com/baixing/BXT/issues/) 组织者
 - 2016-12-?? ?? D2
