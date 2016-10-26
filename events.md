@@ -36,9 +36,14 @@ lang: zh-cmn-Hans-x-hax
 - 2016-09-10 魔都 [100offer MEETUP](http://www.huodongxing.com/event/8350738170800) 嘉宾
   <br>[前端构建的过去、现在和未来](/2016/fe-build/) [[录像 1:29开始（但1:36之前没有录到声音）]](http://e.vhall.com/387006736)
 - 2016-10-20~22 魔都 [QCon上海2016](http://2016.qconshanghai.com/) 前端专题出品人
-- 2016-11-?? 魔都 [BXT-008](https://github.com/baixing/BXT/issues/) 组织者
+- 2016-10-24 魔都 [JavaScript meetup@Crocus Bar](http://www.meetup.com/Shanghai-JavaScript/events/234717554/) 参会
+- 2016-10-25 魔都 [BXT-008](https://github.com/baixing/BXT/issues/9) 组织者
+- 2016-11-24 魔都 
+- 2016-11-25 成都 StuQ训练营 讲师
+- 2016-11-26 重庆 渝FE2016 讲师
+- 2016-11-?? 魔都 [BXT-009](https://github.com/baixing/BXT/issues/) 组织者
+- 2016-12-17 广州 [CSSConf 中国第三届CSS开发者大会](https://css.w3ctech.com/) 参会
 - 2016-12-?? ?? D2
-- 2016-12-?? ?? CSSConf
 
 ### 2015
 
@@ -63,7 +68,7 @@ lang: zh-cmn-Hans-x-hax
 - 2015-07-11~12 深圳 [JSConf 深JS](http://2015.jsconf.cn/) 讲师
   <br>[JavaScript — The World’s Best Programming Language](/2015/js-the-best/)
 - 2015-07-19 魔都 [HTML5梦工场 2015 iWeb峰会](http://2015.html5dw.com/shanghai) 工具分会场主持人
-- 2015-08-08 魔都 [CSSConf 中国第二届CSS开发者大会](http://css.w3ctech.com/) 参会
+- 2015-08-08 魔都 [CSSConf 中国第二届CSS开发者大会](http://css.w3ctech.com/2) 参会
 - 2015-09-01 魔都 [BXT-001](https://github.com/baixing/BXT/issues/2) 组织者
 - 2015-09-13 魔都 [沪江技术沙龙 第2期](http://www.cctalk.com/course/152391648137/) 讲师
   <br>[JavaScript — The World’s Best Programming Language](/2015/js-the-best/)
