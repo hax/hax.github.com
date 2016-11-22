@@ -38,12 +38,15 @@ lang: zh-cmn-Hans-x-hax
 - 2016-10-20~22 魔都 [QCon上海2016](http://2016.qconshanghai.com/) 前端专题出品人
 - 2016-10-24 魔都 [JavaScript meetup@Crocus Bar](http://www.meetup.com/Shanghai-JavaScript/events/234717554/) 参会
 - 2016-10-25 魔都 [BXT-008](https://github.com/baixing/BXT/issues/9) 组织者
-- 2016-11-24 魔都 
-- 2016-11-25 成都 StuQ训练营 讲师
+- 2016-10-29 魔都 [饿了么大前端秋季交流会](http://weibo.com/ttarticle/p/show?id=2309404030147018755616) 嘉宾
 - 2016-11-26 重庆 渝FE2016 讲师
-- 2016-11-?? 魔都 [BXT-009](https://github.com/baixing/BXT/issues/) 组织者
+  <br>ES2017实战
+- 2016-11-29 魔都 [BXT-009](https://github.com/baixing/BXT/issues/) 组织者
+- 2016-11-30 线上 [知乎Live：前端们，贺老 Live 面试你了！](https://www.zhihu.com/lives/778991567569440768) 主讲
+- 2016-12-10 杭州 [SFDC 2016](http://www.bagevent.com/event/166229) 讲师
 - 2016-12-17 广州 [CSSConf 中国第三届CSS开发者大会](https://css.w3ctech.com/) 参会
-- 2016-12-?? ?? D2
+- 2016-12-18 成都 StuQ训练营 讲师
+  <br>ES2017实战
 
 ### 2015
 
