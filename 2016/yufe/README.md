@@ -15,7 +15,7 @@ weibo: @johnhax
 知乎 Live,
 11月30日周三晚上
 
-![JavaScript Interview](https://pic4.zhimg.com/v2-49ec8b94cf20f0fa62c40a918d9ba767_b.png)
+![JavaScript Interview](interview-javascript.png)
 
 模拟面试,
 [前端们，贺老 Live 面试你了！](https://zhuanlan.zhihu.com/p/23870345)
