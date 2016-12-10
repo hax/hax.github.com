@@ -403,6 +403,8 @@ Rx
 
 ### Vue
 
+2016年最闪亮的那颗星
+
 The Next Big Thing?
 
 Cycle.js
