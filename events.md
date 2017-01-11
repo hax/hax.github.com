@@ -51,7 +51,7 @@ lang: zh-cmn-Hans-x-hax
   <br>[JS@2017](/2016/js@2017/)
 - 2016-12-17 广州 [CSSConf 中国第三届CSS开发者大会](https://css.w3ctech.com/) 参会
 - 2016-12-18 成都 StuQ训练营 讲师
-  <br>ES2017实战
+  <br>[JS@2017](/2016/stuq/)
 
 ### 2015
 
