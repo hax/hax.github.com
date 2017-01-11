@@ -43,7 +43,7 @@ lang: zh-cmn-Hans-x-hax
   <br>[ES2017实战](/2016/yufe/)
 - 2016-11-29 魔都 [BXT-009](https://github.com/baixing/BXT/issues/) 组织者
 - 2016-11-30 线上 [知乎Live：前端们，贺老 Live 面试你了！](https://www.zhihu.com/lives/778991567569440768) 主讲
-- 2016-12-10 杭州 [SFDC 2016 杭州站](https://segmentfault.com/sfdc-2016/hz) <!--http://www.bagevent.com/event/166229--> 讲师 服务端分会场主持人
+- 2016-12-10 杭州 [SFDC 2016 杭州站](https://segmentfault.com/sfdc-2016/hz) <!--http://www.bagevent.com/event/166229--> 讲师 服务端分会场代班主持人
   <br>[JS@2017](/2016/js@2017/)
 - 2016-12-17 广州 [CSSConf 中国第三届CSS开发者大会](https://css.w3ctech.com/) 参会
 - 2016-12-18 成都 StuQ训练营 讲师
