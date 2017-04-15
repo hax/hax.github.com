@@ -135,6 +135,268 @@ Only methods
 method
 所有实例共享
 
+## Prior Art
+
+- 命名约定（如下划线前缀）
+- 名称变换（如python）
+- 基于Symbol
+- 基于闭包
+- 基于WeakMap
+
+### 命名约定
+
+```js
+class RGBColor {
+	constructor(r, g, b) {
+		this._hex = r * 0x10000 + g * 0x100 + b
+	}
+	get red()   { return  this._hex >> 16         }
+	get green() { return (this._hex >>  8) & 0xff }
+	get blue()  { return  this._hex        & 0xff }
+	static equals(c1, c2) {
+		return c1._hex === c2._hex
+	}
+}
+```
+
+命名约定
+Pros and Cons
+
+- 简单易行
+- 无性能损失
+- 可能命名冲突
+- 很容易绕过
+- 更接近 protected
+
+### 名称变换
+
+```js
+// @html: <br>
+class RGBColor {
+	constructor(r, g, b) {
+		this._hex = r * 0x10000 + g * 0x100 + b
+	}
+	get red()   { return  this._hex >> 16         }
+	get green() { return (this._hex >>  8) & 0xff }
+	get blue()  { return  this._hex        & 0xff }
+	static equals(c1, c2) {
+		return c1._hex === c2._hex
+	}
+}
+```
+
+```js
+const hex = 'RGBColor:field:hex'
+class RGBColor {
+	constructor(r, g, b) {
+		this[hex] = r * 0x10000 + g * 0x100 + b
+	}
+	get red()   { return  this[hex] >> 16         }
+	get green() { return (this[hex] >>  8) & 0xff }
+	get blue()  { return  this[hex]        & 0xff }
+	static equals(c1, c2) {
+		return c1[hex] === c2[hex]
+	}
+}
+```
+
+名称变换
+Pros and Cons
+
+- 简单易行
+- 无性能损失
+- 可能命名冲突
+- 很容易绕过
+- 更接近 protected
+
+- 简单易行，写法略微麻烦
+- 无性能损失
+- ~~可能命名冲突~~
+- 可以被绕过
+- ~~更接近 protected~~
+
+### 基于Symbol
+
+```js
+const hex = 'RGBColor:field:hex'
+class RGBColor {
+	constructor(r, g, b) {
+		this[hex] = r * 0x10000 + g * 0x100 + b
+	}
+	get red()   { return  this[hex] >> 16         }
+	get green() { return (this[hex] >>  8) & 0xff }
+	get blue()  { return  this[hex]        & 0xff }
+	static equals(c1, c2) {
+		return c1[hex] === c2[hex]
+	}
+}
+```
+
+```js
+const hex = Symbol()
+class RGBColor {
+	constructor(r, g, b) {
+		this[hex] = r * 0x10000 + g * 0x100 + b
+	}
+	get red()   { return  this[hex] >> 16         }
+	get green() { return (this[hex] >>  8) & 0xff }
+	get blue()  { return  this[hex]        & 0xff }
+	static equals(c1, c2) {
+		return c1[hex] === c2[hex]
+	}
+}
+```
+
+基于Symbol
+Pros and Cons
+
+- 简单易行
+- 写法略微麻烦
+- 无性能损失
+- 无命名冲突
+- 可以被绕过
+
+- 简单易行
+- 写法略微麻烦
+- 无性能损失
+- 无命名冲突
+- ~~可以被绕过~~
+
+Unguessability,
+Unforgeability
+
+`Object.getOwnPropertySymbols(obj)`
+
+- 简单易行
+- 写法略微麻烦
+- 无性能损失
+- 无命名冲突
+- 可通过reflection访问
+
+### 基于闭包
+
+```js
+class RGBColor {
+	constructor(r, g, b) {
+		this._hex = r * 0x10000 + g * 0x100 + b
+	}
+	get red()   { return  this._hex >> 16         }
+	get green() { return (this._hex >>  8) & 0xff }
+	get blue()  { return  this._hex        & 0xff }
+	static equals(c1, c2) {
+		return c1._hex === c2._hex
+	}
+}
+```
+
+```js
+class RGBColor {
+	constructor(r, g, b) {
+		const hex = r * 0x10000 + g * 0x100 + b
+		Object.defineProperties(this, {
+			red:   { get: function () { return  hex >> 16         } },
+			green: { get: function () { return (hex >>  8) & 0xff } },
+			blue:  { get: function () { return  hex        & 0xff } },
+		})
+	}
+	static equals(c1, c2) {  // How to implement it?
+		// return c1.hex === c2.hex
+	}
+}
+```
+
+```js
+class RGBColor {
+	constructor(r, g, b) {
+		this._hex = r * 0x10000 + g * 0x100 + b
+	}
+	// @html: <br>
+	get red()   { return  this._hex  >> 16         }
+	get green() { return (this._hex  >>  8) & 0xff }
+	get blue()  { return  this._hex         & 0xff }
+	static equals(c1, c2) {
+		return c1._hex === c2._hex
+	}
+}
+```
+
+```js
+class RGBColor {
+	constructor(r, g, b) {
+		const hex = r * 0x10000 + g * 0x100 + b
+		this.hex = function () { return hex }
+	}
+	get red()   { return  this.hex() >> 16         }
+	get green() { return (this.hex() >>  8) & 0xff }
+	get blue()  { return  this.hex()        & 0xff }
+	static equals(c1, c2) {
+		return c1.hex() === c2.hex()
+	}
+}
+```
+
+基于闭包
+Pros and Cons
+
+- 无命名冲突
+- 外部（包括static方法）完全无法访问
+- 有一定性能代价
+- 与 ES6+ 类的方法语义不协调
+
+prototype方法 VS privilege方法（delegate）,
+对privilege方法 call/apply/bind 行为不确定,
+不在prototype上的方法无法进行 super 调用
+
+### 基于WeakMap
+
+```js
+// @html: <br>
+// @html: <br>
+// @html: <br>
+// @html: <br>
+class RGBColor {
+	constructor(r, g, b) {
+		this._hex = r * 0x10000 + g * 0x100 + b
+	}
+	// @html: <br>
+	// @html: <br>
+	get red()   { return  this._hex  >> 16         }
+	get green() { return (this._hex  >>  8) & 0xff }
+	get blue()  { return  this._hex         & 0xff }
+	static equals(c1, c2) {
+		return c1._hex === c2._hex
+	}
+}
+```
+
+```js
+const privates = new WeakMap
+function hex(instance) {
+	return privates.get(instance).hex
+}
+class RGBColor {
+	constructor(r, g, b) {
+		privates.set(this, {
+			hex: r * 0x10000 + g * 0x100 + b
+		})
+	}
+	get red()   { return  hex(this)  >> 16         }
+	get green() { return (hex(this)  >>  8) & 0xff }
+	get blue()  { return  hex(this)         & 0xff }
+	static equals(c1, c2) {
+		return hex(c1) === hex(c2)
+	}
+}
+```
+
+基于WeakMap
+Pros and Cons
+
+- 无命名冲突
+- 外部无法访问
+- 写法比较麻烦
+- 有较大性能代价
+
 ## 简单加入 private
 	关键字行不行？
 
@@ -245,6 +507,16 @@ sigil
 
 语义问题
 soft vs hard
+
+大部分语言的private机制
+都是某种程度上soft的
+
+但可以使用 SecurityManager
+之类的机制限制 relfection
+
+## 特别问题：膜透性
+
+
 
 协调问题
 - public fields
