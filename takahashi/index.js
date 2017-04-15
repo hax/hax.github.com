@@ -49,7 +49,9 @@ function createSlides(slides) {
 				return
 			}
 			if (codeBlock) {
-				container.innerHTML += line + '<br>'
+				const html = /@html:(.*)/.exec(line)
+				if (html) container.innerHTML += html[1]
+				else container.innerHTML += line + '<br>'
 				return
 			}
 			line = line.trim()
@@ -144,6 +146,7 @@ function startPresentation() {
 		gotoSlide(parseInt(e.state))
 	}
 	window.onkeydown = kbEvent => {
+		// console.log(kbEvent.key, kbEvent.keyIdentifier, kbEvent.keyCode)
 		if (kbEvent.key) {
 			switch (kbEvent.key) {
 				case 'ArrowRight':	case 'ArrowDown':	case 'PageDown':	nextSlide();	break
@@ -154,6 +157,7 @@ function startPresentation() {
 				case 'Right':	case 'Down':	nextSlide();	break
 				case 'Left':	case 'Up':	prevSlide();	break
 			}
+		} else {
 		}
 	}
 }
