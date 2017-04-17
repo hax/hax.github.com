@@ -1,5 +1,5 @@
 # 编程语言如何演化
-	—— 以JS的private为例
+	—— 以 JS 的 private 为例
 
 ##	Introduction of
 	My Company
@@ -12,7 +12,72 @@ github: @hax
 zhihu: 贺师俊
 weibo: @johnhax
 
+
+编程语言
+
+两种
+极端
+
+你用什么语言？	,
+（鄙视脸）
+
+语言都一样！,
+（鄙视脸）
+
+人们总是
+
+高估短期
+低估长期
+
+不太可能是
+项目成败的
+决定性因素
+
+影响团队的
+长期生产力
+
+主题：演化
+
+新特性
+
+What/How
+
+Why
+
+为什么要引入新特性？
+
+为什么长这样？
+
+静态 -> 动态
+
+剧烈演化
+
+Rust/Swift
+
+Go
+
+JS
+
+矛盾体
+
 ## private
+
+讨论历史可以追溯到ES4
+贯穿了整个ES6的开发历史
+最终决定postpone到ES7+
+先后至少有4份proposal
+
+对于JS程序员
+并没有立即可
+用的实践价值
+
+Stage 2
+
+ES ?
+
+对工程实践
+中系统演化
+有借鉴意义
 
 ### 可见性
 - public
@@ -134,6 +199,28 @@ Only methods
 
 method
 所有实例共享
+
+
+拖
+Postpone
+
+Maximally-Minimal
+Class
+
+求同存异
+分而治之
+
+反而避免
+久拖不决
+
+让实践说话
+
+拖延大法好
+
+
+为什么要有 Private ？
+
+实践证明了...
 
 ## Prior Art
 
@@ -486,6 +573,32 @@ WTF!
 
 丑
 
+不要急，
+继续看：
+
+```js
+class Foo {
+  //instance members
+  own x=0, y=0  // two data properties
+  own #secret   // a private field
+                 // initial value undefined
+  own *[Symbol.iterator](){yield this.#secret}
+                 // a generator method
+  own #callback(){}  //a private instance method
+  //class constructor members
+  static #p=new Set(), q=Foo.#p
+                // a private field and a property
+                // of the class constructor
+  static get p(){return Foo.#p} //accessor method
+  //prototype methods
+  setCallback(f){this.#callback=f}
+  constructor(s){
+     this.#secret = s
+  }
+}
+```
+
+
 丑爆了
 
 [Why not use the "private" keyword, like Java or C#?](https://github.com/tc39/proposal-private-fields/issues/14)
@@ -520,6 +633,52 @@ WTF!
 语法问题
 sigil
 
+难道真的不行吗？
+
+PHP
+
+```php
+class RGBColor {
+	private $hex;
+	function __construct($r, $g, $b) {
+		$this->hex = $r * 0x10000 + $g * 0x100 + $b;
+	}
+	function __toString() {
+		return "rgb({$this->red()}, {$this->green()}, {$this->blue()})";
+	}
+	function red()   { return $this->hex >> 16; }
+	function green() { return ($this->hex >> 8) & 0xff; }
+	function blue()  { return $this->hex & 0xff; }
+	static function equals($c1, $c2) {
+		return $c1->hex === $c2->hex;  // 👈 Semantic?
+	}
+}
+```
+
+PHP 可以的？
+JS 为啥不行？
+
+因为 PHP 是
+最好的语言……
+
+因为：
+
+语义复杂
+
+prototype 可变
+
+压缩混淆
+
+属性访问
+性能问题
+
+引擎实现
+复杂性
+
+语法问题
+@ vs #
+
+
 语义问题
 soft vs hard
 
@@ -527,15 +686,27 @@ soft vs hard
 都是某种程度上soft的
 
 但可以使用 SecurityManager
-之类的机制限制 relfection
+之类的机制限制 refection
 
-## 特别问题：膜透性
+Symbol 机制
 
+语法成本
 
+Private symbol？
+
+Proxy
+动态代理
+
+膜
+Membrane
+
+实现 host 接口
 
 协调问题
-- public fields
+- public properties
+- own/prototype/static
 - decorators
+
 
 平衡
 
@@ -544,6 +715,7 @@ soft vs hard
 - performance
 - backward compatibility
 - forward compatibility
+
 
 # FAQ
 github: @hax
