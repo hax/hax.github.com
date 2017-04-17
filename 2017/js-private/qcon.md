@@ -171,7 +171,7 @@ Pros and Cons
 ### 名称变换
 
 ```js
-// @html: <br>
+\
 class RGBColor {
 	constructor(r, g, b) {
 		this._hex = r * 0x10000 + g * 0x100 + b
@@ -310,7 +310,7 @@ class RGBColor {
 	constructor(r, g, b) {
 		this._hex = r * 0x10000 + g * 0x100 + b
 	}
-	// @html: <br>
+\
 	get red()   { return  this._hex  >> 16         }
 	get green() { return (this._hex  >>  8) & 0xff }
 	get blue()  { return  this._hex         & 0xff }
@@ -350,16 +350,16 @@ prototype方法 VS privilege方法（delegate）,
 ### 基于WeakMap
 
 ```js
-// @html: <br>
-// @html: <br>
-// @html: <br>
-// @html: <br>
+\
+\
+\
+\
 class RGBColor {
 	constructor(r, g, b) {
 		this._hex = r * 0x10000 + g * 0x100 + b
 	}
-	// @html: <br>
-	// @html: <br>
+\
+\
 	get red()   { return  this._hex  >> 16         }
 	get green() { return (this._hex  >>  8) & 0xff }
 	get blue()  { return  this._hex         & 0xff }

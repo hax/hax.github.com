@@ -15,6 +15,13 @@ function takahashi(markdownUrl) {
 		.then(parseContent)
 		.then(createSlides)
 		.then(startPresentation)
+		.then(highlight)
+}
+
+
+function highlight() {
+	if (window.Prism) Prism.highlightAll()
+	else if (window.Rainbow) Rainbow.color()
 }
 
 function parseContent(text) {
@@ -41,7 +48,8 @@ function createSlides(slides) {
 					container = document.createElement('code')
 					slideDiv.appendChild(pre)
 					pre.appendChild(container)
-					container.className = line.slice(3)
+					const lang = line.slice(3)
+					container.className = 'language-' + lang
 				} else {
 					codeBlock = false
 					container = slideDiv
@@ -49,9 +57,7 @@ function createSlides(slides) {
 				return
 			}
 			if (codeBlock) {
-				const html = /@html:(.*)/.exec(line)
-				if (html) container.innerHTML += html[1]
-				else container.innerHTML += line + '<br>'
+				container.innerHTML += (line !== '\\' ? line : '') + '\n'
 				return
 			}
 			line = line.trim()
