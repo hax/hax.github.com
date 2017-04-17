@@ -701,6 +701,8 @@ Proxy
 Membrane
 
 实现 host 接口
+- 不可 hack
+- 跨 realm
 
 协调问题
 - public properties
