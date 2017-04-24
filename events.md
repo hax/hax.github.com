@@ -9,6 +9,8 @@ lang: zh-cmn-Hans-x-hax
 ### 2017
 
 - 2017-1-12 杭州 WeexConf
+- 2017-4-16~18 帝都 [QCon北京2017](http://2017.qconbeijing.com/) “编程语言”专题讲师
+  <br>[编程语言如何演化 —— 以 JavaScript 的 private 为例](/2017/js-private/)
 
 ### 2016
 
