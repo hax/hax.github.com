@@ -13,7 +13,7 @@ zhihu: 贺师俊
 weibo: @johnhax
 
 
-编程语言
+## 编程语言
 
 两种
 极端
@@ -36,7 +36,7 @@ weibo: @johnhax
 影响团队的
 长期生产力
 
-主题：演化
+## 主题：演化
 
 新特性
 
@@ -44,19 +44,23 @@ What/How
 
 Why
 
-为什么要引入新特性？
+为什么要引入
+新特性
 
-为什么长这样？
+为什么新特性
+长这样
 
-静态 -> 动态
+静态 ➡ 动态
 
 剧烈演化
 
 Rust/Swift
 
+不怎么变化
+
 Go
 
-JS
+JS?
 
 矛盾体
 
@@ -79,12 +83,12 @@ ES ?
 中系统演化
 有借鉴意义
 
-### 可见性
+## 可见性
 - public
 - private
 - protected
 
-### 可见性
+可见性
 - package-private
 - internal
 - internal protected
@@ -156,7 +160,7 @@ RGBColor.equals = function (c1, c2) {
 Only methods
 No data properties
 
-为何有此限制？
+### 为何有此限制？
 
 prototype 的坑
 
@@ -218,7 +222,7 @@ Class
 拖延大法好
 
 
-为什么要有 Private ？
+## 为什么要有 Private ？
 
 实践证明了...
 
@@ -546,7 +550,7 @@ class RGBColor {
 
 没有类型信息！
 
-所以，现在的
+## 所以，现在的
 proposal：
 
 ```js
@@ -611,7 +615,7 @@ class Foo {
 不过绝大多数都是
 行不通的
 
-语言演化
+## 语言演化
 
 难
 
@@ -624,13 +628,13 @@ class Foo {
 
 例子……
 
-回到 private 问题
+## 回到 private 问题
 
 分成两部分
 
 语法 / 语义
 
-语法问题
+## 语法问题
 sigil
 
 难道真的不行吗？
@@ -679,7 +683,7 @@ prototype 可变
 @ vs #
 
 
-语义问题
+## 语义问题
 soft vs hard
 
 大部分语言的private机制
@@ -704,13 +708,13 @@ Membrane
 - 不可 hack
 - 跨 realm
 
-协调问题
+## 协调问题
 - public properties
 - own/prototype/static
 - decorators
 
 
-平衡
+## 平衡
 
 - common use cases
 - mental model
