@@ -248,11 +248,11 @@ function adjustSlide(curr) {
 			e.style.width = w + 'px'
 		} else {
 			e.style.fontSize = '1rem'
-			e.style.fontSize = `${w / e.offsetWidth / 2}rem`
+			e.style.fontSize = `${w / e.scrollWidth / 2}rem`
 		}
 	}
 
-	const scale = Math.min(h / c.offsetHeight, w / c.offsetWidth)
+	const scale = Math.min(h / c.clientHeight, w / c.clientWidth)
 	// const dx = (w - curr.scrollWidth * scale) / 2
 	// const dy = (h - curr.scrollHeight * scale) / 2
 	// curr.style.transform = `translate(${dx}px, ${dy}px) scale(${scale})`
