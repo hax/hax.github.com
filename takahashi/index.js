@@ -29,9 +29,11 @@ function parseContent(text) {
 }
 
 function createSlides(slides) {
-	slides.map(slide => {
+	slides.forEach((slide, i) => {
 		const slideDiv = document.createElement('div')
+		slideDiv.id = i
 		slideDiv.classList.add('slide')
+		slideDiv.dataset.url = new URL('#' + i, document.URL)
 		document.body.appendChild(slideDiv)
 		const contentDiv = document.createElement('div')
 		contentDiv.classList.add('slide-content')
@@ -224,17 +226,7 @@ function pushState() {
 }
 
 function adjustCurrentSlide() {
-	adjustSlide(current(), viewportSize())
-}
-
-function viewportSize() {
-	const e = document.documentElement
-	return {width: e.clientWidth, height: e.clientHeight, bottom: 96}
-}
-
-function printViewportSize() {
-	const e = document.documentElement
-	return {width: e.clientWidth, height: e.clientHeight, bottom: e.clientHeight * 0.05}
+	adjustSlide(current())
 }
 
 function isReplacedElement(e) {
@@ -265,7 +257,6 @@ function adjustSlide(curr) {
 	// const dy = (h - curr.scrollHeight * scale) / 2
 	// curr.style.transform = `translate(${dx}px, ${dy}px) scale(${scale})`
 
-	// s.transform = `scale(${scale}) `
 	s.transform = `translate(-50%, -50%) scale(${scale}) `
 	s.visibility = null
 }
@@ -274,25 +265,7 @@ window.onresize = adjustCurrentSlide
 
 matchMedia('print').onchange = mql => {
 	if (mql.matches) {
-		// console.log(window.devicePixelRatio,
-		// 	window.innerWidth, window.innerHeight,
-		// 	window.outerWidth, window.outerHeight,
-		// 	document.documentElement.clientWidth, document.documentElement.clientHeight,
-		// 	document.documentElement.offsetWidth, document.documentElement.offsetHeight,
-		// 	document.body.clientWidth, document.body.clientHeight,
-		// 	document.body.offsetWidth, document.body.offsetHeight)
-
-		const v = printViewportSize()
-		const pageBox = document.querySelector('#page-box')
-		pageBox.style.width = (v.width - 200) + 'px'
-		pageBox.style.height = (v.height - 200) + 'px'
-
-		console.log('print', v)
-		for (const slide of document.querySelectorAll('.slide')) {
-			slide.style.width = v.width + 'px'
-			slide.style.height = v.height + 'px'
-			adjustSlide(slide)
-		}
+		document.querySelectorAll('.slide').forEach(adjustSlide)
 	}
 }
 

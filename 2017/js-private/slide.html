@@ -84,15 +84,19 @@
 		counter-reset: slide;
 	}
 	.slide {
+		width: 70vw;
+		height: 70vh;
 		page-break-after: always;
+		margin: 15vh 15vw;
+		position: relative;
 	}
 	.slide::after {
-		counter-increment: slide;
-		content: counter(slide) / 'test';
+		content: attr(data-url);
 		position: absolute;
-		bottom: 0;
-		left: 0; right: 0;
-		text-align: center;
+		bottom: -15vh;
+		right: -15vw;
+		font-size: 2vw;
+		color: silver;
 	}
 	.controls {
 		display: none;
@@ -107,5 +111,5 @@
 <script src="https://unpkg.com/prismjs/components/prism-php.min.js"></script>
 
 <body>
-<div id="page-box"></div>
+<!--<div id="page-box"></div>-->
 <script src="../../takahashi/index.js"></script>
