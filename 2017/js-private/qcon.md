@@ -1,9 +1,9 @@
 # 编程语言如何演化
-	—— 以 JS 的 private 为例
+  —— 以 JS 的 private 为例
 
-##	Introduction of
-	My Company
-	and Myself
+## Introduction of
+   My Company
+   and Myself
 
 百姓网
 www.baixing.com

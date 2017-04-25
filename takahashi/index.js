@@ -31,9 +31,12 @@ function parseContent(text) {
 function createSlides(slides) {
 	slides.map(slide => {
 		const slideDiv = document.createElement('div')
-		slideDiv.className = 'slide'
+		slideDiv.classList.add('slide')
 		document.body.appendChild(slideDiv)
-		let container = slideDiv, listType = null
+		const contentDiv = document.createElement('div')
+		contentDiv.classList.add('slide-content')
+		slideDiv.appendChild(contentDiv)
+		let container = contentDiv, listType = null
 		const listPatterns = {
 			'*': /^\*\s+/,
 			'-': /^-\s+/,
@@ -45,14 +48,15 @@ function createSlides(slides) {
 				if (!codeBlock) {
 					codeBlock = true
 					const pre = document.createElement('pre')
+					container.appendChild(pre)
 					container = document.createElement('code')
-					slideDiv.appendChild(pre)
 					pre.appendChild(container)
 					const lang = line.slice(3)
-					container.className = 'language-' + lang
+					container.classList.add('language-' + lang)
+					pre.classList.add('language-' + lang) // for Prism style consistent
 				} else {
 					codeBlock = false
-					container = slideDiv
+					container = contentDiv
 				}
 				return
 			}
@@ -64,8 +68,8 @@ function createSlides(slides) {
 			if (line.startsWith('<!--')) {
 				line = line.slice(4)
 				if (line.endsWith('-->')) line = line.slice(0, -3)
-				if (!slideDiv.dataset.comments) slideDiv.dataset.comments = line
-				else slideDiv.dataset.comments += '\n' + line
+				if (!container.dataset.comments) container.dataset.comments = line
+				else container.dataset.comments += '\n' + line
 				return
 			}
 			line = line.replace(/^#+\s+/, '')
@@ -74,7 +78,7 @@ function createSlides(slides) {
 					line = line.replace(listPatterns[listType], '')
 				} else {
 					listType = null
-					container = slideDiv
+					container = contentDiv
 				}
 			}
 			if (!listType) {
@@ -82,16 +86,15 @@ function createSlides(slides) {
 					const re = listPatterns[t]
 					if (re.test(line)) {
 						listType = t
-						container = document.createElement(t === '#' ? 'ol' : 'ul')
-						container.className = 'line'
-						slideDiv.appendChild(container)
+						const list = document.createElement(t === '#' ? 'ol' : 'ul')
+						container.appendChild(list)
+						container = list
 						line = line.replace(listPatterns[listType], '')
 						break
 					}
 				}
 			}
 			const lineDiv = document.createElement(listType ? 'li' : 'div')
-			if (!listType) lineDiv.className = 'line'
 			if (line.endsWith(',')) {
 				line = line.slice(0, -1)
 				lineDiv.classList.add('comma')
@@ -225,35 +228,46 @@ function adjustCurrentSlide() {
 }
 
 function viewportSize() {
-	return {width: window.innerWidth, height: window.innerHeight - 96}
+	const e = document.documentElement
+	return {width: e.clientWidth, height: e.clientHeight, bottom: 96}
 }
 
 function printViewportSize() {
-	return {width: 1500, height: 900}
+	const e = document.documentElement
+	return {width: e.clientWidth, height: e.clientHeight, bottom: e.clientHeight * 0.05}
 }
 
 function isReplacedElement(e) {
-	return e.matches('img, canvas, video, embed, iframe, object')
+	return e.matches('img, canvas, picture, video, embed, iframe, object')
 		&& e.width != 0 && e.height != 0
 }
 
-function adjustSlide(curr, size) {
-	curr.style.visibility = 'hidden'
-	curr.style.transform = null
-	Array.from(curr.childNodes).forEach(e => {
-		if (e.classList.contains('replaced')) e.style.width = size.width + 'px'
-		else {
+function adjustSlide(curr) {
+	const w = curr.clientWidth
+	const h = curr.clientHeight
+	const c = curr.querySelector('.slide-content')
+	const s = c.style
+
+	s.visibility = 'hidden'
+	s.transform = null
+
+	for (const e of c.children) {
+		if (isReplacedElement(e)) {
+			e.style.width = w + 'px'
+		} else {
 			e.style.fontSize = '1rem'
-			e.style.fontSize = `${size.width / e.clientWidth / 2}rem`
+			e.style.fontSize = `${w / e.offsetWidth / 2}rem`
 		}
-	})
-	const scale = Math.min(size.height / curr.clientHeight, size.width / curr.clientWidth)
-	// console.log(window.devicePixelRatio, scale, size, {width: curr.clientWidth, height: curr.clientHeight}, curr.textContent)
-	const dx = (size.width - curr.clientWidth * scale) / 2
-	const dy = (size.height - curr.clientHeight * scale) / 2
-	curr.style.transform = `translate(${dx}px, ${dy}px) scale(${scale})`
-	curr.style.visibility = null
-	//console.log(vh, curr.clientHeight, vh / curr.clientHeight, curr.style.transform)
+	}
+
+	const scale = Math.min(h / c.offsetHeight, w / c.offsetWidth)
+	// const dx = (w - curr.scrollWidth * scale) / 2
+	// const dy = (h - curr.scrollHeight * scale) / 2
+	// curr.style.transform = `translate(${dx}px, ${dy}px) scale(${scale})`
+
+	// s.transform = `scale(${scale}) `
+	s.transform = `translate(-50%, -50%) scale(${scale}) `
+	s.visibility = null
 }
 
 window.onresize = adjustCurrentSlide
@@ -267,10 +281,18 @@ matchMedia('print').onchange = mql => {
 		// 	document.documentElement.offsetWidth, document.documentElement.offsetHeight,
 		// 	document.body.clientWidth, document.body.clientHeight,
 		// 	document.body.offsetWidth, document.body.offsetHeight)
-		// const pageBox = document.querySelector('#page-box')
-		// pageBox.style.width = window.innerWidth + 'px'
-		// pageBox.style.height = window.innerHeight + 'px'
-		Array.from(document.querySelectorAll('.slide')).forEach(e => adjustSlide(e, printViewportSize()))
+
+		const v = printViewportSize()
+		const pageBox = document.querySelector('#page-box')
+		pageBox.style.width = (v.width - 200) + 'px'
+		pageBox.style.height = (v.height - 200) + 'px'
+
+		console.log('print', v)
+		for (const slide of document.querySelectorAll('.slide')) {
+			slide.style.width = v.width + 'px'
+			slide.style.height = v.height + 'px'
+			adjustSlide(slide)
+		}
 	}
 }
 
