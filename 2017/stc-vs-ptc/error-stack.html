@@ -1,0 +1,14 @@
+<script>
+'use strict'
+
+function foo(s = '') {
+	if (s.length > 100) {
+		throw new Error()
+	}
+	else return bar(s + '\nfoo!')
+}
+function bar(s) {
+	return foo(s + '\nbar!')
+}
+foo()
+</script>

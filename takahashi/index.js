@@ -124,10 +124,14 @@ function createSlides(slides) {
 						case '**': node = document.createElement('strong'); break
 						case '*': node = document.createElement('em'); break
 						case '~~': node = document.createElement('s'); break
-						default: node = document.createTextNode(tokens[i])
+						default: node = tokens[i]
 					}
-					if (node.nodeType === 1) node.appendChild(document.createTextNode(tokens[++i]))
-					lineDiv.appendChild(node)
+					if (node.nodeType === 1) {
+						node.innerHTML += tokens[++i]
+						lineDiv.appendChild(node)
+					} else {
+						lineDiv.innerHTML += node
+					}
 				}
 			}
 			container.appendChild(lineDiv)
