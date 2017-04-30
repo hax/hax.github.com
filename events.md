@@ -12,7 +12,7 @@ lang: zh-cmn-Hans-x-hax
 - 2017-04-16~18 帝都 [QCon北京2017](http://2017.qconbeijing.com/) “编程语言”专题讲师
   <br>[编程语言如何演化 —— 以 JavaScript 的 private 为例](/2017/js-private/)
 - 2017-04-30 魔都 第三届函数式编程分享 分享
-  <!--<br>[STC vs PTC](/2017/stc-vs-ptc/)-->
+  <br>[STC vs PTC](/2017/stc-vs-ptc/)
 
 ### 2016
 
