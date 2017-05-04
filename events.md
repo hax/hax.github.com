@@ -12,7 +12,7 @@ lang: zh-cmn-Hans-x-hax
 - 2017-04-16~18 帝都 [QCon北京2017](http://2017.qconbeijing.com/) “编程语言”专题讲师
   <br>[编程语言如何演化 —— 以 JavaScript 的 private 为例](/2017/js-private/)
 - 2017-04-30 魔都 第三届函数式编程分享 分享
-  <br>[STC vs PTC](/2017/stc-vs-ptc/)
+  <br>[STC vs PTC](/2017/stc-vs-ptc/) [[录像]](http://v.youku.com/v_show/id_XMjc0NDQ3MDI1Ng==.html?f=49711130&o=0&spm=a2h1n.8251843.playList.5!3~5~A)
 
 ### 2016
 
@@ -121,7 +121,7 @@ lang: zh-cmn-Hans-x-hax
 - 2013-07-13~14 杭州 [ADC·阿里技术嘉年华（第八届D2·跨越）](http://adc.taobao.com/) 参会
 - 2013-08-17~18 魔都 [Test The Web Forward](http://testthewebforward.org/events/2013/shanghai.html) 特邀专家、 CSS3 Grid Layout 测试用例组组长
 - 2013-08-30~31 帝都 [SDCC2013](http://sdcc.csdn.net/2013/) 讲师
-  <br>[Web模板技术的总结与探索](/2013/web_template/) [[视频]](http://v.youku.com/v_show/id_XNjYxMjQxMDI4.html)
+  <br>[Web模板技术的总结与探索](/2013/web_template/) [[录像]](http://v.youku.com/v_show/id_XNjYxMjQxMDI4.html)
 - 2013-11-01~03 魔都 [QCon上海2013](http://2013.qconshanghai.com/) 参会
 - 2013-11-09~10 帝都 [JSConf 京JS](http://2013.jsconf.cn/) Lighting Talk
   <br>[mmclass简介](https://github.com/hax/mmclass)
