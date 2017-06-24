@@ -13,6 +13,11 @@ lang: zh-cmn-Hans-x-hax
   <br>[编程语言如何演化 —— 以 JavaScript 的 private 为例](/2017/js-private/)
 - 2017-04-30 魔都 第三届函数式编程分享 分享
   <br>[STC vs PTC](/2017/stc-vs-ptc/) [[录像]](http://v.youku.com/v_show/id_XMjc0NDQ3MDI1Ng==.html?f=49711130&o=0&spm=a2h1n.8251843.playList.5!3~5~A)
+- 2017-05-04 魔都 [BXT 010](https://github.com/baixing/BXT/issues/11) 组织者
+- 2017-06-24 深圳 [腾讯TFC2017](https://tfc.alloyteam.com/) 讲师
+  <br>[R & B](/2017/r&b/)
+- 2017-07-15~16 魔都 [JSConf 沪JS](http://2017.jsconf.cn/)
+- 2017-10-17~19 魔都 [QCon上海2017](http://2017.qconshanghai.com/) “编程语言”出品人
 
 ### 2016
 
