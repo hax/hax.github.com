@@ -228,7 +228,7 @@ let e = document |> querySelector ".list";
 Elm, PureScript
 ~~Clojure (ClojureScript)~~
 
-Why OCamel
+Why OCaml
 
 历史悠久
 接近产业界
