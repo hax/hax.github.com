@@ -264,6 +264,7 @@ Readable
 Easy to debug
 
 Demo of R & B
+[reason-react-example](https://github.com/chenglou/reason-react-example/)
 
 bs-platform
 reason-cli
