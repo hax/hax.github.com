@@ -63,7 +63,7 @@ function createSlides(slides) {
 				return
 			}
 			if (codeBlock) {
-				container.innerHTML += (line !== '\\' ? line : '') + '\n'
+				container.textContent += (line !== '\\' ? line : '') + '\n'
 				return
 			}
 			line = line.trim()
@@ -89,6 +89,7 @@ function createSlides(slides) {
 					if (re.test(line)) {
 						listType = t
 						const list = document.createElement(t === '#' ? 'ol' : 'ul')
+						if (t === '#') list.start = parseInt(line)
 						container.appendChild(list)
 						container = list
 						line = line.replace(listPatterns[listType], '')
@@ -111,7 +112,7 @@ function createSlides(slides) {
 					lineDiv.appendChild(img)
 				} else {
 					const a = document.createElement('a')
-					a.textContent = m[2]
+					a.innerHTML = m[2]
 					a.href = m[3]
 					lineDiv.appendChild(a)
 				}
