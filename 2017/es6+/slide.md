@@ -381,6 +381,24 @@ let getLength = vector => match (vector) {
 }
 ```
 
+```js
+let isPointOutOfBounds = p => match (p) {
+    { x > 100, y }: true,
+    { x, y > 100 }: true,
+    else: false
+}
+```
+
+```js
+let nums = /(\d)(\d)(\d)/;
+let lets = /(\w)(\w)(\w)/;
+let str = '123';
+match (str) {
+    nums -> [, first, second, third]: first + second + third,
+    lets -> [, first, second, third]: first + second + third
+}
+```
+
 WebAssembly
 
 Q & A
