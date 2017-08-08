@@ -20,7 +20,10 @@ lang: zh-cmn-Hans-x-hax
   <br>[后 ES6 时代的 JavaScript 语言](http://johnhax.net/2017/es6+)
 - 2017-08-08 魔都 [BXT 011](https://github.com/baixing/BXT/issues/12) 组织者
 - 2017-08-10~11 台北 [Modern Web 2017](http://modernweb.tw/) 讲师
-  <br>[avaScript —— 世界第一编程语言（2017版）](/2017/modern-web)
+  <br>[JavaScript —— 世界第一编程语言（2017版）](/2017/modern-web)
+- 2017-08-19 杭州 [第四期 杭州 Node Party 技术分享](https://zhuanlan.zhihu.com/p/28346707) 参会
+- 2017-09-02 魔都
+- 2017-09-06 线上
 - 2017-10-17~19 魔都 [QCon上海2017](http://2017.qconshanghai.com/) “编程语言”出品人
 
 ### 2016
