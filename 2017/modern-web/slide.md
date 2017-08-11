@@ -387,8 +387,8 @@ A monad is just a **monoid** in
 the **category** of **endofunctors**
 單子說白了不過就是**自函子**
 **範疇**上的一個**么半群**而已,
-what's the problem?
-這有什麼難以理解的？
+What's the problem?
+這有什麼**難**以理解的？
 
 ![白眼](shby.jpeg)
 
