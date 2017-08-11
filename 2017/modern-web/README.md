@@ -11,3 +11,7 @@ JavaScript —— 世界第一編程語言（2017版）
 賀師俊，網名Hax，現就職於百姓網架構部。
 
 Hax對多項Web標準、多種編程語言和多個開源項目均有微小的貢獻：給HTML標準提交過PR；給ECMAScript標準提交過issue；給Babel、ESLint等提交過PR；是多個Atom插件的維護者；發明了「..<」符號被Groovy和Swift語言採納。 Hax在許多技術活動中擔任講師、嘉賓或主持人，連續兩年擔任QCon上海的前端專題出品人並獲頒「優秀出品人」，也是百姓網BXT技術沙龍的組織者之一。 Hax還是知乎的編程、前端開發、JavaScript、CSS等話題的「優秀回答者」。
+
+## 檔案
+
+[簡報](slide?slide)（需要支援 ES6+ 以及 Fetch 等 APIs 的瀏覽器如 Chrome 50+）
