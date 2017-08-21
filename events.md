@@ -18,7 +18,7 @@ lang: zh-cmn-Hans-x-hax
   <br>[R & B](/2017/r&b/)
 - 2017-07-15~16 魔都 [JSConf 沪JS](http://2017.jsconf.cn/) 讲师
   <br>[后 ES6 时代的 JavaScript 语言](http://johnhax.net/2017/es6+)
-- 2017-08-08 魔都 [BXT 011](https://github.com/baixing/BXT/issues/12) 组织者
+- 2017-08-08 魔都 [BXT 011](https://github.com/baixing/BXT/issues/13) 组织者
 - 2017-08-10~11 台北 [Modern Web 2017](http://modernweb.tw/) 讲师
   <br>[JavaScript —— 世界第一编程语言（2017版）](/2017/modern-web)
 - 2017-08-19 杭州 [第四期 杭州 Node Party 技术分享](https://zhuanlan.zhihu.com/p/28346707) 参会
