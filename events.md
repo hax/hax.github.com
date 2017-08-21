@@ -22,7 +22,8 @@ lang: zh-cmn-Hans-x-hax
 - 2017-08-10~11 台北 [Modern Web 2017](http://modernweb.tw/) 讲师
   <br>[JavaScript —— 世界第一编程语言（2017版）](/2017/modern-web)
 - 2017-08-19 杭州 [第四期 杭州 Node Party 技术分享](https://zhuanlan.zhihu.com/p/28346707) 参会
-- 2017-09-02 魔都
+- 2017-09-02 魔都 [QCon上海2017演讲经验交流会] 嘉宾
+  <br>[讲师试讲之心得](/2017/rehearsal) 及 [高桥流简报法之心得](/2017/takahashi)
 - 2017-09-06 线上 [知乎Live：如何学习和实践 ES201X？](/2017/live-es201x) 主讲
 - 2017-10-17~19 魔都 [QCon上海2017](http://2017.qconshanghai.com/) “编程语言”出品人
 - 2017-11-?
