@@ -14,8 +14,17 @@ lang: zh-cmn-Hans-x-hax
 
 ### 版本
 
- - 2015年7月 深JS版（20分钟） [[Video]](http://v.youku.com/v_show/id_XMTMwMzI5ODc4MA==.html) [[Slide]](slide?shenjs)
- - 2015年9月 沪江版（90分钟） [[Video (118:30 ~ 207:20)]](http://www.cctalk.com/course/152391648137/) [[Slide]](slide?hujiang)
- - 2015年11月 QCon版（45分钟） 视频预计2016年2月发布 [[Slide]](slide?qcon)
- - 2015年12月 SDCC版（45分钟） 视频尚未发布 [[Slide]](slide?sdcc)
- - 2016年?月
+ - 2015年7月 深JS版（20分钟）
+   [[Video]](http://v.youku.com/v_show/id_XMTMwMzI5ODc4MA==.html)
+   [[Slide]](slide?shenjs)
+ - 2015年9月 沪江版（90分钟）
+   [[Video (118:30 ~ 207:20)]](http://www.cctalk.com/course/152391648137/)
+   [[Slide]](slide?hujiang)
+ - 2015年11月 QCon版（45分钟）
+   [[Video]](http://www.infoq.com/cn/presentations/javascript-the-world-best-programming-language) [[Slide]](slide?qcon)
+ - 2015年12月 SDCC版（45分钟）
+   视频尚未发布
+   [[Slide]](slide?qcon)
+ - 2017年8月 ModernWeb版（45分钟）
+   视频尚未发布
+   [[2017版Slide]](/2017/modern-web)
