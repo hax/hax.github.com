@@ -1,0 +1,130 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<title>Slide</title>
+<!--<style>
+	.slide {
+		outline: thick dotted red;
+	}
+	.slide-content {
+		outline: medium dotted green;
+	}
+	.slide-content > * {
+		outline: thin dashed blue;
+	}
+	#page-box {
+		position: fixed;
+		border: 100px double silver;
+	}
+</style>-->
+<style>
+	html {
+		font-family: Noto Sans CJK SC, PingFang SC, Hiragino Sans GB;
+	}
+	ol, ul {
+		padding-left: 1.34em;
+		-webkit-padding-start: 1.34em;
+		padding-inline-start: 1.34em;
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
+	}
+	ol:first-child, ul:first-child {
+		margin-top: 0;
+	}
+	pre > code {
+		tab-size: 2 !important;
+	}
+	strong {
+		color: red
+	}
+	a {
+		color: blue;
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+
+	.slide {
+		display: flow-root;
+	}
+	.slide-content {
+		position: relative;
+		top: 50%;
+		left: 50%;
+		width: fit-content;
+		transform: translate(-50%, -50%);
+	}
+	.slide-content > * {
+		width: max-content;
+	}
+</style>
+<style media="screen">
+	.slide {
+		position: fixed;
+		left: 5%; right: 5%;
+		top: 5%; bottom: 96px;
+		visibility: hidden;
+	}
+	.current.slide {
+		visibility: visible;
+	}
+	.comma ~ * {
+		visibility: hidden;
+	}
+	s.comma {
+		text-decoration: none;
+	}
+	s.comma + em {
+		visibility: hidden;
+	}
+</style>
+<style media="print">
+	body {
+		margin: 0;
+		counter-reset: slide;
+	}
+	.slide {
+		width: 70vw;
+		height: 70vh;
+		page-break-after: always;
+		margin: 15vh 15vw;
+		position: relative;
+	}
+	.slide::after {
+		content: attr(data-url);
+		position: absolute;
+		bottom: -15vh;
+		right: -15vw;
+		font-size: 2vw;
+		color: silver;
+	}
+	.controls {
+		display: none;
+	}
+</style>
+
+<style title=eva media=screen>
+	html {
+		background: black;
+		color: #f0f0f0;
+	}
+	code {
+		color: silver;
+	}
+	a {
+		color: lightskyblue;
+	}
+</style>
+
+<!--<script src="https://unpkg.com/rainbow-code/dist/rainbow.min.js"></script>-->
+
+<!-- <link rel="stylesheet" href="https://unpkg.com/prismjs/themes/prism.css">
+<script src="https://unpkg.com/prismjs/components/prism-core.min.js"></script>
+<script src="https://unpkg.com/prismjs/components/prism-clike.min.js"></script>
+<script src="https://unpkg.com/prismjs/components/prism-javascript.min.js"></script>
+<script src="https://unpkg.com/prismjs/components/prism-php.min.js"></script> -->
+
+<body>
+<!--<div id="page-box"></div>-->
+<script src="../../takahashi/index.js"></script>
