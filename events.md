@@ -25,7 +25,15 @@ lang: zh-cmn-Hans-x-hax
 - 2017-09-02 魔都 [QCon上海2017演讲经验交流会] 嘉宾
   <br>[讲师试讲之心得](/2017/rehearsal) 及 [高桥流简报法之心得](/2017/takahashi)
 - 2017-09-06 线上 [知乎Live：如何学习和实践 ES201X？](/2017/live-es201x) 主讲
+- 2017-09-07 魔都 [BXT 012](https://github.com/baixing/BXT/issues/15) 组织者
 - 2017-10-17~19 魔都 [QCon上海2017](http://2017.qconshanghai.com/) “编程语言”出品人
+- 2017-10-25 魔都 [BXT 013](https://github.com/baixing/BXT/issues/17) 组织者
+- 2017-11-02 帝都 美团内部分享 讲师
+  <br>Fastify 框架和性能优化
+- 2017-11-03 帝都 360内部分享
+  <br>如何撸一个JavaScript Benchmark的轮子 [录像](http://cloud.live.360vcloud.net/theater/play?roomid=2242)
+- 2017-11-12 帝都 [壹佰案例](http://www.top100summit.com/) 讲师
+  <br>如何撸一个JavaScript Benchmark的轮子
 - 2017-11-?
 
 ### 2016
