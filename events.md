@@ -23,7 +23,7 @@ lang: zh-cmn-Hans-x-hax
   <br>[JavaScript —— 世界第一编程语言（2017版）](/2017/modern-web)
 - 2017-08-19 杭州 [第四期 杭州 Node Party 技术分享](https://zhuanlan.zhihu.com/p/28346707) 参会
 - 2017-09-02 魔都 [QCon上海2017演讲经验交流会] 嘉宾
-  <br>[讲师试讲之心得](/2017/rehearsal) 及 [高桥流简报法之心得](/2017/takahashi)
+  <br>[讲师试讲之心得](/2017/rehearsal/slide)
 - 2017-09-06 线上 [知乎Live：如何学习和实践 ES201X？](/2017/live-es201x) 主讲
 - 2017-09-07 魔都 [BXT 012](https://github.com/baixing/BXT/issues/15) 组织者
 - 2017-10-17~19 魔都 [QCon上海2017](http://2017.qconshanghai.com/) “编程语言”出品人
@@ -34,7 +34,10 @@ lang: zh-cmn-Hans-x-hax
   <br>如何撸一个JavaScript Benchmark的轮子 [录像](http://cloud.live.360vcloud.net/theater/play?roomid=2242)
 - 2017-11-12 帝都 [壹佰案例](http://www.top100summit.com/) 讲师
   <br>如何撸一个JavaScript Benchmark的轮子
-- 2017-11-?
+- 2017-11-?? 魔都 BXT 014
+- 2017-12-05 杭州 [第五期 杭州 Node Party 技术分享](https://www.bagevent.com/event/975252) 讲师
+  <br>主题待定
+- 2017-12-16 杭州 [第十二届 D2]
 
 ### 2016
 
