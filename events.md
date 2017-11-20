@@ -35,7 +35,7 @@ lang: zh-cmn-Hans-x-hax
 - 2017-11-12 帝都 [壹佰案例](http://www.top100summit.com/) 讲师
   <br>如何撸一个JavaScript Benchmark的轮子
 - 2017-11-?? 魔都 BXT 014
-- 2017-12-05 杭州 [第五期 杭州 Node Party 技术分享](https://www.bagevent.com/event/975252) 讲师
+- 2017-11-25 杭州 [第五期 杭州 Node Party 技术分享](https://www.bagevent.com/event/975252) 讲师
   <br>主题待定
 - 2017-12-16 杭州 [第十二届 D2]
 
