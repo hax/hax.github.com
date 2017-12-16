@@ -1,3 +1,26 @@
+Microbenchmark
+for JavaScript
+----------------------------------------
+[johnhax.net/2017/benchmark/](http://johnhax.net/2017/benchmark/slide?slide)
+
+我
+
+贺师俊
+
+hax
+
+百姓网
+www.baixing.com
+
+百姓网
+架构部
+
+github: @hax
+zhihu: 贺师俊
+weibo: @johnhax
+
+引子
+
 什么是 microbenchmark
 
 测试一小段
@@ -190,8 +213,6 @@ process.hrtime()
 
 benchmark.js
 
-示例
-
 问题
 
 慢
@@ -207,3 +228,20 @@ Boilerplate
 
 重新考虑
 基本假设
+
+正态分布？
+
+假设其他条件不变
+最小值应该收敛！
+
+实际表现
+
+async
+
+更多细节
+看代码！
+
+Q & A
+github: @hax
+zhihu: 贺师俊
+weibo: @johnhax
