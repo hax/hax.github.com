@@ -6,6 +6,10 @@ lang: zh-cmn-Hans-x-hax
 
 ## Timeline
 
+### 2018
+
+- 2018-01-06 杭州 [SEE Conf 2018](https://zhuanlan.zhihu.com/p/32709149) 嘉宾
+
 ### 2017
 
 - 2017-01-12 杭州 WeexConf 参会
@@ -31,13 +35,15 @@ lang: zh-cmn-Hans-x-hax
 - 2017-11-02 帝都 美团内部分享 讲师
   <br>Fastify 框架和性能优化
 - 2017-11-03 帝都 360内部分享
-  <br>如何撸一个JavaScript Benchmark的轮子 [录像](http://cloud.live.360vcloud.net/theater/play?roomid=2242)
+  <br>如何撸一个JavaScript Benchmark的轮子 [[录像]](http://cloud.live.360vcloud.net/theater/play?roomid=2242)
 - 2017-11-12 帝都 [壹佰案例](http://www.top100summit.com/) 讲师
   <br>如何撸一个JavaScript Benchmark的轮子
-- 2017-11-?? 魔都 BXT 014
 - 2017-11-25 杭州 [第五期 杭州 Node Party 技术分享](https://www.bagevent.com/event/975252) 讲师
-  <br>主题待定
-- 2017-12-16 杭州 [第十二届 D2]
+  <br>[STC vs PTC](http://johnhax.net/2017/stc-vs-ptc/)
+- 2017-12-14 魔都 [BXT 014](https://github.com/baixing/BXT/issues/19) 讲师
+  <br>如何打造一个JS平台下通用的 microbenchmark 轮子
+- 2017-12-16 杭州 [第十二届D2·匠心](http://d2forum.alibaba-inc.com/) 讲师
+  <br>Microbenchmark for JavaScript [[Slide]](http://johnhax.net/2017/benchmark/slide?slide) [[录像 2:56:30开始 约1小时]](https://tianchi.aliyun.com/forum/videoStream.html#postsId=3503)
 
 ### 2016
 
