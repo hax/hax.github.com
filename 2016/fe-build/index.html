@@ -1,24 +1,38 @@
 <!doctype html>
+<head>
 <meta charset="utf-8">
 <title>Slide</title>
+<!--<style>
+	.slide {
+		outline: thick dotted red;
+	}
+	.slide-content {
+		outline: medium dotted green;
+	}
+	.slide-content > * {
+		outline: thin dashed blue;
+	}
+	#page-box {
+		position: fixed;
+		border: 100px double silver;
+	}
+</style>-->
 <style>
 	html {
 		font-family: Noto Sans CJK SC, PingFang SC, Hiragino Sans GB;
 	}
+	ol, ul {
+		padding-left: 1.34em;
+		-webkit-padding-start: 1.34em;
+		padding-inline-start: 1.34em;
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
+	}
+	pre > code {
+		tab-size: 2 !important;
+	}
 	strong {
 		color: red
-	}
-	.slide {
-		-webkit-transform-origin: 0 0;
-		transform-origin: 0 0;
-	}
-	.line {
-		/*width: -webkit-fit-content;*/
-		width: fit-content;
-		margin: auto;
-	}
-	.replaced img, .replaced canvas, .replaced video, .replaced embed, .replaced iframe, .replaced object {
-		width: 100%;
 	}
 	a {
 		color: blue;
@@ -27,17 +41,32 @@
 	a:hover {
 		text-decoration: underline;
 	}
+
+	.slide {
+		display: flow-root;
+	}
+	.slide-content {
+		position: relative;
+		top: 50%;
+		left: 50%;
+		width: fit-content;
+		transform: translate(-50%, -50%);
+	}
+	.slide-content > * {
+		width: max-content;
+	}
 </style>
 <style media="screen">
 	.slide {
 		position: fixed;
-		left: 0; top: 0;
+		left: 5%; right: 5%;
+		top: 5%; bottom: 96px;
 		visibility: hidden;
 	}
 	.current.slide {
 		visibility: visible;
 	}
-	.line.comma ~ .line {
+	.comma ~ * {
 		visibility: hidden;
 	}
 	s.comma {
@@ -48,15 +77,30 @@
 	}
 </style>
 <style media="print">
-	html, body {
-		height: 100%;
+	body {
+		margin: 0;
+		counter-reset: slide;
 	}
 	.slide {
+		width: 70vw;
+		height: 70vh;
 		page-break-after: always;
-		/*outline: 1px dotted navy;*/
+		margin: 15vh 15vw;
+		position: relative;
+	}
+	.slide::after {
+		content: attr(data-url);
+		position: absolute;
+		bottom: -15vh;
+		right: -15vw;
+		font-size: 2vw;
+		color: silver;
 	}
 	.controls {
 		display: none;
 	}
 </style>
+
+<body>
+<!--<div id="page-box"></div>-->
 <script src="../../takahashi/index.js"></script>
