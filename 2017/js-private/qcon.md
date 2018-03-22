@@ -690,7 +690,7 @@ soft vs hard
 都是某种程度上soft的
 
 但可以使用 SecurityManager
-之类的机制限制 refection
+之类的机制限制 reflection
 
 Symbol 机制
 
