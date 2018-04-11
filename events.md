@@ -9,6 +9,11 @@ lang: zh-cmn-Hans-x-hax
 ### 2018
 
 - 2018-01-06 杭州 [SEE Conf 2018](https://zhuanlan.zhihu.com/p/32709149) 嘉宾
+- 2018-03-31 厦门 [CSSConf 中国第四届CSS大会](https://css.w3ctech.com/4) 参会
+- 2018-04-18 魔都 [BXT 015](https://github.com/baixing/BXT/issues/20) 组织者
+- 2018-04-20~22 帝都 [QCon北京2018](https://2018.qconbeijing.com/) “编程语言”专题讲师
+- 2018-05-?? 魔都 [BXT 016](https://github.com/baixing/BXT/issues/22) 组织者
+- 2018-09-01~02 魔都
 
 ### 2017
 
