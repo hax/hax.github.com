@@ -6,18 +6,26 @@ if (typeof fetch !== 'function') {
 	return
 }
 
-const mdSource = location.search.slice(1) || 'README'
-takahashi(mdSource + '.md')
+takahashi(
+	location.search.slice(1)
+	|| getName(location.pathname)
+	|| 'README'
+)
 
-function takahashi(markdownUrl) {
-	fetch(markdownUrl)
+function getName(path) {
+	const filename = path.slice(path.lastIndexOf('/') + 1)
+	const pos = filename.lastIndexOf('.')
+	return pos === -1 ? filename : filename.slice(0, pos)
+}
+
+function takahashi(slideURL) {
+	fetch(slideURL + '.md')
 		.then(res => res.text())
 		.then(parseContent)
 		.then(createSlides)
 		.then(startPresentation)
 		.then(highlight)
 }
-
 
 function highlight() {
 	if (window.Prism) Prism.highlightAll()
