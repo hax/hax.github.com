@@ -1,0 +1,26 @@
+<!doctype html>
+
+<input id=my-date type=date>
+
+<input id=test type=button value="test it!">
+
+<script>
+void function () {
+
+	const testButton = document.getElementById('test')
+	const myDateInput = document.getElementById('my-date')
+
+	myDateInput.oninput = function (e) {
+		console.log(myDateInput.value)
+		console.log(myDateInput.valueAsDate)
+	}
+
+	testButton.onclick = function () {
+		const d = myDateInput.valueAsDate
+		d.setFullYear(2019)
+		console.log(d)
+		console.log(myDateInput.valueAsDate)
+	}
+
+}()
+</script>
