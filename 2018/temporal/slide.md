@@ -379,6 +379,10 @@ No `toDate()`
 
 `fromString()` rather than `parse()`
 
+`toString()`: `<Y>-<M>-<D>T<h>:<m>:<s>.<ns>[Z|<offset>]`
+
+`new Intl.DateTimeFormat(locales, options).format(date)`
+
 [CivilXXX 命名](https://github.com/tc39/proposal-temporal/issues/33)
 [Local 的意思](https://github.com/tc39/proposal-temporal/issues/11)
 
