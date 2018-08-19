@@ -1,79 +1,72 @@
-Time in JavaScript
+关于时间
+QConBeijing 2018
 
-About me
+
+个人简介
 
 hax
+
 贺师俊
 
 百姓网
 www.baixing.com
 
+百姓网
+架构部
+
+前端
+
+HTML
+
+JavaScript
+
+[proposal-function-this](https://github.com/hax/proposal-function-this)
+
 时间
 Time
 
-日期和时间的处理
-Date and Time Handling
-
 平常
-Ordinary
 
 复杂
-Complicated
 
 历法
-Calendar
 
 天文
-Astronomy
 
 年 月 日
-Year Month Day
 
-- 年 太阳 Year Sun
-- 月 月亮 Moon Month
-- 日 地球 Day Earth
+- 年 太阳
+- 月 月亮
+- 日 地球
 
 政治、宗教、文化
-Politics/Religion/Culture
 
-公历/西历
-Western Calendar
+公历
 
-格里历
-Gregorian Calendar
+- 农历
+- 佛历
+- 印度历
+- 希伯来历
+- 波斯历
+- 伊斯兰历
 
-教宗格列高利十三世
-Pope Gregory XIII
-
-- 农历 Chinese lunar calendar
-- 佛历 Buddhist calendar
-- 印度历 Hindu calendar
-- 希伯来历 Hebrew calendar
-- 波斯历 Persian calendar
-- 伊斯兰历 Hijri calendar
-
-- 年月日 Y-M-D
-- 月日年 M-D-Y
-- 日月年 D-M-Y
+- 年月日
+- 月日年
+- 日月年
 
 现代编程语言
 内置的时间API
-Time API in modern
-programming languages
 
 [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
 
 格里历
-Gregorian Calendar
 
 外推格里历
 [Proleptic Gregorian calendar](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar)
 
 ~~政治、宗教、文化~~
-~~Politics/Religion/Culture~~
 
 天文
-Astronomy
 
 +1S
 
@@ -83,20 +76,10 @@ Astronomy
 [Bugs](https://en.wikipedia.org/wiki/Leap_second#Examples_of_problems_associated_with_the_leap_second)
 
 ~~政治、宗教、文化~~
-~~Politics/Religion/Culture~~
 
 ~~天文~~
-~~Astronomy~~
-
-简化
-Simplified
 
 时间 API
-Time API
-
-Simple?
-
-JavaScript
 
 Date
 
@@ -129,16 +112,13 @@ date.getTimezoneOffset()
 ```
 
 问题
-Issues
 
-- Many toXXXString(), but not support custom format
-- Only UTC and local time, not support timezones
-- Lack of convinent APIs for calculation
-- Many deprecated APIs
-- Precision only millisecond
-
-Time Zones
-[TZ database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+- 好多toXXXString()
+- 不支持自定义格式
+- 只有 UTC 和 local，不支持时区
+- 缺乏方便的时间计算 API
+- 一些 deprecated API
+- 精度到毫秒
 
 
 ```js
@@ -169,12 +149,10 @@ new Date(0, 0, 0) // 1899-12-30T16:00:00Z
 
 ```js
 Date.parse('2018-04-16T15:00:00')
-// UTC or local?
 ```
 
 ```js
 Date.parse('2018-04-16T15:00:00Z')
-// UTC
 ```
 
 Mutable
@@ -211,26 +189,15 @@ const user = {
 }
 ```
 
-为什么那么挫？
-Why so hard?
+为什么
+那么挫？
 
 Brendan Eich
-Create in 10 days
+10天创造
 
-Date is not
-designed by BE
-这锅我不背！
+JavaScript
 
-- JavaScript
-- Java
-
-雷锋 vs 雷峰塔
-[Car vs Carpet](https://stackoverflow.com/questions/245062/whats-the-difference-between-javascript-and-java)
-
-Really?
-
-熊猫 vs 小熊猫
-Panda vs Red Panda (firefox)
+Java
 
 [java.util.Date](https://docs.oracle.com/javase/7/docs/api/java/util/Date.html)
 
@@ -242,28 +209,18 @@ Java 8
 
 [java.time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
 
-- Immutability
-- Soc: Human-readable date time / Machine time
-- Clarity (consistent APIs)
-- Utility operations
-- Extendable (for non-ISO calendars)
-
-What about JS?
-
-Bad API
-20+ Years!
-
-![Complains to JS Date](https://flaviocopes.com/javascript-dates/Screen%20Shot%202018-07-06%20at%2007.20.58.png)
+- 不变性
+- 分离人类可读时间和机器时间
+- 更清晰的 API 接口
+- 实用运算
+- 可扩展性
 
 库
-libs to save
 
 - [Moment.js](http://momentjs.com/)
 - [date-fns](https://date-fns.org/)
 - [js-joda](https://js-joda.github.io/js-joda/)
 
-
-Moment.js
 
 ```js
 moment().format('MMMM Do YYYY, h:mm:ss a')
@@ -281,13 +238,8 @@ moment().subtract(10, 'days')
 moment().add(1, 'hours')
 ```
 
-Issues
-
 - [Why Moment.js Isn’t Immutable Yet](https://maggiepint.com/2016/06/24/why-moment-js-isnt-immutable-yet/)
 - [moment.js为何要设计成mutable的，有何优缺点？](https://www.zhihu.com/question/52669297)
-
-
-js-joda
 
 
 ```js
@@ -304,10 +256,7 @@ const dt = LocalDateTime.parse('2018-02-26T23:55:42.123')
 dt.truncatedTo(ChronoUnit.HALF_DAYS); // '2018-02-26T12:00'
 ```
 
-[More examples of js-joda](https://js-joda.github.io/js-joda/cheat-sheet.html)
-
 提案
-Proposal
 
 [proposal-temporal](https://github.com/tc39/proposal-temporal)
 
@@ -371,41 +320,20 @@ const instant = zonedInstant.toInstant()
 ```
 
 一些讨论
-Some discussions
-
-No `toDate()`
-
-`fromMilliseconds()` instead of `fromDate()`
-
-`fromString()` rather than `parse()`
 
 [CivilXXX 命名](https://github.com/tc39/proposal-temporal/issues/33)
 [Local 的意思](https://github.com/tc39/proposal-temporal/issues/11)
-
-
-计算机科学两大难：
-There are only two hard things in Computer Science:
-缓存和命名
-cache invalidation and naming things.
-
-命名
-Naming
 
 - Date/Time/DateTime
 - Civil
 - Local
 - Plain
-
-- Unzoned
-- Naive (aware)
+- Unzoned,
 - CalendarDate/ClockTime/DateTime
-- [Simple](https://github.com/tc39/proposal-temporal/issues/33#issuecomment-404687232)
 
 其他历法？
-Other non-ISO calendars?
 
 其他时间构造？
-Other time types?
 
 - Period
 - Year
@@ -414,13 +342,7 @@ Other time types?
 - OffsetTime
 - ZonedDateTime
 
-Try it today!
-
-[Polyfill](https://www.npmjs.com/package/tc39-proposal-temporal)
-(Not recommend for production)
-
 总结
-Summary
 
 Q & A
 - [@johnhax](https://weibo.com/haxy)
