@@ -379,7 +379,9 @@ No `toDate()`
 
 `fromString()` rather than `parse()`
 
-`toString()`: `<Y>-<M>-<D>T<h>:<m>:<s>.<ns>[Z|<offset>]`
+```
+toString(): <Y>-<M>-<D>T<h>:<m>:<s>.<ns>[Z|<offset>]
+```
 
 `new Intl.DateTimeFormat(locales, options).format(date)`
 
