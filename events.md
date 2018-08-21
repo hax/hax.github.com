@@ -12,7 +12,11 @@ lang: zh-cmn-Hans-x-hax
 - 2018-03-31 厦门 [CSSConf 中国第四届CSS大会](https://css.w3ctech.com/4) 参会
 - 2018-04-18 魔都 [BXT 015](https://github.com/baixing/BXT/issues/20) 组织者
 - 2018-04-20~22 帝都 [QCon北京2018](https://2018.qconbeijing.com/) “编程语言”专题讲师
-- 2018-05-?? 魔都 [BXT 016](https://github.com/baixing/BXT/issues/22) 组织者
+  <br>[关于“时间”的各种编程与API设计问题](https://2018.qconbeijing.com/presentation/448)
+- 2018-05-16 魔都 [BXT 016](https://github.com/baixing/BXT/issues/22) 组织者
+- 2018-08-18 广州 [首届 React Dev Conf China](https://react.w3ctech.com/) 参会
+- 2018-08-19 广州 [第四届FEDAY](https://fequan.com/2018/) 讲师
+  <br>[Time in JavaScript](/2018/temporal/)
 - 2018-09-01~02 魔都
 
 ### 2017
@@ -31,6 +35,7 @@ lang: zh-cmn-Hans-x-hax
 - 2017-08-10~11 台北 [Modern Web 2017](http://modernweb.tw/) 讲师
   <br>[JavaScript —— 世界第一编程语言（2017版）](/2017/modern-web)
 - 2017-08-19 杭州 [第四期 杭州 Node Party 技术分享](https://zhuanlan.zhihu.com/p/28346707) 参会
+- 2017-08-26 帝都 [第三届FEDAY](https://fequan.com/2017/) 参会
 - 2017-09-02 魔都 [QCon上海2017演讲经验交流会] 嘉宾
   <br>[讲师试讲之心得](/2017/rehearsal/slide)
 - 2017-09-06 线上 [知乎Live：如何学习和实践 ES201X？](/2017/live-es201x) 主讲
@@ -52,7 +57,7 @@ lang: zh-cmn-Hans-x-hax
 
 ### 2016
 
-- 2016-03-19 广州 [第二届FEDay前端开发者大会](http://fequan.com/2016/) 圆桌论坛主持人
+- 2016-03-19 广州 [第二届FEDAY](https://fequan.com/2016/) 圆桌论坛主持人
   <br>[[圆桌论坛 录像]](https://www.youtube.com/watch?v=TX4S3ESgH8c&index=4&list=PLsAZ3w8R-w4tyQcFTGYy5wHYHRxIoC0BF)
 - 2016-03-26 魔都 [Node 地下铁第二期线下沙龙](http://taobaofed.org/blog/2016/04/01/node-subway-shanghai/) 参会
 - 2016-03-27 魔都 [TopGeek 中国前端开发者大会](http://fdcon.topgeek.org/) 讲师
@@ -101,7 +106,7 @@ lang: zh-cmn-Hans-x-hax
   [[录像 B]](http://my.tv.sohu.com/pl/9047590/81233461.shtml)
   [[录像 C]](http://my.tv.sohu.com/pl/9047590/81233395.shtml)
 - 2015-01-14 魔都 [C4分享会](http://www.imooc.com/learn/327) 参会
-- 2015-01-17 广州 [FEDAY 首届前端开发者年度大会](http://fequan.com/feday) 讲师
+- 2015-01-17 广州 [FEDAY 首届前端开发者年度大会](https://fequan.com/feday) 讲师
   <br>[ES6实战](/2015/es6-in-action/)
   [[录像]](http://v.youku.com/v_show/id_XODgwNzMyNzAw.html)
 - 2015-03-04 魔都 [JavaScript Wednesday night](http://www.meetup.com/efjsday/events/218731261/) 参会
