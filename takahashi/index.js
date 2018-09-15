@@ -156,7 +156,7 @@ function startPresentation() {
 	controls.style.left = '0'
 	controls.style.right = '0'
 	controls.style.color = 'gray'
-	controls.style.opacity = '0.5'
+	controls.style.opacity = '0.8'
 	controls.innerHTML = '<button class="prev" style="width: 38%; height: 48px">&lt;</button><button class="next" style="width: 61%; height: 48px">&gt;</button>'
 	document.body.appendChild(controls)
 	controls.addEventListener('click', event => {
