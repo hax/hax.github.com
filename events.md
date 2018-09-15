@@ -17,7 +17,8 @@ lang: zh-cmn-Hans-x-hax
 - 2018-08-18 广州 [首届 React Dev Conf China](https://react.w3ctech.com/) 参会
 - 2018-08-19 广州 [第四届FEDAY](https://fequan.com/2018/) 讲师
   <br>[Time in JavaScript](/2018/temporal/)
-- 2018-09-01~02 魔都
+- 2018-09-15 魔都 QCon上海演讲经验交流会分享 讲师
+  <br>[高桥流简报法之心得](/2018/takahashi/slide)
 
 ### 2017
 
