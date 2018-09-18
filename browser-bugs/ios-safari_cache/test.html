@@ -1,27 +1,53 @@
 <!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html { font-size: x-large }
+</style>
+
+<body>
+<p><a href="?fix">fix!</a></p>
+<p><a href="?">bug!</a></p>
 
 <script>
-// window.addEventListener('load', e => {
-// 	out(e)
-// 	out(a)
-// 	var a = [1, 2, 3]
-// 	out(a)
-// 	a.push(4)
-// 	a.reverse()
-// 	out(a)
-// })
-window.addEventListener('pageshow', e => {
-	out(e)
-	out(a)
-	var a = [1, 2, 3]
-	out(a)
-	a.reverse()
-	out(a)
-})
-function out(s) {
-	console.log(s)
-	document.writeln(s)
+function out(...args) {
+	console.log(...args)
+	document.body.innerHTML += args.join(' ') + '<br>'
+}
+</script>
+
+<script>
+if (location.search === '?fix') {
+	Array.prototype._reverse = Array.prototype.reverse
+	Array.prototype.reverse = function reverse() {
+		this.length = this.length
+		return this._reverse()
+	}
+}
+</script>
+
+<script>
+// out(navigator.userAgent)
+let a = bug()
+let b = bug()
+
+// a.slice()
+a.length
+// a.fill('x', 1, 1)
+// a.copyWithin(1, 0, 0)
+
+out('a:', a)
+out('a.join():', a.join())
+out('b:', b)
+out('b.join():', b.join())
+out('a.reverse()')
+a.reverse()
+out('a:', a)
+out('a.join():', a.join())
+out('b:', b)
+out('b.join():', b.join())
+
+function bug() {
+	return [1, 2, 3]
 }
 </script>
