@@ -1,0 +1,72 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html { font-size: x-large }
+</style>
+
+<body>
+<p><a href="?fix">fix!</a></p>
+<p><a href="?">bug!</a></p>
+<p><a href="https://johnhax.net/browser-bugs/ios12-safari-array-reverse/test">fix!</a></p>
+<p><a href="https://johnhax.net/browser-bugs/ios12-safari-array-reverse/test">bug!</a></p>
+
+<script>
+function out(...args) {
+	console.log(...args)
+	document.body.innerHTML += args.join(' ') + '<br>'
+}
+</script>
+
+<script>
+if (location.search === '?fix') {
+	out('fix');
+	(function() {
+		if (buggy()) patch();
+
+		function buggy() {
+			var a = [1, 2];
+			return String(a) === String(a.reverse());
+		}
+
+		function patch() {
+			var r = Array.prototype.reverse;
+			Array.prototype.reverse = function reverse() {
+				if (Array.isArray(this)) this.length = this.length;
+				return r.call(this);
+			}
+			// Array.prototype.reverse = new Uint8Array().reverse
+		}
+	})();
+	out(Object.getOwnPropertyDescriptor(Array.prototype, 'reverse').value)
+}
+</script>
+
+<script>
+out(navigator.userAgent)
+let a = bug()
+let b = bug()
+
+// a.length
+// a.fill('x', 1, 1)
+// a.copyWithin(1, 0, 0)
+
+// a.length = a.length
+// a.slice()
+
+out('a:', Array.prototype.toString.call(a))
+out('a.join():', Array.prototype.join.call(a))
+out('b:', Array.prototype.toString.call(b))
+out('b.join():', Array.prototype.join.call(b))
+out('a.reverse()')
+Array.prototype.reverse.call(a)
+out('a:', Array.prototype.toString.call(a))
+out('a.join():', Array.prototype.join.call(a))
+out('b:', Array.prototype.toString.call(b))
+out('b.join():', Array.prototype.join.call(b))
+
+function bug() {
+	return [1, 2, 3]
+	// return {length:3, 0:1, 1:2, 2:3}
+}
+</script>
