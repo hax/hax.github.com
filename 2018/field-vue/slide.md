@@ -16,7 +16,9 @@ class Counter {
 		return <div>{this.value}</div>
 	}
 }
-\
+```
+
+```js
 const counter = proxiedByVue(new Counter())
 counter.value // 0, first run
 ++counter.value // 1, trigger render()
@@ -29,23 +31,40 @@ class Counter {
 \
 	get value() { return this._value }
 	set value(v) { this._value = Math.max(v, 10) }
-}
 \
+	render() { ... }
+}
+```
+
+```js
 const counter = proxiedByVue(new Counter())
 counter.value // 0, first run
 ++counter.value // 1, trigger render()
 counter.value = 10 // 10, trigger render() again
 counter.value = 255 // still 10, not trigger render()
+counter._value = 255 // but it can be cracked easily!
 ```
 
 ```js
 const myValue = Symbol()
 class Counter {
-	;[myValue] = 0
+	;[myValue] = 0 // weird syntax, but let's ignore it
 \
 	get value() { return this[myValue] }
 	set value(v) { this[myValue] = Math.max(v, 10) }
+\
+	render() { ... }
 }
+```
+
+```js
+const counter = proxiedByVue(new Counter())
+counter.value // 0, first run
+++counter.value // 1, trigger render()
+counter.value = 10 // 10, trigger render() again
+counter.value = 255 // still 10, not trigger render()
+// Without symbol key exposed, no simple way to access the internal state
+// Though you can use Object.getOwnPropertySymbols() to inspect it
 ```
 
 ```js
@@ -59,35 +78,32 @@ class Counter {
 		return <div>{this.value}</div>
 	}
 }
-\
-const counter = proxiedByVue(new Counter())
-counter.value // throw!!! 😱
-\
 ```
 
-Branding check
+```js
+const counter = proxiedByVue(new Counter())
+\
+counter.value // Throw!!! 😱
+```
+
+Brand checking
 
 Not only affect Vue,
-But also MobX, Aurelia...
+But also MobX, Aurelia...,
+Even affect builtins...
+```js
+new Proxy(new Set, {}).add(1) // throw!
+```
 
 Proxy transparency?
 
+Assume auto unwrap, but...
+
 ```js
-class Counter {
-	#value = 0
-\
-	get value() { return this.#value }
-	set value(v) { this.#value = Math.max(v, 10) }
-\
-	render() {
-		return <div>{this.value}</div>
-	}
-}
-\
 const counter = proxiedByVue(new Counter())
 \
 counter.value // can't collect dependencies
-counter.value = 255 // never trigger render()
+++counter.value // never trigger render()
 ```
 
 Proxy can't trap private
@@ -96,24 +112,34 @@ Getters/Setters still work?
 
 NO.
 
+No brand checking failure,
+but also can't trap private
+
+Can we treat Getters/Setters special?,
+Yes, but can't really solve the problem
+
 ```js
 const chineseNumber = [...'〇一二三四五六七八九十']
 \
 class Counter {
 	#value = 0
 \
+	inc() { ++this.#value }
 	displayValue() { return chineseNumber[this.#value] }
 \
 	render() {
-		return <div>{this.displayValue()}</div>
+		return <div onClick={() => this.inc()}>{this.displayValue()}</div>
 	}
 }
+// No way to know inc() will change #value
+// No way to know displayValue() depend on #value
 ```
 
 🤔 Any solution?
 
 🤔 `Proxy unwrap trap`,
-May need several years or fail...,
+[Still an idea, no formal proposal](https://github.com/littledan/proposal-proxy-transparent/issues/4),
+May need several years...,
 Still no reactivity
 
 🤔 Decorators
@@ -129,19 +155,23 @@ Decorators still stage 2
 Need to decorate ALL private
 you want to track MANUALLY
 
-Caputre ALL instances
-even not used for Vue,
+Intercept ALL private accesses of
+ALL instances even not used for Vue,
 Performance?
 
 🤔 `WeakMap`-based => `Symbol`-based
 
-Refused by some members in TC39,
-We (includ me) still try
+Refused by some members in TC39
+because of membrane requirements
+(99.9% JS programmers never heard of membrane),
+Many (includ me) still try
 to convince TC39 to revisit
 
 🤔 Vue Hooks?
 
 Observable vs. Privacy
+
+No classes -> No private fields -> No problems
 
 🤔 Do NOT use private field
 if you want to use Vue 😥
@@ -159,7 +189,7 @@ new "BAD PART" of JS?
 
 FAQ
 JS class fields & Vue
-[johnax.net/2018/js-class-field-vue/slide](https://johnhax.net/2018/js-class-field-vue/slide)
+[johnax.net/2018/field-vue](https://johnhax.net/2018/field-vue/slide)
 ------------------------------
 by hax @ VueConf 2018 Hangzhou
 
