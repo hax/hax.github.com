@@ -159,6 +159,7 @@ new "BAD PART" of JS?
 
 FAQ
 JS class fields & Vue
+[johnax.net/2018/js-class-field-vue/slide](https://johnhax.net/2018/js-class-field-vue/slide)
 ------------------------------
 by hax @ VueConf 2018 Hangzhou
 
