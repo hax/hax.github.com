@@ -191,7 +191,7 @@ function hideControls() {
 }
 
 function initSlide() {
-	if (gotoSlide(parseInt(location.hash.slice(1))) || gotoSlide(0)) pushState()
+	if (gotoSlide(parseInt(location.hash.slice(1))) || gotoSlide(0)) updateState()
 }
 
 function current() {
@@ -212,13 +212,13 @@ function nextSlide() {
 		return
 	}
 	const next = curr.nextElementSibling
-	if (next && next.matches('.slide')) showSlide(slideIndex + 1, next, curr) && pushState()
+	if (next && next.matches('.slide')) showSlide(slideIndex + 1, next, curr) && updateState()
 }
 
 function prevSlide() {
 	const curr = current()
 	const prev = curr.previousElementSibling
-	if (prev && prev.matches('.slide')) showSlide(slideIndex - 1, prev, curr) && pushState()
+	if (prev && prev.matches('.slide')) showSlide(slideIndex - 1, prev, curr) && updateState()
 }
 
 function showSlide(index, element, old) {
@@ -238,8 +238,8 @@ function showSlide(index, element, old) {
 }
 
 let slideIndex
-function pushState() {
-	history.pushState(slideIndex, '', `#${slideIndex}`)
+function updateState() {
+	history.replaceState(slideIndex, '', `#${slideIndex}`)
 }
 
 function adjustCurrentSlide() {
