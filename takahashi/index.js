@@ -263,7 +263,7 @@ function adjustSlide(curr) {
 	for (const e of c.children) {
 		if (isReplacedElement(e)) {
 			e.style.width = w + 'px'
-		} else {
+		} else if (c.childElementCount > 1) {
 			e.style.fontSize = '1rem'
 			e.style.fontSize = `${w / e.scrollWidth / 2}rem`
 		}

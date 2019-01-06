@@ -6,6 +6,12 @@ lang: zh-cmn-Hans-x-hax
 
 ## Timeline
 
+### 2019
+
+- 2018-01-05 杭州 [SEE Conf 2019](https://seeconf.antfin.com/) 参会
+- 2018-01-06 杭州 [第十三届D2](http://d2forum.alibaba-inc.com/) 讲师
+  <br>[Will class fields be the new Bad Part of JavaScript?](/2019/class-fields/)
+
 ### 2018
 
 - 2018-01-06 杭州 [SEE Conf 2018](https://zhuanlan.zhihu.com/p/32709149) 嘉宾
@@ -19,6 +25,14 @@ lang: zh-cmn-Hans-x-hax
   <br>[Time in JavaScript](/2018/temporal/)
 - 2018-09-15 魔都 QCon上海演讲经验交流会分享 讲师
   <br>[高桥流简报法之心得](/2018/takahashi/slide)
+- 2018-10-17 魔都 [BXT 017](https://github.com/baixing/BXT/issues/24) 组织者
+- 2018-10-18~20 魔都 [QCon上海2018](https://2018.qconshanghai.com/) 参会
+- 2018-11-24 杭州 [第二届 VueConf](https://vue.w3ctech.com/) 闪电演讲
+  <br>[JS class fields & Vue](http://johnhax.net/2018/field-vue/)
+- 2018-12-07 杭州 阿里妈妈前端分享会 讲师
+  <br>[Will "class fields" be the new "bad part" of JavaScript?](https://github.com/hax/js-class-fields-chinese-discussion)
+- 2018-12-09 杭州 [第八期 杭州 NodeParty x Rokid 技术分享](https://www.bagevent.com/event/2069131) 讲师
+  <br>[Will "class fields" be the new "bad part" of JavaScript?](https://github.com/hax/js-class-fields-chinese-discussion)
 
 ### 2017
 
@@ -79,7 +93,7 @@ lang: zh-cmn-Hans-x-hax
   <br>[JavaScript API 设计案例分析](/2016/js-api/)
 - 2016-08-02 线上 [代码时间](http://codetimecn.com/) 嘉宾
   <br>[[Podcast: ES2015 上]](https://codetimecn.com/episodes/es2015) [[Podcast: ES2015 下]](https://codetimecn.com/episodes/es20152)
-- 2016-08-07 杭州 [搜车NodeParty](http://f2e.souche.com/blog/di-jie-sou-che-node-party-zong-jie-ji-ppt/) 参会
+- 2016-08-07 杭州 [第一届 搜车 Node Party](http://f2e.souche.com/blog/di-jie-sou-che-node-party-zong-jie-ji-ppt/) 参会
 - 2016-08-11 魔都 [BXT-007](https://github.com/baixing/BXT/issues/8) 组织者
 - 2016-09-03~04 南京 [JSConf 宁JS](http://2016.jsconf.cn/) Lightning Talk
   <br>[如何写一个Babel Plugin？](/2016/babel-plugin/slide?content)
