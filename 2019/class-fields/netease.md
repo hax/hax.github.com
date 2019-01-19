@@ -12,6 +12,7 @@ The Good Parts
 The Bad Parts
 
 ![The Good Parts](goodparts.jpg)
+
 ![You don't know JS](udontknowjs.jpg)
 
 GitHub @hax
@@ -577,6 +578,14 @@ class Test {
 	f() { ... }
 }
 ```
+
+Can linter/formmatter save us?
+
+- ESLint
+- TSLint
+- Prettier
+
+Community Cost
 
 Syntax issues,
 Semantic issues
