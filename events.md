@@ -8,10 +8,10 @@ lang: zh-cmn-Hans-x-hax
 
 ### 2019
 
-- 2018-01-05 杭州 [SEE Conf 2019](https://seeconf.antfin.com/) 参会
-- 2018-01-06 杭州 [第十三届D2](http://d2forum.alibaba-inc.com/) 讲师
+- 2019-01-05 杭州 [SEE Conf 2019](https://seeconf.antfin.com/) 参会
+- 2019-01-06 杭州 [第十三届D2](http://d2forum.alibaba-inc.com/) 讲师
   <br>[Will class fields be the new Bad Part of JavaScript?](/2019/class-fields/)
-- 2018-01-19 杭州 [第二届网易前端技术大会](https://fc.netease.com/)
+- 2019-01-19 杭州 [第二届网易前端技术大会](https://fc.netease.com/)
   <br>[Will class fields be the new Bad Part of JavaScript?](/2019/class-fields/)
 
 ### 2018
