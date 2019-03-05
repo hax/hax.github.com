@@ -13,6 +13,14 @@ lang: zh-cmn-Hans-x-hax
   <br>[Will class fields be the new Bad Part of JavaScript?](/2019/class-fields/)
 - 2019-01-19 杭州 [第二届网易前端技术大会](https://fc.netease.com/)
   <br>[Will class fields be the new Bad Part of JavaScript?](/2019/class-fields/)
+- 2019-03-01 魔都 bilibili技术研讨会 参会
+- 2019-03-16 魔都 [Node 地下铁沙龙 #8 《Let's Go Serverless!》](https://taobaofed.github.io/nodejs-club/) 讲师
+  <br>Serverless 与 JS 语言中的编程范式的初步思考
+- 2019-03-30 深圳 [CSSConf 中国第五届CSS大会](https://css.w3ctech.com/5) 参会
+- 2019-04-?? 魔都 待定
+- 2019-05-06~08 帝都 [QCon北京2019](https://2019.qconbeijing.com/) 待定
+- 2019-05-19 魔都 [FDCon2019](http://fdcon.topgeek.org/) 待定
+- 2019-06-20~21 帝都 [GMTC2019](https://gmtc2019.geekbang.org/) “编程语言”专题出品人
 
 ### 2018
 
@@ -57,7 +65,7 @@ lang: zh-cmn-Hans-x-hax
   <br>[讲师试讲之心得](/2017/rehearsal/slide)
 - 2017-09-06 线上 [知乎Live：如何学习和实践 ES201X？](/2017/live-es201x) 主讲
 - 2017-09-07 魔都 [BXT 012](https://github.com/baixing/BXT/issues/15) 组织者
-- 2017-10-17~19 魔都 [QCon上海2017](http://2017.qconshanghai.com/) “编程语言”出品人
+- 2017-10-17~19 魔都 [QCon上海2017](http://2017.qconshanghai.com/) “编程语言”专题出品人
 - 2017-10-25 魔都 [BXT 013](https://github.com/baixing/BXT/issues/17) 组织者
 - 2017-11-02 帝都 美团内部分享 讲师
   <br>Fastify 框架和性能优化
