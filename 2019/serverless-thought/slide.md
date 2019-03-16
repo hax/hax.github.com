@@ -128,4 +128,9 @@ Garbage
 - FaaS Functional Patterns?（函数编排）
 - FaaS 在特定语言的优化问题（JIT、GC）
 
+参考
+
+- https://www.youtube.com/watch?v=5onnYmFcG6M
+- https://pattern-match.com/blog/2018/10/18/functional-programming-in-serverless-world/
+
 QA
