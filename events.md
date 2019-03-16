@@ -15,7 +15,7 @@ lang: zh-cmn-Hans-x-hax
   <br>[Will class fields be the new Bad Part of JavaScript?](/2019/class-fields/)
 - 2019-03-01 魔都 bilibili技术研讨会 参会
 - 2019-03-16 魔都 [Node 地下铁沙龙 #8 《Let's Go Serverless!》](https://taobaofed.github.io/nodejs-club/) 讲师
-  <br>Serverless 与 JS 语言中的编程范式的初步思考
+  <br>[FaaS 与 FP 的初步思考](/2019/serverless-thought/slide)
 - 2019-03-30 深圳 [CSSConf 中国第五届CSS大会](https://css.w3ctech.com/5) 参会
 - 2019-04-?? 魔都 待定
 - 2019-05-06~08 帝都 [QCon北京2019](https://2019.qconbeijing.com/) 待定
