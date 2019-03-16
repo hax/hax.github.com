@@ -119,8 +119,8 @@ Garbage
 
 如何实施 immutable 约束？
 
-- TypeScript (ReadOnly<X>)
-- Proxy (X.readonly())
+- TypeScript (ReadOnly&lt;X&gt;)
+- Proxy (X.readonly)
 
 其他
 
