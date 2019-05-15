@@ -17,10 +17,13 @@ lang: zh-cmn-Hans-x-hax
 - 2019-03-16 魔都 [Node 地下铁沙龙 #8 《Let's Go Serverless!》](https://taobaofed.github.io/nodejs-club/) 讲师
   <br>[FaaS 与 FP 的初步思考](/2019/serverless-thought/slide)
 - 2019-03-30 深圳 [CSSConf 中国第五届CSS大会](https://css.w3ctech.com/5) 参会
-- 2019-04-?? 魔都 待定
-- 2019-05-06~08 帝都 [QCon北京2019](https://2019.qconbeijing.com/) 待定
-- 2019-05-19 魔都 [FDCon2019](http://fdcon.topgeek.org/) 待定
+- 2019-05-19 魔都 [FDCon2019](http://fdcon.topgeek.org/) 大会出品人、讲师
+  <br>[JS @ 2019](/2019/js@2019/slide)
+- 2019-05-17~18 南京 待定
+- 2019-06-?? 魔都 待定
+- 2019-06-08 魔都 VueConf 待定
 - 2019-06-20~21 帝都 [GMTC2019](https://gmtc2019.geekbang.org/) “编程语言”专题出品人
+- 2019-09-?? 魔都 JSConf 待定
 
 ### 2018
 
