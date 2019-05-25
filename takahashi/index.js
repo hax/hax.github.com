@@ -45,6 +45,10 @@ function createSlides(slides) {
 		document.body.appendChild(slideDiv)
 		const contentDiv = document.createElement('div')
 		contentDiv.classList.add('slide-content')
+		if (slide[0].startsWith('.')) {
+			const classList = slide.shift().slice(1).split('.')
+			contentDiv.classList.add(classList)
+		}
 		slideDiv.appendChild(contentDiv)
 		let container = contentDiv, listType = null
 		const listPatterns = {
@@ -170,16 +174,18 @@ function startPresentation() {
 		gotoSlide(parseInt(e.state))
 	}
 	window.onkeydown = kbEvent => {
-		// console.log(kbEvent.key, kbEvent.keyIdentifier, kbEvent.keyCode)
+		console.log(kbEvent.key, kbEvent.keyIdentifier, kbEvent.keyCode)
 		if (kbEvent.key) {
 			switch (kbEvent.key) {
 				case 'ArrowRight':	case 'ArrowDown':	case 'PageDown':	nextSlide();	hideControls();	break
 				case 'ArrowLeft':	case 'ArrowUp':	case 'PageUp':	prevSlide();	hideControls();	break
+				case 'E': document.body.classList.toggle('eva'); break
 			}
 		} else if (kbEvent.keyIdentifier) {
 			switch (kbEvent.keyIdentifier) {
 				case 'Right':	case 'Down':	nextSlide();	hideControls();	break
 				case 'Left':	case 'Up':	prevSlide();	hideControls();	break
+				case 'E': document.body.classList.toggle('eva'); break
 			}
 		} else {
 		}
@@ -265,7 +271,7 @@ function adjustSlide(curr) {
 			e.style.width = w + 'px'
 		} else if (c.childElementCount > 1) {
 			e.style.fontSize = '1rem'
-			e.style.fontSize = `${w / e.scrollWidth / 2}rem`
+			e.style.fontSize = `${w / e.scrollWidth}rem`
 		}
 	}
 
