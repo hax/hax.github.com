@@ -19,7 +19,10 @@ lang: zh-cmn-Hans-x-hax
 - 2019-03-30 深圳 [CSSConf 中国第五届CSS大会](https://css.w3ctech.com/5) 参会
 - 2019-05-19 魔都 [FDCon2019](http://fdcon.topgeek.org/) 大会出品人、讲师
   <br>[JS @ 2019](/2019/js@2019/slide)
-- 2019-05-17~18 南京 待定
+- 2019-05-17~18 南京 中兴前端大会 嘉宾
+  <br>[JS的几朵乌云](/2019/js-issues/slide)
+- 2018-05-25 帝都 GMTC演讲经验交流会分享 讲师
+  <br>[高桥流简报法之心得](/2019/gql)
 - 2019-06-?? 魔都 待定
 - 2019-06-08 魔都 VueConf 待定
 - 2019-06-20~21 帝都 [GMTC2019](https://gmtc2019.geekbang.org/) “编程语言”专题出品人
