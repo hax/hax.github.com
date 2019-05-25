@@ -1,0 +1,55 @@
+<!doctype html>
+
+<style>
+	div.page {
+		border: thick dotted;
+		width: max-content;
+	}
+	div.page > * {
+		outline: medium dotted silver;
+	}
+	div.page p {
+		width: fit-content;
+		height: fit-content;
+	}
+	ul {
+		list-style: decimal;
+	}
+	.testing {
+		font-size: 2rem;
+	}
+</style>
+
+<div class=page>
+	<p>Paragraphs don't require any special markup in AsciiDoc.
+A paragraph is just one or more lines of consecutive text.
+	<p>To begin a new paragraph, separate it by at least one blank line.
+	<ul reversed>
+		<li>Apple
+		<li>Banana
+		<li value=5>Melon
+		<li>Strawbrey
+	</ul>
+</div>
+
+<div class="testing">
+<p><em>text: em</em>
+<p><strong>text: strong</strong>
+<p><small>text: small</small>
+<p><s>text: s</s>
+<p><cite>text: cite</cite>
+<p><q>text: q</q>
+<p><dfn>text: dfn</dfn>
+<p><abbr>text: abbr</abbr>
+<p><ruby>text: ruby<rp>(<rt>text: rt<rp>)</ruby>
+<p><data value="data">text: data</data>
+<p><time datetime="2017-5-1">text: time</time>
+<p><code>text: code</code>
+<p><var>text: var</var>
+<p><samp>text: samp</samp>
+<p><kbd>text: kbd</kbd>
+<p>text <sup>sup</sup> <sub>sub</sub>
+<p><i>text: i</i>
+<p><b>text: b</b>
+<p><u>text: u</u>
+<p><mark>text: mark</mark>

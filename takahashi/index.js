@@ -45,10 +45,10 @@ function createSlides(slides) {
 		document.body.appendChild(slideDiv)
 		const contentDiv = document.createElement('div')
 		contentDiv.classList.add('slide-content')
-		if (slide[0].startsWith('.')) {
-			const classList = slide.shift().slice(1).split('.')
-			contentDiv.classList.add(classList)
-		}
+		// if (slide[0].startsWith('.')) {
+		// 	const classList = slide.shift().slice(1).split('.')
+		// 	contentDiv.classList.add(classList)
+		// }
 		slideDiv.appendChild(contentDiv)
 		let container = contentDiv, listType = null
 		const listPatterns = {
