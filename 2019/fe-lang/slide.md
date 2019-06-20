@@ -158,6 +158,8 @@ UI-as-code
 
 React Hooks？
 
+Vue 3: template 和 render() 的完美结合
+
 未来
 
 越来越相似？
@@ -184,8 +186,20 @@ Flutter 能否支持小程序？
 
 中国公司和产业是否会诞生新语言？
 
-参与语言标准的制订
+编程语言维度
 
-JavaScript
+例子
+
+- ES module
+- async/await
+
+- DSL
+- IDE,
+- 参与语言标准的制订
+
+JavaScript - TC39
+
+工欲善其事
+必先利其器
 
 <span></span>
