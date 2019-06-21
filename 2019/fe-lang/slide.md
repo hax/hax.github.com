@@ -1,4 +1,5 @@
-<span></span>
+前端开发编程语言的
+过去、现在和未来
 
 自我介绍
 
@@ -64,7 +65,12 @@ XX语言最好！,
 - Android: Java
 - iOS: Objective-C
 
-其他语言可能性？
+其他编程语言
+可能性？
+
+额外运行时库
+后端无所谓
+前端很敏感
 
 问题
 
@@ -86,16 +92,19 @@ XX语言最好！,
 前端编程语言
 平台“钦定”
 
-不满足于单一平台
+不满足于
+单一平台
 
 跨端和全栈
 
 - TS/JS: Node
 - Kotlin: JVM, JS, Native
 - Dart: VM, JS, Native
-- Swift: SeverSide
+- Swift: Server-side
 
-TS/JS 仍然是跨端和全栈能力最强的语言
+TS/JS 仍然是
+跨端和全栈能力
+最强的语言
 
 - 多端都配有 JS 引擎,
 - JS 本身是 target,
@@ -104,7 +113,8 @@ TS/JS 仍然是跨端和全栈能力最强的语言
 从前到后易
 从后到前难
 
-新一代前端编程语言趋同
+新一代前端编程语言
+趋同
 
 语法
 
@@ -154,7 +164,9 @@ UI-as-code
 
 命令式代码声明化
 
-声明性DSL和命令式程序的结合/统一
+声明性DSL和
+命令式程序的
+结合/统一
 
 React Hooks？
 
@@ -169,22 +181,25 @@ Vue 3: template 和 render() 的完美结合
 - Dart 保守
 - TS/JS ？
 
-王巍：在分歧中发展——2019，我们能用 Swift 做什么
+王巍：在分歧中发展
+——2019 能用 Swift 做什么
 
 Web Assembly
 
-于航：WebAssembly — 技术变革，未来已来
+于航：WebAssembly
+——技术变革，未来已来
 
 小程序
 
-Flutter 能否支持小程序？
+Flutter for 小程序？
 
 选型
 
 - 平台需求
 - 团队背景
 
-中国公司和产业是否会诞生新语言？
+中国科技公司和产业
+是否会诞生新语言？
 
 编程语言维度
 
@@ -193,13 +208,22 @@ Flutter 能否支持小程序？
 - ES module
 - async/await
 
+已经摸到门槛
+只是差一口气
+
+目前可以做的
+
 - DSL
 - IDE,
-- 参与语言标准的制订
+- 贡献编程语言社区,
+- 参与编程语言标准的制订
 
-JavaScript - TC39
+JavaScript
+ECMA TC39
+
+360 即将加入 TC39
 
 工欲善其事
 必先利其器
 
-<span></span>
+QA
