@@ -23,14 +23,14 @@ lang: zh-cmn-Hans-x-hax
   <br>[JS的几朵乌云](/2019/js-issues/slide)
 - 2018-05-25 帝都 GMTC演讲经验交流会分享 讲师
   <br>[高桥流简报法之心得](/2019/gql)
-- 2019-05-29 魔都 [BXT 016](https://github.com/baixing/BXT/issues/25) 组织者
-- 2019-06-08 魔都 VueConf 参会
+- 2019-05-29 魔都 [BXT 018](https://github.com/baixing/BXT/issues/25) 组织者
+- 2019-06-08 魔都 [第三届 VueConf](https://vue.w3ctech.com/3) 参会
 - 2019-06-20~21 帝都 [GMTC2019](https://gmtc2019.geekbang.org/) “编程语言”专题出品人 主题演讲
   <br>[前端开发编程语言的过去、现在和未来](/2019/fe-lang/slide)
-- 2019-07-?? 魔都 BXT 017 组织者
+- 2019-07-17 魔都 [BXT 019](https://github.com/baixing/BXT/issues/26) 组织者
 <!--- 2019-07-?? 中国前端联盟 闭门讨论-->
-- 2019-09-16 福冈 W3C TPAC 2019 参会
-- 2019-10-?? 魔都 JSConf 待定
+- 2019-09-16~20 福冈 [W3C TPAC 2019](https://www.w3.org/2019/09/TPAC/) 参会
+- 2019-10-19~20 魔都 [JSConf](https://2019.jsconfchina.com/) 待定
 
 ### 2018
 
