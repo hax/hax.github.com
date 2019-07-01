@@ -1,5 +1,0 @@
-extends: [airbnb]
-
-rules:
-  semi: [2, never]
-  indent: [2, tab]
