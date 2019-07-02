@@ -144,7 +144,7 @@ newString = [oldstring stringByReplacingOccurrencesOfString:@"oc" withString:@"s
 
 ## 开发体验
 
-此外，前端语言在开发体验上也互相借鉴。上一个演讲里董博士（Flutter团队高级研究员：董韬博士）提到了Hot Reload，这个过去只有Web前端开发者可以享受到的便利性。但是现在其他端也都引入了。比如在Android上Instant Run，Flutter也提供了Hot Reload。Swift可能没有官方的，但是有社区方案。总体来讲，整个体验是往这方面靠拢的。因为这个对于我们开发效率会有提高的。
+此外，前端语言在开发体验上也互相借鉴。上一个演讲里董博士（Flutter团队高级研究员：董韬博士）提到了Hot Reload，这个过去只有Web前端开发者可以享受到的便利性。但是现在其他端也都引入了。比如在Android上Instant Run，Flutter也提供了Hot Reload，而SwiftUI发布时也同时发布了Xcode Previews。所以整个体验是往这方面靠拢的，因为这个对于我们开发效率确实有提高的。
 
 ## 为什么会趋同
 
