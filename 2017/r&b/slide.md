@@ -112,7 +112,7 @@ let rec sort list =
   | x::xs ->
       sort (xs |> List.filter (fun u  -> u <= x))
 			@ (x :: (sort (xs |> List.filter (fun u  -> u > x))))
-<!-- -->
+\
 let list = [1; 3; 2; 4; 5; 10; 23; 3]
 let list = sort list
 let () = list |> List.iter Js.log
@@ -121,7 +121,7 @@ let () = list |> List.iter Js.log
 ```js
 let qsort = list => {
 	if (list.length === 0) return [];
-<!-- -->
+\
 	let [x, ...xs] = list;
 	return [...qsort(xs.filter(u => u <= x)),
 		x, ...qsort(xs.filter(u => u > x))];
@@ -218,7 +218,7 @@ module Impl(T: { type t; }) => {
   external querySelector : string => option Dom.element = "" [@@bs.send.pipe: T.t] [@@bs.return null_to_opt];
   external querySelectorAll : string => Dom.nodeList = "" [@@bs.send.pipe: T.t];
 };
-<!-- -->
+\
 let e = document |> querySelector ".list";
 ```
 
