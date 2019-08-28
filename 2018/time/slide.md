@@ -1,6 +1,9 @@
 时间
 Time
 
+时间
+是把杀猪刀
+
 缘起
 
 平常
@@ -13,6 +16,46 @@ Complicated
 
 日期和时间
 领域知识
+
+㋿
+U+32FF
+
+.v
+<ruby><rb>㋿<rt style="font-size:25%">U+32FF</ruby>
+
+㍾ ㍽ ㍼
+U+337E U+337D U+337C
+㍻ ㋿
+U+337B U+32FF
+
+㍻ ㋿
+
+[日本新年號的資訊系統問題：合字](https://medium.com/@yorkxin/japanese-era-name-ligature-e4794958c81)
+
+平成31年4月19日,
+令和元年4月19日
+
+平成31年4月19日
+~~令和元年4月19日~~
+
+平成31年4月30日
+令和元年5月1日
+
+昭和64年1月7日
+平成元年1月8日
+
+[「令和元年」の証明書を誤発行](https://www3.nhk.or.jp/lnews/matsue/20190416/4030002580.html)
+[video](https://www.youtube.com/watch?v=nyboC83lpeM)
+
+[昭和100年问题](https://www.pcmarket.com.hk/2019/03/06/%E6%97%A5%E6%9C%AC%E9%9B%BB%E8%85%A6%E7%B3%BB%E7%B5%B1%E6%AD%A3%E9%9D%A2%E8%87%A8%E6%98%AD%E5%92%8C100%E5%B9%B4%E5%95%8F%E9%A1%8C/)
+
+[日本人使用年号表达年份的人多吗？](https://www.zhihu.com/question/24531927)
+
+日本纪年,
+民国纪年,
+主体纪年
+
+西方？
 
 总统日
 每年二月的第三个星期一

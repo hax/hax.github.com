@@ -19,8 +19,13 @@
 </style>-->
 <style>
 	html {
-		font-family: Noto Sans CJK SC, PingFang SC, Hiragino Sans GB;
-		font-size: 64px;
+		font-size: 20vmin;
+		/* font-family:
+			'Noto Serif CJK', 'Noto Serif CJK SC',
+			'Source Han Serif', 'Source Han Serif SC',
+			serif; */
+		/* font-family: Noto Sans CJK SC, PingFang SC, Hiragino Sans GB; */
+		/* font-weight: 100; */
 	}
 	ol, ul {
 		padding-left: 1.34em;
@@ -36,7 +41,7 @@
 		color: red
 	}
 	a {
-		color: blue;
+		color: darkblue;
 		text-decoration: none;
 	}
 	a:hover {
@@ -52,9 +57,14 @@
 		left: 50%;
 		width: fit-content;
 		transform: translate(-50%, -50%);
+		border: 1px solid transparent;
 	}
 	.slide-content > * {
 		width: max-content;
+		white-space: nowrap;
+	}
+	.v {
+		writing-mode: vertical-rl;
 	}
 </style>
 <style media="screen">
@@ -82,14 +92,10 @@
 		margin: 0;
 		counter-reset: slide;
 	}
-	a::after {
-		content: '-' attr(href);
-	}
 	.slide {
 		width: 70vw;
 		height: 70vh;
-		/* page-break-after: always; */
-		break-after: page;
+		page-break-after: always;
 		margin: 15vh 15vw;
 		position: relative;
 	}
@@ -105,19 +111,16 @@
 		display: none;
 	}
 </style>
-<style title=eva media=screen>
-	html {
+
+<style>
+/* html {
+		color: white;
 		background: black;
-		color: #f0f0f0;
-	}
-	a {
-		color: lightskyblue;
-	}
+} */
 </style>
 <link rel="stylesheet" href="https://unpkg.com/prismjs/themes/prism-twilight.css">
 <!-- <link rel="stylesheet" href="https://unpkg.com/prismjs/themes/prism.css"> -->
 <script src="https://unpkg.com/prismjs/components/prism-core.min.js"></script>
-<script src="https://unpkg.com/prismjs/components/prism-markup.min.js"></script>
 <script src="https://unpkg.com/prismjs/components/prism-clike.min.js"></script>
 <script src="https://unpkg.com/prismjs/components/prism-javascript.min.js"></script>
 <script src="https://unpkg.com/prismjs/components/prism-typescript.min.js"></script>
