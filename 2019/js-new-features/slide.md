@@ -343,7 +343,6 @@ console.log(H, K)
 const lang = localStorage.getItem('lang') ?? 'en-US'
 const labels = i18n.load(lang)
 const user = JSON.parse(localStorage.getItem('user'))
-
 document.querySelector('bdi#user-name')!.textContent =
 	user?.name ?? labels?.['non-login-user-name'] ?? 'anonymous'
 ```
@@ -453,7 +452,7 @@ globalThis
 - self
 - global
 
-[Why `globalThis`](https://github.com/tc39/proposal-global/blob/master/NAMING.md)
+[Why globalThis](https://github.com/tc39/proposal-global/blob/master/NAMING.md)
 
 global
 https://github.com/tc39/proposal-global
