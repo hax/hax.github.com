@@ -101,84 +101,104 @@ Nullish Coalescing Operators
 
 ??
 
-a ?? b
+`a ?? b`
 
-a !== undefined && a !== null ? a : b
+`a !== undefined && a !== null ? a : b`
 
-a != null ? a : b
+`a != null ? a : b`
 
+```js
 a ? a : b
 a || b
+```
 
 truthy/falsy
 
-- string: "" || v
-- boolean: false || v
-- nubmer: 0 || v
-- number: NaN || v
-- Array: [] || v
-- Object: { valueOf() { return 0 } } || v
+- string: `"" || v`
+- boolean: `false || v`
+- nubmer: `0 || v`
+- number: `NaN || v`
+- Array: `[] || v`
+- Object: `({ valueOf() { return 0 } }) || v`
 
 nullish
 
+```js
 a != null ? a : b
+```
 
+```js
+a.b.c() ?? v
+a.b.c.d ?? v
+```
+
+```js
 a.b.c() != null ? a.b.c() : v
 a.b.c.d != null ? a.b.c.d : v
+```
 
 Side effects
 
-- Evaluate once
+- OAOO
 - DRY
 
-a != null ? a : b,
-a !== undefined && a !== null ? a : b
+- eval Once And Only Once
+- Don't Repeat Yourself
 
-document.all
+`a != null ? a : b`,
+`a !== undefined && a !== null ? a : b`
+
+`document.all`
 
 TypeScript
 
-a ?? b
+`a ?? b`,
 a 必须是 nullish
 
-- T | undefined
-- T | null
-- T | null | undefined
+- `T | undefined`
+- `T | null`
+- `T | null | undefined`
 
+```js
 a ?? b || c
 a || b ?? c
 a ?? b && c
 a && b ?? c
+```
 
-SyntaxError
+`SyntaxError`
 
 必须加括号
 
 未决问题
 优先级
 
-- 等于 ?: —— GNU C、Groovy（?:）
+- 等于 ?: —— GNU C、Groovy（`?:`）
 - **小于 ||** —— C#、PHP、Dart、Coffee
-- 等于 || —— Perl（//）
+- 等于 || —— Perl（`//`）
 - 高于 ==：Swift、Kotlin
 
-v ?? complex_expression
+`v ?? complex_expression`
 
-complex_expression ?? v
+`complex_expression ?? v`
 
+```js
 a == b ?? c
 (a == b) ?? c
 a == (b ?? c)
+```
 
+```js
 a ** b ?? c
 (a ** b) ?? c
 a ** (b ?? c)
+```
 
 [Operator precedence](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
 
 TypeScript
 
-a ?? b
+`a ?? b`
 a 必须是 nullish
 
 (a *[OP]* b) ?? c
@@ -245,18 +265,20 @@ a && a.b && a.b.c
 
 Side effects
 
-- Evaluate once
+- OAOO
 - DRY
 
 document.all
 
 TypeScript
 
-a?.b
+`a?.b`
 a 必须是 nullish
 
+```js
 a?.b.c
 a?.b?.c
+```
 
 Short-circuiting
 
@@ -269,23 +291,31 @@ a == null ? undefined : a.b.c(++x).d
 
 Long short-circuiting
 
+```js
 a?.b.c
 (a?.b).c
+```
 
+```js
 a == null ? undefined : a.b.c
 (a == null ? undefined : a.b).c
+```
 
+```js
 a?.b.c.d
 a?.b?.c?.d
+```
 
 TypeScript静态类型检查
 可以严格地确定每个部分
 应该用`a.b`还是`a?.b`
 
-a?.b.c?.d
+`a?.b.c?.d`
 
+```js
 a?.b
 a!.b
+```
 
 Non-null assertion
 
@@ -384,12 +414,12 @@ a?.b a?.[key] a?.(...args) a ?? b
 ```
 
 主要use case
-a?.b [80%+](https://github.com/tc39/proposal-optional-chaining/issues/17)
+[a?.b 80%+](https://github.com/tc39/proposal-optional-chaining/issues/17)
 a ?? b
 
-delete a?.b
+`delete a?.b`
 
-a == null ? true : delete a.b
+`a == null ? true : delete a.b`
 
 不支持的
 
@@ -403,7 +433,7 @@ a == null ? true : delete a.b
 - a?.b`string`
 - a?.b = c
 
-a?.b = c
+`a?.b = c`
 
 ```js
 // syntax error
