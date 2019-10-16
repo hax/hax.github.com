@@ -37,8 +37,12 @@ lang: zh-cmn-Hans-x-hax
 - 2019-09-16~20 福冈 [W3C TPAC 2019](https://www.w3.org/2019/09/TPAC/) 参会
 - 2019-10-01~03 [第72次TC39会议](https://github.com/tc39/agendas/blob/master/2019/10.md) 远程参会
 - 2019-10-17~19 魔都 [QCon上海2019](https://2019.qconshanghai.com/) “编程语言”专题讲师
-- 2019-10-19~20 魔都 [JSConf](https://2019.jsconfchina.com/) 待定
-- 2019-12-??~?? 第73次TC39会议 ??参会
+  <br>[JS的几个新特性](/2019/js-new-features/slide)
+- 2019-10-19~20 魔都 [JSConf](https://2019.jsconfchina.com/) 参会
+- 2019-11-16~17 成都 [成都 Web 开发者大会 2019](https://web-conf.tk/) 讲师
+- 2019-12-03~05 旧金山 第73次TC39会议 参会
+- 2019-12-14 杭州 [第十四届D2](http://d2forum.alibaba-inc.com/) 待定
+- 2019-12-26 帝都 内部课程
 
 ### 2018
 
