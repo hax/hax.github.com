@@ -21,7 +21,7 @@ lang: zh-cmn-Hans-x-hax
   <br>[JS @ 2019](/2019/js@2019/slide)
 - 2019-05-17~18 南京 中兴前端大会 嘉宾
   <br>[JS的几朵乌云](/2019/js-issues/slide)
-- 2018-05-25 帝都 GMTC演讲经验交流会分享 讲师
+- 2019-05-25 帝都 GMTC演讲经验交流会分享 讲师
   <br>[高桥流简报法之心得](/2019/gql)
 - 2019-05-29 魔都 [BXT 018](https://github.com/baixing/BXT/issues/25) 组织者
 - 2019-06-08 魔都 [第三届 VueConf](https://vue.w3ctech.com/3) 参会
