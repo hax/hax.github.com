@@ -25,7 +25,7 @@ lang: zh-cmn-Hans-x-hax
   <br>[高桥流简报法之心得](/2019/gql)
 - 2019-05-29 魔都 [BXT 018](https://github.com/baixing/BXT/issues/25) 组织者
 - 2019-06-08 魔都 [第三届 VueConf](https://vue.w3ctech.com/3) 参会
-- 2019-06-20~21 帝都 [GMTC2019](https://gmtc2019.geekbang.org/) “编程语言”专题出品人 主题演讲
+- 2019-06-20~21 帝都 [GMTC2019](https://gmtc.infoq.cn/2019/beijing/) “编程语言”专题出品人 主题演讲
   <br>[前端开发编程语言的过去、现在和未来](/2019/fe-lang/slide)
 - 2019-07-11 杭州 钉钉内部分享会 OSS VSCode 参会
 - 2019-07-17 魔都 [BXT 019](https://github.com/baixing/BXT/issues/26) 组织者
@@ -43,7 +43,8 @@ lang: zh-cmn-Hans-x-hax
 - 2019-11-16~17 成都 [成都 Web 开发者大会 2019](https://web-conf.tk/) 讲师
 - 2019-12-03~05 旧金山 第73次TC39会议 参会
 - 2019-12-14 杭州 [第十四届D2](http://d2forum.alibaba-inc.com/) 待定
-- 2019-12-26 帝都 内部课程
+- 2019-12-20~21 深圳 [GMTC2019·深圳站](https://gmtc.infoq.cn/2019/shenzhen/) 待定
+<!-- - 2019-12-26 帝都 内部课程 -->
 
 ### 2018
 
