@@ -27,10 +27,11 @@ lang: zh-cmn-Hans-x-hax
 - 2019-06-08 魔都 [第三届 VueConf](https://vue.w3ctech.com/3) 参会
 - 2019-06-20~21 帝都 [GMTC2019](https://gmtc2019.geekbang.org/) “编程语言”专题出品人 主题演讲
   <br>[前端开发编程语言的过去、现在和未来](/2019/fe-lang/slide)
+- 2019-07-11 杭州 钉钉内部分享会 OSS VSCode 参会
 - 2019-07-17 魔都 [BXT 019](https://github.com/baixing/BXT/issues/26) 组织者
-<!-- 2019-07-?? 钉钉 内部分享会 参会 -->
-<!--- 2019-08-12 杭州 华为编译器和编程语言实验室技术交流 主讲 -->
 - 2019-07-23~25 [第71次TC39会议](https://github.com/tc39/agendas/blob/master/2019/7.md) 远程参会
+- 2019-07-27 [第十期 杭州 NodeParty](https://github.com/NodeParty-China/Node-Party/tree/master/2019-07-27) 分享
+<!--- 2019-08-12 杭州 华为编译器和编程语言实验室技术交流 -->
 - 2019-09-07 杭州 [个推TechDay——前端开发展望，创新技术落地](https://www.huodongxing.com/event/7506588491100) 讲师
   <br>[聊聊JS的几个新特性](/2019/js-new-features/slide)
 - 2019-09-08 魔都 [JS class fields 提案闭门研讨会](https://github.com/hax/js-class-fields-chinese-discussion/tree/master/meetings/20190908) 召集人 主讲人
@@ -59,6 +60,7 @@ lang: zh-cmn-Hans-x-hax
   <br>[高桥流简报法之心得](/2018/takahashi/slide)
 - 2018-10-17 魔都 [BXT 017](https://github.com/baixing/BXT/issues/24) 组织者
 - 2018-10-18~20 魔都 [QCon上海2018](https://2018.qconshanghai.com/) 参会
+- 2018-11-17 杭州 [W3C Web中文兴趣组启动会暨第一次面对面会议](https://github.com/w3c/chinese-ig/blob/master/meetings/2018-11-17.md) 参会
 - 2018-11-24 杭州 [第二届 VueConf](https://vue.w3ctech.com/) 闪电演讲
   <br>[JS class fields & Vue](http://johnhax.net/2018/field-vue/)
 - 2018-12-07 杭州 阿里妈妈前端分享会 讲师
