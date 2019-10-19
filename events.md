@@ -33,12 +33,12 @@ lang: zh-cmn-Hans-x-hax
 - 2019-07-27 [第十期 杭州 NodeParty](https://github.com/NodeParty-China/Node-Party/tree/master/2019-07-27) 分享
 <!--- 2019-08-12 杭州 华为编译器和编程语言实验室技术交流 -->
 - 2019-09-07 杭州 [个推TechDay——前端开发展望，创新技术落地](https://www.huodongxing.com/event/7506588491100) 讲师
-  <br>[聊聊JS的几个新特性](/2019/js-new-features/slide)
+  <br>[聊聊JS的几个新特性（8月版）](/2019/js-new-features/slide)
 - 2019-09-08 魔都 [JS class fields 提案闭门研讨会](https://github.com/hax/js-class-fields-chinese-discussion/tree/master/meetings/20190908) 召集人 主讲人
 - 2019-09-16~20 福冈 [W3C TPAC 2019](https://www.w3.org/2019/09/TPAC/) 参会
 - 2019-10-01~03 [第72次TC39会议](https://github.com/tc39/agendas/blob/master/2019/10.md) 远程参会
 - 2019-10-17~19 魔都 [QCon上海2019](https://2019.qconshanghai.com/) “编程语言”专题讲师
-  <br>[JS的几个新特性](/2019/js-new-features/slide)
+  <br>[聊聊JS的几个新特性（10月版）](/2019/js-new-features/slide?qcon)
 - 2019-10-19~20 魔都 [JSConf](https://2019.jsconfchina.com/) 参会
 - 2019-11-16~17 成都 [成都 Web 开发者大会 2019](https://web-conf.tk/) 讲师
 - 2019-12-03~05 旧金山 第73次TC39会议 参会
