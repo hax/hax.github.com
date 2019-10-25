@@ -40,6 +40,8 @@ lang: zh-cmn-Hans-x-hax
 - 2019-10-17~19 魔都 [QCon上海2019](https://2019.qconshanghai.com/) “编程语言”专题讲师
   <br>[聊聊JS的几个新特性（10月版）](/2019/js-new-features/slide?qcon)
 <!-- - 2019-10-19~20 魔都 [JSConf](https://2019.jsconfchina.com/) 没有参会 -->
+- 2019-11-02~03 魔都 [2019 中国开源年会 COSCon'19](https://kaiyuanshe.cn/activity/summit/coscon-2019/) 参会
+- 2019-11-16 深圳 [TWeb 腾讯前端技术大会](https://tweb.tencent.com/) 嘉宾
 - 2019-11-16~17 成都 [成都 Web 开发者大会 2019](https://web-conf.tk/) 讲师
 - 2019-12-03~05 旧金山 第73次TC39会议 参会
 - 2019-12-14 杭州 [第十四届D2](http://d2forum.alibaba-inc.com/) 待定
