@@ -6,6 +6,8 @@ lang: zh-cmn-Hans-x-hax
 
 ## Timeline
 
+### 2020
+
 ### 2019
 
 - 2019-01-05 杭州 [SEE Conf 2019](https://seeconf.antfin.com/) 参会
@@ -31,7 +33,7 @@ lang: zh-cmn-Hans-x-hax
 - 2019-07-17 魔都 [BXT 019](https://github.com/baixing/BXT/issues/26) 组织者
 - 2019-07-23~25 [第71次TC39会议](https://github.com/tc39/agendas/blob/master/2019/7.md) 远程参会
 - 2019-07-27 [第十期 杭州 NodeParty](https://github.com/NodeParty-China/Node-Party/tree/master/2019-07-27) 分享
-<!--- 2019-08-12 杭州 华为编译器和编程语言实验室技术交流 -->
+<!-- - 2019-08-12 杭州 华为编译器和编程语言实验室技术交流 -->
 - 2019-09-07 杭州 [个推TechDay——前端开发展望，创新技术落地](https://www.huodongxing.com/event/7506588491100) 讲师
   <br>[聊聊JS的几个新特性（8月版）](/2019/js-new-features/slide)
 - 2019-09-08 魔都 [JS class fields 提案闭门研讨会](https://github.com/hax/js-class-fields-chinese-discussion/tree/master/meetings/20190908) 召集人 主讲人
@@ -41,8 +43,13 @@ lang: zh-cmn-Hans-x-hax
   <br>[聊聊JS的几个新特性（10月版）](/2019/js-new-features/slide?qcon)
 <!-- - 2019-10-19~20 魔都 [JSConf](https://2019.jsconfchina.com/) 没有参会 -->
 - 2019-11-02~03 魔都 [2019 中国开源年会 COSCon'19](https://kaiyuanshe.cn/activity/summit/coscon-2019/) 参会
+- 2019-11-12~13 [Chrome Dev Summit](https://developer.chrome.com/devsummit/) 远程参会
+<!-- - 2019-11-15 深圳 华为总部关于ECMA的交流 -->
 - 2019-11-16 深圳 [TWeb 腾讯前端技术大会](https://tweb.tencent.com/) 嘉宾
 - 2019-11-16~17 成都 [成都 Web 开发者大会 2019](https://web-conf.tk/) 讲师
+  <br>待定
+- 2019-11-23 魔都 [Chrome Dev Summit Extended Shanghai](https://www.meetup.com/Shanghai-GDG/events/266228915/)
+  <br>待定
 - 2019-12-03~05 旧金山 第73次TC39会议 参会
 - 2019-12-14 杭州 [第十四届D2](http://d2forum.alibaba-inc.com/) 待定
 - 2019-12-20~21 深圳 [GMTC2019·深圳站](https://gmtc.infoq.cn/2019/shenzhen/) 待定
