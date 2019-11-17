@@ -1,0 +1,37 @@
+<form id=myForm>
+	<input type="button" name="beijing" value="beijing">
+	<input type="button" name="shanghai" value="shanghai">
+	<input type="button" name="chengdu" value="chengdu">
+</form>
+<script>
+class Greeting {
+	static from(control) {
+		return new Greeting(control.value)
+	}
+	constructor(name) {
+		this.name = name
+	}
+	hello() {
+		console.log(`Hello ${this.name || 'world'}!`)
+	}
+}
+[...myForm.elements]
+	.map(e => [e, Greeting.from(e)])
+	.forEach(([e, {hello}]) =>
+		e.addEventListener('click', hello))
+</script>
+
+<script>
+// const numbers = [1, 2, 3].map(x => Promise.resolve(x))
+// Promise.all(numbers)
+// 	.then(values => {
+// 		const nonNumbers = values.filter(isNaN)
+// 		return Promise.all(values.concat(nonNumbers.map(Promise.reject)))
+// 	})
+// 	.then(console.log)
+// 	.catch(errorLogger)
+
+// function errorLogger(e) {
+// 	// console.error(e)
+// }
+</script>
