@@ -610,9 +610,30 @@ pd.value // true | false | null
 - explicit this => `true`
 - implicit this (contains `this` or `super.foo`) => `true`
 
-后续关键提案
+好复杂？
+学不动？
 
-- Extensions and `::` notation (bind operator)
+此特性主要是提供给
+框架和库开发者的
+
+间接改善普通开
+发者的开发体验
+
+将来能结合decorator
+
+```js
+@constructor
+function OldStyleConstructor() {
+	// ...
+}
+```
+
+- function explicit `this` parameter
+- function instance `thisArgumentExpected` data property,
+- extensions and `::` notation
+
+当然也可能通
+不过委员会🤬
 
 欢迎反馈意见！
 
