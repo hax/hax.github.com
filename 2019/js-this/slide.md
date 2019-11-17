@@ -282,19 +282,28 @@ const ::div = function (this numerator, denominator) {
 ```
 
 ```js
-// parameter decorators
-function div(@toInt32 this numerator, @toInt32 denominator) {
-	// numerator = numerator|0
-	// denominator = denominator|0
+function div(@int32 this numerator, @int32 denominator) {
+	// if (numerator !== numerator|0) throw new TypeError()
+	// if (denominator !== denominator|0) throw new TypeError()
 	// ...
 }
 ```
 
 ```js
-function div(@int32 this numerator, @int32 denominator) {
-	// if (numerator !== numerator|0) throw new TypeError()
-	// if (denominator !== denominator|0) throw new TypeError()
-	// ...
+Number.prototype.toHex = function (this: number) {
+	return this.toString(16)
+}
+```
+
+```js
+Number.prototype.toHex = function (this: number) {
+	return Number(this).toString(16)
+}
+```
+
+```js
+Number.prototype.toHex = function (@toNumber this) {
+	return this.toString(16)
 }
 ```
 
