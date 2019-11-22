@@ -38,3 +38,6 @@ TC39代表
 华为
 
 Top-level Await
+
+https://www.chromestatus.com/feature/5767881411264512
+https://hub.packtpub.com/googles-v8-javascript-engine-adds-support-for-top-level-await/
