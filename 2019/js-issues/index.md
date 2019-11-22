@@ -27,7 +27,7 @@
 - how to tradeoff? who decide the priority of contradictory use cases and requirements?
 
 ### JS的希望在中国
-- 头部公司加入
+- 头部公司的加入
 - 真正代表开发者
 - 阻止糟糕的提案
 - 提出更好的方案
