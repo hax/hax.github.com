@@ -2,6 +2,7 @@ JS新特性之
 Top-level Await
 — 从入门到被坑
 ====================
+https://johnhax.net/2019/tla/slide
 
 自我介绍
 
