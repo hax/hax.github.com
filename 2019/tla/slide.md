@@ -63,6 +63,7 @@ https://www.google.com/search?q=top-level+await
 - https://v8.dev/features/top-level-await
 - https://github.com/tc39/proposal-top-level-await
 - https://gist.github.com/Rich-Harris/0b6f317657f5167663b493c722647221
+- https://gist.github.com/MylesBorins/ae97abab4a4144411c12240bb09dc7dd
 
 被坑时间到
 
