@@ -8,6 +8,9 @@ lang: zh-cmn-Hans-x-hax
 
 ### 2020
 
+- 2020-01-04 杭州 [第三届 SEE Conf](https://seeconf.antfin.com/) 待定
+- 2020-02-04~06 檀香山 [第73次TC39会议](https://github.com/tc39/agendas/blob/master/2020/2.md) 参会
+
 ### 2019
 
 - 2019-01-05 杭州 [SEE Conf 2019](https://seeconf.antfin.com/) 参会
@@ -22,7 +25,7 @@ lang: zh-cmn-Hans-x-hax
 - 2019-05-19 魔都 [FDCon2019](http://fdcon.topgeek.org/) 大会出品人、讲师
   <br>[JS @ 2019](/2019/js@2019/slide)
 - 2019-05-17~18 南京 中兴前端大会 嘉宾
-  <br>[JS的几朵乌云](/2019/js-issues/slide)
+  <br>[闪电分享：JS的几朵乌云](/2019/js-issues/slide)
 - 2019-05-25 帝都 GMTC演讲经验交流会分享 讲师
   <br>[高桥流简报法之心得](/2019/gql)
 - 2019-05-29 魔都 [BXT 018](https://github.com/baixing/BXT/issues/25) 组织者
@@ -43,16 +46,24 @@ lang: zh-cmn-Hans-x-hax
   <br>[聊聊JS的几个新特性（10月版）](/2019/js-new-features/slide?qcon)
 <!-- - 2019-10-19~20 魔都 [JSConf](https://2019.jsconfchina.com/) 没有参会 -->
 - 2019-11-02~03 魔都 [2019 中国开源年会 COSCon'19](https://kaiyuanshe.cn/activity/summit/coscon-2019/) 参会
-- 2019-11-12~13 [Chrome Dev Summit](https://developer.chrome.com/devsummit/) 远程参会
+<!-- - 2019-11-12~13 [Chrome Dev Summit](https://developer.chrome.com/devsummit/) 没有参会 -->
 <!-- - 2019-11-15 深圳 华为总部关于ECMA的交流 -->
 - 2019-11-16 深圳 [TWeb 腾讯前端技术大会](https://tweb.tencent.com/) 嘉宾
 - 2019-11-16~17 成都 [成都 Web 开发者大会 2019](https://web-conf.tk/) 讲师
   <br>[this in JS](/2019/js-this/slide)
 - 2019-11-23 魔都 [Chrome Dev Summit Extended Shanghai](https://www.meetup.com/Shanghai-GDG/events/266228915/)
   <br>[JS新特性之 Top-level Await — 从入门到被坑](/2019/tla/slide)
-- 2019-12-03~05 旧金山 第73次TC39会议 参会
-- 2019-12-14 杭州 [第十四届D2](http://d2forum.alibaba-inc.com/) 待定
-- 2019-12-20~21 深圳 [GMTC2019·深圳站](https://gmtc.infoq.cn/2019/shenzhen/) 待定
+- 2019-11-27 魔都 百度内部分享
+  <br>[JS 的几朵乌云](/2019/js-issues/)
+- 2019-12-03~05 [第73次TC39会议](https://github.com/tc39/agendas/blob/master/2019/12.md) 远程参会
+- 2019-12-06~07 帝都 [ArchSummit 全球架构师峰会](https://archsummit.infoq.cn/2019/beijing/) 参会
+- 2019-12-08 帝都 [GDG DevFest 2019 Beijing](https://www.meetup.com/GDG-Beijing/events/265252940/) 讲师
+  <br>主题待定
+- 2019-12-14 杭州 [第十四届D2](http://d2forum.alibaba-inc.com/) 嘉宾
+  <br>主题待定
+<!-- - 2019-12-17 魔都 百度内部分享 参会 -->
+- 2019-12-20~21 深圳 [GMTC2019·深圳站](https://gmtc.infoq.cn/2019/shenzhen/) 讲师
+  <br>主题待定
 <!-- - 2019-12-26 帝都 内部课程 -->
 
 ### 2018
