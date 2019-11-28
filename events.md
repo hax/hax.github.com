@@ -9,7 +9,7 @@ lang: zh-cmn-Hans-x-hax
 ### 2020
 
 - 2020-01-04 杭州 [第三届 SEE Conf](https://seeconf.antfin.com/) 待定
-- 2020-02-04~06 檀香山 [第73次TC39会议](https://github.com/tc39/agendas/blob/master/2020/2.md) 参会
+- 2020-02-04~06 檀香山 [第74次TC39会议](https://github.com/tc39/agendas/blob/master/2020/2.md) 参会
 
 ### 2019
 
