@@ -10,7 +10,7 @@ Precedence Issue
 
 Developer Experience Issue
 
-Differnt type of developers
+Different type of developers
 
 - precedence is arbitary, don't care about it (it's programmer's duty)
 - precedence is evil (forcing parens everywhere)
@@ -19,15 +19,16 @@ Differnt type of developers
 - precedence should be optimized/limited for special cases (TC39 position?)
 
 Precedents:
+
 - `yield` vs `await`
 - -a ** b
 - a && b ?? c
-- `|>` [#23](https://github.com/tc39/proposal-pipeline-operator/issues/23) [#104](https://github.com/tc39/proposal-pipeline-operator/issues/104) ...
+- `|>` #23 #104 ...
 
 We should make decision for last two types of developers:
-- ~precedence is arbitary, don't care about it (it's programmer's duty)~
-- ~precedence is evil (forcing parens everywhere)~
-- ~precedence is mostly evil (forcing parens except well-known operators: +-*/)~
+- ~~precedence is arbitary, don't care about it (it's programmer's duty)~~
+- ~~precedence is evil (forcing parens everywhere)~~
+- ~~precedence is mostly evil (forcing parens except well-known operators: +-*/)~~
 - precedence should be optimized for most use cases (need protection for bad cases)
 - precedence should be optimized/limited for special cases (TC39 position?)
 
@@ -44,12 +45,12 @@ No difference in these cases
 `a + b ?? c`
 
 - Parens: `(a + b) ?? c` `a + (b ?? c)`
-- Low:    ` a + b  ?? c` `a + (b ?? c)`
-- High:   `(a + b) ?? c` `a +  b ?? c `
+- Low: &nbsp; &nbsp;&nbsp; `a + b  ?? c` `a + (b ?? c)`
+- High: &nbsp; `(a + b) ?? c` `a +  b ?? c`
 
 - Parens: `a + (b ?? c)`
-- Low:    `a + (b ?? c)`
-- High:   `a +  b ?? c `
+- Low: &nbsp;&nbsp; `a + (b ?? c)`
+- High: &nbsp; `a +  b ?? c`
 
 All binary operators except `&&` `||`
 `**` `*` `/` `%` `+` `-` `<<` `>>` `>>>` `<` `<=` `>` `>=`
@@ -83,19 +84,19 @@ safe, but ...
 
 Conclusion
 
-Low precedence
+Low precedence &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 - deoptimized for all cases of `a [op] b ?? c`
 - no difference with high precedence for safe cases
 - "optimized" for unsafe cases
 - need to keep forbiding mix `??` and `&&` `||` for ever
 
-High precedence
+High precedence &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 - optimized for all cases of `a [op] b ?? c`
 - no difference with low precedence for safe cases
 - "deoptimized" for unsafe cases
 - allow us eventually remove the limitation of `&&` `||`
 
-Forcing parens
+Forcing parens &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 - Postpone the decision
 - Wait for tools mature
 
