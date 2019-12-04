@@ -2,9 +2,9 @@ Nullish Coalescing Precedence Issue
 
 https://github.com/tc39/proposal-nullish-coalescing/issues/58
 
-- Low Precedence (effectively same as `||` by forcing parens for mix of `||` and `&&`)
-- High Precedence ([higher than `**`](https://github.com/tc39/proposal-nullish-coalescing/issues/26#issuecomment-511344028))
-- Forcing parentheses for mix of `**` to `? :` (allow us postpone precedence decision to future)
+- Low Precedence <br>(effectively same as `||` by forcing parens for mix of `??` and `||`/`&&`)
+- [High Precedence <br>(higher than `**`)](https://github.com/tc39/proposal-nullish-coalescing/issues/26#issuecomment-511344028)
+- Forcing parentheses for mix of `??` and others from `**` to `? :` <br>(allow us postpone precedence decision to future)
 
 Precedence Issue
 
