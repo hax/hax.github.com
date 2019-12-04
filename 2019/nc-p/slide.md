@@ -44,9 +44,9 @@ No difference in these cases
 
 `a + b ?? c`
 
-- Parens: `(a + b) ?? c` `a + (b ?? c)`
-- Low: &nbsp; &nbsp;&nbsp; `a + b  ?? c` `a + (b ?? c)`
-- High: &nbsp; `(a + b) ?? c` `a +  b ?? c`
+- Parens: `(a + b) ?? c` vs `a + (b ?? c)`
+- Low: &nbsp; &nbsp; &nbsp; `a + b  ?? c` vs `a + (b ?? c)`
+- High: &nbsp;&nbsp;`(a + b) ?? c` vs `a +  b ?? c`
 
 - Parens: `a + (b ?? c)`
 - Low: &nbsp;&nbsp; `a + (b ?? c)`
