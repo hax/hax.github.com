@@ -100,6 +100,7 @@ Forcing parens
 - Wait for tools mature
 
 My apologize for too late to bring the concern
-- Unwilling to block a very useful feature to stage 3
-- Misjudged the progress of the tools and the implementation of TS
-- Can only collect useful user feedbacks after implementation (especially TS) available
+- Unwilling to block a very wanted feature
+- Misunderstanding of the status of the issue
+- Misjudged the progress of the tools and the implementation choice of TS
+- Can only collect more user feedbacks after implementation (especially TS) available
