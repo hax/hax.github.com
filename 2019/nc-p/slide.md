@@ -65,11 +65,13 @@ Especially bad for Kotlin/Swift background developers
 Low precedence (effectively same as `||`) is optimized
 for migration from `||` (poor man's `??`) to real `??`
 
-Already have parens, no difference
-`a + (b || c)` => `a + (b ?? c)`
-`(a + b) || c` => `(a + b) ?? c`
+`a [op] b || c` ≠> `(a [op] b) ?? c`
 
-What about `a || b + c`?
+Already have parens, no difference
+`a [op] (b || c)` => `a [op] (b ?? c)`
+`a || (b [op] c)` => `a ?? (b [op] c)`
+
+What about `a || b [op] c`?
 
 if `a` is boolean/number/string
 UNSAFE to do naive replacement
