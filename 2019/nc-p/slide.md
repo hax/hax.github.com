@@ -45,8 +45,12 @@ No difference in these cases
 `a + b ?? c`
 
 - Parens: `(a + b) ?? c` vs `a + (b ?? c)`
-- Low: &nbsp; &nbsp; &nbsp; `a + b  ?? c` vs `a + (b ?? c)`
-- High: &nbsp;&nbsp;`(a + b) ?? c` vs `a +  b ?? c`
+- Low: &nbsp; &nbsp; &nbsp; &nbsp; `a + b  ?? c` vs `a + (b ?? c)`
+- High: &nbsp; &nbsp;&nbsp;`(a + b) ?? c` vs `a +  b ?? c`
+
+`(a + b) ?? c` interpretation is illogic
+`a + b` never produce nullish value
+so `?? c` is just dead code
 
 - Parens: `a + (b ?? c)`
 - Low: &nbsp;&nbsp; `a + (b ?? c)`
