@@ -218,15 +218,15 @@ a?.(...)
 
 不支持的
 
-- new?.target
-- import?.('foo')
-- new a?.()
-- new a?.b()
-- super?.()
-- super?.foo
-- a?.`string`
-- a?.b`string`
-- a?.b = c
+- `new?.target`
+- `import?.('foo')`
+- `new a?.()`
+- `new a?.b()`
+- `super?.()`
+- `super?.foo`
+- ``a?.`string` ``
+- ``a?.b`string` ``
+- `a?.b = c`
 
 QA
 
