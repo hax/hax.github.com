@@ -308,7 +308,7 @@ new B().x // 1
 class C {
 	#priv = 42
 	test1() { return 'ok' }
-	test2() { return #priv }
+	test2() { return this.#priv }
 }
 const p = new Proxy(new C(), {})
 p.test1() // ok
