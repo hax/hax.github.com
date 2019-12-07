@@ -237,9 +237,9 @@ QA
 'abaa'.match(/a/)  // ['a', index: 0, input: 'abaa']
 'abaa'.match(/a/g) // ['a', 'a', 'a']
 \
-'abaa'.matchAll('a')  // (['a', index: 0, input: 'abaa'])
+'abaa'.matchAll('a')  // (['a', index: 0], ['a', index: 2], ['a', index: 3])
 'abaa'.matchAll(/a/g) // (['a', index: 0], ['a', index: 2], ['a', index: 3])
-'abaa'.matchAll(/a/)  // ?
+'abaa'.matchAll(/a/)  // throw TypeError
 ```
 
 `String.prototype.replaceAll`
@@ -253,12 +253,7 @@ Stage 3
 \
 'abaa'.replaceAll('a', 'A')  // AbAA
 'abaa'.replaceAll(/a/g, 'A') // AbAA
-'abaa'.replaceAll(/a/, 'A')  // Ab??
-```
-
-```js
-'abaa'.replaceAll(/a/, 'A') // TypeError!
-'abaa'.matchAll(/a/)        // TypeError!
+'abaa'.replaceAll(/a/, 'A')  // throw TypeError
 ```
 
 QA
