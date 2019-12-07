@@ -129,10 +129,11 @@ function createSlides(slides) {
 					lineDiv.appendChild(a)
 				}
 			} else {
-				const tokens = line.split(/(`|\*\*|\*|~~)(?=\S)(.*?\S)\1/g)
+				const tokens = line.split(/(``?|\*\*?|~~)(?=\S)(.*?\S)\1/g)
 				for (let i = 0; i < tokens.length; ++i) {
 					let node
 					switch (tokens[i]) {
+						case '``': node = document.createElement('code'); break
 						case '`': node = document.createElement('code'); break
 						case '**': node = document.createElement('strong'); break
 						case '*': node = document.createElement('em'); break
