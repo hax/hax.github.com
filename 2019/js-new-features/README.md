@@ -16,3 +16,5 @@
 - Optional Chaining / Nullish Coalescing *
 
 （* 需在12月会议上决定是否能赶上ES2020）
+
+- [简报](slide?devfest)
