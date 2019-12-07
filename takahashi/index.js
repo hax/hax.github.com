@@ -154,7 +154,8 @@ function parseInline(s, container) {
 			default: node = tokens[i]
 		}
 		if (node.nodeType === 1) {
-			parseInline(tokens[++i], node)
+			if (node.tagName.toLowerCase() === 'code') node.innerHTML = tokens[++i]
+			else parseInline(tokens[++i], node)
 			container.appendChild(node)
 		} else {
 			parseInline(node, container)
