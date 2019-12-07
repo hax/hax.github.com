@@ -129,28 +129,37 @@ function createSlides(slides) {
 					lineDiv.appendChild(a)
 				}
 			} else {
-				const tokens = line.split(/(``?|\*\*?|~~)(?=\S)(.*?\S)\1/g)
-				for (let i = 0; i < tokens.length; ++i) {
-					let node
-					switch (tokens[i]) {
-						case '``': node = document.createElement('code'); break
-						case '`': node = document.createElement('code'); break
-						case '**': node = document.createElement('strong'); break
-						case '*': node = document.createElement('em'); break
-						case '~~': node = document.createElement('s'); break
-						default: node = tokens[i]
-					}
-					if (node.nodeType === 1) {
-						node.innerHTML += tokens[++i]
-						lineDiv.appendChild(node)
-					} else {
-						lineDiv.innerHTML += node
-					}
-				}
+				parseInline(line, lineDiv)
 			}
 			container.appendChild(lineDiv)
 		})
 	})
+}
+
+function parseInline(s, container) {
+	let tokens = s.split(/(`+)(.*?)\1/g)
+	if (tokens.length === 1) tokens = s.split(/(\*\*?|~~)(?=\S)(.*?\S)\1/g)
+	if (tokens.length === 1) {
+		container.appendChild(document.createTextNode(s))
+		return
+	}
+	for (let i = 0; i < tokens.length; ++i) {
+		let node
+		switch (tokens[i]) {
+			case '``': node = document.createElement('code'); break
+			case '`': node = document.createElement('code'); break
+			case '**': node = document.createElement('strong'); break
+			case '*': node = document.createElement('em'); break
+			case '~~': node = document.createElement('s'); break
+			default: node = tokens[i]
+		}
+		if (node.nodeType === 1) {
+			parseInline(tokens[++i], node)
+			container.appendChild(node)
+		} else {
+			parseInline(node, container)
+		}
+	}
 }
 
 function startPresentation() {
