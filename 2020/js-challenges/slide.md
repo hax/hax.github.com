@@ -251,6 +251,9 @@ value |> f(#, ...args)
 
 Binary AST
 
+- 不同平台的需求
+- 性能和动态性的矛盾
+
 Roadmap？
 
 主导者？
