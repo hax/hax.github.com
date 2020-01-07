@@ -8,7 +8,8 @@ lang: zh-cmn-Hans-x-hax
 
 ### 2020
 
-- 2020-01-04 杭州 [第三届 SEE Conf](https://seeconf.antfin.com/) 待定
+- 2020-01-04 杭州 [第三届 SEE Conf](https://seeconf.antfin.com/) 参会
+<!-- - 2020-01-11 帝都 [NodeParty 1.11]() 待定 -->
 - 2020-02-04~06 檀香山 [第74次TC39会议](https://github.com/tc39/agendas/blob/master/2020/2.md) 参会
 
 ### 2019
@@ -58,13 +59,12 @@ lang: zh-cmn-Hans-x-hax
 - 2019-12-03~05 [第73次TC39会议](https://github.com/tc39/agendas/blob/master/2019/12.md) 远程参会
 - 2019-12-06~07 帝都 [ArchSummit 全球架构师峰会](https://archsummit.infoq.cn/2019/beijing/) 参会
 - 2019-12-08 帝都 [GDG DevFest 2019 Beijing](https://www.meetup.com/GDG-Beijing/events/265252940/) 讲师
-  <br>主题待定
-- 2019-12-14 杭州 [第十四届D2](http://d2forum.alibaba-inc.com/) 嘉宾
-  <br>主题待定
-<!-- - 2019-12-17 魔都 百度内部分享 参会 -->
+  <br>[JS的新特性（12月版）](/2019/js-new/features/slide?devfest)
+- 2019-12-14 杭州 [第十四届D2](http://d2forum.alibaba-inc.com/) 晚场嘉宾
+  <br>[2019-D2 晚会前端分享记录](https://www.yuque.com/zhaishenking/ggn07n/uvdo44)
+<!-- - 2019-12-17 魔都 百度内部分享 没有参会 -->
 - 2019-12-20~21 深圳 [GMTC2019·深圳站](https://gmtc.infoq.cn/2019/shenzhen/) 讲师
-  <br>主题待定
-<!-- - 2019-12-26 帝都 内部课程 -->
+  <br>[JavaScript 的困境与挑战](/2020/js-challenges/)
 
 ### 2018
 
