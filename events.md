@@ -31,8 +31,8 @@ lang: zh-cmn-Hans-x-hax
   <br>[高桥流简报法之心得](/2019/gql)
 - 2019-05-29 魔都 [BXT 018](https://github.com/baixing/BXT/issues/25) 组织者
 - 2019-06-08 魔都 [第三届 VueConf](https://vue.w3ctech.com/3) 参会
-- 2019-06-20~21 帝都 [GMTC2019](https://gmtc.infoq.cn/2019/beijing/) “编程语言”专题出品人 主题演讲
-  <br>[前端开发编程语言的过去、现在和未来](/2019/fe-lang/slide)
+- 2019-06-20~21 帝都 [GMTC2019](https://gmtc.infoq.cn/2019/beijing/) “编程语言”专题出品人、讲师
+  <br>[主题演讲：前端开发编程语言的过去、现在和未来](/2019/fe-lang/slide)
 - 2019-07-11 杭州 钉钉内部分享会 OSS VSCode 参会
 - 2019-07-17 魔都 [BXT 019](https://github.com/baixing/BXT/issues/26) 组织者
 - 2019-07-23~25 [第71次TC39会议](https://github.com/tc39/agendas/blob/master/2019/7.md) 远程参会
@@ -64,7 +64,7 @@ lang: zh-cmn-Hans-x-hax
   <br>[2019-D2 晚会前端分享记录](https://www.yuque.com/zhaishenking/ggn07n/uvdo44)
 <!-- - 2019-12-17 魔都 百度内部分享 没有参会 -->
 - 2019-12-20~21 深圳 [GMTC2019·深圳站](https://gmtc.infoq.cn/2019/shenzhen/) 讲师
-  <br>[JavaScript 的困境与挑战](/2020/js-challenges/)
+  <br>[主题演讲：JavaScript 的困境与挑战](/2020/js-challenges/)
 
 ### 2018
 
