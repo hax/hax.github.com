@@ -57,6 +57,7 @@ lang: zh-cmn-Hans-x-hax
 - 2019-11-27 魔都 百度内部分享
   <br>[JS 的几朵乌云](/2019/js-issues/)
 - 2019-12-03~05 [第73次TC39会议](https://github.com/tc39/agendas/blob/master/2019/12.md) 远程参会
+  <br>[Nullish Coalescing Precedence Issue](/2019/nc-p/slide)
 - 2019-12-06~07 帝都 [ArchSummit 全球架构师峰会](https://archsummit.infoq.cn/2019/beijing/) 参会
 - 2019-12-08 帝都 [GDG DevFest 2019 Beijing](https://www.meetup.com/GDG-Beijing/events/265252940/) 讲师
   <br>[JS的新特性（12月版）](/2019/js-new/features/slide?devfest)
