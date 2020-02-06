@@ -849,6 +849,15 @@ Object.defineProperty(directEval, 'thisArgumentExpected', {value: true})
 ```
 
 ```js
+// if you can control the source code
+function directEval(this) {
+	eval(code) // eval('this')
+}
+directEval.thisArgumentExpected // true
+```
+
+
+```js
 function implicitThis() { this }
 implicitThis.thisArgumentExpected // true
 ```
@@ -878,6 +887,15 @@ Object.defineProperty(OldStyleConstructor, 'thisArgumentExpected', {value: false
 ```
 
 ```js
+// future possibility
+@constructor
+function OldStyleConstructor(foo) {
+	// if (new.target === undefined) throw new TypeError()
+	this.foo = foo
+}
+```
+
+```js
 class X {
 	static of(...args) {
 		return new (this ?? X)(args)
@@ -888,6 +906,15 @@ Object.defineProperty(X.of, 'thisArgumentExpected', {value: false})
 ```
 
 ```js
+class X {
+	static of(@optional this, ...args) {
+		return new (this ?? X)(args)
+	}
+}
+```
+
+```js
+// do not need it because we already have globalThis, just for example
 let getGlobalThis = new Function('return this')
 getGlobalThis.thisArgumentExpected // true
 Object.defineProperty(getGlobalThis, 'thisArgumentExpected', {value: false})
@@ -914,6 +941,9 @@ Allow frameworks/libraries (and future language features!)
 create safer APIs by checking the `thisArgumentExpected`
 property, throw an error as early as possible, and the error
 could contain better error message which is helpful to locate the bug
+
+- explicit `this` parameter (declarative mechnasim)
+- `thisArgumentExpected` property (impretive/reflective mechnasim)
 
 Stage 1 ?
 
