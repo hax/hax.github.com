@@ -942,8 +942,9 @@ create safer APIs by checking the `thisArgumentExpected`
 property, throw an error as early as possible, and the error
 could contain better error message which is helpful to locate the bug
 
-- explicit `this` parameter (declarative mechnasim)
+- explicit `this` parameter (syntax, declarative mechnasim)
 - `thisArgumentExpected` property (impretive/reflective mechnasim)
+- Complement each other, but could also stands for themselves
 
 Stage 1 ?
 
