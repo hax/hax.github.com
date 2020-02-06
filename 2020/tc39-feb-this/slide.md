@@ -212,8 +212,9 @@ Misuse of "method",
 <!-- method is just functions property -->
 <!-- common OO terminology -->
 
-A method expect correct `this`
-argument provided when invoked by the caller
+A "real" method expect correct
+`this` argument to be provided
+by the caller when it is invoked
 
 ```js
 obj.method();
@@ -223,9 +224,10 @@ let {method} = obj; method()
 ```
 
 A method used as callback
-- callback do not provide `thisArg`,
-- callback provide wrong `thisArg`
+- do not provide `thisArg`,
+- provide wrong `thisArg`
 <!-- very common in callback cases -->
+<!-- worse in second case, non-strict -->
 
 <iframe src=greeting1.html></iframe>
 [sample:](greeting1.html?end=-1)
@@ -242,7 +244,7 @@ Promise.race([
 ])
 ```
 
-Factors in this case
+Some factors in this case
 - static, but expects this argument
 - implementation inconsistent (Promise/A+)
 - only get errors in very late time, rarely
