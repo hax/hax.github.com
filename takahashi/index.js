@@ -127,31 +127,36 @@ function createSlides(slides) {
 				line = line.slice(0, -1)
 				lineDiv.classList.add('comma')
 			}
-			const m = /^(!?)\[(.*?)\]\((.*?)\)/.exec(line)
-			if (m) {
-				if (m[1]) {
-					const img = document.createElement('img')
-					img.alt = m[2]
-					img.src = m[3]
-					lineDiv.classList.add('replaced')
-					lineDiv.appendChild(img)
-				} else {
-					const a = document.createElement('a')
-					a.innerHTML = m[2]
-					a.href = m[3]
-					lineDiv.appendChild(a)
-				}
-			} else {
-				parseInline(line, lineDiv)
-			}
+			parseImageOrLink(line, lineDiv)
 			container.appendChild(lineDiv)
 		})
 	})
 }
 
+function parseImageOrLink(s, container) {
+	const m = /^(!?)\[(.*?)\]\((.*?)\)/.exec(s)
+	if (!m) {
+		parseInline(s, container)
+		return
+	}
+	if (m[1]) {
+		const img = document.createElement('img')
+		img.alt = m[2]
+		img.src = m[3]
+		container.classList.add('replaced')
+		container.appendChild(img)
+	} else {
+		const a = document.createElement('a')
+		a.href = m[3]
+		container.appendChild(a)
+		parseInline(m[2], a)
+	}
+}
+
 function parseInline(s, container) {
-	let tokens = s.split(/(`+)(.*?)\1/g)
-	if (tokens.length === 1) tokens = s.split(/(\*\*?|~~)(?=\S)(.*?\S)\1/g)
+	// let tokens = s.split(/(`+)(.*?)\1/g)
+	// if (tokens.length === 1)
+	let tokens = s.split(/((?:\*\*?|~~)(?=\S)|(?:`+))(.*?\S)\1/g)
 	if (tokens.length === 1) {
 		container.appendChild(document.createTextNode(s))
 		return
@@ -168,10 +173,10 @@ function parseInline(s, container) {
 		}
 		if (node.nodeType === 1) {
 			if (node.tagName.toLowerCase() === 'code') node.innerHTML = tokens[++i]
-			else parseInline(tokens[++i], node)
+			else parseImageOrLink(tokens[++i], node)
 			container.appendChild(node)
 		} else {
-			parseInline(node, container)
+			parseImageOrLink(node, container)
 		}
 	}
 }
