@@ -79,6 +79,8 @@ function createSlides(slides) {
 				return
 			}
 			line = line.trim()
+
+			// todo: deal with multiline comments!
 			if (line.startsWith('<!--')) {
 				line = line.slice(4)
 				if (line.endsWith('-->')) line = line.slice(0, -3)
@@ -86,6 +88,17 @@ function createSlides(slides) {
 				else container.dataset.comments += '\n' + line
 				return
 			}
+
+			if (/^<(\S+\b).*?>.*<\/\1>$/.test(line)) {
+				container.innerHTML += line
+				return
+			}
+
+			if (/^-{3,}$/.test(line)) {
+				container.innerHTML += `<div class="hr">${line}</div>`
+				return
+			}
+
 			line = line.replace(/^#+\s+/, '')
 			if (listType) {
 				if (listPatterns[listType].test(line)) {
