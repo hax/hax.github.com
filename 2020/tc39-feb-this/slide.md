@@ -1,9 +1,10 @@
-# Improve Developer Experience of
+	Improve Developer Experience of
 `this` in JavaScript
 Explict `this` parameter for Stage 1
 `thisArgumentExpected` for Stage 1
 --------------------------------------------------------
 <div> @hax, 360 Tech Group, <small>February 2020 TC39</small></div>
+https://johnhax.net/2020/tc39-feb-this/slide   *[source of slide/demo](https://github.com/hax/hax.github.com/tree/master/2020/tc39-feb-this)*
 
 ## Introduce myself
 
@@ -13,7 +14,7 @@ GitHub @hax
 <!-- u can call me hax -->
 Freenode @haxjs
 Twitter @haxy
-Wechat @johnhax
+Wechat/Weibo @johnhax
 
 
 Started coding JS from 1998

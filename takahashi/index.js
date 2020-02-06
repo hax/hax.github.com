@@ -158,6 +158,7 @@ function parseInline(s, container) {
 	// if (tokens.length === 1)
 	let tokens = s.split(/((?:\*\*?|~~)(?=\S)|(?:`+))(.*?\S)\1/g)
 	if (tokens.length === 1) {
+		// s = s.replace(/ () /g, ' \u2003')
 		container.appendChild(document.createTextNode(s))
 		return
 	}
@@ -183,6 +184,7 @@ function parseInline(s, container) {
 
 function startPresentation() {
 	const controls = document.createElement('div')
+	controls.style.all = 'initial'
 	controls.classList.add('controls')
 	controls.style.position = 'fixed'
 	controls.style.bottom = '0'
@@ -222,7 +224,7 @@ function startPresentation() {
 }
 
 function hideControls() {
-	document.querySelector('div.controls').style.opacity = '0'
+	document.querySelector('div.controls').style.visibility = 'hidden'
 }
 
 function initSlide() {
