@@ -158,7 +158,7 @@ function parseInline(s, container) {
 	// if (tokens.length === 1)
 	let tokens = s.split(/((?:\*\*?|~~)(?=\S)|(?:`+))(.*?\S)\1/g)
 	if (tokens.length === 1) {
-		// s = s.replace(/ () /g, ' \u2003')
+		s = s.replace(/  /g, ' \u2003')
 		container.appendChild(document.createTextNode(s))
 		return
 	}
@@ -284,6 +284,7 @@ function adjustCurrentSlide() {
 }
 
 function isReplacedElement(e) {
+	console.log(e.tagName, e.width, e.height, e.width != 0 && e.height != 0)
 	return e.matches('img, canvas, picture, video, embed, iframe, object')
 		&& e.width != 0 && e.height != 0
 }

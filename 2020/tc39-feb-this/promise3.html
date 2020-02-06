@@ -1,0 +1,27 @@
+<script>
+function test() {
+	process(input.value.split(','))
+}
+function process(data) {
+	Promise.all(data)
+		.then(rejectNonNumbers)
+		.then(showMax)
+		.catch(e => {
+			console.error(e)
+			alert('wrong numbers!')
+		})
+}
+async function showMax(promises) {
+	const numbers = (await Promise.allSettled(promises))
+		.filter(({status}) => status === 'fulfilled')
+		.map(({value}) => value)
+		alert('max: ' + Math.max(...numbers))
+}
+function rejectNonNumbers(values) {
+	const realNumbers = values.filter(isFinite)
+	const nonNumbers = values.filter(isNaN).map(Promise.reject)
+	return realNumbers.concat(nonNumbers)
+}
+</script>
+<input id=input type=text value="1,2,3">
+<input type=button value=process onclick="test()">

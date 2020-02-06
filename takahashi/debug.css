@@ -1,0 +1,13 @@
+.slide {
+	outline: thick dotted red;
+}
+.slide-content {
+	outline: medium dotted green;
+}
+.slide-content > * {
+	outline: thin dashed blue;
+}
+#page-box {
+	position: fixed;
+	border: 100px double silver;
+}

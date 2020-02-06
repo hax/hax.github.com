@@ -1,0 +1,92 @@
+html {
+	font-size: 20vmin;
+	/* font-family:
+		'Noto Serif CJK', 'Noto Serif CJK SC',
+		'Source Han Serif', 'Source Han Serif SC',
+		serif; */
+	/* font-family: Noto Sans CJK SC, PingFang SC, Hiragino Sans GB; */
+	/* font-weight: 100; */
+}
+ol, ul {
+	padding-left: 1.34em;
+	-webkit-padding-start: 1.34em;
+	padding-inline-start: 1.34em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+pre > code {
+	tab-size: 3 !important;
+}
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+em > a:only-child {
+	font-style: normal;
+}
+
+.slide {
+	display: flow-root;
+}
+.slide-content {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	width: fit-content;
+	transform: translate(-50%, -50%);
+	border: 1px solid transparent;
+}
+.slide-content > * {
+	width: max-content;
+}
+.v {
+	writing-mode: vertical-rl;
+}
+
+@media screen {
+	.slide {
+		position: fixed;
+		left: 5%; right: 5%;
+		top: 5%; bottom: 96px;
+		visibility: hidden;
+	}
+	.current.slide {
+		visibility: visible;
+	}
+	.comma ~ * {
+		visibility: hidden;
+	}
+	s.comma {
+		text-decoration: none;
+	}
+	s.comma + em {
+		visibility: hidden;
+	}
+}
+
+@media print {
+	body {
+		margin: 0;
+		counter-reset: slide;
+	}
+	.slide {
+		width: 70vw;
+		height: 70vh;
+		page-break-after: always;
+		margin: 15vh 15vw;
+		position: relative;
+	}
+	.slide::after {
+		content: attr(data-url);
+		position: absolute;
+		bottom: -15vh;
+		right: -15vw;
+		font-size: 2vw;
+		color: silver;
+	}
+	.controls {
+		display: none;
+	}
+}

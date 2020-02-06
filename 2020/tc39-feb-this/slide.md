@@ -3,8 +3,8 @@ Improve Developer Experience of
 Explict `this` parameter for Stage 1
 `thisArgumentExpected` for Stage 1
 --------------------------------------------------------
-<div> @hax, 360 Tech Group, <small>February 2020 TC39</small></div>
-https://johnhax.net/2020/tc39-feb-this/slide   *[source of slide/demo](https://github.com/hax/hax.github.com/tree/master/2020/tc39-feb-this)*
+<div> @hax, 360 Tech Group <small>February 2020 TC39</small></div>
+<div><small>source of slide/demo: <a href=https://github.com/hax/hax.github.com/tree/master/2020/tc39-feb-this>github.com/hax/hax.github.com/tree/master/2020/tc39-feb-this</a></small></div>
 
 ## Introduce myself
 
@@ -195,6 +195,8 @@ argument provided when invoked by the caller
 A method used as callback
 - callback do not provide `thisArg`
 - callback provide wrong `thisArg`
+
+![source](greeting1.html)
 
 ```html
 <form id=myForm>
