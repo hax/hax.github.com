@@ -8,9 +8,9 @@ https://johnhax.net/2020/tc39-feb-this/slide   *[source of slide/demo](https://g
 
 ## Introduce myself
 
-<div><ruby>贺师俊<rt>HE Shi-Jun</rt></ruby></div>
+	<div><ruby>贺师俊<rt>HE Shi-Jun</rt></ruby></div>
 
-GitHub @hax
+	GitHub @hax
 <!-- u can call me hax -->
 	Freenode @haxjs
 	Twitter @haxy
