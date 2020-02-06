@@ -1,4 +1,4 @@
-	Improve Developer Experience of
+Improve Developer Experience of
 `this` in JavaScript
 Explict `this` parameter for Stage 1
 `thisArgumentExpected` for Stage 1
@@ -8,14 +8,13 @@ https://johnhax.net/2020/tc39-feb-this/slide   *[source of slide/demo](https://g
 
 ## Introduce myself
 
-	<div><ruby>贺师俊<rt>HE Shi-Jun</rt></ruby></div>
+<div><ruby>贺师俊<rt>HE Shi-Jun</rt></ruby></div>
 
-	GitHub @hax
+GitHub @hax
 <!-- u can call me hax -->
-	Freenode @haxjs
-	Twitter @haxy
-	Wechat/Weibo @johnhax
-
+Freenode @haxjs
+Twitter @haxy
+Wechat/Weibo @johnhax
 
 Started coding JS from 1998
 <!-- I have been using JS as my main programming language 20 years -->
