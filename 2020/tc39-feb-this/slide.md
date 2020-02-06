@@ -12,9 +12,9 @@ https://johnhax.net/2020/tc39-feb-this/slide   *[source of slide/demo](https://g
 
 GitHub @hax
 <!-- u can call me hax -->
-Freenode @haxjs
-Twitter @haxy
-Wechat/Weibo @johnhax
+	Freenode @haxjs
+	Twitter @haxy
+	Wechat/Weibo @johnhax
 
 
 Started coding JS from 1998
