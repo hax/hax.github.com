@@ -1,11 +1,7 @@
 <script>
-function test() {
-	process(input.value.split(','))
-}
 function process(data) {
 	Promise.all(data)
-		.then(rejectNonNumbers)
-		.then(showMax)
+		.then(rejectNonNumbers).then(showMax)
 		.catch(() => alert('wrong numbers!'))
 }
 async function showMax(promises) {
@@ -17,6 +13,9 @@ function rejectNonNumbers(values) {
 	const nonNumbers = values.filter(isNaN).map(Promise.reject)
 	return realNumbers.concat(nonNumbers)
 }
+function test() {
+	process(input.value.split(','))
+}
 </script>
-<input id=input type=text value="1,2,3">
+<input id=input type=text size=6 value="1,2,3">
 <input type=button value=process onclick="test()">

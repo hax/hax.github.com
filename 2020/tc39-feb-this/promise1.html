@@ -1,15 +1,15 @@
 <script>
-function test() {
-	process(input.value.split(','))
-}
 function process(data) {
 	Promise.all(data)
 		.then(showMax)
 }
-function showMax(promises) {
-	Promise.all(promises)
-		.then(numbers => alert('max: ' + Math.max(...numbers)))
+async function showMax(promises) {
+	const numbers = await Promise.all(promises)
+	alert('max: ' + Math.max(...numbers))
+}
+function test() {
+	process(input.value.split(','))
 }
 </script>
-<input id=input type=text value="1,2,3">
+<input id=input type=text size=6 value="1,2,3">
 <input type=button value=process onclick="test()">

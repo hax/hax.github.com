@@ -1,0 +1,20 @@
+<head>
+<link rel="stylesheet" title=light href="https://unpkg.com/prismjs/themes/prism.css">
+<link rel="alternate stylesheet" title=dark href="https://unpkg.com/prismjs/themes/prism-twilight.css">
+<link rel="alternate stylesheet" title=EVA href="https://unpkg.com/prismjs/themes/prism-tomorrow.css">
+
+<script src="https://unpkg.com/prismjs/prism.js" data-manual></script>
+<script src="https://unpkg.com/prismjs/components.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/prismjs/plugins/line-highlight/prism-line-highlight.css">
+<script src="https://unpkg.com/prismjs/plugins/line-highlight/prism-line-highlight.js"></script>
+
+<pre data-src="prism-test.html" data-line="3-5"></pre>
+
+<script>
+window.onload = () => {
+	document.body.innerHTML += '<pre data-src="prism-test.html" data-line="7-8"></pre>'
+	Prism.highlightAll()
+	Prism.fileHighlight()
+}
+</script>

@@ -7,22 +7,26 @@ Explict `this` parameter for Stage 1
 <div><small>source of slide/demo: <a href=https://github.com/hax/hax.github.com/tree/master/2020/tc39-feb-this>github.com/hax/hax.github.com/tree/master/2020/tc39-feb-this</a></small></div>
 
 ## Introduce myself
+<!-- my first time submit proposal in tc39 -->
 
 <div><ruby>贺师俊<rt>HE Shi-Jun</rt></ruby></div>
 
 GitHub @hax
-<!-- u can call me hax -->
 Freenode @haxjs
 Twitter @haxy
 Wechat/Weibo @johnhax
+<!-- u can call me hax -->
+<!-- sorry for using diff name in diff places -->
+<!-- naming is always issue -->
 
 Started coding JS from 1998
-<!-- I have been using JS as my main programming language 20 years -->
 Read the ES3 spec several times
 & **[found a spec bug](https://esdiscuss.org/topic/question-about-joined-function-object-of-ecma-262-3rd-edition)** (fixed in ES5)
-<!-- joined functions -->
 Subscribed es-discuss mailing list
 when it was called es4-discuss
+<!-- I have been using JS as my main programming language 20 years -->
+<!-- 13 years ago, raised issues about "joined functions" in ES3 -->
+<!-- start from that time, I am always keeping eyes on tc39  -->
 
 Very active in Chinese
 JavaScript & Web front-end
@@ -35,6 +39,8 @@ most biggest tech conferences in China
 Working for 360 now
 Join ECMA TC39 from July 2019
 Also member of W3C from 2012
+<!-- also introduce tc39 to many china companies -->
+<!-- very happy that we now have 4 chinese company members -->
 
 Watching/contributing many
 proposal repos for years
@@ -66,6 +72,7 @@ from Groovy
 - 100 lines of Swift
 🐸 人呐，就都不知道，
 自己不可以预料 👓
+<!-- maybe it's the time to change this  -->
 
 PART 0
 `this` in JS
@@ -96,6 +103,9 @@ f.call(null)
 f.call()
 ```
 
+`this` is common in OO languages
+But there are some special things in JS
+
 strict VS. non-strict
 global VS. functions
 
@@ -112,11 +122,13 @@ this // undefined
 'use strict'
 new Function('return this')() // global
 ```
+<!-- weird -->
 
 ```js
 'use strict'
 globalThis // global
 ```
+<!-- though the name is unfortunate -->
 
 ```js
 'use strict'
@@ -125,7 +137,8 @@ globalThis === this // false
 
 🤡 `globalThis` is
 strictly **NOT** `this` in
-strict global code,
+strict global code
+<!-- sorry, may be a bad joke -->
 
 - global `this`
 - `this` in functions
@@ -135,19 +148,21 @@ strict global code,
 
 - ~~`globalThis`~~
 - `this` in functions
+<!-- remove it from the weirdness list of `this` -->
 
-The root cause of
-`this` confusion is
+`this` confusion from
 the functions
 
 `function` is
 too overloaded
 
 a classic function can be used for...
-- plain call `func(...args)`
-- method invoking `o.method(...args)`
-- construct `new C(...args)`
-- callback `doSth(callback)`
+- `func(...args)` plain call
+- `o.method(...args)` method invoking
+- `new C(...args)` construct
+- `doSth(callback)` callback
+with very different `this` behavior
+<!-- used in various ways -->
 
 ES6
 
@@ -155,88 +170,171 @@ ES6
 Reflect.apply(target, thisArg, args)
 Reflect.construct(target, args, newTarget)
 ```
+<!-- diff: thisArg -->
 
-- plain call `f(...args)` → `Reflect.apply(f, undefined, args)`
-- method invoking `o.m(...args)` → `Reflect.apply(o.m, o, args)`
-- construct `new C(...args)` → `Reflect.construct(C, args)`
-- callback `foo(callback)` → ?
+a classic function can be used for...
+- `f(...args)` → `R.apply(f, undefined, args)` plain call
+- `o.m(...args)` → `R.apply(o.m, o, args)` method invoking
+- `new C(...args)` → `R.construct(C, args)` construct
+- `foo(callback)` → ?
+with very different `this` behavior
 
-- plain call `f(...args)` → `Reflect.apply(f, undefined, args)`
-- method invoking `o.m(...args)` → `Reflect.apply(o.m, o, args)`
-- construct `new C(...args)` → `Reflect.construct(C, args)`
-- callback `foo(callback)` → ?
+- bound functions (ES5)
+- arrow functions (ES6)
+- class (ES6)
 
-- plain call `func(...args)`
-- method invoking `reciever.method(...args)`
-- callback `onevent = callback`
-- ~~old style constructors~~ class `new C()`
+a classic function should be used for...
+- `f(...args)` → `R.apply(f, undefined, args)` plain call
+- `o.m(...args)` → `R.apply(o.m, o, args)` method invoking
+- ~~`new C(...args)` → `R.construct(C, args)`~~ use class!
+- `foo(callback)` → ?
+<!-- in most time, u can't provide thisArg -->
+<!-- don't know what's the thisArg passed in  -->
 
-- plain call `func(...args)`
-- method invoking `reciever.method(...args)`
-- callback `onevent = callback`
+a classic function should be used for...
+- `f(...args)` → `R.apply(f, undefined, args)` plain call
+- `o.m(...args)` → `R.apply(o.m, o, args)` method invoking
+- ~~`new C(...args)` → `R.construct(C, args)`~~ use class!
+- ~~`foo(callback)` → ?~~ use arrow/bound! can we?
 
-- plain call `func(...args)`
-- method invoking `reciever.method(...args)`
-- arrow/bound for callback `onevent = callback`
-
-- plain call `func(...args)`
-- method invoking `reciever.method(...args)`
-- arrow/bound/plain for callback `onevent = callback`
-
-Always use arrow, bound or
-plain functions for callback
+Prefer use arrow, bound
+functions for callbacks,
 But very hard to ensure that!
 
-Misuse of "method"
+a classic function should be used for...
+- `f(...args)` → `R.apply(f, undefined, args)` plain call
+- `o.m(...args)` → `R.apply(o.m, o, args)` method invoking
+- ~~`new C(...args)` → `R.construct(C, args)`~~ use class!
+- ~~`foo(callback)` → ?~~ use arrow/bound! can we?
 
-A method, which expect correct `this`
+Misuse of "method",
+(What is "method"? Spec is vague about that)
+<!-- method is just functions property -->
+<!-- common OO terminology -->
+
+A method expect correct `this`
 argument provided when invoked by the caller
 
+```js
+obj.method();
+(obj.method)();
+(0, obj.method)();
+let {method} = obj; method()
+```
+
 A method used as callback
-- callback do not provide `thisArg`
+- callback do not provide `thisArg`,
 - callback provide wrong `thisArg`
+<!-- very common in callback cases -->
 
-![source](greeting1.html)
+<iframe src=greeting1.html></iframe>
+[sample:](greeting1.html?end=-1)
+[sample:](greeting.js)
 
-```html
-<form id=myForm>
-	<input type="button" name="tc39" value="tc39">
-	<input type="button" name="w3c" value="w3c">
-</form>
-```
+<iframe src=greeting2.html></iframe>
+[sample:](greeting2.html?end=-1)
+[sample:](greeting.js)
+
 ```js
-class Greeting {
-	static from(control) { return new Greeting(control.value) }
-	constructor(name) { this.name = name }
-	hello() { console.log(`Hello ${this.name || 'world'}!`) }
+Promise.race([
+	fetch('result'),
+	fetch('negative-result').then(Promise.reject)
+])
+```
+
+Factors in this case
+- static, but expects this argument
+- implementation inconsistent (Promise/A+)
+- only get errors in very late time, rarely
+- can't easily differantiate error source
+
+How to deal with it?
+
+RTFM
+
+RTFS
+
+RTFM/RTFS to figure out / remeber
+- `Promise.resolve` expect `this`
+- `e.addEventListener` use `e` as `this` arg
+
+```js
+Promise.race
+Array.isArray
+Array.of
+setTimeout
+```
+
+```js
+Promise.race // expects this arg
+Array.isArray // not expect this arg
+Array.of // optional
+// optional, throw if provide wrong,
+// always pass it to callback as this arg
+setTimeout
+```
+
+What about user-land code?
+
+```js
+class A {
+	static realStaticMethod() {
+		// ...
+	}
+	static dynamicStaticMethod() {
+		// ...
+		this.foo
+		// ...
+	}
+	instanceMethod() {
+		// ...
+		this.foo
+		// ...
+	}
+	instanceMethodButNeverUseInstance() {
+		// ...
+	}
 }
-;[...myForm.elements]
-	.map(e => [e, Greeting.from(e)])
-	.forEach(([e, {hello}]) => e.addEventListener('click', hello))
 ```
 
-- "Hello tc39"
-- "Hello world"
-- "Hello "
-- throw ReferenceError
-- Other
-
-[test](test)
-
+Are we ok?,
+Try this:
 
 ```js
-Promise.all(numberPromises).then(nextStep)
+const o = {
+	is_this_a_method(x) {
+		// ...
+		// ...
+		x.foo = function (f) {
+			// ...
+			// ...
+			return f.call(this)
+			// ...
+		}.bind(o, () => ({
+			x() { this },
+			y: function () { this },
+			z: () => eval('this'),
+		}))
+		// ...
+	}
+}
 ```
 
 ```js
-Promise.all(numberPromises)
-	.then(values => {
-		const nonNumbers = values.filter(isNaN)
-		return Promise.all(values.concat(nonNumbers.map(Promise.reject)))
-	})
-	.then(nextStep)
-	.catch(errorLogger)
+class A extends B {
+	static process(...args) {
+		// ...
+		// ...
+		// ...
+		if (condition) {
+			// ...
+			args.forEach(super.process)
+			// ...
+		}
+	}
+}
 ```
+<!-- this static -->
 
 `this` binding is a
 constant source of confusion
@@ -248,7 +346,7 @@ who does not take the time to learn how the mechanism actually works.
 constant source of confusion
 for the JavaScript developer
 even they do take the time to learn how the mechanism actually works.
-—— *Don't forget JS hate you*
+—— *JS don't like you*
 
 
 People always make mistakes
@@ -257,61 +355,31 @@ People always make mistakes
 - How hidden the mistakes could be
 - How hard to locate the mistakes
 
-
-```js
-let f = function () { this }
-f = f.bind(null)
-f = function () { return function () { this } }
-f = function () { g(() => this) }
-f = (class { static f() { this } }).f
-f = ({f() { super.f }}).f
-```
-
-```js
-let f = function () { this } // 方法
-f = f.bind(null)
-f = function () { return function () { this } }
-f = function () { g(() => this) } // 方法
-f = (class { static f() { this } }).f // 方法
-f = ({f() { super.f }}).f // 方法
-```
-
-源码缺乏标记
-『真·方法』
-
-```js
-Promise.race // 方法
-Array.isArray
-Array.of // *
-addEventListener // 方法
-setTimeout // *
-```
-
-- 普通函数，可直接调用 `f()`
-- 必须以方法形式调用 `o.f()`
-
-不知道built-in函数
-或第三方函数是否是
-『真·方法』
-
-如何解决？
+How to solve?
 
 - TypeScript
 - ESLint,
-- 新语言特性！
+- New language features!
 
 Part Ⅰ
 # explicit `this` parameter
 
-[Outdated draft: gilbert/es-explicit-this](https://github.com/gilbert/es-explicit-this)
+[Draft: gilbert/es-explicit-this](https://github.com/gilbert/es-explicit-this)
+Written by Gilbert 4 years ago,
+before TS adding `this` type check
+
+Prior Arts:
+- TypeScript
+- Java (explicit receiver parameter)
+- C# (`this` modifier of extension methods)
 
 ## Usage
 
 ```js
-function getX(this) { // explicit this
+function getX(this) { // explicit this parameter
 	return this.x
 }
-function getX(this o) { // alias
+function getX(this o) { // give a name instead of `this`
 	return o.x
 }
 function getX(this {x}) { // destructuring
@@ -360,6 +428,11 @@ function process (name) {
 	});
 };
 ```
+<!-- shadowed -->
+<!-- we avoid shadow -->
+<!-- this always shadow -->
+<!-- hard to recognize -->
+<!-- not convinent to use outside -->
 
 ```js
 function process (name) {
@@ -383,8 +456,8 @@ function process (this obj, name) {
 ```
 
 ```js
-// extension proposal (bind operator)
-const ::div = function (this numerator, denominator) {
+// static extension proposal (old bind operator)
+const Number::div = function (this numerator, denominator) {
 	const quot = Math.floor(numerator / denominator)
 	const rem = numerator % denominator
 	return [quot, rem]
@@ -393,18 +466,11 @@ const ::div = function (this numerator, denominator) {
 ```
 
 ```js
-function div(@int32 this numerator, @int32 denominator) {
-	// if (numerator !== numerator|0) throw new TypeError()
-	// if (denominator !== denominator|0) throw new TypeError()
-	// ...
-}
-```
-
-```js
 Number.prototype.toHex = function (this: number) {
 	return this.toString(16)
 }
 ```
+<!-- no runtime check -->
 
 ```js
 Number.prototype.toHex = function (this: number) {
@@ -413,8 +479,18 @@ Number.prototype.toHex = function (this: number) {
 ```
 
 ```js
+// Future parameter decorators
 Number.prototype.toHex = function (@toNumber this) {
 	return this.toString(16)
+}
+```
+
+
+```js
+function div(@int32 this numerator, @int32 denominator) {
+	// if (numerator !== numerator|0) throw new TypeError()
+	// if (denominator !== denominator|0) throw new TypeError()
+	// ...
 }
 ```
 
@@ -435,6 +511,9 @@ class User {
 	}
 }
 ```
+
+Protect programmers by
+throwing as early as possible
 
 ## Early errors
 
@@ -475,27 +554,79 @@ function f(this o) {
 ```
 
 ```js
-class A extends B {
-	constructor(this /* syntax error */) {
-		super() // <-- `this` is only available after `super()`
+class C {
+	constructor(this /* syntax error */) {}
+}
+```
+<!-- constructor is special -->
+<!-- you can't pass in thisArg to constructor -->
+<!-- if param, u could pass a value as this arg to it -->
+<!-- this in constructor is created automatically -->
+
+```js
+// use case of naming?
+class C {
+	constructor(this newInstance) {
+		newInstance.innerClass = class {
+			constructor() {
+				this.outer = newInstance
+			}
+		}
+	}
+}
+```
+<!-- this pattern is not common cases -->
+
+```js
+class C {
+	constructor(this ) {
+		this.innerClass = this |> outer => class {
+			constructor() {
+				this.outer = outer
+			}
+		}
 	}
 }
 ```
 
+Prior Arts:
+- TypeScript: NO
+- Java: NO
+- C#: N/A
+
+## Runtime errors
+
 ```js
-class C {
-	constructor(this /* syntax error */) {}
-}
+function f(this) {}
+\
+f() // TypeError
+new f() // TypeError
+\
+f.call() // allowed
+Reflect.apply(f, undefined) // allowed
+\
+Reflect.construct(f) // TypeError
 ```
 
 ## Possible linter rules
 
 ```js
-function f(this o) {
+function f(this x) {
 	function g(/* this */) {
 		this // <-- linter error
 	}
 }
+```
+
+```js
+function f(this x) {
+	function g(this y) {
+		y // ok
+	}
+}
+```
+
+```js
 class C {
 	m1() { this } // <-- ok
 	static m2() {} // <-- ok
@@ -506,10 +637,43 @@ class C {
 }
 ```
 
+```js
+class C {
+	m1() { this }
+	static m2() {}
+	m3(this) {} // <-- ok
+	static m4(this) {
+		this // ok
+	}
+}
+```
+
+Summary of
+explicit `this` parameter
+
+Allow you do treat `this` as normal parameter
+- annotate/decorate it
+- name it
+- destructure it
+
+Allow programmers *explicitly*
+mark a function as *method*
+which expect `this` arg to be passed in
+---------------------------------------
+Improve self-documenting
+Better coding style of `this`
+Error early for some common misuse
+
+Stage 1?
+
 Part Ⅱ
 # function `thisArgumentExpected` property
 
-[Outdated draft: hax/proposal-function-this](https://github.com/hax/proposal-function-this)
+[draft: hax/proposal-function-this](https://github.com/hax/proposal-function-this)
+
+`thisArgumentExpected` data property of functions
+indicates whether the function
+expect "`this` argument" to be passed in
 
 ## Use cases
 
@@ -535,7 +699,9 @@ document.querySelector('input').addEventListener('change', hax.showName)
 ```js
 // safer API:
 function on(eventTarget, eventType, listener, options) {
-	if (listener.thisArgumentExpected) throw new TypeError('listener should not expect this argument')
+	if (listener.thisArgumentExpected) {
+		throw new TypeError('listener should not expect this argument')
+	}
 	return eventTarget.addEventListener(eventType, listener, options)
 }
 ```
@@ -548,9 +714,11 @@ on(document.querySelector('input'), 'change', hax.showName.bind(hax)) // ok
 ```
 
 ```js
-// combine with extension (bind operator) and explicit this
-const ::on = function (this eventTarget, eventType, listener, options) {
-	if (listener.thisArgumentExpected) throw new TypeError('listener should not expect this argument')
+// combine with static extension and explicit this
+const EventTarget::on = function (this eventTarget, eventType, listener, options) {
+	if (listener.thisArgumentExpected) {
+		throw new TypeError('listener should not expect this argument')
+	}
 	return eventTarget.addEventListener(eventType, listener, options)
 }
 window::on('click', hax.showName) // throw TypeError
@@ -568,18 +736,28 @@ document.querySelector('input').addEventListener('change', util.show('name'))
 ```
 
 ```js
-document.querySelector('input')::on('change', ({currentTarget}) => {
-	const ::{show} = util
-	currentTarget::show('name')
-})
-```
-
-```js
+// future static extension proposal
 document.querySelector('input')::on('change',
 	e => e.currentTarget::util:show('name'))
 ```
 
-## Usages
+```js
+let {then} = Promise.prototype
+Promise.prototype.then = function (onFulfilled, onRejected) {
+  if (onFulfilled?.thisArgumentExpected) throw new TypeError()
+  if (onRejected?.thisArgumentExpected) throw new TypeError()
+  return then.call(this, onFulfilled, onRejected)
+}
+```
+
+```js
+Promise.race([
+	fetch('result'),
+	fetch('negative-result').then(Promise.reject)
+]) // throw now! ----------^^^^
+```
+
+## Semantics
 
 ```js
 let arrow = () => { this }
@@ -713,7 +891,7 @@ getGlobalThis.thisArgumentExpected // true
 Object.defineProperty(getGlobalThis, 'thisArgumentExpected', {value: false})
 ```
 
-## Semantics
+## Summary
 
 ```js
 let pd = Object.getOwnPropertyDescriptor(callable, 'thisArgumentExpected')
@@ -723,7 +901,6 @@ pd.configurable // true
 pd.value // true | false | null
 ```
 
-`callable` => `callable.thisArgumentExpected`
 - class constructor => `null`
 - bound function => `false`
 - arrow function => `false`
@@ -731,34 +908,19 @@ pd.value // true | false | null
 - explicit this => `true`
 - implicit this (contains `this` or `super.foo`) => `true`
 
-好复杂？
-学不动？
+Allow frameworks/libraries (and future language features!)
+create safer APIs by checking the `thisArgumentExpected`
+property, throw an error as early as possible, and the error
+could contain better error message which is helpful to locate the bug
 
-此特性主要是提供给
-框架和库开发者的
+Stage 1 ?
 
-间接改善普通开
-发者的开发体验
-
-将来能结合decorator
-
-```js
-@constructor
-function OldStyleConstructor() {
-	// ...
-}
-```
+Part Ⅲ
 
 - function explicit `this` parameter
 - function instance `thisArgumentExpected` data property,
-- extensions and `::` notation
+- static extensions
 
-当然也可能通
-不过委员会🤬
-
-欢迎反馈意见！
-
-欢迎提出你的提案！
-
-Part Ⅲ
-QA
+static extensions
+------------------
+See you next time!

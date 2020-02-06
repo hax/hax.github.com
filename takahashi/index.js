@@ -19,6 +19,7 @@ function getName(path) {
 }
 
 function takahashi(slideURL) {
+	Prism.highlight.manual = true
 	fetch(slideURL + '.md')
 		.then(res => res.text())
 		.then(parseContent)
@@ -28,8 +29,12 @@ function takahashi(slideURL) {
 }
 
 function highlight() {
-	if (window.Prism) Prism.highlightAll()
-	else if (window.Rainbow) Rainbow.color()
+	if (window.Prism) {
+		Prism.highlightAll()
+		Prism.fileHighlight()
+	} else if (window.Rainbow) {
+		Rainbow.color()
+	}
 }
 
 function parseContent(text) {
@@ -57,6 +62,7 @@ function createSlides(slides) {
 			'#': /^\d\.\s+/,
 		}
 		let codeBlock = false
+
 		slide.forEach(line => {
 			if (line.startsWith('```')) {
 				if (!codeBlock) {
@@ -65,9 +71,11 @@ function createSlides(slides) {
 					container.appendChild(pre)
 					container = document.createElement('code')
 					pre.appendChild(container)
-					const lang = line.slice(3)
+					const [lang, dataLine]= line.slice(3).split(/\s+/)
 					container.classList.add('language-' + lang)
 					pre.classList.add('language-' + lang) // for Prism style consistent
+					// pre.classList.add('line-numbers')
+					pre.dataset.line = dataLine
 				} else {
 					codeBlock = false
 					container = contentDiv
@@ -145,6 +153,23 @@ function parseImageOrLink(s, container) {
 		img.src = m[3]
 		container.classList.add('replaced')
 		container.appendChild(img)
+	} else if (/^sample:/.test(m[2])) {
+		// const [, lang, lines] = /([^./#?]*)(#.*)?$/.exec(m[3])
+		const pre = document.createElement('pre')
+		container.appendChild(pre)
+		pre.dataset.src = m[3]
+		console.log(pre)
+
+		// fetch(m[3]).then(res => res.text()).then(text => {
+		// 	console.log(lang, text)
+		// 	const pre = document.createElement('pre')
+		// 	c.appendChild(pre)
+		// 	const code = document.createElement('code')
+		// 	pre.appendChild(code)
+		// 	code.textContent = text
+		// 	code.classList.add('language-' + lang)
+		// 	pre.classList.add('language-' + lang) // for Prism style consistent
+		// })
 	} else {
 		const a = document.createElement('a')
 		a.href = m[3]
@@ -206,19 +231,11 @@ function startPresentation() {
 	}
 	window.onkeydown = kbEvent => {
 		console.log(kbEvent.key, kbEvent.keyIdentifier, kbEvent.keyCode)
-		if (kbEvent.key) {
-			switch (kbEvent.key) {
-				case 'ArrowRight':	case 'ArrowDown':	case 'PageDown':	nextSlide();	hideControls();	break
-				case 'ArrowLeft':	case 'ArrowUp':	case 'PageUp':	prevSlide();	hideControls();	break
-				case 'E': document.body.classList.toggle('eva'); break
-			}
-		} else if (kbEvent.keyIdentifier) {
-			switch (kbEvent.keyIdentifier) {
-				case 'Right':	case 'Down':	nextSlide();	hideControls();	break
-				case 'Left':	case 'Up':	prevSlide();	hideControls();	break
-				case 'E': document.body.classList.toggle('eva'); break
-			}
-		} else {
+		switch (kbEvent.key) {
+			case 'ArrowRight':	case 'ArrowDown':	case 'PageDown':	nextSlide();	hideControls();	break
+			case 'ArrowLeft':	case 'ArrowUp':	case 'PageUp':	prevSlide();	hideControls();	break
+			case 'E': document.body.classList.toggle('eva'); break
+			case ' ': adjustCurrentSlide()
 		}
 	}
 }
@@ -284,7 +301,6 @@ function adjustCurrentSlide() {
 }
 
 function isReplacedElement(e) {
-	console.log(e.tagName, e.width, e.height, e.width != 0 && e.height != 0)
 	return e.matches('img, canvas, picture, video, embed, iframe, object')
 		&& e.width != 0 && e.height != 0
 }
@@ -299,7 +315,32 @@ function adjustSlide(curr) {
 	s.transform = null
 
 	for (const e of c.children) {
-		if (isReplacedElement(e)) {
+		if (e.matches('iframe')) {
+			e.style.width = w + 'px'
+			e.contentDocument.head.innerHTML += `
+			<style>
+			html {
+				font-size: 2rem;
+			}
+			input {
+				-webkit-appearance: none;
+				font-size: 2rem;
+				min-width: 3rem;
+			}
+			body {
+				margin: 0;
+				position: fixed;
+			}
+			</style>
+			`
+			const iframeBody = e.contentDocument.body
+
+			iframeBody.style.margin = '0'
+			iframeBody.style.position = 'fixed'
+			e.style.width = w + 'px'
+
+			e.style.height = iframeBody.offsetHeight + 'px'
+		} else if (isReplacedElement(e)) {
 			e.style.width = w + 'px'
 		} else if (c.childElementCount > 1) {
 			e.style.fontSize = '1rem'
