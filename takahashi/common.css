@@ -14,6 +14,9 @@ ol, ul {
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
 }
+code {
+	font-family: monospace;
+}
 pre > code {
 	tab-size: 3 !important;
 }
