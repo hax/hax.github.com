@@ -58,7 +58,16 @@ TC39
 
 1996年11月
 
-Mr. Cargill (Netscape), Ms. Converse (Netscape), Mr. Eich (Netscape), Mr. Fisher (NIST), Mr. Gardner (Borland), Mr. Krull (Borland), Mr. Ksar (HP), Mr. Lenkov (HP), Mr. Lie (W3C), Mr. Luu (Mainsoft), Mr. Mathis (Pithecanthropus, JTC1/SC22), Mr. Matzke (Apple), Mr. Murarka (Spyglass), Ms. Nguyen (Netscape), Mr. Noorda (Nombas), Mr. Palay (Silicon Graphics), Mr. Reardon (Microsoft), Mr. Robinson (Sun), Mr. Singer (IBM), Mr. Smilonich (Unysis), Mr. Smith (Digital), Mr. Stryker (Netscape), Ms. Thompson (Unisys), Mr. Urquhart (Sun), Mr. Veale (Borland), Mr. Welland (Microsoft), Mr. White (AAC Group, Microsoft), Mr. Willingmyre (GTW Associates, Microsoft), Mr. Wiltamuth (Microsoft).
+Mr. Cargill (Netscape), Ms. Converse (Netscape), Mr. Eich (Netscape),
+Mr. Fisher (NIST), Mr. Gardner (Borland), Mr. Krull (Borland),
+Mr. Ksar (HP), Mr. Lenkov (HP), Mr. Lie (W3C), Mr. Luu (Mainsoft),
+Mr. Mathis (Pithecanthropus, JTC1/SC22), Mr. Matzke (Apple),
+Mr. Murarka (Spyglass), Ms. Nguyen (Netscape), Mr. Noorda (Nombas),
+Mr. Palay (Silicon Graphics), Mr. Reardon (Microsoft), Mr. Robinson (Sun),
+Mr. Singer (IBM), Mr. Smilonich (Unysis), Mr. Smith (Digital),
+Mr. Stryker (Netscape), Ms. Thompson (Unisys), Mr. Urquhart (Sun),
+Mr. Veale (Borland), Mr. Welland (Microsoft), Mr. White (AAC Group, Microsoft),
+Mr. Willingmyre (GTW Associates, Microsoft), Mr. Wiltamuth (Microsoft).
 
 [《JavaScript: The First 20 Years》](https://github.com/doodlewind/jshistory-cn)
 - Allen Wirfs-Brock
@@ -296,18 +305,6 @@ g.next(2) // {value: 3, done: true}
 
 ```js
 function *g() {
-	const a = function.sent
-	yield
-	const b = function.sent
-	return a + b
-}
-const iter = g()
-g.next(1)
-g.next(2) // {value: 3, done: true}
-```
-
-```js
-function *g() {
 	let v = 0
 	for (;;) {
 		v += function.sent
@@ -414,11 +411,12 @@ iter.next('back') // {value: 4}
 iter.next('back') // {done: true}
 ```
 
-Web compatibility
+Web compatibility？
 
 JSCIG
 中文讨论组
 
 [JSCIG/es-discuss/issues](https://github.com/JSCIG/es-discuss/issues)
 
-总结
+Thank you!
+一起参与！
