@@ -185,15 +185,21 @@ HOPL-IV (The History of Programming Languages Conferences)
 
 ![NN2、NN3、IE3](./nn2-nn3-ie3.png)
 
+准备工作
+（案头工作）
+
+- [The Origins of JavaScript](https://github.com/doodlewind/jshistory-cn/blob/master/part-1.md)
+-
+
 一些困难
 
 - 搞到老的浏览器binary安装包
 - Netscape可能有平台差异
 - NN2 beta 2 有时间限制
 - NN2 不支持外部脚本
-- 没有 console.log
-- 没有 typeof、全等 等基本运算符
-- 没有 try ... catch
+- 没有 `console.log`
+- 没有 `typeof`、全等 等基本运算符
+- 没有 `try ... catch`
 - NN2 很容易崩溃
 
 Demo
@@ -205,7 +211,13 @@ Demo
 
 没有`prototype`！
 
-`arguments`是函数！
+`arguments`是函数自身！
+
+```js
+function f() {
+	d(f == f.arguments)
+}
+```
 
 函数之外没有`this`！
 
