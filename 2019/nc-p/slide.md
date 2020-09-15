@@ -106,6 +106,10 @@ Forcing parens &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 - Postpone the decision
 - Wait for tools mature
 
+Prior Art:
+- https://github.com/apple/swift/commit/d441f3249197257d12bd238fe26d49bb405e1437#diff-4ac32a78649ca5bdd8e0ba38b7006a1eR147-R148
+- https://forums.swift.org/t/nil-coalescing-operator-precedence/2954
+
 My apologize for too late to bring the concern
 - Unwilling to block a very wanted feature
 - Misunderstanding of the status of the issue
