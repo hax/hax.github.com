@@ -30,7 +30,7 @@ let [first, ...rest, last] = iterable
 - 2017 https://esdiscuss.org/topic/strawman-complete-array-and-object-destructuring
 - 2017 https://esdiscuss.org/topic/an-update-on-rest-operator
 
-```python
+```py
 (first, *rest, last) = [1, 2, 3, 4] // Python, Ruby
 ```
 ```coffee
