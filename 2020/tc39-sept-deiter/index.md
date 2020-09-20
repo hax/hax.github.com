@@ -1,0 +1,2 @@
+- [This slide: https://johnhax.net/2020/tc39-sept-deiter](https://johnhax.net/2020/tc39-sept-deiter)
+- [Proposal repo: https://github.com/hax/proposal-deiter](https://github.com/hax/proposal-deiter)
