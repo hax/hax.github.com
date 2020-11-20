@@ -11,6 +11,16 @@ lang: zh-cmn-Hans-x-hax
 - 2020-01-04 杭州 [第三届 SEE Conf](https://seeconf.antfin.com/) 参会
 <!-- - 2020-01-11 帝都 [NodeParty 1.11]() 待定 -->
 - 2020-02-04~06 檀香山 [第74次TC39会议](https://github.com/tc39/agendas/blob/master/2020/2.md) 参会
+- 2020-09-05 深圳 [腾讯Live开发者大会](https://2020.tlc.ivweb.io/) 讲师
+  <br>[中国参与 JS 语言标准的最新进展](/2020/js-proposals-cn)
+- 2020-10-15~17 深圳 [有你有我开源节](https://www.infoq.cn/article/i82z2fr9gpbdusbnst41) 参会
+- 2020-10-24 魔都 [2020 中国开源年会 COSCon'20](https://kaiyuanshe.cn/activity/summit/coscon-2020/) 开源脱口秀嘉宾
+- 2020-10-24 线上 [图灵X掘金1024活动：JavaScript的过去、现在和将来活动心得](https://juejin.cn/post/6887733734334791694) 嘉宾
+- 2020-10-25 魔都 字节跳动技术沙龙 讲师
+  <br>[中国参与 JS 语言标准的最新进展](/2020/js-proposals-cn)
+- 2020-11-16~19 线上 [第79次TC39会议](https://github.com/tc39/agendas/blob/master/2020/11.md) 参会
+- 2020-12-10~12 魔都 中兴前端技术大会 讲师
+- 2020-12-19~20 线上 [第十五届D2](https://www.alibabaf2e.com/) 待定
 
 ### 2019
 
