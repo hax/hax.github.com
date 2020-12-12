@@ -128,10 +128,7 @@ Extensions and `::` notation
 - functional style VS. oo style
 - `_.chain().foo().bar().value()` (Ergonomics? Perf?)
 - `_.mixin(extension)` (Name conflict? Static info (type)?)
-
-```js
-
-```
+- tree-shaking (bundle/package 粒度)
 
 Minimal examples
 
