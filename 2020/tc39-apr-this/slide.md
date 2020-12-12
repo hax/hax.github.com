@@ -40,6 +40,7 @@ report error in early stage and
 provide better error/warning message
 
 Possible solution:
+<!-- use static method API as example -->
 
 ```js
 forEach(f, thisArg) {
