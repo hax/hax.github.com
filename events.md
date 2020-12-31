@@ -6,12 +6,23 @@ lang: zh-cmn-Hans-x-hax
 
 ## Timeline
 
+### 2021
+
+- 2021-01-09 杭州 [SEE Conf 2021](https://seeconf.antfin.com/) 参会
+- 2021-01-25~28 线上 [TC39会议](https://github.com/tc39/agendas/blob/master/2021/01.md) 远程参会
+  <br>更新：双端迭代和解构
+  <br>更新：Extension和`::`
+  <br>讨论：Brand checking
+  <br>讨论：反向索引和`item()/at()`
+- 2021-03-12~14 魔都 开源技术大会 GOTC 大前端分论坛出品人
 ### 2020
 
 - 2020-01-04 杭州 [第三届 SEE Conf](https://seeconf.antfin.com/) 参会
 <!-- - 2020-01-11 帝都 [NodeParty 1.11]() 待定 -->
 - 2020-02-04~06 檀香山 [第74次TC39会议](https://github.com/tc39/agendas/blob/master/2020/2.md) 远程参会
-- 2020-03-21~04-02 线上 [第75次TC39会议](https://github.com/tc39/agendas/blob/master/2020/2.md) 远程参会
+- 2020-03-21~04-02 线上 [第75次TC39会议](https://github.com/tc39/agendas/blob/master/2020/3.md) 远程参会
+- 2020-06-01~06-04 线上 [第76次TC39会议](https://github.com/tc39/agendas/blob/master/2020/3.md) 远程参会
+- 2020-03-21~04-02 线上 [第77次TC39会议](https://github.com/tc39/agendas/blob/master/2020/3.md) 远程参会
 - 2020-09-05 深圳 [腾讯Live开发者大会](https://2020.tlc.ivweb.io/) 讲师
   <br>[中国参与 JS 语言标准的最新进展](/2020/js-proposals-cn)
 - 2020-09-21~24 线上 [第78次TC39会议](https://github.com/tc39/agendas/blob/master/2020/09.md) 远程参会
@@ -24,7 +35,8 @@ lang: zh-cmn-Hans-x-hax
 - 2020-11-16~19 线上 [第79次TC39会议](https://github.com/tc39/agendas/blob/master/2020/11.md) 远程参会
   <br>[Extensions和`::`](/2020/tc39-nov-ext)
 - 2020-12-10~12 魔都 中兴前端技术大会 讲师
-- 2020-12-19~20 线上 [第十五届D2](https://www.alibabaf2e.com/) 待定
+- 2020-12-19~20 线上 [第十五届D2](https://www.alibabaf2e.com/) 参会
+- 2020-12-20 魔都 [QCon上海2020](https://qcon.infoq.cn/2020/shanghai/) 参会
 
 ### 2019
 
