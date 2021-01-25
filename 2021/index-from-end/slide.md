@@ -63,7 +63,7 @@ elements[^i] // work
 elements.at(-i) // not work
 ```
 
-Out of range
+Argument range
 
 ```js
 let a = [1, 2, 3]
