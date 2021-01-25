@@ -62,6 +62,7 @@ function createSlides(slides) {
 			'#': /^\d\.\s+/,
 		}
 		let codeBlock = false
+		let html = null
 
 		slide.forEach(line => {
 			if (line.startsWith('```')) {
@@ -97,10 +98,25 @@ function createSlides(slides) {
 				return
 			}
 
+			if (/^<\/\w+>$/.test(line)) {
+				container.innerHTML += html + line
+				html = null
+				return
+			}
+			if (html) {
+				html += line
+				return
+			}
+			if (/^<\w+\b[^<>]*?>$/.test(line)) {
+				html = line
+				return
+			}
+
 			if (/^<(\S+\b).*?>.*<\/\1>$/.test(line)) {
 				container.innerHTML += line
 				return
 			}
+
 
 			if (/^-{3,}$/.test(line)) {
 				container.innerHTML += `<div class="hr">${line}</div>`
