@@ -4,7 +4,13 @@ Class brand check for Stage 1
 
 
 - [Class brand checks](https://github.com/hax/proposal-class-brand-check)
-- [#13 of Ergonomic brand checks for Private Fields](https://github.com/tc39/proposal-private-fields-in-in/issues/13)
+- [Ergonomic brand checks for Private Fields (private-in)](https://github.com/tc39/proposal-private-fields-in-in)
+
+<blockquote style="max-width: 30em">
+	<p>...there is no case where you'd want to check for the existance of a particular private field which could not be satisfied by testing for a given value being an instance of the current class.</p>
+	<p>While instanceof can be spoofed, and might not be a 100% safe option because of that, a new, unspoofable class brand check could be devised, whose uselfuness would go beyond testing the existance of a private field.</p>
+	<p>— @dcleao, #13 of private-in proposal</p>
+</blockquote>
 
 ```js
 // Ergonomic brand checks for Private Fields
@@ -14,224 +20,277 @@ class C {
 		return #brand in obj // private in
 	}
 }
-\
-C.isC(new C()) // true
-C.isC(Object.create(C.prototype)) // false
-new C() instanceof C // true
-Object.create(C.prototype) instanceof C // true
+```
+
+```js
+// Example in the README of private-in proposal
+class C {
+  #brand;
+  #method() {}
+  get #getter() {}
+  static isC(obj) {
+		// check all private names
+    return #brand in obj && #method in obj && #getter in obj;
+  }
+}
 ```
 
 Why we need `isC()`?
 
 ```js
-class C {
-	#x
-	constructor(x) { this.#x = x }
-	equals(o) {
-		return this.#x === o.#x
-	}
-}
-let a = new C(1)
-let b = new C(2)
-a.equals(a) // true
-a.equals(b) // false
-a.equals(1) // throw TypeError!
-```
-
-```js
-class C {
-	#x
-	constructor(x) { this.#x = x }
-	equals(o) {
-		if (!(o instanceof X)) return false
-		return this.#x === o.#x
-	}
+class Range {
+  #start
+  #end
+  constructor(start, end) {
+    this.#start = start
+    this.#end = end
+  }
+  includes(value) {
+    return value >= this.#start && value < this.#end
+  }
+  equals(range) {
+    return this.#start === range.#start && this.#end === range.#end
+  }
 }
 ```
 
 ```js
-class C {
-	#x
-	constructor(x) { this.#x = x }
-	equals(o) {
-		if (!(isC(o))) return false
-		return this.#x === o.#x
-	}
+let r1 = new Range(1, 5)
+let r2 = new Range(2, 5)
+r1.equals(r1) // true
+r1.equals(r2) // false
+r1.equals({}) // expect false, actually throw TypeError
+```
+
+
+```js
+class Range {
+	...
+  equals(range) {
+    if (!(range instanceof Range)) return false
+    return this.#start === range.#start && this.#end === range.#end
+  }
 }
 ```
 
 ```js
-class C {
-	#x
-	constructor(x) { this.#x = x }
-	equals(o) {
-		if (!(IsRealInstanceOf(o, C))) return false
-		return this.#x === o.#x
-	}
+new Range(1, 5) instanceof Range // true
+Object.create(Range.prototype) instanceof Range // also true
+```
+
+```js
+class Range {
+	...
+  equals(range) {
+    if (!(range instanceof Range)) return false
+    return this.#start === range.#start && this.#end === range.#end
+  }
 }
 ```
 
-What is "real instance" mean?
+```js
+class Range {
+	...
+  equals(range) {
+    if (!isRange(range)) return false
+    return this.#start === range.#start && this.#end === range.#end
+  }
+}
+```
 
-`o` is the "real instance" of class `X`,
-means `o` is created via `new X()`,
-and have all public interfaces and
-internal implementation details of `X`
+```js
+class Range {
+	...
+  equals(range) {
+    if (!(range IsRealInstanceOf Range)) return false
+    return this.#start === range.#start && this.#end === range.#end
+  }
+}
+```
 
-Note: "real instance of" is a high-level
-OOP concept which shared by almost all
-mainstream OOP programming languages
+What is `isC` or "is real instance of `C`" mean?
+
+`o` is the "real instance" of class `C`,
+means `o` have all public interfaces and
+internal implementation details of `C`
+
+Note: `isC` or "is real instance of `C`"
+is a concept model in the programmer's mind
+shared by almost all mainstream OOP programming languages
+based on the high-level intension
+not based on the low-level mechnism
 
 Our problem: `instanceof` is prototype-based by default,
 currently we don't have the mechnism
 which could 100% map that concept
 
 ```js
-#x
-static isC(obj) {
-	try {
-		obj.#x
-		return true
-	} catch {
-		return false
-	}
-}
-```
-
-Abusing the low-level mechnism (try/catch)
-to make up high-level intentions
-
-
-```js
-get #x() { ... }
-static isC(obj) {
-	try {
-		obj.#x
-		return true
-	} catch {
-		return false
-	}
+// Abusing the low-level mechnism (try/catch)
+// to make up high-level intentions
+class C {
+  #x
+  static isC(obj) {
+    try { obj.#x; return true }
+    catch { return false }
+  }
 }
 ```
 
 ```js
-static isC(obj) {
-	return #x in obj
+class C {
+  get #x() { ... }
+  static isC(obj) {
+	  try { obj.#x; return true }
+    catch { return false }
+  }
+}
+```
+
+```js
+class C {
+  get #x() { ... }
+  static isC(obj) {
+	  return #x in obj
+  }
 }
 ```
 
 It seems to solve the problem
-But it's still a abusing
-low-level mechanism
+But still a mismatch between the
+low-level mechanics and the high-level intention
 
 ```js
-class Product {
-	id
-	constructor(id) { this.id = id }
-	equals(o) {
-		if (???) return false
-		return this.id === o.id
-	}
+class Range {
+  #start
+  #end
+  ...
+  equals(range) {
+    if (!(#start in range && #end in range)) return false
+    return this.#start === range.#start && this.#end === range.#end
+  }
 }
 ```
 
 ```js
-class Product {
-	#id
-	get id() { return this.#id }
-	set id(v) { this.#id = v }
-	constructor(id) { this.id = id }
-	equals(o) {
-		if (!(#x in o)) return false
-		return this.x === o.x
-	}
+class Range {
+  start
+  end
+  ...
+  equals(range) {
+    if (!(???)) return false
+    return this.start === range.start && this.end === range.end
+  }
+}
+```
+
+```js
+class Range {
+  #start
+  #end
+  get start() { return this.#start }
+  get end() { return this.#end }
+  set start(value) { this.#start = value }
+  set end(value) { this.#end = value }
+  ...
+  equals(range) {
+    if (!(#start in range && #end in range)) return false
+    return this.#start === range.#start && this.#end === range.#end
+  }
 }
 ```
 
 be tempted to use private field，
 even you don't need it
 
-- performance
-- semantic (`Object.keys()`/`assign()`)
+Affect semantics (breaking change)
+- `Object.keys()`/`assign()` behavior
+- proxy transparency
 
 Even you already
 use private fields
 
 ```js
-class Product {
-	#id
-	#name // more
-	#desc // fields
-	equals(o) {
-		if (!(#id in o)) return false
-		// if (!(#id in o && #name in o && #desc in o)) return false
-		return this.#id === o.#id
-	}
-	static idOf(o) {
-		if (!(#id in o)) return null
-		// if (!(#id in o && #name in o && #desc in o)) return null
-		return o.#id
-	}
+class C {
+  #brand;
+  #method() {}
+  get #getter() {}
+\
+  static isC(obj) {
+    return #brand in obj && #method in obj && #getter in obj;
+  }
 }
 ```
 
-- Add: maintaining cost
-- Not add: incorrect in concept, theorically edge case
-- It depends: mental model cost
+```js
+class Range {
+  #start
+  #end
+  #inclusive // add a new private field
+  ...
+  equals(range) {
+    if (!(#start in range && #end in range)) return false // should I update this line?
+    // if (!(#start in range && #end in range && #inclusive in range)) return false
+    return this.#start === range.#start && this.#end === range.#end && this.#inclusive === range.#inclusive
+  }
+  static Inclusive(range) {
+    if (#start in range && #end in range) { // should I also check #inclusive?
+      return new Range(range.#start, range.#end, true)
+    } else {
+      const [start, end] = arguments
+      return new Range(start, end, true)
+    }
+  }
+}
+```
+
+- Always check add: maintaining cost
+- It depends: mental model cost, easy to lose sync, maybe worse
 
 Possible “Best practice”
 
 ```js
-class Product {
-	#id
-	#name // more
-	#desc // fields
-	static #isProduct(o) {
-		return #id in o && #name in o && #desc in o
-	}
-	equals(o) {
-		if (!(#isProduct(o))) return false
-		return this.#id === o.#id
-	}
-	static idOf(o) {
-		if (!(#isProduct(o))) return null
-		return o.#id
-	}
+class Range {
+  #start
+  #end
+  #inclusive
+  static #isRange(range) {
+    return #start in range && #end in range && #inclusive in range
+  }
+  ...
+  equals(range) {
+    if (!Range.#isRange(range)) return false
+    return this.#start === range.#start && this.#end === range.#end && this.#inclusive === range.#inclusive
+  }
+  static Inclusive(range) {
+    if (Range.#isRange(range)) {
+      return new Range(range.#start, range.#end, true)
+    } else {
+      const [start, end] = arguments
+      return new Range(start, end, true)
+    }
+  }
 }
 ```
 
 ```js
-class C {
-	#x
-	#y
-	#brand // for brand check, must be the last one, don't touch it!
-	equals(o) {
-		if (!(#brand in o)) return false
-		return this.#x === o.#x && this.#y === o.#y
-	}
-	static readX(o) {
-		if (!(#brand in o)) return null
-		return o.#x
-	}
-}
-```
-
-```js
-class C {
-	#x
-	#y
-	#brand
-	static #isC(o) {
-		return #brand in o
-	}
-	equals(o) {
-		if (!(#isC(o)) return false
-		return this.#x === o.#x && this.#y === o.#y
-	}
-	static readX(o) {
-		if (!(#isC(o)) return null
-		return o.#x
-	}
+class Range {
+  #start
+  #end
+  #inclusive
+  ...
+  equals(range) {
+    if (#brand in range) return false
+    return this.#start === range.#start && this.#end === range.#end && this.#inclusive === range.#inclusive
+  }
+  static Inclusive(range) {
+    if (#brand in range) {
+      return new Range(range.#start, range.#end, true)
+    } else {
+      const [start, end] = arguments
+      return new Range(start, end, true)
+    }
+  }
+  #brand // for brand check, don't touch it and always keep it in the last!
 }
 ```
 
@@ -240,18 +299,79 @@ existence test of a single private field
 not match programmer's
 high-level intentions well
 
-Class brand checks proposal
+```js
+class Range {
+  #start
+  #end
+  #inclusive
+  ...
+  equals(range) {
+    if (!Range.#isRange(range)) return false
+    return this.#start === range.#start && this.#end === range.#end && this.#inclusive === range.#inclusive
+  }
+  static Inclusive(range) {
+    if (Range.#isRange(range)) {
+      return new Range(range.#start, range.#end, true)
+    } else {
+      const [start, end] = arguments
+      return new Range(start, end, true)
+    }
+  }
+\
+  static #isRange(range) {
+    return #brand in range
+  }
+  #brand // for brand check, don't touch it and always keep it in the last!
+}
+```
 
 ```js
 class C {
-	equals(o) {
-		if (!(class.hasInstance(o))) return false
-		return ...
-	}
-	static readX(o) {
-		if (!(class.hasInstance(o))) return null
-		return ...
-	}
+  static #isC(o) {
+    try { o.#brand; return true }
+    catch { return false }
+  }
+  #brand // only for brand check, don't touch it and always keep it in the last!
+}
+```
+
+Class brand checks proposal
+
+```js
+class Range {
+  #start
+  #end
+  #inclusive
+  ...
+  equals(range) {
+    if (!class.hasInstance(range)) return false
+    return this.#start === range.#start && this.#end === range.#end && this.#inclusive === range.#inclusive
+  }
+  static Inclusive(range) {
+    if (class.hasInstance(range)) {
+      return new Range(range.#start, range.#end, true)
+    } else {
+      const [start, end] = arguments
+      return new Range(start, end, true)
+    }
+  }
+}
+```
+
+```js
+class Range {
+  ...
+  equals(range) {
+    if (!class.hasInstance(range)) return false
+    return ...
+  }
+  static Inclusive(range) {
+    if (class.hasInstance(range)) {
+      ...
+    } else {
+      ...
+    }
+  }
 }
 ```
 
@@ -267,16 +387,22 @@ class C {
 - opt-in (only classes contains `class.hasInstance` would have class brand)
 - more details semantics could be discussed in future stage
 
+Discussion
+
+Stage 1?
+
+
+
 Private declarations
 
 ```js
-private #shared
+private #x
 \
 class X {
-	outer #shared
+	outer #x
 }
 class Y {
-	outer #shared
+	f(x) { x.#x }
 }
 ```
 
