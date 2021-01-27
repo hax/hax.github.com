@@ -1,0 +1,27 @@
+<!doctype html>
+<script>
+let o = {
+	get x() { return x },
+	set x(v) { x = v },
+	get y() { return y },
+	set y(v) { y = v },
+}
+let x = 1
+throw new Error()
+let y = 1
+</script>
+
+<script>
+o.x = 2
+console.log(o.x)
+o.y = 3
+console.log(o.y)
+</script>
+
+<script>
+let x = 4
+</script>
+
+<script>
+let y = 5
+</script>
