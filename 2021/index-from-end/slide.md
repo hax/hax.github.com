@@ -13,6 +13,7 @@ a // [1, 2, 4]
 
 - Borrowed from C# 8 but keep minimal
 - `a[^i]` roughly same as `a[a.length - i]`
+- Semantic: `a[LengthOfArrayLike(a) - Number(i)]`
 
 Motivations
 - Same as `.at()`
@@ -27,7 +28,7 @@ negative numbers count backwards from the last element.
 ----------------------------------------------------------------
 [https://github.com/tc39/proposal-relative-indexing-method#rationale](https://github.com/tc39/proposal-relative-indexing-method#rationale)
 
-- `a[-i]` (Python/Ruby)
+- `a[-i]` (Python/Ruby, impossible in JS)
 - `a[^i]` (syntax solution)
 - `a.at(-i)` (prototype method solution)
 
@@ -36,21 +37,21 @@ Comparison
 ```js
 a[a.length - 1] // currently
 a[-1] // Python/Ruby...
-a[^1] // this proposal
+a[^1] // C#, this proposal
 a.at(-1) // .at() proposal
 ```
 
 ```js
 a[a.length - 1] = v // currently
 a[-1] = v // Python/Ruby...
-a[^1] = v // this proposal
+a[^1] = v // C#, this proposal
 // .at() is only for read
 ```
 
 ```js
 a[a.length - 1] += v // currently
 a[-1] += v // Python/Ruby...
-a[^1] += v // this proposal
+a[^1] += v // C#, this proposal
 a.setAt(-1, a.at(-1) + v) // imaginary .setAt()
 ```
 
@@ -67,6 +68,7 @@ Argument range
 
 ```js
 let a = [1, 2, 3]
+a[i], a[^i], a[a.length - i], a.at(-i), a.at(i)
 ```
 
 <style>table#idx td {text-align:center}</style>
@@ -125,13 +127,12 @@ Inconsistency with `a[i]`
 - `a.at('not-a-number')`
 - `a.at(0n)`
 
-Inconsitency with `s.xxxAt()`
+Confusion with `s.xxxAt()`
 - `s.at(i)`
 - `s.charCodeAt(i)`
 - `s.charAt(i)`
 - `s.codePointAt(i)`
 - `s.at(i)` (old proposal)
-
 
 Adoption cost
 - `a[^i]`: need transpiling, not need runtime polyfill
