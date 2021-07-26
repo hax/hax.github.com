@@ -10,11 +10,21 @@ lang: zh-cmn-Hans-x-hax
 
 - 2021-01-09 杭州 [SEE Conf 2021](https://seeconf.antfin.com/) 参会
 - 2021-01-25~28 线上 [TC39会议](https://github.com/tc39/agendas/blob/master/2021/01.md) 远程参会
+  <br>讨论：Branding checks
+  <br>讨论：反向索引和`item()/at()`
+- 2021-05-29 帝都 [QCon北京2021](https://qcon.infoq.cn/2021/beijing) 参会
+- 2021-07-04 帝都 [GMTC 全球大前端技术大会 2021·北京站](https://gmtc.infoq.cn/2021/beijing) 出品人
+- 2021-07-10 魔都 [第五届函数式编程分享会](https://zhuanlan.zhihu.com/p/382695580) 远程参会
+- 2021-07-24 魔都 [RTC Dev Meetup：前端专场巡回沙龙上海站](https://www.huodongxing.com/event/9605317125000) 参会
+- 2021-07-31 帝都 [CCFTF-SIG前端技术：前端的未来发展方向](https://www.ccf.org.cn/Focus/2021-07-19/732493.shtml) 特邀讲者
+- 2021-07-31~08~01 深圳 [GOTC全球开源技术峰会](https://gotc.oschina.net/) 大前端分论坛出品人
+- 2021-08-31~09-01 线上 [TC39会议] (https://github.com/tc39/agendas/blob/master/2021/08.md) 远程参会
+  <br>更新：Branding checks
   <br>更新：双端迭代和解构
   <br>更新：Extension和`::`
-  <br>讨论：Brand checking
-  <br>讨论：反向索引和`item()/at()`
-- 2021-03-12~14 魔都 开源技术大会 GOTC 大前端分论坛出品人
+  <br>更新：反向索引和slice notation
+- 2021-09-10~12 魔都 [Inclusion外滩大会](https://www.inclusionconf.com/)
+
 ### 2020
 
 - 2020-01-04 杭州 [第三届 SEE Conf](https://seeconf.antfin.com/) 参会
