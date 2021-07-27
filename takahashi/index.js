@@ -19,7 +19,7 @@ function getName(path) {
 }
 
 function takahashi(slideURL) {
-	Prism.highlight.manual = true
+	if (window.Prism) Prism.highlight.manual = true
 	fetch(slideURL + '.md')
 		.then(res => res.text())
 		.then(parseContent)
