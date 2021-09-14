@@ -4,6 +4,8 @@ title: Hax 参加的活动
 lang: zh-cmn-Hans-x-hax
 ---
 
+本表只列出 Hax 参加的活动，更多技术活动日程见 https://r.tiye.me/b-conf/conf-dates/
+
 ## Timeline
 
 ### 2021
@@ -19,11 +21,13 @@ lang: zh-cmn-Hans-x-hax
 - 2021-07-31 帝都 [CCFTF-SIG前端技术：前端的未来发展方向](https://www.ccf.org.cn/Focus/2021-07-19/732493.shtml) 特邀讲者
 - 2021-07-31~08~01 深圳 [GOTC全球开源技术峰会](https://gotc.oschina.net/) 大前端分论坛出品人
 - 2021-08-31~09-01 线上 [TC39会议] (https://github.com/tc39/agendas/blob/master/2021/08.md) 远程参会
-  <br>更新：Branding checks
+- 2021-11-12~11-13 深圳 [开放原子全球开发者大会](https://openatom.org/static_event/oadc) 前端技术分论坛联合出品人
+- 2021-12-11~12-12 帝都 [WOT全球技术创新大会](https://wot.51cto.com/act/wot2021/dev/) 前端专题出品人
+<!--   <br>更新：Branding checks
   <br>更新：双端迭代和解构
   <br>更新：Extension和`::`
-  <br>更新：反向索引和slice notation
-- 2021-09-10~12 魔都 [Inclusion外滩大会](https://www.inclusionconf.com/)
+  <br>更新：反向索引和slice notation -->
+<!-- - 2021-09-10~12 魔都 [Inclusion外滩大会](https://www.inclusionconf.com/) -->
 
 ### 2020
 
