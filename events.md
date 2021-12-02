@@ -24,7 +24,8 @@ lang: zh-cmn-Hans-x-hax
 - 2021-07-04 帝都 [GMTC 全球大前端技术大会 2021·北京站](https://gmtc.infoq.cn/2021/beijing) 出品人
 - 2021-07-10 魔都 [第五届函数式编程分享会](https://zhuanlan.zhihu.com/p/382695580) 远程参会
 - 2021-07-24 魔都 [RTC Dev Meetup：前端专场巡回沙龙上海站](https://www.huodongxing.com/event/9605317125000) 参会
-- 2021-07-31 帝都 [CCFTF-SIG前端技术：前端的未来发展方向](https://www.ccf.org.cn/Focus/2021-07-19/732493.shtml) 特邀讲者
+- 2021-07-31 帝都 [中国计算机学会 TF43：前端的未来发展方向](https://www.ccf.org.cn/Focus/2021-07-19/732493.shtml) 特邀讲者
+  <br>[我们如何参与JS语言标准的制定](https://dl.ccf.org.cn/video/videoDetail.html?_ack=1&id=5578915538241536)
 - 2021-07-31~08~01 深圳 [GOTC全球开源技术峰会](https://gotc.oschina.net/) 大前端分论坛出品人
 <!-- - 2021-08-31~09-01 线上 [TC39会议] (https://github.com/tc39/agendas/blob/master/2021/08.md) 远程参会 -->
 <!--   <br>更新：Branding checks
