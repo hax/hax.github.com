@@ -191,7 +191,7 @@ class Range {
   start
   end
   equals(that) {
-    if (#brand in that) return false
+    if (!(#brand in that)) return false
     return this.start === that.start && this.end === that.end
   }
   // ...
@@ -213,7 +213,7 @@ class Range {
     for (let i = this.start; i < this.end; ++i) yield i
   }
   equals(that) {
-    if (#brand in that) return false
+    if (!(#brand in that)) return false
     return this.start === that.start && this.end === that.end
   }
   // ...
@@ -236,13 +236,18 @@ class Range extends Cache {
     for (let i = this.start; i < this.end; ++i) yield i
   }
   equals(that) {
-    if (#brand in that) return false
+    if (!(#brand in that)) return false
     return this.start === that.start && this.end === that.end
   }
   // ...
   // DO NOT add class fields after this line!!!
   #brand // Only for branding purpose, don't touch it!
 }
+const a = Range.make(1, 2)
+try { Range.make(1, badInput) } catch {}
+const b = Range.make(1, badInput)
+b.end = 2
+a.equals(b) // true
 ```
 
 Semantic details
