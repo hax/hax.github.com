@@ -200,6 +200,151 @@ class Range {
 }
 ```
 
+```js
+class Range {
+  start
+  end
+  constructor(start, end) {
+    this.start = validate(start)
+    this.end = validate(end)
+    Object.freeze(this)
+  }
+  *[Symbol.iterator]() {
+    for (let i = this.start; i < this.end; ++i) yield i
+  }
+  equals(that) {
+    if (#brand in that) return false
+    return this.start === that.start && this.end === that.end
+  }
+  // ...
+  // DO NOT add class fields after this line!!!
+  #brand // Only for branding purpose, don't touch it!
+}
+```
+
+```js
+class Range extends Cache {
+  start
+  end
+  constructor(start, end) {
+    super(start, end)
+    this.start = validate(start)
+    this.end = validate(end)
+    Object.freeze(this)
+  }
+  *[Symbol.iterator]() {
+    for (let i = this.start; i < this.end; ++i) yield i
+  }
+  equals(that) {
+    if (#brand in that) return false
+    return this.start === that.start && this.end === that.end
+  }
+  // ...
+  // DO NOT add class fields after this line!!!
+  #brand // Only for branding purpose, don't touch it!
+}
+```
+
+Semantic details
+
+- When to install the class brand
+- Whether `class.hasInstance()` is a function or function-like
+- Behavior of `eval("class.hasInstance(o)")`
+- `class.hasInstance` syntax
+
+When to install class brand
+https://github.com/tc39/proposal-class-brand-check/issues/6
+1. At the start of constructor, impossible!
+1. After `this` is available, before fields
+1. After fields initialization
+1. At the end of constructor
+
+When to install class brand
+https://github.com/tc39/proposal-class-brand-check/issues/6
+1. At the start of constructor, impossible!
+1. After `this` is available, before fields
+1. After fields initialization
+1. **At the end of constructor**
+
+After the return completion of the
+constructor so if constructor throw
+the brand will not be installed
+
+Reason: Make sure the object
+is **fully initialized**.
+Cumbersome to do that manually
+via `WeakSet` (as constructors can
+have multiple returns and even throws)
+
+Whether class.hasInstance() is
+a function or just function-like
+https://github.com/tc39/proposal-class-brand-check/issues/8
+
+Whether class.hasInstance() is
+a function or **just function-like**
+https://github.com/tc39/proposal-class-brand-check/issues/8
+
+- Function objects: name/length/thisArgument, etc.
+- Function-like: Nothing to worry about
+
+- meta property: `new.target` `import.meta`,
+- meta function: `import()`,
+- meta method: `class.hasInstance()`
+
+Behavior of `eval("class.hasInstance(o)")`
+https://github.com/tc39/proposal-class-brand-check/issues/7
+
+```js
+eval(`
+class {
+  static test(o) {
+    return class.hasInstance(o)
+  }
+}`)
+eval("class.hasInstance(o)")
+```
+
+```js
+class X {
+  static test(o) {
+    return eval("class.hasInstance(o)")
+  }
+}
+```
+
+```js
+class X {
+  static test(o) {
+    return class.hasInstance(o)
+      , eval("class.hasInstance(o)")
+  }
+}
+```
+
+`class.hasInstance` syntax
+https://github.com/tc39/proposal-class-access-expressions/issues/14
+
+Spec text
+
+[tc39.es/proposal-class-brand-check](https://tc39.es/proposal-class-brand-check/)
+
+- `CallExpression: ClassHasInstanceCall`
+- `object.[[ClassBrands]]`
+- `FunctionObject.[[ClassBrand]]`
+- Class Environment Record `[[ClassConstructor]]`
+
+Future work
+- Refine the spec text
+- Tweak the transpilers
+- Exploring all corner cases
+- User feedback
+
+Queue
+
+Stage 2?
+
+Thank you!
+
 Old Stage 1 Slides
 
 ```js
