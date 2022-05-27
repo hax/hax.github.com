@@ -69,56 +69,6 @@ function handleClick(@Type(HTMLElement) this) {
 element.addEventListener("click", handleClick)
 ```
 
-Allow programmers *explicitly*
-mark a function as *method*
-which expect `this` arg to be passed in
----------------------------------------
-Improve self-documenting
-Error early for some common misuse
-
-```js
-let o = {
-	doSomething(v) {
-		// ...
-		// hundreds of line
-		// ...
-		doA(() => {
-			// ...
-			doB(() => {
-				// deep nest
-				// ...
-				use(this) // <- here
-			})
-		})
-	},
-}
-promise.then(o.doSomething) // wrong
-```
-
-```js
-// Use this parameter to
-// mark method
-let o = {
-	doSomething(this, v) {
-		// ...
-	},
-}
-promise.then(v => o.doSomething(v))
-```
-
-```js
-class X {
-	// Use this parameter to denote a static
-	// method which also need receiver
-	static foo(this) {
-		// ...
-	}
-}
-```
-
-Protect programmers by
-throwing as early as possible
-
 ## Early errors
 (Follow TS/Flow errors)
 
@@ -168,6 +118,54 @@ Reflect.apply(f, undefined, []) // ok
 - global (`this ??= globalThis`)
 - implicit (no `this` parameter)
 - explicit (has `this` parameter)
+
+Allow programmers *explicitly*
+mark a function as *method*
+which expect `this` arg to be passed in
+---------------------------------------
+Improve self-documenting
+Error early for some common misuse
+
+```js
+let o = {
+	doSomething(v) {
+		// ...
+		// hundreds of line
+		// ...
+		doA(() => {
+			// ...
+			doB(() => {
+				// deep nest
+				// ...
+				use(this) // <- here
+			})
+		})
+	},
+}
+list.forEach(o.doSomething) // wrong
+```
+
+```js
+// Use this parameter to
+// mark method
+let o = {
+	doSomething(this) {
+		// ...
+	},
+}
+list.forEach(o.doSomething) // TypeError
+list.forEach(o.doSomething, o) // ok
+```
+
+```js
+class X {
+	// Use this parameter to denote a static
+	// method which also need receiver
+	static foo(this) {
+		// ...
+	}
+}
+```
 
 ## Useful to Extensions/call-this proposal
 
