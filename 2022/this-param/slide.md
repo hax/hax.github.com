@@ -12,7 +12,7 @@
 
 ```ts
 // TypeScript this parameter
-function getX<T>(this: T) {
+function getX(this: Point) {
 	return this.x
 }
 ```
@@ -24,34 +24,41 @@ function getX(this) {
 }
 ```
 
-[Type Annotation proposal](https://github.com/tc39/proposal-type-annotations#this-parameters)
-[Old gilbert/es-explicit-this](https://github.com/gilbert/es-explicit-this)
-Written by Gilbert 6 years ago
-before TS adding `this` type check
-Include renaming and destructuring
-
 Prior Arts:
-- Java 8+ (explicit receiver parameter)
 - TypeScript
 - FlowType
+<li>Java 8+<br>(explicit receiver parameter)</li>
+
+[Old proposal: gilbert/es-explicit-this](https://github.com/gilbert/es-explicit-this)
+- by Gilbert 6 years ago (before TS adding `this` type check)
+- include renaming and destructuring `this` feature
+- main motivation: solve `this` confusion (shadowing) issue
+- presented on Feb 2020 meeting but not advanced
+
+[Type Annotation: tc39/proposal-type-annotations](https://github.com/tc39/proposal-type-annotations#this-parameters)
+- `this` parameter itself is not type annotation
+- runtime semantic is out of scope of "annotation" (aka. comments)
+
+[This proposal: hax/proposal-this-parameter](https://github.com/hax/proposal-this-parameter)
+- **drop** the features of renaming and destructuring
+- focus on the basic syntax **and semantic**
 
 ## Motivations
 
 Standardize syntax for TS/Flow/etc.
 Simpify tool chains of TS/Flow/etc.
-Eliminate the confusion of newcomers
 
 Narrow the gap between
 JavaScript and TypeScript
+Eliminate the confusion of newcomers
 
 Effort of reducing the syntax burdens
 of Type Annotation proposal
 
-## Use cases
+## Usage
 
 - Type annotation
 - Parameter decorators
-- Mark "method"
 
 ```ts
 // type annotation (TypeScript, FlowType)
@@ -90,6 +97,7 @@ class C {
 <!-- TypeScript/FlowType/Java all disallow it -->
 
 ## Runtime errors
+(Also match TS/Flow behavior)
 
 ```js
 function f(this) {}
@@ -101,30 +109,31 @@ Reflect.construct(f, []) // TypeError
 ```js
 function f(this) {}
 f() // TypeError
-f.call() // ok
-Reflect.apply(f, undefined, []) // ok
+f.call({}) // ok
+Reflect.apply(f, {}, []) // ok
 ```
 
-## How to spec runtime semantic?
+Extra Motivation
+Provide syntax/semantic for "method"
 
-`[[ThisMode]]`
-- lexical (arrow functions)
-- global (`this ??= globalThis`)
-- strict,
-- explicit (has `this` parameter)
+- Constructor: no *this argument*
+- Non-method: ignore *this argument*
+- Method: expect *this argument*
 
-`[[ThisMode]]`
-- lexical (arrow functions)
-- global (`this ??= globalThis`)
-- implicit (no `this` parameter)
-- explicit (has `this` parameter)
+- Dedicated syntax for Constructors: classes
+- Dedicated syntax for Non-methods: arrow functions
+- Dedicated syntax for Methods: ?
+
+- Dedicated syntax for Constructors: classes
+- Dedicated syntax for Non-methods: arrow functions
+- Dedicated syntax for Methods: `this` parameter
 
 Allow programmers *explicitly*
 mark a function as *method*
-which expect `this` arg to be passed in
+expect *this argument* to be passed in
 ---------------------------------------
 Improve self-documenting
-Error early for some common misuse
+Throw Error early for some common misuse
 
 ```js
 let o = {
@@ -137,11 +146,14 @@ let o = {
 			doB(() => {
 				// deep nest
 				// ...
-				use(this) // <- here
+				if (condition)
+					use(this) // <- here
 			})
 		})
 	},
 }
+const {doSomething} = o
+doSomething(value) // wrong
 list.forEach(o.doSomething) // wrong
 ```
 
@@ -149,10 +161,13 @@ list.forEach(o.doSomething) // wrong
 // Use this parameter to
 // mark method
 let o = {
-	doSomething(this) {
+	doSomething(this, v) {
 		// ...
 	},
 }
+const {doSomething} = o
+doSomething(value) // TypeError
+doSomething.call(value) // ok
 list.forEach(o.doSomething) // TypeError
 list.forEach(o.doSomething, o) // ok
 ```
@@ -160,11 +175,13 @@ list.forEach(o.doSomething, o) // ok
 ```js
 class X {
 	// Use this parameter to denote a static
-	// method which also need receiver
+	// method also expect this argument
 	static foo(this) {
 		// ...
 	}
 }
+run(X.foo) // throw TypeError
+run(() => X.foo()) // ok
 ```
 
 ## Useful to Extensions/call-this proposal
@@ -208,8 +225,42 @@ Summary of
 
 - adopt TS/Flow syntax
 - annotate/decorate `this` arg
-- "method" semantic
+- "method" syntax/semantic
 
 Queue...
 
+Extra slides
+(not stage 1 consideration)
+
+```js
+f() // TypeError
+f.call({}) // ok
+Reflect.apply(f, {}, []) // ok
+// Issue: what about undefined/null?
+f.call() // ok?
+f.call(null) // ok?
+Reflect.apply(f, undefined, []) // ok?
+Reflect.apply(f, null, []) // ok?
+```
+
+## How to spec ?
+
+`[[ThisMode]]`
+- lexical (arrow functions)
+- global (`this=Object(this??globalThis)`)
+- strict,
+- explicit (has `this` parameter)
+
+`[[ThisMode]]`
+- lexical (arrow functions)
+- global (`this=Object(this??globalThis)`)
+- implicit (no `this` parameter)
+- explicit (has `this` parameter)
+
+[Issue: Non-strict?](https://github.com/hax/proposal-this-parameter#issue-of-non-strict-mode)
+If you specify something explicitly
+you don't want any implicit effect
+
 Stage 1?
+
+Thank you!
