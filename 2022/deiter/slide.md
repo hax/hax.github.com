@@ -471,7 +471,7 @@ The issues of `next("back")`
 The benefits of `nextLast()`
 - Hopefully have clear difference to `cursor.previous()`
 - The word "last" is consistent with `lastIndexOf`, `findLast` and so on
-- Symmetry of `next()` and `nextLast()` (consume forward/backward-only)
+- Symmetry of `next()` and `nextLast()` (consume the first/last of the rest items)
 - Much easy to spec how iterator helpers work on double-ended
 - Not abusing custom iterator protocol
 - No magic string
@@ -507,9 +507,9 @@ So instead of introducing new well-known symbols and new
 protocols, we just add an optional `nextLast()` method to
 the *Iterator* interface (just like `throw()` and `return()`)
 
-- only has `next()`: forward-only iterator
+- only has `next()`: normal iterator
 - have both `next()` and `nextLast()`: double-ended iterator,
-- only has `nextLast()`: backward-only iterator
+- only has `nextLast()`?
 - no `next()` and no `nextLast()`: "dead" iterator?
 
 ```js
@@ -529,25 +529,25 @@ last // 42
 
 ```js
 // Consider how iterator helpers could work
-// it's nature to have backward-only iterators
+// it's possible to have `nextLast`-only iterators
 \
-// With this proposal, it's easy to imagine a `toReversed()` iterator
+// For example, it's easy to imagine a `toReversed()` iterator
 // helper which just reverse the invoking of `next` and `nextLast`
 function toReversed(upstream) {
 	let next = upstream.nextLast?.bind(upstream)
 	let nextLast = upstream.next?.bind(upstream)
 	let ret = upstream.return?.bind(upstream)
-	return Iterator.from({next, nextLast, return: ret})
+	return {next, nextLast, return: ret, __proto__: IteratorPrototype}
 }
 // assume array iterators are double-ended, have both next/nextLast
-let [three, ..., one] = [1, 2, 3].values().toReversed()
+let [three, ..., one] = toReversed([1, 2, 3].values())
 three // 3
 one // 1
 \
 // As the consequence, reverse a forward-only iterator
 // could just give a backward-only iterator
 function* onetwothree() { yield 1; yield 2; yield 3 }
-let [..., two, one] = onetwothree().toReversed()
+let [..., two, one] = toReversed(onetwothree())
 one // 1
 two // 2
 ```
@@ -571,7 +571,7 @@ let [...one_two_three] = onetwothree()
 The key point is `nextLast()` could also be
 used to consume rest items just like `next()`
 
-So with this proposal, we actually update the *Iterator* iterface
+So we actually could update the *Iterator* iterface to
 make `next` method also optional, or we can say an *Iterator*
 is required to have either `next()` or `nextLast()`, or both
 
@@ -688,9 +688,9 @@ for (;;) {
 rest = _rest
 ```
 
-- Forward-only iterators: `next()`-only
-- Backward-only iterators: `nextLast()`-only
+- Normal iterators: `next()`-only
 - Double-ended iterators: `next()` and `nextLast()`
+- `nextLast()`-only ? (Do we like it?)
 - No need of `@@doubleEndedIterator` (or `@@reverseIterator`)
 
 What about built-in iterables?
@@ -703,8 +703,9 @@ What about built-in iterables?
 - I may miss something, please raise issues in the repo
 
 How iterator helpers work on double-ended?
-- Some methods like `forEach`, `map` just simply invoke upstream `next/nextLast`
+- One important thing to decide: do we want `nextLast()`-only?
 - Some methods like `indexed`, `find`, `reduce` require `next`, no need to change
+- Some methods like `forEach`, `map` just simply invoke upstream `next/nextLast`
 <li>Most aggregator methods like <code>toArray</code>, <code>every</code>, etc. are neutral, need to fallback<br> to <code>nextLast</code> if <code>next</code> is not available</li>
 - Some methods like `take`, `flatMap` need more investigation
 - Can have some new iterator helpers like `toReversed`, `takeLast`, `reduceRight` etc.
@@ -790,6 +791,7 @@ const IteratorPrototype = function *() {}.prototype.__proto__.__proto__
 ```
 
 Some future plan
+- Align with iterator helpers proposal
 - Experimental babel implementation for syntax
 - Experimental built-ins polyfills
 - Experimental double-ended iterator helpers polyfills
