@@ -408,8 +408,8 @@ GeometricProgression({start: 4, ratio: 1/2})
 
 More consideration of double-ended iterators
 - Symmetry of `next` and `nextLast`, also symmetry of derived APIs
-<li>Provide reasonable semantics for <code>findLast</code>, <code>takeLast</code>, <code>reduceRight</code><br> and <code>reverse</code> iterator helpers which people may expect</li>
-<li>Can cover almost all use cases of reverse iterators, so instead of two<br> separate iterators (and still can't support <code>let [a, ..., b] = it</code>),<br> developers only need maintain the iteration logic in one double-ended<br> iterator, and <code>iter.reverse()</code> just give the reverse iterator</li>
+<li>Provide reasonable semantics for <code>findLast</code>, <code>takeLast</code>, <code>reduceRight</code><br> and <code>toReversed</code> iterator helpers which people may expect</li>
+<li>Can cover almost all use cases of reverse iterators, so instead of two<br> separate iterators (and still can't support <code>let [a, ..., b] = it</code>),<br> developers only need maintain the iteration logic in one double-ended<br> iterator, and <code>iter.toReversed()</code> just get the reverse iterator</li>
 
 More consideration of double-ended iterators
 - Predictable performance in all syntax or API usage
@@ -531,23 +531,23 @@ last // 42
 // Consider how iterator helpers could work
 // it's nature to have backward-only iterators
 \
-// With this proposal, it's easy to imagine a `reverse()` iterator
+// With this proposal, it's easy to imagine a `toReversed()` iterator
 // helper which just reverse the invoking of `next` and `nextLast`
-function reverse(upstream) {
+function toReversed(upstream) {
 	let next = upstream.nextLast?.bind(upstream)
 	let nextLast = upstream.next?.bind(upstream)
 	let ret = upstream.return?.bind(upstream)
 	return Iterator.from({next, nextLast, return: ret})
 }
 // assume array iterators are double-ended, have both next/nextLast
-let [three, ..., one] = [1, 2, 3].values().reverse()
+let [three, ..., one] = [1, 2, 3].values().toReversed()
 three // 3
 one // 1
 \
 // As the consequence, reverse a forward-only iterator
 // could just give a backward-only iterator
 function* onetwothree() { yield 1; yield 2; yield 3 }
-let [..., two, one] = onetwothree().reverse()
+let [..., two, one] = onetwothree().toReversed()
 one // 1
 two // 2
 ```
@@ -707,7 +707,7 @@ How iterator helpers work on double-ended?
 - Some methods like `indexed`, `find`, `reduce` require `next`, no need to change
 <li>Most aggregator methods like <code>toArray</code>, <code>every</code>, etc. are neutral, need to fallback<br> to <code>nextLast</code> if <code>next</code> is not available</li>
 - Some methods like `take`, `flatMap` need more investigation
-- Can have some new iterator helpers like `reverse`, `takeLast`, `reduceRight` etc.
+- Can have some new iterator helpers like `toReversed`, `takeLast`, `reduceRight` etc.
 - [See tc39/proposal-deiter/blob/main/iterator-helpers.md for more info](https://github.com/tc39/proposal-deiter/blob/main/iterator-helpers.md)
 
 How to write double-ended iterators in generators?
