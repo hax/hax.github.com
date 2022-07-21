@@ -544,8 +544,8 @@ let [three, ..., one] = toReversed([1, 2, 3].values())
 three // 3
 one // 1
 \
-// As the consequence, reverse a forward-only iterator
-// could just give a backward-only iterator
+// As the consequence, reverse a normal iterator
+// could just give a `nextLast`-only iterator
 function* onetwothree() { yield 1; yield 2; yield 3 }
 let [..., two, one] = toReversed(onetwothree())
 one // 1
