@@ -691,8 +691,7 @@ rest = _rest
 - Forward-only iterators: `next()`-only
 - Backward-only iterators: `nextLast()`-only
 - Double-ended iterators: `next()` and `nextLast()`
-- Double-ended iterable: `@@iterator()` returns double-ended iterators
-- Reversible iterables:
+- No need of `@@doubleEndedIterator` (or `@@reverseIterator`)
 
 What about built-in iterables?
 - Most built-in iterables/iterators can be double-ended
