@@ -14,19 +14,19 @@ Web前端和JS语言
 20多年发展历程
 见证人和参与者
 
-- 盛大创新院
-- 百姓网
-- 360奇舞团
-
 2003 中国国际万维网发展论坛
-2013 深圳TPAC
-2015 札幌TPAC
-2019 福冈TPAC
-
 ![CIFWeb03](cifweb03_117a.jpeg)
 
 - HTML5 Chinese IG
 - Chinese Web IG
+
+- 2013 深圳TPAC
+- 2015 札幌TPAC
+- 2019 福冈TPAC
+
+使用者
+参与者
+设计者
 
 2019年6月~2021年4月
 360集团 TC39代表
@@ -61,6 +61,15 @@ ECMA-262
 <!-- JavaScript商标 -->
 TC39
 
+JS语言标准和
+Web标准的关系
+
+- Promise
+- TrustType
+- ShadowRealm
+- Transferable
+- Module机制
+
 中国公司和社区？
 
 我个人
@@ -73,7 +82,7 @@ TC39
 阿里、腾讯、美团
 慧科、字节、360
 
-思考：为什么企业要参与JS标准？
+思考：为什么企业要参与Web标准？
 
 「开放」标准？
 以公司、组织为单位
@@ -109,8 +118,8 @@ TC39
 
 由中国代表担任champion的提案一览
 
-- Error cause (Stage 4)
-- `Array.prototype.findLast`/`findLastIndex` (Stage 4)
+- Error cause (Stage 4, ES2022)
+- `Array.prototype.findLast`/`findLastIndex` (Stage 4, ES2023)
 
 - `function.sent` meta property (Stage 2)
 - Double-ended iterators (Stage 1)
@@ -148,7 +157,7 @@ TC39
 - 360：2021年4月之后基本无参与
 - 我：深度参与（个人）
 
-时区 英语
+英语 时区
 意愿 能力
 
 怕自己误解
@@ -215,8 +224,12 @@ TC39的制度在
 浏览器厂商之
 间的互相制衡
 
-- 缺乏国际化和包容性
-- 缺乏对社区的尊重
+- 国际化和包容性
+- 对社区的尊重
+
+提升中国参与标准化需要
+个人、公司、标准化组织
+不断共同努力
 
 [中国计算机学会TF43 简报](https://johnhax.net/2021/js-cn/slide#72)
 [中国计算机学会TF43 录像](https://dl.ccf.org.cn/video/videoDetail.html?_ack=1&id=5578915538241536)
