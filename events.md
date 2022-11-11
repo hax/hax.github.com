@@ -15,11 +15,12 @@ lang: zh-cmn-Hans-x-hax
 - 2022-01-29 线上 [第三十六届前端早早聊大会-前端职业路](https://www.zaozao.run/conf/c36) 分享嘉宾<br>[我的前端20年回顾](/2022/fe20/slide)
 - 2022-05-11 线上 [掘金夜谈：畅聊JS最新标准 & ES 2022](https://juejin.cn/post/7094148679476445191) 分享嘉宾
   <br>[简报](/2022/es2022/slide)
-- 2022-07-27 帝都 [2022开放原子全球开源峰会](https://openatom.cn/summit/)
+- 2022-07-27 帝都 [2022开放原子全球开源峰会](https://openatom.cn/summit/) 分享嘉宾
   <br>[TOC-编程语言趋势](/2022/pl/TOC-PL.pptx)
+- 2022-09-03~04 帝都 [WOT全球技术创新大会](https://wot.51cto.com/act/wot2021/dev/) 前端专题出品人
 - 2022-09-06 杭州 [新一代 Web 技术标准论坛 · W3C 2022 年度全球技术大会中国会场](https://www.chinaw3c.org/tpac2022-china-hub.html) 分享嘉宾
   <br>[国际 Web 标准参与历程思考](/2022/web-std-cn/slide)
-- 2022-07-23~24 帝都 [WOT全球技术创新大会](https://wot.51cto.com/act/wot2021/dev/) 前端专题出品人
+- 2022-10-29 第七届中国开源年会（COSCon 2022） Web应用开发分论坛联合出品人
 <!-- - 2022-??-??~?? 深圳 [开放原子全球开发者大会](https://openatom.org/static_event/oadc) 前端技术分论坛联合出品人 -->
 <!-- - 2021-09-10~12 魔都 [Inclusion外滩大会](https://www.inclusionconf.com/) -->
 
