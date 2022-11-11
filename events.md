@@ -10,11 +10,15 @@ lang: zh-cmn-Hans-x-hax
 
 ### 2022
 - 2022-01-06~09 帝都 [第十届全球软件案例研究峰会](https://www.top100summit.com/) 讲师
+  <br>[中国参与JS语言标准的案例分析](/2022/js-cn/slide)
 - 2022-01-08 杭州 [SEE Conf 2022](https://seeconf.antfin.com/) 远程参会
 - 2022-01-29 线上 [第三十六届前端早早聊大会-前端职业路](https://www.zaozao.run/conf/c36) 分享嘉宾<br>[我的前端20年回顾](/2022/fe20/slide)
 - 2022-05-11 线上 [掘金夜谈：畅聊JS最新标准 & ES 2022](https://juejin.cn/post/7094148679476445191) 分享嘉宾
+  <br>[简报](/2022/es2022/slide)
+- 2022-09-06 杭州 [新一代 Web 技术标准论坛 · W3C 2022 年度全球技术大会中国会场](https://www.chinaw3c.org/tpac2022-china-hub.html) 分享嘉宾
+  <br>[国际 Web 标准参与历程思考](/2022/web-std-cn/slide)
 - 2022-07-23~24 帝都 [WOT全球技术创新大会](https://wot.51cto.com/act/wot2021/dev/) 前端专题出品人
-- 2022-??-??~?? 深圳 [开放原子全球开发者大会](https://openatom.org/static_event/oadc) 前端技术分论坛联合出品人
+<!-- - 2022-??-??~?? 深圳 [开放原子全球开发者大会](https://openatom.org/static_event/oadc) 前端技术分论坛联合出品人 -->
 <!-- - 2021-09-10~12 魔都 [Inclusion外滩大会](https://www.inclusionconf.com/) -->
 
 ### 2021
@@ -28,7 +32,7 @@ lang: zh-cmn-Hans-x-hax
 - 2021-07-10 魔都 [第五届函数式编程分享会](https://zhuanlan.zhihu.com/p/382695580) 远程参会
 - 2021-07-24 魔都 [RTC Dev Meetup：前端专场巡回沙龙上海站](https://www.huodongxing.com/event/9605317125000) 参会
 - 2021-07-31 帝都 [中国计算机学会 TF43：前端的未来发展方向](https://www.ccf.org.cn/Focus/2021-07-19/732493.shtml) 特邀讲者
-  <br>[我们如何参与JS语言标准的制定](https://dl.ccf.org.cn/video/videoDetail.html?_ack=1&id=5578915538241536)
+  <br>我们如何参与JS语言标准的制定 [[简报]](/2021/js-cn/slide) [[录像]](https://dl.ccf.org.cn/video/videoDetail.html?_ack=1&id=5578915538241536)
 - 2021-07-31~08-01 深圳 [GOTC全球开源技术峰会](https://gotc.oschina.net/) 大前端分论坛出品人
 <!-- - 2021-08-31~09-01 线上 [TC39会议] (https://github.com/tc39/agendas/blob/master/2021/08.md) 远程参会 -->
 <!--   <br>更新：Branding checks
