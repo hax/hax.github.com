@@ -365,6 +365,11 @@ a.at(i) // 1 !
 - 个人建议：避免使用
 - 替代方案：`a[^i]`提案
 
+为啥当初不反对这个提案？
+因为当初这个提案原名`item()`
+有额外的motivation：统一DOM已有的方法
+后来因为兼容性问题必须改名就只剩鸡肋
+
 Hashbang `#!` (ES2023)
 Bradley Farias, Node.js
 
@@ -456,7 +461,7 @@ transformed in various ways
 Programmers always have a simple belief:
 Prepend/Append whitespaces/comments
 will not change the behavior of my code,
-(This is true from ES1 to ES2022, until hashbang proposal)
+(This is true from ES1 to ES2021, until hashbang proposal)
 
 Simple transformations which normally do not use full-featured parser
 - Adding copyrights and license at start
@@ -515,6 +520,7 @@ setTimeout(() => console.log(outputPlusValue(100), 1000);
 ```
 
 解决方案
+
 ```js
 // awaiting.mjs
 import { process } from "./some-module.mjs";
