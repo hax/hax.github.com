@@ -23,6 +23,10 @@ lang: zh-cmn-Hans-x-hax
 - 2022-10-29 第七届中国开源年会（COSCon 2022） Web应用开发分论坛联合出品人
 <!-- - 2022-??-??~?? 深圳 [开放原子全球开发者大会](https://openatom.org/static_event/oadc) 前端技术分论坛联合出品人 -->
 <!-- - 2021-09-10~12 魔都 [Inclusion外滩大会](https://www.inclusionconf.com/) -->
+- 2022-11-18~19 [GIAC 全球互联网架构大会 上海站](https://giac.msup.com.cn/2022sh/home) 讲师
+  <br>[JS is dead — long live ecosystem](/2022/JS-is-dead/slide)
+- 2022-11-22~23 [IDEA大会](https://conference2022.idea.edu.cn/) 嘉宾
+<!-- - 2022-12-06 华为编程语言活动 分享 -->
 
 ### 2021
 
