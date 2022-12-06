@@ -1,5 +1,4 @@
-The Bad Parts
-of JS/TS (and how to fix it)
+The Bad Parts of JS/TS
 
 知乎 贺师俊
 微博 @johnhax
@@ -36,8 +35,7 @@ Ecma-TC39 JS语言标准委员会
 - 2019年6月~2021年4月 360集团 代表
 - 2021年4月起 特邀专家
 
-The Bad Parts
-of JS/TS (and how to fix it)
+The Bad Parts of JS/TS
 
 2015~2017年期间
 做的「鸡血」演讲
