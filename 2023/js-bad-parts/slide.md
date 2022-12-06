@@ -11,8 +11,7 @@ Web前端和JS语言
 20多年发展历程
 见证人和参与者
 
-~~编程语言专家~~
-「Hello world」爱好者
+编程语言爱好者
 
 对 Groovy 语言并间接对
 Swift 等语言有一点点贡献
@@ -62,8 +61,13 @@ ___________________________________
 ![Definitive Guide vs. Good Parts](goodparts.jpg)
 
 现代 JS（ES6）
-修复了很多问题
+解决了很多问题
 
+- Module 使得 JS 生态系统能重新统一
+- Module / Class 等让 JS 更适合大型编程
+- Promise 等将最佳实践标准化
+- Iterator/Generator/Proxy/Map/Set 等提供了现代语言所需的重要设施
+- Arrow function / Destructring 等不仅是语法糖，而且填了长期以来的一些坑
 
 但也许也没有想象的美好
 
@@ -105,6 +109,18 @@ ES3 -> ES5 -> ES6 (ES2015)
 - 开发者
 - 实现者
 - 规范制定者
+
+- 最终用户（兼容性、安全）
+- 开发者（心智负担）
+- 实现者（复杂度、性能）
+- 规范制定者（一致性）
+
+- 应用开发者
+- 库和框架开发者
+- 生态关键库和框架的维护者
+- 工具链实现者
+- 运行时实现者
+- 引擎实现者
 
 ES2022
 [Finished proposals](https://github.com/tc39/proposals/blob/main/finished-proposals.md)
@@ -173,11 +189,12 @@ JS正则的 Bad Parts
 
 - 词法复杂性：`/pattern/g` 和除法的歧义
 - 语法不方便：`/http:\/\//`
+- API 返回混杂数组：`[matched, ...subgroups]&{input, index, groups, indices: [...]&{groups}}`
 - global模式：`"hello world!".replace(/[aeiou]/, ch => ch.toUpperCase())`
-- global模式：`exec/match/replace`、`replaceAll/matchAll`、`split`、`splitN`
+- global模式：`exec/match/replace`、`replaceAll/matchAll`、`split/splitN`
 
-根源：从Perl抄时抄坏了（运算符 -> literal）
-根治：基于template string的库
+- 根源：从Perl抄时抄坏了（运算符 -> literal）
+- 根治：基于template string的库
 
 `Object.hasOwn()` (ES2022)
 Jamie Kyle, Rome (Author)
@@ -218,8 +235,8 @@ if (Object.hasOwn(o, "foo")) {
 
 个人评价：聊胜于无
 
-根源：Record和对象的混杂、原型链机制
-根治：Record类型、Extension机制
+- 根源：Record和对象的混杂、原型链机制
+- 根治：Record类型、Extension机制
 
 `.at()` (ES2022)
 Tab Atkins, Shu-yu Guo, Google
@@ -278,8 +295,8 @@ a.at(i) // 1 !
 有额外的motivation：统一DOM已有的方法
 后来因为兼容性问题必须改名就只剩鸡肋
 
-根源：负数索引、ToNumber不合理的容错处理
-根治：`a[^i]`反向索引
+- 根源：负数索引、ToNumber不合理的容错处理
+- 根治：`a[^i]`反向索引
 
 Hashbang `#!` (ES2023)
 Bradley Farias, Node.js
@@ -405,8 +422,8 @@ So developers will keep only using hashbang in cli-only scripts
 - 个人评价：有潜在风险
 - 个人建议：通过lint工具禁用
 
-根源：CLI特殊需求
-根治：CLI自行处理（如node/deno等的入口脚本用不同的文件后缀名）
+- 根源：CLI特殊需求
+- 根治：CLI自行处理（如node/deno等的入口脚本用不同的文件后缀名）
 
 Top-level `await` (ES2022)
 Myles Borins, Google
@@ -534,8 +551,8 @@ async module、async script（未来？）
 - 个人建议：库代码中严格禁用，应用代码中暂时禁用（但目前没有办法禁用~）
 - 替代方案：未来lint和打包工具确保只有`<script type=module async>`可以使用
 
-根源：
-根治：
+- 根源：Web历史与CLI工具的利益分歧、浏览器厂商对工程风险的忽视
+- 根治：无，只能靠工具补救，但性价比极低
 
 Class fields等
 - public instance fields
@@ -545,9 +562,54 @@ Class fields等
 - ergonomic brand checks for private elements
 - class static block（除外）
 
+```js
+class A {
+	x = "x"
+}
+class B extends A {
+	get x() { return super.x.toUpperCase() }
+}
+```
+
+```js
+class A {
+	x = 1
+	test() { return this.x }
+}
+class B {
+	#x = 1
+	test() { return this.#x }
+}
+new Proxy(new A, {}).test() // 1
+new Proxy(new B, {}).test() // throw TypeError
+```
+
+```js
+class A {
+	static #x = 1
+	static test() { return this.#x }
+}
+class B extends A {}
+B.test() // throw TypeError
+```
+
+```js
+class A {
+	#x
+	#y
+	equals(that) {
+		return #x in that && #y in that
+			&& this.#x === that.#x && this.#y === that.#y
+	}
+}
+```
+
 - 个人评价：Considered harmful
 - 个人建议：自求多福
 - 替代方案：没有（TS在部分问题上有一些保护，但效果有限）
+
+- 根源：非常复杂
+- 根治：无，只能靠工具补救，希望未来提案（如静态分派提案和`class.hasInstance`提案）能有所补救
 
 总结
 
@@ -574,15 +636,43 @@ JS 技术复杂度
 部分代表有严重个人偏好
 优先满足委员会内部
 
-提升中国参与标准化需要
-个人、公司、标准化组织
-不断共同努力
-
-[中国计算机学会TF43 简报](https://johnhax.net/2021/js-cn/slide#72)
-[中国计算机学会TF43 录像](https://dl.ccf.org.cn/video/videoDetail.html?_ack=1&id=5578915538241536)
-
 JS语言进入了发展瓶颈期
 且未来路径的不确定性风险很高
+
+TypeScript?
+
+JS背着历史包袱，TS背着JS
+
+成也萧何
+败也萧何
+
+以更强的静态类型系统
+适应动态类型编程惯例
+
+- unsound
+- 类型描述非常复杂
+- 边际效用下降
+
+JS/TS 的一些核心负资产
+
+- 弱类型
+- 错误处理（`catch (e)`子句捕捉所有错误）
+- `undefined`和`null`
+- mutable prototype（monkey patch）
+- UTF16 string
+
+其他一些小问题
+
+- 没有整数类型（很容易去优化）
+- ASI（分号）hazards
+- 多余的包装类（Java遗产）
+- String是iterable
+- 迭代器本身也实现了可迭代协议
+- indirect eval应该是operator
+- switch不好用（C遗产）
+- for..in不好用（TCL遗产）
+- 糟糕的日期时间类型（Java遗产）
+- splice、substr等不好用的API（Perl遗产）
 
 - 无论 JS 语言有多大的问题，JS 的生态会一直发展壮大
 - 足够大的生态会孕育工具和方案来逐渐解决问题
