@@ -26,7 +26,8 @@ lang: zh-cmn-Hans-x-hax
 - 2022-11-18~19 [GIAC 全球互联网架构大会 上海站](https://giac.msup.com.cn/2022sh/home) 讲师
   <br>[JS is dead — long live ecosystem](/2022/JS-is-dead/slide)
 - 2022-11-22~23 [IDEA大会](https://conference2022.idea.edu.cn/) 嘉宾
-<!-- - 2022-12-06 华为编程语言活动 分享 -->
+- 2022-12-06 华为语言编译器/运行时workshop 嘉宾
+  <br>[The bad parts of JS/TS (and how to fix it)](/2023/js-bad-parts/)
 
 ### 2021
 
