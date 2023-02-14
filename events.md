@@ -8,6 +8,9 @@ lang: zh-cmn-Hans-x-hax
 
 ## Timeline
 
+### 2023
+- 2022-02-04 线上 JS@2022 分享嘉宾
+
 ### 2022
 - 2022-01-06~09 帝都 [第十届全球软件案例研究峰会](https://www.top100summit.com/) 讲师
   <br>[中国参与JS语言标准的案例分析](/2022/js-cn/slide)
