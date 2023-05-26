@@ -58,8 +58,6 @@ JavaScript Chinese Interest Group
 
 什么是 alt-JS？
 
-Alternatives to JavaScript
-
 ![alt-js-1](google-alt-js-1.png)
 
 ![alt-js-2](google-alt-js-2.png)
@@ -76,6 +74,7 @@ alt-JS是指可以被编译到JavaScript语言的任何非JavaScript语言。
 的应用程序。通过编译器或转换工具，alt-JS可以被转换为JavaScript
 代码，从而在任何支持JavaScript的浏览器或运行环境上执行。（GPT）
 
+Alternatives to JavaScript
 
 ![alt-js-langs](google-alt-js-langs.png)
 
@@ -124,8 +123,8 @@ Why alt-JS？
 CoffeeScript
 已经不见了
 
-- 2012/9 Dropbox 宣布其前端代码从JS改为Coffee
-- 2017/5 Dropbox 基本完成从Coffee到TS的迁移
+- [2012/9 Dropbox 宣布其前端代码从JS改为Coffee](https://dropbox.tech/application/dropbox-dives-into-coffeescript)
+- [2017/5 Dropbox 基本完成从Coffee到TS的迁移](https://dropbox.tech/frontend/the-great-coffeescript-to-typescript-migration-of-2017)
 
 标志性事件
 Atom
@@ -168,3 +167,94 @@ TS/JS 一体化
 TS 就是答案吗？
 
 没有银弹
+
+![deno内部代码去除ts](deno-stop-use-ts.png)
+
+![svelte从ts迁移到jsdoc](svelte-drop-ts.png)
+
+![放弃ts](google-giveup-ts.png)
+
+- [Deno will stop using TypeScript](https://news.ycombinator.com/item?id=23592483)
+- [TypeScript is ‘not worth it’ for developing libraries](https://devclass.com/2023/05/11/typescript-is-not-worth-it-for-developing-libraries-says-svelte-author-as-team-switches-to-javascript-and-jsdoc/)
+- [7 really good reasons not to use TypeScript](https://juejin.cn/post/6844904069224480782)
+- [17 Compelling Reasons To Start Ditching TypeScript Now](https://dev.to/wiseai/17-compelling-reasons-to-start-ditching-typescript-now-249b)
+
+并不是JS
+子集而不是超集
+不同的编译选项可认为是不同的子集
+
+类型系统过于强大但又有限制
+类型体操
+类型代码比实际代码还多
+学习曲线、使用成本
+
+By design
+Not Sound
+
+仅仅是type checker
+无RTTI
+类型信息不能
+用来提升性能
+
+var-TS
+
+什么是 var-TS？
+
+不用搜索
+不用问 ChatGPT
+
+因为这个术语
+是我发明的
+并在本次大会上首次提出 😎
+
+Variants of TypeScript
+基于TypeScript的变种语言
+设计目标通常是克服TS的前述问题
+
+- TypeScript++/TypeScript--
+- AssemblyScript
+- Static TypeScript (Microsoft Makecode)
+- UniApp UTS（UCloud）
+- OpenHarmony eTS/arkTS（华为）
+- AliOS XTS（斑马智行）
+- TS subset 用于 IoT（某国内科技公司联合某国际大厂）
+
+
+[Typescript as fast as Rust: Typescript++](https://zaplib.com/docs/blog_ts++.html)
+TL;DR: This is a proposal to create a language that sits
+somewhere between Typescript and Rust, and which you
+can incrementally adopt if you already use Typescript.
+
+Zaplib的创业所基于的出发点
+1. JS & the browser are slow
+0. Incrementally porting JS to Rust/Wasm will speed up your app
+0. We’ll land-and-expand from small ports to take over your whole app
+0. In the long-run this evolves to a next-gen stack (”Unity for apps”)
+
+- 目标：性能
+- 设想 TS++ 生成更高效的 JS 对象（如利用 ArrayBuffer）
+- 设想 TS-- 在文件或函数级别使用类 Rust 的内存模型
+- 设想 可以编译到 native 或 wasm
+
+[AssemblyScript](https://www.assemblyscript.org/)
+[Doc: Using the langauge](https://www.assemblyscript.org/concepts.html)
+
+- 用 TS 语法写 wasm
+- 有对应 JS 的标准库
+- 对应 wasm（而不是 JS）的类型系统，没有类型体操
+- 有静态类型检查（函数语法），无运行时reflection
+- 特性（如 exceptions、async等）受限于 wasm 标准的进度（除了GC）
+
+[我的评价](https://www.zhihu.com/question/347763134/answer/839887835)
+写于2019年但今天仍然适用
+
+- 确定性子集（但具有更多基本数据类型）
+- 无类型体操相关问题（无union type）
+- Sound
+- AOT，静态类型用于提升性能
+- 需要深入了解 wasm
+
+
+
+回顾 Typescript as fast as Rust: Typescript++
+[Zaplib post-mortem](https://zaplib.com/docs/blog_post_mortem.html)
