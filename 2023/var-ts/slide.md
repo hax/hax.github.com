@@ -256,6 +256,53 @@ Zaplib的创业所基于的出发点
 - AOT，静态类型用于提升性能
 - 需要深入了解 wasm
 
+Static TypeScript
+- [MakeCode项目语言介绍](https://makecode.com/language)
+- [microsoft/pxt](https://github.com/microsoft/pxt/blob/master/common-docs/javascript/sts.md)
+- [Microsoft Research paper](https://www.microsoft.com/en-us/research/publication/static-typescript/)
+
+- 基于 TS 2.6 的子集
+- 使用名义类型（nominal type），并支持用虚拟函数表的经典技术对类进行高效编译
+- STS 编译为 ARM Thumb 机器码并在浏览器中将其与预编译好的 C++ 运行时链接
+- 在小型基准测试中性能可以和 V8 JIT 编译器媲美，所需的内存则低几个数量级
+- 可以在 RAM 低达 16kB 的设备（例如 BBC micro:bit）上运行
+
+[UniApp UTS（DCloud）](https://zh.uniapp.dcloud.io/tutorial/syntax-uts.html)
+- 目标：跨平台开发，可编译为TS、Kotlin和Swift
+- 已经可用，主要用于开发跨平台组件，可利用UniApp已有的跨平台库
+
+我认为UTS的主要挑战
+语言的差异
+
+- 细节语义（如基本整数运算的溢出行为）
+- 内存模型（Swift使用引用计数和语言级弱引用支持）
+- 异步模型（Kotlin、Swift使用结构化异步）
+- 异常模型（JS/TS的欠缺）
+
+[Harmony ArkTS/eTS](https://developer.harmonyos.com/cn/docs/documentation/doc-guides/ets-get-started-0000001412054073)
+
+- 在 TS 上增加类似 SwiftUI 的声明式 UI
+- 增加更多语言特性（类 Kotlin）
+- 方舟编译器优化
+- 子集可能考虑中
+
+[AliOS XTS](https://developers.alios.cn/v1/doc/6/7705?refer=aside)
+
+- 目标：性能
+- TS 3.3 的子集，不支持 ES module
+- 魔改V8引擎（类似于基于V8的AOT）
+- unsound/sound 模式（类似 "use strict"）
+- 据说 sound 模式在生产中没有人用
+
+TS subset 用于 IoT
+（某国内科技公司）
+
+- 目标：性能
+- 方案A：魔改 QuickJS 利用类型信息生成更高效的数据结构
+- 方案B：TS子集编译到 WASM（与某国际大厂合作）
+- 尚在研发中
+
+
 回顾 Typescript as fast as Rust: Typescript++
 [Zaplib post-mortem](https://zaplib.com/docs/blog_post_mortem.html)
 
@@ -265,3 +312,10 @@ Zaplib的创业所基于的出发点
 指望了。即使 10 倍性能改进基本不成立，工程师们自然不会愿意接受这样一套需要
 重新学习、重新维护的工具链和技术堆栈。我们自己肯定不愿意，自然也不能强迫
 其他人。总之，**要想实现性能改进，一般都有比转向 Rust/Wasm 更简单的方法**。”
+
+总结
+
+- TS 获得巨大成功，但也孕育着新的机会
+- var-TS 雨后春笋，尤其国内公司也有很多不同路线的尝试
+- var-TS 的设计目标如果仅是性能，是否能获得市场成功？
+- 如何设计一个基础子集？
