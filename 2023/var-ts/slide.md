@@ -318,4 +318,13 @@ TS subset 用于 IoT
 - TS 获得巨大成功，但也孕育着新的机会
 - var-TS 雨后春笋，尤其国内公司也有很多不同路线的尝试
 - var-TS 的设计目标如果仅是性能，是否能获得市场成功？
-- 如何设计一个基础子集？
+- [如何设计一个var-TS？](https://www.zhihu.com/question/442622908/answer/1715676739)
+
+- Static Dispatch (Extension methods)
+- `class.hasInstance()` meta method
+- Double-ended destructuring and iteration
+- slice notation (`array[start:end]`)
+- index from end (`array[^i]`)
+- Error handling
+
+QA
