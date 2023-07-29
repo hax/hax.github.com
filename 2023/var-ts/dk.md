@@ -308,7 +308,7 @@ Static TypeScript
 - Double-ended destructuring and iteration
 - Generator `function.sent` meta property
 
-QA
+The End
 
 One more thing
 
@@ -325,4 +325,18 @@ AIGC
 
 更适合普通人的编程语言
 也许也是更适合LLM的？
+
+LLM三大问题
+- 答非所问（Unpredictable）
+- 胡说八道（Hallucination）
+- 视而不见（Context window）
+
+人类觉得困难的工作
+对于LLM同样困难
+—— 微软Semantic Kernel团队
+
+更适合普通人的编程语言
+也许也是更适合LLM的？
 （例：TypeChat的TS子集）
+
+Discussion
