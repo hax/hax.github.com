@@ -132,9 +132,9 @@ a // [6, 5, 4]
 ```
 
 Problem: Clarity and consistency of the semantics of parameters
-Solution: a[i:j] uses square brackets, so it’s clear that it’s about
-indexes, and the colon suggests a symmetry on both sides (both indexes)
-  
+Solution: a[i:j] uses square brackets, so clear it’s about index
+and the colon suggests a symmetry on both sides (both indexes)
+
 Problem: Negative index, `-1`, `-0` issues
 Solution: `a[^i]`, `a[i:^j]` follow `a[i]`
 
