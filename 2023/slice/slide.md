@@ -53,6 +53,8 @@ a // [1, 0, 0, 4]
 
 Problems
 
+[Statistic of Array-like methods usage](https://gist.github.com/hax/c16cd2cd3f393ad98249f20b41c222e1)
+
 Clarity and Consistency of Parameter Semantics
 - Index or length?
 - `slice/splice` inconsistent
