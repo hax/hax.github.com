@@ -153,3 +153,4 @@ Discussion
 - Do we agree the direction?
 - If that, I will ask stage 1 for index from end proposal
 - And update the explainer and spec for slice notation proposal soon
+- Plan to go back next meeting for details (maybe ask for stage 2)
