@@ -99,8 +99,7 @@ Coercing behavior
 - Illegal index: become 0
 - bigint: throw
 
-[Easy to made mistake, even MDN document](https://github.com/mdn/content/blob/main/files/en-us/web/javascript/reference/global_objects/string/slice/index.md?plain=1#L54
-)
+[Easy to made mistake, even MDN document](https://github.com/mdn/content/blob/main/files/en-us/web/javascript/reference/global_objects/string/slice/index.md?plain=1#L54)
 
 Problems summarized
 - Clarity and consistency of the semantics of parameters
