@@ -16,6 +16,11 @@ lang: zh-cmn-Hans-x-hax
 - 2023-05-26~27 广州 [QCon 全球软件开发大会 广州站](https://qcon.infoq.cn/2023/guangzhou/) 讲师
 - 2023-05-28 魔都 [GOTC 全球开源技术峰会 2023](https://gotc2023.oschina.net) 前端分论坛出品人
 - 2023-06-31~07-01 [第三届稀土开发者大会](https://conf.juejin.cn/) 「前端未来」专题出品人
+- 2023-12-04 线上 [2023技术播客节 代码不在服务区 Vol.4 前端向未来：AI时代，怎样成为顶尖的前端工程师](https://www.xiaoyuzhoufm.com/episode/656d6ece51ba7218578bf793) 嘉宾
+  <br>[苹果播客](https://podcasts.apple.com/cn/podcast/vol-4-%E5%89%8D%E7%AB%AF%E5%90%91%E6%9C%AA%E6%9D%A5-ai-%E6%97%B6%E4%BB%A3-%E6%80%8E%E6%A0%B7%E6%88%90%E4%B8%BA%E9%A1%B6%E5%B0%96%E7%9A%84%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88/id1687422590?i=1000637397097) [小宇宙](https://www.xiaoyuzhoufm.com/episode/656d6ece51ba7218578bf793)
+- 2023-12-16 杭州 [第十八届 D2 终端技术大会](https://d2.alibabatech.com/) 嘉宾
+- 2023-12-17 无锡 [2023开放原子开发者大会](https://openatomcon.openatom.cn/) 「AI时代的前端开发」出品人、主持人
+  <br>[CCTV视频回放](https://gongyi.cctv.com/special/2023oadc/index.shtml)
 
 ### 2022
 - 2022-01-06~09 帝都 [第十届全球软件案例研究峰会](https://www.top100summit.com/) 讲师
