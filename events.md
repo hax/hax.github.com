@@ -19,7 +19,7 @@ lang: zh-cmn-Hans-x-hax
 - 2023-12-04 线上 [2023技术播客节 代码不在服务区 Vol.4 前端向未来：AI时代，怎样成为顶尖的前端工程师](https://www.xiaoyuzhoufm.com/episode/656d6ece51ba7218578bf793) 嘉宾
   <br>[苹果播客](https://podcasts.apple.com/cn/podcast/vol-4-%E5%89%8D%E7%AB%AF%E5%90%91%E6%9C%AA%E6%9D%A5-ai-%E6%97%B6%E4%BB%A3-%E6%80%8E%E6%A0%B7%E6%88%90%E4%B8%BA%E9%A1%B6%E5%B0%96%E7%9A%84%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88/id1687422590?i=1000637397097) [小宇宙] (节目录制于8月)(https://www.xiaoyuzhoufm.com/episode/656d6ece51ba7218578bf793)
 - 2023-11-18 杭州 [第六届 FEDAY](https://fequan.com/2023/) 分享嘉宾
-  <br>[如何更丝滑地在应用中调用 GPT](https://www.bilibili.com/video/BV1nC4y1P7Gi/?vd_source=4a58dc3640e6e0834e20e9b8984b3ea0)
+  <br>如何更丝滑地在应用中调用 GPT [[简报]](/2023/lets-gpt/slide) [[视频]](https://www.bilibili.com/video/BV1nC4y1P7Gi/?vd_source=4a58dc3640e6e0834e20e9b8984b3ea0)
 - 2023-12-16 杭州 [第十八届 D2 终端技术大会](https://d2.alibabatech.com/) 嘉宾
 - 2023-12-17 无锡 [2023开放原子开发者大会](https://openatomcon.openatom.cn/) 「AI时代的前端开发」出品人、主持人
   <br>[CCTV视频回放](https://gongyi.cctv.com/special/2023oadc/index.shtml)
