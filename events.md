@@ -14,6 +14,7 @@ lang: zh-cmn-Hans-x-hax
 - 2023-04-01 杭州 [第一届早早聊 GPT 沙龙](https://www.zaozao.run/conf/gpt1) 参会
 - 2023-04-04 线上 [CSDN 开谈 AI系列 GPT与前端篇](https://live.csdn.net/room/programmer_editor/W2dVVh1w) 嘉宾
 - 2023-05-26~27 广州 [QCon 全球软件开发大会 广州站](https://qcon.infoq.cn/2023/guangzhou/) 讲师
+  <br>[从 alt-JS 到 var-TS —— JavaScript/TypeScript 生态下的变种语言评述和展望](/2023/var-ts/)
 - 2023-05-28 魔都 [GOTC 全球开源技术峰会 2023](https://gotc2023.oschina.net) 前端分论坛出品人
 - 2023-06-31~07-01 [第三届稀土开发者大会](https://conf.juejin.cn/) 「前端未来」专题出品人
 - 2023-12-04 线上 [2023技术播客节 代码不在服务区 Vol.4](https://www.xiaoyuzhoufm.com/episode/656d6ece51ba7218578bf793) 嘉宾
