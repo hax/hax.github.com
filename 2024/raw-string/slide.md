@@ -13,7 +13,7 @@ console.log(String.raw`
 `)
 ```
 
-But, `` ` ``
+But, `
 
 ```javascript
 let query = `
@@ -66,7 +66,7 @@ let generatedCode = `
 `
 ```
 
-Not only `` ` ``
+Not only `
 But also `${`
 
 ```javascript
@@ -103,7 +103,6 @@ you would output the advice:
 ## Advice
 It's more readable to use template literal to replace
 the string concatenation.
-
 ## Original code
 \`\`\`js
 let s1 = "This is a\\n"
@@ -112,7 +111,6 @@ let s1 = "This is a\\n"
 let a = 1, b = 2
 let s2 = "a + b = " + (a + b)
 \`\`\`
-
 ## Improved code
 \`\`\`js
 let s1 = String.dedent\`
@@ -135,12 +133,14 @@ Use External File?
 
 ## Motivation
 
-JS lacks raw literal that can contain any arbitrary text
-Prevents containing other languages (eg. JS itself) and text formats (eg. Markdown)
+JS lacks raw literal that can
+contain any arbitrary text
+Prevents containing other languages (eg. 
+JS itself) and text formats (eg. Markdown)
 
 ## Core Goals
 
-1. Raw literal allow *all* string values without escape
+1. *All* string values without escape
 2. Support interpolations
 3. Support tag functions
 
@@ -157,7 +157,7 @@ Prevents containing other languages (eg. JS itself) and text formats (eg. Markdo
 - here document
 - Swift/Rust style
 
-```swift
+```js
 let query = #`
     select * 
     from `users`
@@ -165,7 +165,7 @@ let query = #`
 `#
 ```
 
-```swift
+```js
 let name = "hax"
 let generatedCode = #`
     let name = $#{JSON.stringify(name)}
