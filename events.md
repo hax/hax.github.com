@@ -8,6 +8,17 @@ lang: zh-cmn-Hans-x-hax
 
 ## Timeline
 
+### 2024
+
+- 2024-06-28～29 帝都 [稀土开发者大会2024](https://conf.juejin.cn/xdc2024/) 「前端未来」专题出品人 获得优秀出品人荣誉
+- 2024-10-24 线上 [1024码上奇妙夜](https://live.marscode.cn/7116/1024coder) 嘉宾
+- 2024-11-02~03 北京 [第九届中国开源年会（COSCon'24）](https://kaiyuanshe.cn/activity/COSCon-2024) Web 应用开发分论坛 联合出品人
+- 2024-11-14 线上 [浪说博客](https://langshuo0.podcast.xyz/) 04期嘉宾
+  <br>[小宇宙](https://www.xiaoyuzhoufm.com/episode/6734d7eb64373f6b0cced9c5) [苹果](https://podcasts.apple.com/cn/podcast/%E8%A7%A3%E8%AF%BB%E5%89%8D%E7%AB%AF%E5%A4%A7%E7%89%9Btc39-%E6%88%90%E5%91%98hax%E8%B4%BA%E5%B8%88%E4%BF%8A-%E5%A6%82%E4%BD%95%E4%BF%9D%E6%8C%81%E4%B8%AA%E4%BA%BA%E7%AB%9E%E4%BA%89%E5%8A%9B-ls04/id1775454766?i=1000676834419) [spotify](https://open.spotify.com/episode/6ouFOpXrUXo6WHbCLbhj1B) [喜马拉雅](https://www.ximalaya.com/sound/774455352)
+- 2024-11-25 线上 [EfficLab 口袋记录](https://space.bilibili.com/5953240/channel/collectiondetail?sid=4237062) 首期嘉宾
+  <br>[B站](https://www.bilibili.com/video/BV1hoB4YPEfZ/) [油管](https://www.youtube.com/watch?v=NaJ3p_TWY2k)
+- 2024-12-20～21 武汉 [2024开放原子开发者大会](https://openatomcon.openatom.cn/) 前端分论坛出品人
+
 ### 2023
 - 2023-02-04 线上 前端圈 JS@2022 分享嘉宾
   <br>[B站视频回放](https://www.bilibili.com/video/BV12R4y1B7hG/)
@@ -15,8 +26,10 @@ lang: zh-cmn-Hans-x-hax
 - 2023-04-04 线上 [CSDN 开谈 AI系列 GPT与前端篇](https://live.csdn.net/room/programmer_editor/W2dVVh1w) 嘉宾
 - 2023-05-26~27 广州 [QCon 全球软件开发大会 广州站](https://qcon.infoq.cn/2023/guangzhou/) 讲师
   <br>[从 alt-JS 到 var-TS —— JavaScript/TypeScript 生态下的变种语言评述和展望](/2023/var-ts/)
-- 2023-05-28 魔都 [GOTC 全球开源技术峰会 2023](https://gotc2023.oschina.net) 前端分论坛出品人
-- 2023-06-31~07-01 [第三届稀土开发者大会](https://conf.juejin.cn/) 「前端未来」专题出品人
+- 2023-05-28 魔都 [GOTC 全球开源技术峰会 2023](https://gotc2023.oschina.net) 前端分论坛出品人 讲师
+- 2023-06-31~07-01 [第三届稀土开发者大会](https://conf.juejin.cn/xdc2023/) 「前端未来」专题出品人
+- 2023-07-29 [欧拉多咖操作系统研讨会 Web生态新发展] 嘉宾
+  <br>[从 alt-JS 到 var-TS —— JavaScript/TypeScript 生态下的变种语言评述和展望](/2023/var-ts/)
 - 2023-12-04 线上 [2023技术播客节 代码不在服务区 Vol.4](https://www.xiaoyuzhoufm.com/episode/656d6ece51ba7218578bf793) 嘉宾
   <br>前端向未来：AI时代，怎样成为顶尖的前端工程师（节目录制于8月） [[苹果播客]](https://podcasts.apple.com/cn/podcast/vol-4-%E5%89%8D%E7%AB%AF%E5%90%91%E6%9C%AA%E6%9D%A5-ai-%E6%97%B6%E4%BB%A3-%E6%80%8E%E6%A0%B7%E6%88%90%E4%B8%BA%E9%A1%B6%E5%B0%96%E7%9A%84%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88/id1687422590?i=1000637397097) [[小宇宙]](https://www.xiaoyuzhoufm.com/episode/656d6ece51ba7218578bf793)
 - 2023-11-18 杭州 [第六届 FEDAY](https://fequan.com/2023/) 分享嘉宾
