@@ -14,9 +14,9 @@ lang: zh-cmn-Hans-x-hax
 - 2024-10-24 线上 [1024码上奇妙夜](https://live.marscode.cn/7116/1024coder) 嘉宾
 - 2024-11-02~03 北京 [第九届中国开源年会（COSCon'24）](https://kaiyuanshe.cn/activity/COSCon-2024) Web 应用开发分论坛 联合出品人
 - 2024-11-14 线上 [浪说博客](https://langshuo0.podcast.xyz/) 04期嘉宾
-  <br>[小宇宙](https://www.xiaoyuzhoufm.com/episode/6734d7eb64373f6b0cced9c5) [苹果](https://podcasts.apple.com/cn/podcast/%E8%A7%A3%E8%AF%BB%E5%89%8D%E7%AB%AF%E5%A4%A7%E7%89%9Btc39-%E6%88%90%E5%91%98hax%E8%B4%BA%E5%B8%88%E4%BF%8A-%E5%A6%82%E4%BD%95%E4%BF%9D%E6%8C%81%E4%B8%AA%E4%BA%BA%E7%AB%9E%E4%BA%89%E5%8A%9B-ls04/id1775454766?i=1000676834419) [spotify](https://open.spotify.com/episode/6ouFOpXrUXo6WHbCLbhj1B) [喜马拉雅](https://www.ximalaya.com/sound/774455352)
+  <br>[[小宇宙]](https://www.xiaoyuzhoufm.com/episode/6734d7eb64373f6b0cced9c5) [[苹果播客]](https://podcasts.apple.com/cn/podcast/%E8%A7%A3%E8%AF%BB%E5%89%8D%E7%AB%AF%E5%A4%A7%E7%89%9Btc39-%E6%88%90%E5%91%98hax%E8%B4%BA%E5%B8%88%E4%BF%8A-%E5%A6%82%E4%BD%95%E4%BF%9D%E6%8C%81%E4%B8%AA%E4%BA%BA%E7%AB%9E%E4%BA%89%E5%8A%9B-ls04/id1775454766?i=1000676834419) [[spotify]](https://open.spotify.com/episode/6ouFOpXrUXo6WHbCLbhj1B) [[喜马拉雅]](https://www.ximalaya.com/sound/774455352)
 - 2024-11-25 线上 [EfficLab 口袋记录](https://space.bilibili.com/5953240/channel/collectiondetail?sid=4237062) 首期嘉宾
-  <br>[B站](https://www.bilibili.com/video/BV1hoB4YPEfZ/) [油管](https://www.youtube.com/watch?v=NaJ3p_TWY2k)
+  <br>[[B站]](https://www.bilibili.com/video/BV1hoB4YPEfZ/) [[油管]](https://www.youtube.com/watch?v=NaJ3p_TWY2k)
 - 2024-12-20～21 武汉 [2024开放原子开发者大会](https://openatomcon.openatom.cn/) 前端分论坛出品人
 
 ### 2023
@@ -28,7 +28,7 @@ lang: zh-cmn-Hans-x-hax
   <br>[从 alt-JS 到 var-TS —— JavaScript/TypeScript 生态下的变种语言评述和展望](/2023/var-ts/)
 - 2023-05-28 魔都 [GOTC 全球开源技术峰会 2023](https://gotc2023.oschina.net) 前端分论坛出品人 讲师
 - 2023-06-31~07-01 [第三届稀土开发者大会](https://conf.juejin.cn/xdc2023/) 「前端未来」专题出品人
-- 2023-07-29 [欧拉多咖操作系统研讨会 Web生态新发展] 嘉宾
+- 2023-07-29 欧拉多咖操作系统研讨会 Web生态新发展 嘉宾
   <br>[从 alt-JS 到 var-TS —— JavaScript/TypeScript 生态下的变种语言评述和展望](/2023/var-ts/)
 - 2023-12-04 线上 [2023技术播客节 代码不在服务区 Vol.4](https://www.xiaoyuzhoufm.com/episode/656d6ece51ba7218578bf793) 嘉宾
   <br>前端向未来：AI时代，怎样成为顶尖的前端工程师（节目录制于8月） [[苹果播客]](https://podcasts.apple.com/cn/podcast/vol-4-%E5%89%8D%E7%AB%AF%E5%90%91%E6%9C%AA%E6%9D%A5-ai-%E6%97%B6%E4%BB%A3-%E6%80%8E%E6%A0%B7%E6%88%90%E4%B8%BA%E9%A1%B6%E5%B0%96%E7%9A%84%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88/id1687422590?i=1000637397097) [[小宇宙]](https://www.xiaoyuzhoufm.com/episode/656d6ece51ba7218578bf793)
@@ -62,9 +62,9 @@ lang: zh-cmn-Hans-x-hax
 ### 2021
 
 - 2021-01-09 杭州 [SEE Conf 2021](https://seeconf.antfin.com/) 参会
-- 2021-01-25~28 线上 [TC39会议](https://github.com/tc39/agendas/blob/master/2021/01.md) 远程参会
+<!--- 2021-01-25~28 线上 [TC39会议](https://github.com/tc39/agendas/blob/master/2021/01.md) 远程参会
   <br>讨论：Branding checks
-  <br>讨论：反向索引和`item()/at()`
+  <br>讨论：反向索引和`item()/at()`-->
 - 2021-05-29 帝都 [QCon北京2021](https://qcon.infoq.cn/2021/beijing) 参会
 - 2021-07-04 帝都 [GMTC 全球大前端技术大会 2021·北京站](https://gmtc.infoq.cn/2021/beijing) 出品人
 - 2021-07-10 魔都 [第五届函数式编程分享会](https://zhuanlan.zhihu.com/p/382695580) 远程参会
@@ -85,21 +85,21 @@ lang: zh-cmn-Hans-x-hax
 
 - 2020-01-04 杭州 [第三届 SEE Conf](https://seeconf.antfin.com/) 参会
 <!-- - 2020-01-11 帝都 [NodeParty 1.11]() 待定 -->
-- 2020-02-04~06 檀香山 [第74次TC39会议](https://github.com/tc39/agendas/blob/master/2020/2.md) 远程参会
+<!--- 2020-02-04~06 檀香山 [第74次TC39会议](https://github.com/tc39/agendas/blob/master/2020/2.md) 远程参会
 - 2020-03-21~04-02 线上 [第75次TC39会议](https://github.com/tc39/agendas/blob/master/2020/3.md) 远程参会
 - 2020-06-01~06-04 线上 [第76次TC39会议](https://github.com/tc39/agendas/blob/master/2020/3.md) 远程参会
-- 2020-03-21~04-02 线上 [第77次TC39会议](https://github.com/tc39/agendas/blob/master/2020/3.md) 远程参会
+- 2020-03-21~04-02 线上 [第77次TC39会议](https://github.com/tc39/agendas/blob/master/2020/3.md) 远程参会-->
 - 2020-09-05 深圳 [腾讯Live开发者大会](https://2020.tlc.ivweb.io/) 讲师
   <br>[中国参与 JS 语言标准的最新进展](/2020/js-proposals-cn)
-- 2020-09-21~24 线上 [第78次TC39会议](https://github.com/tc39/agendas/blob/master/2020/09.md) 远程参会
-  <br>[双端迭代器和解构](/2020/tc39-sept-deiter)
+<!--- 2020-09-21~24 线上 [第78次TC39会议](https://github.com/tc39/agendas/blob/master/2020/09.md) 远程参会
+  <br>[双端迭代器和解构](/2020/tc39-sept-deiter)-->
 - 2020-10-15~17 深圳 [有你有我开源节](https://www.infoq.cn/article/i82z2fr9gpbdusbnst41) 参会
 - 2020-10-24 魔都 [2020 中国开源年会 COSCon'20](https://kaiyuanshe.cn/activity/summit/coscon-2020/) 开源脱口秀嘉宾
 - 2020-10-24 北京 [图灵X掘金1024活动：JavaScript的过去、现在和将来活动心得](https://juejin.cn/post/6887733734334791694) 远程连线嘉宾
 - 2020-10-25 魔都 字节跳动技术沙龙 讲师
   <br>[中国参与 JS 语言标准的最新进展](/2020/js-proposals-cn)
-- 2020-11-16~19 线上 [第79次TC39会议](https://github.com/tc39/agendas/blob/master/2020/11.md) 远程参会
-  <br>[Extensions和`::`](/2020/tc39-nov-ext)
+<!--- 2020-11-16~19 线上 [第79次TC39会议](https://github.com/tc39/agendas/blob/master/2020/11.md) 远程参会
+  <br>[Extensions和`::`](/2020/tc39-nov-ext)-->
 - 2020-12-10~12 魔都 中兴前端技术大会 讲师
 - 2020-12-19~20 线上 [第十五届D2](https://www.alibabaf2e.com/) 参会
 - 2020-12-20 魔都 [QCon上海2020](https://qcon.infoq.cn/2020/shanghai/) 参会
@@ -127,14 +127,14 @@ lang: zh-cmn-Hans-x-hax
   <br>[主题演讲：前端开发编程语言的过去、现在和未来](/2019/fe-lang/slide)
 - 2019-07-11 杭州 钉钉内部分享会 OSS VSCode 参会
 - 2019-07-17 魔都 [BXT 019](https://github.com/baixing/BXT/issues/26) 组织者
-- 2019-07-23~25 [第71次TC39会议](https://github.com/tc39/agendas/blob/master/2019/7.md) 远程参会
+<!--- 2019-07-23~25 [第71次TC39会议](https://github.com/tc39/agendas/blob/master/2019/7.md) 远程参会-->
 - 2019-07-27 [第十期 杭州 NodeParty](https://github.com/NodeParty-China/Node-Party/tree/master/2019-07-27) 分享
 <!-- - 2019-08-12 杭州 华为编译器和编程语言实验室技术交流 -->
 - 2019-09-07 杭州 [个推TechDay——前端开发展望，创新技术落地](https://www.huodongxing.com/event/7506588491100) 讲师
   <br>[聊聊JS的几个新特性（8月版）](/2019/js-new-features/slide)
 - 2019-09-08 魔都 [JS class fields 提案闭门研讨会](https://github.com/hax/js-class-fields-chinese-discussion/tree/master/meetings/20190908) 召集人 主讲人
 - 2019-09-16~20 福冈 [W3C TPAC 2019](https://www.w3.org/2019/09/TPAC/) 参会
-- 2019-10-01~03 [第72次TC39会议](https://github.com/tc39/agendas/blob/master/2019/10.md) 远程参会
+<!--- 2019-10-01~03 [第72次TC39会议](https://github.com/tc39/agendas/blob/master/2019/10.md) 远程参会-->
 - 2019-10-17~19 魔都 [QCon上海2019](https://2019.qconshanghai.com/) “编程语言”专题讲师
   <br>[聊聊JS的几个新特性（10月版）](/2019/js-new-features/slide?qcon)
 <!-- - 2019-10-19~20 魔都 [JSConf](https://2019.jsconfchina.com/) 没有参会 -->
@@ -148,7 +148,7 @@ lang: zh-cmn-Hans-x-hax
   <br>[JS新特性之 Top-level Await — 从入门到被坑](/2019/tla/slide)
 - 2019-11-27 魔都 百度内部分享
   <br>[JS 的几朵乌云](/2019/js-issues/)
-- 2019-12-03~05 [第73次TC39会议](https://github.com/tc39/agendas/blob/master/2019/12.md) 远程参会
+<!--- 2019-12-03~05 [第73次TC39会议](https://github.com/tc39/agendas/blob/master/2019/12.md) 远程参会-->
   <br>[Nullish Coalescing Precedence Issue](/2019/nc-p/slide)
 - 2019-12-06~07 帝都 [ArchSummit 全球架构师峰会](https://archsummit.infoq.cn/2019/beijing/) 参会
 - 2019-12-08 帝都 [GDG DevFest 2019 Beijing](https://www.meetup.com/GDG-Beijing/events/265252940/) 讲师
