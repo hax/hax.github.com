@@ -8,6 +8,11 @@ lang: zh-cmn-Hans-x-hax
 
 ## Timeline
 
+### 2025
+
+- 2025-02-22 帝都 [第二届vivo蓝河操作系统创新赛](https://competition.atomgit.com/competitionInfo?id=4d59fdd1604b17529552a14449f5d460) <!-- https://competition.atomgit.com/competitionInfo?id=964de98f91be169a12524db7d5049ce9 --> 评委
+- 2025-03-08 杭州 [第十九届 D2 终端技术大会](https://d2.alibabatech.com/) 工程研发专场出品人
+
 ### 2024
 
 - 2024-06-28～29 帝都 [稀土开发者大会2024](https://conf.juejin.cn/xdc2024/) 「前端未来」专题出品人 获得优秀出品人荣誉
