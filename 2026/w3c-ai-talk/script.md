@@ -158,6 +158,8 @@ Pretext 做的是什么呢？简单说就是绕开浏览器直接用 JavaScript 
 
 零 DOM 读取，按帧 reflow。
 
+https://x.com/_chenglou/status/2037715519277760531
+
 龙穿行文本、文字绕开障碍、动态 exclusion zones，这些 demo 好看，但背后首先是一个很硬的排版与性能问题。
 
 它让我们想到了 CSS shapes 还有 CSS exclusions。
@@ -186,6 +188,8 @@ Pretext 做的是什么呢？简单说就是绕开浏览器直接用 JavaScript 
 
 然后，龙。
 
+https://x.com/Riyvir/status/2038093450139279426
+
 不是巴哥那个🐲。
 
 龙在文字里穿行，文字绕开障碍物。这种画面不需要解释，一眼就能懂。
@@ -195,6 +199,8 @@ Pretext 做的是什么呢？简单说就是绕开浏览器直接用 JavaScript 
 “文字像水一样分开又合上”这种体验，把话题从优化库变成了新交互媒介。
 
 接下来 repo 就会变成 meme。
+
+https://www.pretext.cool/
 
 当社区开始做龙、做实验、做 playground、做 gallery，项目就不只是仓库，而像一场集体创作活动。
 
