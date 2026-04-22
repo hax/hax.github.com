@@ -8,6 +8,12 @@ lang: zh-cmn-Hans-x-hax
 
 ## Timeline
 
+### 2026
+
+- 2026-03-21 汴州 [第二十届 D2 终端技术大会](https://d2.alibabatech.com/) 参会
+- 2026-04-22 汴州 [Web进化论｜W3C开放日暨Web标准国际论坛](https://www.w3.org/zh-hans/events/happenings/2026/webevolve-w3c-open-day-web-standards-forum/) 演讲者
+  <br>[开发者眼中的 AI 革命](/2026/w3c-ai-talk/)
+
 ### 2025
 
 - 2025-02-22 帝都 [第二届vivo蓝河操作系统创新赛](https://competition.atomgit.com/competitionInfo?id=4d59fdd1604b17529552a14449f5d460) <!-- https://competition.atomgit.com/competitionInfo?id=964de98f91be169a12524db7d5049ce9 --> 评委
