@@ -13,6 +13,8 @@ lang: zh-cmn-Hans-x-hax
 - 2026-03-21 汴州 [第二十届 D2 终端技术大会](https://d2.alibabatech.com/) 参会
 - 2026-04-22 汴州 [Web进化论｜W3C开放日暨Web标准国际论坛](https://www.w3.org/zh-hans/events/happenings/2026/webevolve-w3c-open-day-web-standards-forum/) 演讲者
   <br>[开发者眼中的 AI 革命](/2026/w3c-ai-talk/)
+- 2026-06-12~14 东莞 [华为开发者大会 2026](https://developer.huawei.com/consumer/cn/hdc/2026/) 参会
+- 2026-07-18 魔都 [Vue x Vite 开发者大会 2026](https://vueconf.cn/) 参会
 
 ### 2025
 
